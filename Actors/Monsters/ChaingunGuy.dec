@@ -149,56 +149,6 @@ Actor TangoChaingunGuySlow : TangoChaingunGuy
 	}
 }
 
-Actor TangoChaingunGuyDropAssaultRifle : TangoChaingunGuy 27709
-{
-	//$Title "TangoChaingunGuy (Drops AR)"
-	DropItem "TangoAssaultRifle"
-}
-
-Actor TangoChaingunGuyDropAssaultRifleSlow : TangoChaingunGuyDropAssaultRifle
-{
-	States
-	{
-	Missile:
-		CGGY E 10 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
-		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
-		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
-		CGGY F 6 Bright
-		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
-		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
-		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
-		CGGY E 6 Bright
-		CGGY F 1 Bright A_CPosRefire
-		Goto Missile+1
-	}
-}
-
-Actor TangoChaingunGuyDropChaingun : TangoChaingunGuy 27710
-{
-	//$Title "TangoChaingunGuy (Drops Chaingun)"
-	DropItem "TangoChaingun"
-}
-
-Actor TangoChaingunGuyDropChaingunSlow : TangoChaingunGuyDropChaingun
-{
-	States
-	{
-	Missile:
-		CGGY E 10 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
-		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
-		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
-		CGGY F 6 Bright
-		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
-		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
-		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
-		CGGY E 6 Bright
-		CGGY F 1 Bright A_CPosRefire
-		Goto Missile+1
-	}
-}
-
 Actor TangoChaingunGuyDropClip : TangoChaingunGuy 27711
 {
 	//$Title "TangoChaingunGuy (Drops Clip)"

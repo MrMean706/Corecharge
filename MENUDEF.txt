@@ -58,7 +58,6 @@ OptionMenu "SuperchargeOptions"
 	StaticText "Gameplay Options", 1
 	Option     "Pistol start (GZDoom only)", "t_m8f_wm_PistolStart", "OnOff"
 	Option     "Auto reload weapons on empty", "cl_tango_auto_reload_when_empty", "OnOff"
-	Option     "Use Chaingun instead of Assault Rifle*", "sv_tango_chaingun_replace_assault_rifle", "OnOff"
 	
 	
 	StaticText ""
@@ -68,10 +67,6 @@ OptionMenu "SuperchargeOptions"
 	Option     "Use vanilla projectile origins for Fusionite", "sv_tango_monster_projectile_vanilla_origin_fusionite", "OnOff"
 	Option     "Use vanilla projectile origins for Behemoth", "sv_tango_monster_projectile_vanilla_origin_behemoth", "OnOff"
 	
-	
-// 	StaticText ""
-// 	StaticText "Randomization Options", 1
-// 	Option     "Random Baron spawns", "sv_tango_enable_random_baron", "OnOff"
 
 	StaticText ""
 	StaticText 	"* = Requires map restart to take effect"
