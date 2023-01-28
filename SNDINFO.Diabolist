@@ -1,8 +1,0 @@
-diabolist/see					dsdiasit
-diabolist/active				dsdiaact
-diabolist/death					dsdiadie
-diabolist/plumestart			dsplumst
-diabolist/plumeexplode			dsplumxp
-
-$limit diabolist/plumestart		0
-$limit diabolist/plumeexplode	4
