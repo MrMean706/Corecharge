@@ -1,185 +1,31 @@
-BrightMap Sprite ZBAMA1
-{
-Map "brightmaps/plasmazombie/BMZBAMA1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMA2A8
-{
-Map "brightmaps/plasmazombie/BMZBAMA2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMA3A7
-{
-Map "brightmaps/plasmazombie/BMZBAMA3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMA4A6
-{
-Map "brightmaps/plasmazombie/BMZBAMA4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMA5
-{
-Map "brightmaps/plasmazombie/BMZBAMA5"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMB1
-{
-Map "brightmaps/plasmazombie/BMZBAMB1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMB2B8
-{
-Map "brightmaps/plasmazombie/BMZBAMB2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMB3B7
-{
-Map "brightmaps/plasmazombie/BMZBAMB3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMB4B6
-{
-Map "brightmaps/plasmazombie/BMZBAMB4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMB5
-{
-Map "brightmaps/plasmazombie/BMZBAMB5"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMC1
-{
-Map "brightmaps/plasmazombie/BMZBAMC1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMC2C8
-{
-Map "brightmaps/plasmazombie/BMZBAMC2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMC3C7
-{
-Map "brightmaps/plasmazombie/BMZBAMC3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMC4C6
-{
-Map "brightmaps/plasmazombie/BMZBAMC4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMD1
-{
-Map "brightmaps/plasmazombie/BMZBAMD1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMD2D8
-{
-Map "brightmaps/plasmazombie/BMZBAMD2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMD3D7
-{
-Map "brightmaps/plasmazombie/BMZBAMD3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMD4D6
-{
-Map "brightmaps/plasmazombie/BMZBAMD4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAME1
-{
-Map "brightmaps/plasmazombie/BMZBAME1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAME2E8
-{
-Map "brightmaps/plasmazombie/BMZBAME2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAME3E7
-{
-Map "brightmaps/plasmazombie/BMZBAME3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMF1
-{
-Map "brightmaps/plasmazombie/BMZBAMF1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMF2F8
-{
-Map "brightmaps/plasmazombie/BMZBAMF2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMF3F7
-{
-Map "brightmaps/plasmazombie/BMZBAMF3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMF4F6
-{
-Map "brightmaps/plasmazombie/BMZBAMF4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMF5
-{
-Map "brightmaps/plasmazombie/BMBLACK"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMG1
-{
-Map "brightmaps/plasmazombie/BMZBAMG1"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMG2G8
-{
-Map "brightmaps/plasmazombie/BMZBAMG2"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMG3G7
-{
-Map "brightmaps/plasmazombie/BMZBAMG3"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMG4G6
-{
-Map "brightmaps/plasmazombie/BMZBAMG4"
-DisableFullBright
-}
-
-BrightMap Sprite ZBAMH0
-{
-Map "brightmaps/plasmazombie/BMZBAMH0"
-DisableFullBright
-}
+BrightMap Sprite ZBAMA1 { Map "brightmaps/plasmazombie/BMZBAMA1.png" DisableFullBright }
+BrightMap Sprite ZBAMA2A8 { Map "brightmaps/plasmazombie/BMZBAMA2.png" }
+BrightMap Sprite ZBAMA3A7 { Map "brightmaps/plasmazombie/BMZBAMA3.png" DisableFullBright }
+BrightMap Sprite ZBAMA4A6 { Map "brightmaps/plasmazombie/BMZBAMA4.png" DisableFullBright }
+BrightMap Sprite ZBAMA5 { Map "brightmaps/plasmazombie/BMZBAMA5.png" DisableFullBright }
+BrightMap Sprite ZBAMB1 { Map "brightmaps/plasmazombie/BMZBAMB1.png" DisableFullBright }
+BrightMap Sprite ZBAMB2B8 { Map "brightmaps/plasmazombie/BMZBAMB2.png" DisableFullBright }
+BrightMap Sprite ZBAMB3B7 { Map "brightmaps/plasmazombie/BMZBAMB3.png" }
+BrightMap Sprite ZBAMB4B6 { Map "brightmaps/plasmazombie/BMZBAMB4.png" DisableFullBright }
+BrightMap Sprite ZBAMB5     { Map "brightmaps/plasmazombie/BMZBAMB5.png" DisableFullBright }
+BrightMap Sprite ZBAMC1     { Map "brightmaps/plasmazombie/BMZBAMC1.png" DisableFullBright }
+BrightMap Sprite ZBAMC2C8   { Map "brightmaps/plasmazombie/BMZBAMC2.png" DisableFullBright }
+BrightMap Sprite ZBAMC3C7   { Map "brightmaps/plasmazombie/BMZBAMC3.png" DisableFullBright }
+BrightMap Sprite ZBAMC4C6   { Map "brightmaps/plasmazombie/BMZBAMC4.png" DisableFullBright }
+BrightMap Sprite ZBAMD1     { Map "brightmaps/plasmazombie/BMZBAMD1.png" DisableFullBright }
+BrightMap Sprite ZBAMD2D8   { Map "brightmaps/plasmazombie/BMZBAMD2.png" DisableFullBright }
+BrightMap Sprite ZBAMD3D7   { Map "brightmaps/plasmazombie/BMZBAMD3.png" DisableFullBright }
+BrightMap Sprite ZBAMD4D6   { Map "brightmaps/plasmazombie/BMZBAMD4.png" DisableFullBright }
+BrightMap Sprite ZBAME1     { Map "brightmaps/plasmazombie/BMZBAME1.png" DisableFullBright }
+BrightMap Sprite ZBAME2E8   { Map "brightmaps/plasmazombie/BMZBAME2.png" DisableFullBright }
+BrightMap Sprite ZBAME3E7   { Map "brightmaps/plasmazombie/BMZBAME3.png" DisableFullBright }
+BrightMap Sprite ZBAMF1     { Map "brightmaps/plasmazombie/BMZBAMF1.png" DisableFullBright }
+BrightMap Sprite ZBAMF2F8   { Map "brightmaps/plasmazombie/BMZBAMF2.png" DisableFullBright }
+BrightMap Sprite ZBAMF3F7   { Map "brightmaps/plasmazombie/BMZBAMF3.png" DisableFullBright }
+BrightMap Sprite ZBAMF4F6   { Map "brightmaps/plasmazombie/BMZBAMF4.png" DisableFullBright }
+BrightMap Sprite ZBAMF5     { Map "brightmaps/plasmazombie/BMBLACK.png" DisableFullBright }
+BrightMap Sprite ZBAMG1     { Map "brightmaps/plasmazombie/BMZBAMG1.png" DisableFullBright }
+BrightMap Sprite ZBAMG2G8   { Map "brightmaps/plasmazombie/BMZBAMG2.png" DisableFullBright }
+BrightMap Sprite ZBAMG3G7   { Map "brightmaps/plasmazombie/BMZBAMG3.png" DisableFullBright }
+BrightMap Sprite ZBAMG4G6   { Map "brightmaps/plasmazombie/BMZBAMG4.png" DisableFullBright }
+BrightMap Sprite ZBAMH0     { Map "brightmaps/plasmazombie/BMZBAMH0.png" DisableFullBright }
