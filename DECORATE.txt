@@ -39,8 +39,6 @@
 #include "actors/weapons/PlasmaRifle.dec"
 #include "actors/weapons/BFG.dec"
 #include "actors/weapons/Chaingun.dec"
-#include "actors/weapons/Stomper.dec"
-
 
 /*** MONSTERS ***/
 #include "actors/monsters/PyroDemon.dec"
