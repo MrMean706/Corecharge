@@ -8,7 +8,6 @@
 #include "actors/Snow.dec"
 #include "actors/Barrel.dec"
 #include "actors/HealthArmorPowerups.dec"
-#include "actors/RandomSpawners.dec"
 #include "actors/Casings.dec"
 #include "actors/BulletPuffs.dec"
 #include "actors/Tracers.dec"
@@ -41,8 +40,6 @@
 #include "actors/weapons/BFG.dec"
 #include "actors/weapons/Chaingun.dec"
 #include "actors/weapons/Stomper.dec"
-#include "actors/weapons/Minigun.dec"
-// #include "actors/weapons/Nailgun.dec"
 
 
 /*** MONSTERS ***/

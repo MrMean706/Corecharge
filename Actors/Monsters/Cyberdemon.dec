@@ -201,13 +201,3 @@ Actor TangoWeakCyberdemonSlow : TangoWeakCyberdemon
 		Goto See
 	}
 }
-
-Actor TangoCyberDemonDropStomperCache : TangoCyberdemon
-{
-	DropItem "TangoStomperCacheSpawner"
-}
-
-Actor TangoWeakCyberDemonDropStomperCache : TangoCyberdemon
-{
-	DropItem "TangoStomperCacheSpawner"
-}

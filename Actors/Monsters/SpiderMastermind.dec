@@ -69,11 +69,6 @@ ACTOR TangoSpiderMastermind replaces SpiderMastermind
   }
 }
 
-Actor TangoSpiderMastermindDropScrapGunCache : TangoSpiderMastermind
-{
-	DropItem "TangoScrapGunCacheSpawner"
-}
-
 ACTOR SpiderScrap
 {
 	Projectile
