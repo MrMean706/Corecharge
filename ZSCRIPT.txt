@@ -1,4 +1,8 @@
 version "3.2.0"
+
+#include "actors/Player.zs"
+#include "actors/ReloadableWeapon.zs"
+
 // Everything below this line, including the files included, come from m8f's
 // fantastic idclev-starter-0.5.1.pk3 mod. As per the license terms, the original
 // license has also been included below the only changes that I (tango) made

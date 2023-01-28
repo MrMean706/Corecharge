@@ -8,7 +8,7 @@ ACTOR ShotgunAmmo : Ammo
 	+IGNORESKILL
 }
 
-Actor TangoShotgun : Weapon replaces Shotgun
+Actor TangoShotgun : ReloadableWeapon replaces Shotgun
 {
 	Tag "Shotgun"
 	+WEAPON.AMMO_OPTIONAL

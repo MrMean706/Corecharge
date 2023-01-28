@@ -61,7 +61,7 @@ Actor AssaultRifleSpreadToken : Inventory
 // equal to (1 / max spread tokens)
 const float ar_max_token_factor = 0.05;
 
-Actor TangoAssaultRifle : Weapon replaces Chaingun
+Actor TangoAssaultRifle : ReloadableWeapon replaces Chaingun
 {
 
 	//$Category Weapons
