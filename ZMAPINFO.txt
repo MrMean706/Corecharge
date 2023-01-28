@@ -75,27 +75,3 @@ skill hard
 	Name = "$SKILL_HARD"
 	Key = "u"
 }
-
-skill hard_randomized
-{
-// 	PicName = "M_RANDOM"
-	Name = "Ultra-Randomized."
-	
-	SpawnFilter = Hard
-	MustConfirm = "$TANGO_SKILL_ULTRA_RANDOM"
-	Key = "n"
-	
-	ReplaceActor = "PainElemental", "TangoPainElementalSpawner"
-	ReplaceActor = "Cacodemon", "TangoCacodemonSpawner"
-	ReplaceActor = "HellKnight", "TangoHellKnightSpawner"
-	ReplaceActor = "BaronOfHell", "TangoBaronOfHellSpawner"
-	ReplaceActor = "ChaingunGuy", "TangoChaingunGuySpawner"
-	ReplaceActor = "Revenant", "TangoDraugrSpawner"
-	ReplaceActor = "Berserk", "TangoBerserkSpawner"
-	ReplaceActor = "SpiderMastermind", "TangoSpiderMastermindDropScrapGunCache"
-	ReplaceActor = "Cyberdemon", "TangoCyberDemonDropStomperCache"
-	ReplaceActor = "TangoWeakCyberdemon", "TangoWeakCyberDemonDropStomperCache"
-	ReplaceActor = "RocketLauncher", "TangoRocketLauncherSpawner"
-	ReplaceActor = "RocketAmmo", "TangoRocketAmmoSpawner"
-	ReplaceActor = "RocketBox", "TangoRocketBoxSpawner"
-}
