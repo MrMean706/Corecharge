@@ -40,8 +40,6 @@
 
 
 /*** MONSTERS ***/
-#include "actors/monsters/PyroDemon.dec"
-#include "actors/monsters/TorturedSoul.dec"
 #include "actors/monsters/Behemoth.dec"
 #include "actors/monsters/Fusionite.dec"
 #include "actors/monsters/Imp.dec"
@@ -54,15 +52,10 @@
 #include "actors/monsters/Cacodemon.dec"
 #include "actors/monsters/Exile.dec"
 #include "actors/monsters/ChaingunGuy.dec"
-#include "actors/monsters/CyberBaron.dec"
 #include "actors/monsters/PlasmaZombie.dec"
-#include "actors/monsters/Diabolist.dec"
 #include "actors/monsters/Cyberdemon.dec"
-#include "actors/monsters/MachinegunGuy.dec"
 #include "actors/monsters/SpiderMastermind.dec"
 #include "actors/monsters/BaronOfHell.dec"
-#include "actors/monsters/Wicked.dec"
-#include "actors/monsters/Grenadier.dec"
 
 
 #include "actors/monsters/MonsterRocket.dec"
