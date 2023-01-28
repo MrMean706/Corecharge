@@ -7,13 +7,12 @@ ACTOR TangoPlayer : Doomplayer replaces Doomplayer
 	Player.StartItem "PistolAmmo", 8
 	Player.StartItem "ShotgunAmmo", 8
 	Player.StartItem "AssaultRifleAmmo", 48
-	Player.StartItem "ScrapAmmo", 4
 	Player.StartItem "PlasmaRifleAmmo", 40
 	Player.WeaponSlot 1, TangoChainsaw, TangoFist
    	Player.WeaponSlot 2, TangoPistol
 	Player.WeaponSlot 3, TangoShotgun, TangoSuperShotgun
-	Player.WeaponSlot 4, TangoAssaultRifle, TangoChaingun, TangoScrapGun, TangoNailgun
-	Player.WeaponSlot 5, TangoStomper, TangoRocketLauncher
-	Player.WeaponSlot 6, TangoMinigun, TangoPlasmaRifle
+	Player.WeaponSlot 4, TangoAssaultRifle
+	Player.WeaponSlot 5, TangoRocketLauncher
+	Player.WeaponSlot 6, TangoPlasmaRifle
 	Player.WeaponSlot 7, TangoBFG9000
 }
