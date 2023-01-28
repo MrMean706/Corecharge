@@ -4,48 +4,48 @@
 //without these, they're hard to see against the nukage flat if used in gzDoom with brightmap support
 BrightMap Sprite SLIMA0
 {
-Map "brightmaps/terrain/BMSLIMA0"
+Map "brightmaps/terrain/BMSLIMA0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMB0
 {
-Map "brightmaps/terrain/BMSLIMB0"
+Map "brightmaps/terrain/BMSLIMB0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMC0
 {
-Map "brightmaps/terrain/BMSLIMC0"
+Map "brightmaps/terrain/BMSLIMC0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMD0
 {
-Map "brightmaps/terrain/BMSLIMD0"
+Map "brightmaps/terrain/BMSLIMD0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIME0
 {
-Map "brightmaps/terrain/BMSLIME0"
+Map "brightmaps/terrain/BMSLIME0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMF0
 {
-Map "brightmaps/terrain/BMSLIMF0"
+Map "brightmaps/terrain/BMSLIMF0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMG0
 {
-Map "brightmaps/terrain/BMSLIMG0"
+Map "brightmaps/terrain/BMSLIMG0.png"
 DisableFullBright
 }
 
 BrightMap Sprite SLIMH0
 {
-Map "brightmaps/terrain/BMSLIMH0"
+Map "brightmaps/terrain/BMSLIMH0.png"
 DisableFullBright
 }
