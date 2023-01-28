@@ -1,0 +1,338 @@
+const int imp_gib_angle_start = 150;
+const int imp_gib_angle_end = 210;
+
+ACTOR TangoImp : DoomImp replaces DoomImp
+{
+	//$Title "TangoImp"
+	//$Category Monsters
+	//$Color 12
+	Health 60 // same as default doomimp, this is just here for reference
+	PainChance "Chaingun", 20
+	Tag "Imp"
+	States
+	{
+	Spawn:
+		BIMP A 10 A_Look
+		Loop
+	See:
+		BIMP AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		BIMP EF 8 A_FaceTarget
+		TNT1 A 0 A_JumpIfCloser(32, "Scratch")
+		BIMP G 6 A_CustomComboAttack("TangoImpBall", 32, 16, "imp/melee")
+		Goto See
+	Scratch:
+		BIMP G 6 A_MeleeAttack
+		Goto See
+	Pain:
+		TNT1 A 0
+		BIMP H 2
+		BIMP H 2 A_Pain
+		Goto See
+	Raise:
+		BIMP MLKJI 8
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		BIMP M -1
+		Stop
+	
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		TNT1 A 0 A_Jump(80, "LegsDeath", "ArmDeath")
+		Goto RegularDeath
+		
+	XDeath:
+		TNT1 A 0 A_Jump(128, "LegsDeath", "FlyDeath")
+		Goto ArmDeath
+		
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(80, "DeathRandom1")
+		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom2")
+		Goto Death
+		
+	Death.Rocket:
+	Death.Plasma:
+		Goto XDeath
+	
+	DeathRandom1:
+		TNT1 A 0 A_Jump(60, "LegsDeath", "ArmDeath")
+		TNT1 A 0 A_Jump(100, "FlyDeath", "FlyArmDeath")
+		TNT1 A 0 ThrustThing(angle*256/360+128, 4)
+		TNT1 A 0 ThrustThingZ(0, 6, 0, 1)
+		Goto RegularDeath
+		
+	DeathRandom2:
+		TNT1 A 0 A_Jump(40, "ArmDeath")
+		TNT1 A 0 A_Jump(120, "FlyDeath", "FlyArmDeath")
+		TNT1 A 0 ThrustThing(angle*256/360+128, 2)
+		TNT1 A 0 ThrustThingZ(0, 6, 0, 1)
+		Goto RegularDeath
+
+		
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood",0,0,32,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood",0,0,40,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,48,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BIMP I 6
+		BIMP J 6 A_Scream
+		BIMP K 4
+		BIMP L 4 A_Stop
+		BIMP M -1
+		Stop
+	
+	FlyDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThing(angle*256/360+128, 6)
+		TNT1 A 0 ThrustThingZ(0, 32, 0, 1)
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner4")
+		TNT1 AAA 0 A_SpawnItemEx("NewFlyingBlood",0,0,48,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_CustomMissile("TangoImpChestChunk", 42, 0, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_CustomMissile("TangoImpArmLeft", 42, 12, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_CustomMissile("TangoImpArmRight", 42, -12, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		BID5 A 7
+	FlyDeathAirLoop:
+		BID5 B 2 A_CheckFloor("FlyDeathFinish")
+		Loop
+	FlyDeathFinish:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood",0,0,10,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood",0,0,10,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood",0,0,10,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_PlaySound("misc/xdeath2")
+		BID5 C -1
+		Stop
+		
+	
+	FlyArmDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThing(angle*256/360+128, 4)
+		TNT1 A 0 ThrustThingZ(0, 24, 0, 1)
+		TNT1 AAA 0 A_SpawnItemEx("NewFlyingBlood",0,0,48,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_CustomMissile("TangoImpArmLeft", 42, 12, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		BID6 A 6
+		BID6 B 6
+	FlyArmDeathAirLoop:
+		BID6 C 2 A_CheckFloor("FlyArmDeathFinish")
+		Loop
+	FlyArmDeathFinish:
+		TNT1 A 0 A_Stop		
+		TNT1 AAA 0 A_SpawnItemEx("NewFlyingBlood",0,0,10,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_PlaySound("misc/xdeath1")
+		BID6 D -1
+		Stop
+		
+		
+	LegsDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_CustomMissile("TangoImpChestChunk", 12, 0, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_CustomMissile("TangoImpArmRight", 12, -12, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner5")
+		BID2 A 6
+		
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID2 B 3
+
+		BID2 CD 6
+		BID2 E -1
+		Stop
+
+
+	ArmDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner5")
+		TNT1 A 0 A_CustomMissile("TangoImpChestChunk", 12, 0, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_CustomMissile("TangoImpArmRight", -12, 0, random(imp_gib_angle_start, imp_gib_angle_end), 2, random (10, 45))
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Jump(128, "RightArmDeath")
+		Goto LeftArmDeath
+		
+	LeftArmDeath:
+		BID3 A 3
+		BID3 BBBB 4 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID3 CD 4
+		BID3 E -1
+		Stop
+		
+	RightArmDeath:
+		BID4 A 3
+		BID4 BBBB 4 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		BID4 CD 4
+		BID4 E -1
+		Stop
+  }
+}
+
+// Fires a slower projectile
+ACTOR TangoImpSlow : TangoImp
+{
+	States
+	{
+	Melee:
+	Missile:
+		BIMP EF 8 A_FaceTarget
+		TNT1 A 0 A_JumpIfCloser(32, "Scratch")
+		BIMP G 6 A_CustomComboAttack("TangoImpBallSlow", 32, 16, "imp/melee")
+		Goto See
+	Scratch:
+		BIMP G 6 A_MeleeAttack
+		Goto See
+	}
+}
+
+ACTOR TangoImpArmRight
+{
+    Radius 2
+    Height 2
+    Scale 1.1
+	Speed 6
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.2
+	WallBounceFactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		BIAR ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        BIAR I -1
+        Stop
+    }
+}
+
+ACTOR TangoImpArmLeft
+{
+    Radius 2
+    Height 2
+    Scale 1.1
+	Speed 6
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.2
+	WallBounceFactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		BIAL ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        BIAL I -1
+        Stop
+    }
+}
+
+ACTOR TangoImpChestChunk
+{
+    Radius 2
+    Height 2
+    Scale 1.1
+	Speed 6
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.2
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		BD2C ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        BD2C I -1
+        Stop
+    }
+}
+
+ACTOR TangoImpBall : DoomImpBall replaces DoomImpBall
+{
+	Speed 13
+	FastSpeed 15
+	Damage (14)
+	Renderstyle Normal
+	States
+	{
+	Spawn:
+		BIBA AAABBB 1 Bright A_SpawnItemEx("TangoImpBallTrail")
+		Loop
+	Death:
+		BIBA CDEFGHI 2 Bright
+		Stop
+	}
+}
+
+Actor TangoImpBallSlow : TangoImpBall
+{
+	Speed 11
+}
+
+Actor TangoImpBallTrail
+{
+	Radius 1
+	Height 1
+	Speed 0
+	Alpha 0.4
+	Scale 0.5
+	+CLIENTSIDEONLY
+	+NOGRAVITY
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 A 2
+	SpawnLoop:
+		BIBT ABCDEF 1 Bright
+		Stop
+	}
+}

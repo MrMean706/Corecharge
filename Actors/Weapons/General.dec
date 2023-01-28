@@ -1,0 +1,4 @@
+Actor Reloading : Inventory
+{
+	Inventory.MaxAmount 1
+}

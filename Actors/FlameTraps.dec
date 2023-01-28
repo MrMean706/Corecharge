@@ -1,0 +1,364 @@
+// All the code in this file was done by Captain Toenail, with the exception
+// of a few small tweaks by Tango. So just credit Captain Toenail or grab the
+// original FlameTraps.pk3 from realm667.com to get a version where the spitter
+// and floor TNT1l come built in with voxels.
+ACTOR FireballSpitter : SwitchableDecoration 12700
+{
+	//$Title Fireball Spitter
+	//$Category Traps
+	//$IsDecoration
+	//Angled
+	//$Sprite FARFA1
+	//$Arg0 Shot Delay (seconds)
+	//$Arg0Default 3
+	//$Arg1 Projectile Speed
+	//$Arg1Default 10
+	
+	Var int user_shotdelay;
+	Var int user_shotspeed;
+
+	+NOCLIP
+	+NOGRAVITY
+	+FIXMAPTHINGPOS
+	//+WALLSPRITE
+	-RANDOMIZE
+	Radius 4
+	Height 32
+	
+		States
+		{
+			Spawn:
+				TNT1 A 0 NoDelay A_SetUserVar("user_shotdelay", Args[0])
+			ShotDelay:
+				TNT1 A 35 A_SetUserVar("user_shotdelay", user_shotdelay-1)
+				TNT1 A 0 A_JumpIf(user_shotdelay==0,"Active")
+				Loop
+			Active:
+				TNT1 A 12
+				TNT1 A 20 Bright A_SpawnItemEx ("SpitterShot", 1, 0, 0, Args[1], 0, 0, 0, 0, 0, 0)
+				Goto Spawn
+			Inactive:
+				TNT1 A -1 A_SetUserVar("user_shotdelay", Args[0])
+				Stop
+		}
+}
+
+
+ACTOR FireballSpitterInactive : FireballSpitter 12701
+{
+	//$Title Fireball Spitter Inactive
+	//$Sprite FARFA1
+
+		States
+		{
+			Spawn:
+				Goto Super::Inactive
+		}
+}
+
+ACTOR FlameJetter : SwitchableDecoration 12702
+{
+	//$Title Flame Jetter
+	//$Category Traps
+	//$IsDecoration
+	//Angled
+	//$Sprite GFIRC0
+	//$Arg0 Jet Delay (seconds)
+	//$Arg0Default 3
+	//$Arg1 Jet Duration (seconds)
+	//$Arg1Default 3
+	
+	Var int user_jetdelay;
+	Var int user_jetduration;
+
+	+NOCLIP
+	+NOGRAVITY
+	+FIXMAPTHINGPOS
+	//+WALLSPRITE
+	-RANDOMIZE
+	Radius 8
+	Height 32
+		
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SetUserVar("user_jetdelay", Args[0])
+			TNT1 A 0 A_SetUserVar("user_jetduration", Args[1])
+		ShotDelay:
+			TNT1 A 35 A_SetUserVar("user_jetdelay", user_jetdelay-1)
+			TNT1 A 0 A_JumpIf(user_jetdelay==0,"Active")
+			Loop
+		Active:
+			TNT1 A 4
+			TNT1 A 8
+			TNT1 A 0 A_PlaySound ("FireballSpitter/Launch")
+			TNT1 A 0 A_PlaySound("FlameJetter/Fire", CHAN_6, 1, TRUE)
+		FlameJet:
+			TNT1 A 0 Bright A_SetUserVar("user_jetduration", user_jetduration-1)
+			TNT1 AAAAAAA 5 Bright A_SpawnItemEx ("JetFlameShot", 1, 0, 1, 160, 0, 0, 0, 0, 0)
+			TNT1 A 0 A_JumpIf(user_jetduration==0,"StopJet")
+			Loop
+		StopJet:
+			TNT1 A 0 A_StopSound(CHAN_6)
+			TNT1 A 12 A_PlaySound ("FireballSpitter/Hit")
+			Goto Spawn
+		Inactive:
+			TNT1 A 0 A_SetUserVar("user_jetdelay", Args[0])
+			TNT1 A -1 A_SetUserVar("user_jetduration", Args[1])
+			Stop
+	}
+}
+
+ACTOR FlameJetterInactive : FlameJetter 12703
+{
+	//$Title Flame Jetter Inactive
+	//$Sprite GFIRC0
+
+		States
+		{
+			Spawn:
+				Goto Super::Inactive
+		}
+}
+
+ACTOR FlameJetterToggle : SwitchableDecoration 12706
+{
+	//$Title Flame Jetter Toggle
+	//$Category Traps
+	//$IsDecoration
+	//Angled
+	//$Sprite GFIRC0
+
+	+NOCLIP
+	+NOGRAVITY
+	+FIXMAPTHINGPOS
+	//+WALLSPRITE
+	-RANDOMIZE
+	Radius 8
+	Height 32
+		
+		States
+		{
+			Inactive:
+				TNT1 A 0 A_StopSound(CHAN_6)
+				TNT1 A 8 A_PlaySound ("FireballSpitter/Hit")
+				TNT1 A 4
+			Spawn:
+				TNT1 A -1
+				Stop
+			Active:
+				TNT1 A 12
+				TNT1 A 0 A_PlaySound ("FireballSpitter/Launch")
+				TNT1 A 0 A_PlaySound("FlameJetter/Fire", CHAN_6, 1, TRUE)
+			FlameJet:
+				TNT1 A 5 Bright A_SpawnItemEx ("JetFlameShot", 1, 0, 0, 160, 0, 0, 0, 0, 0)
+				Loop
+		}
+}
+
+ACTOR FloorGrill : SwitchableDecoration 12704
+{
+	//$Title Flaming Floor Grill
+	//$Category Traps
+	//$IsDecoration
+	//$Sprite GFIRF0
+	//$Icon GFIRF0
+	//$NotAngled
+	//$Arg0 Jet Delay (seconds)
+	//$Arg0Default 3
+	//$Arg1 Jet Duration (seconds)
+	//$Arg1Default 3
+	
+	Var int user_jetdelay;
+	Var int user_jetduration;
+
+	-RANDOMIZE
+	Radius 16
+	Height 4
+		
+		States
+		{
+			Spawn:
+				TNT1 A 0 NoDelay A_SetUserVar("user_jetdelay", Args[0])
+				TNT1 A 0 A_SetUserVar("user_jetduration", Args[1])
+			ShotDelay:
+				TNT1 A 35 A_SetUserVar("user_jetdelay", user_jetdelay-1)
+				TNT1 A 0 A_JumpIf(user_jetdelay==0,"Active")
+				Loop
+			Active:
+				TNT1 A 0 A_PlaySound ("FireballSpitter/Launch")
+				TNT1 A 0 A_PlaySound("FlameJetter/Fire", CHAN_6, 1, TRUE)
+			FlameJet:
+				TNT1 A 0 Bright A_SetUserVar("user_jetduration", user_jetduration-1)
+				// The active frames here need to add up to 35 to = 1 second
+				TNT1 A 3 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 4 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 3 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 4 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 3 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 4 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 3 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 4 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 3 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 4 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				TNT1 A 0 Bright A_JumpIf(user_jetduration==0,"StopJet")
+				Loop
+			StopJet:
+				TNT1 A 0 A_StopSound(CHAN_6)
+				TNT1 A 0 A_PlaySound ("FireballSpitter/Hit")
+				TNT1 A 0
+				Goto Spawn
+			Inactive:
+				TNT1 A 0 A_SetUserVar("user_jetdelay", Args[0])
+				TNT1 A -1 A_SetUserVar("user_jetduration", Args[1])
+				Stop
+		}
+}
+
+ACTOR FloorGrillInactive : FloorGrill 12705
+{
+	//$Title Flaming Floor Grill Inactive
+
+		States
+		{
+			Spawn:
+				Goto Super::Inactive
+		}
+}
+
+ACTOR FloorGrillToggle : SwitchableDecoration 12707
+{
+	//$Title Flaming Floor Grill Toggle
+	//$Category Traps
+	//$IsDecoration
+	//$Sprite GFIRF0
+	//$Icon GFIRF0
+	//$NotAngled
+
+	-RANDOMIZE
+	Radius 16
+	Height 4
+			
+		States
+		{
+			Inactive:
+				TNT1 A 0 A_StopSound(CHAN_6)
+				TNT1 A 0 A_PlaySound ("FireballSpitter/Hit")
+			Spawn:
+				TNT1 A -1
+				Stop
+			Active:
+				TNT1 A 0 A_PlaySound ("FireballSpitter/Launch")
+				TNT1 A 0 A_PlaySound("FlameJetter/Fire", CHAN_6, 1, TRUE)
+			FlameJet:
+				TNT1 A 5 Bright A_SpawnItemEx ("FloorFlameSpawner", 0, 0, 0, 0, 0, 4, 0, 0, 0)
+				Loop
+
+		}
+}
+
+
+
+ACTOR SpitterShot
+{
+	Radius 4
+	Height 4
+	Speed 10
+	Damage (16)
+	DamageType Fire
+	RenderStyle Add
+	DeathSound "FireballSpitter/Hit"
+	Decal "SpitterScorch"
+	Projectile 
+	+ROCKETTRAIL
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	
+		States
+		{
+			Spawn:
+				FARF A 0 Bright NoDelay A_PlaySound("FireballSpitter/Flight", CHAN_6, 1, TRUE)
+				FARF A 0 Bright A_PlaySound ("FireballSpitter/Launch")
+			Fly:
+				FARF AB 3 Bright
+				Loop
+			Death:
+				BAL1 CDE 5 Bright A_StopSound(CHAN_6)
+				Stop
+		}
+}
+
+ACTOR JetFlameShot : FastProjectile
+{
+	Radius 4
+	Height 4
+	Speed 22
+	Damage 0
+	ReactionTime 2
+	RenderStyle Add
+	MissileType "JetFlameSpawner"
+	Projectile 
+	+RIPPER
+	+BLOODLESSIMPACT
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	
+		States
+		{
+			Spawn:
+				TNT1 A 1 NoDelay A_Countdown
+				Loop
+		}
+}
+
+ACTOR JetFlame
+{
+	//RenderStyle "Add"
+	// Alpha 0.8
+	RenderStyle "Add"
+	Alpha 1.0
+	+NOINTERACTION
+	
+		States
+		{
+			Spawn:
+				GFIR ABCDEFG 2 Bright NoDelay 
+				Stop
+		}
+}
+
+ACTOR JetFlameSpawner
+{
+	+NOINTERACTION
+	+NODAMAGETHRUST
+	+BLOODLESSIMPACT
+	+FORCERADIUSDMG
+	DamageType Fire
+	
+		States
+		{
+			Spawn:
+				TNT1 A 0 NoDelay A_SpawnItemeX ("JetFlame", 0, 0, 4, 0, random(0, 1), 1, random (1, 360))
+				TNT1 A 8 A_Explode (4, 16)
+				TNT1 A 8 A_Explode (4, 16)
+				Stop
+		}
+}
+
+ACTOR FloorFlameSpawner
+{
+	+NOINTERACTION
+	+NODAMAGETHRUST
+	+BLOODLESSIMPACT
+	+FORCERADIUSDMG
+	DamageType Fire
+	
+		States
+		{
+			Spawn:
+				TNT1 A 0 NoDelay A_SpawnItemEx ("JetFlame", random(-20, 20), 0, random(-1, -4), 0, 0, 1, random (1, 360))
+				TNT1 A 8 A_Explode (5, 24)
+				TNT1 A 8 A_Explode (5, 24)
+				Stop
+		}
+}

@@ -1,0 +1,143 @@
+ClearLocks
+
+Lock 1 Doom
+{
+	Tangoredcard
+	Message "$PD_REDC"
+	RemoteMessage "$PD_REDCO"
+	Mapcolor 255 0 0
+}
+
+
+Lock 2 Doom
+{
+	Tangobluecard
+	Message "$PD_BLUEC"
+	RemoteMessage "$PD_BLUECO"
+	Mapcolor 0 0 255
+}
+
+
+Lock 3 Doom
+{
+	Tangoyellowcard
+	Message "$PD_YELLOWC"
+	RemoteMessage "$PD_YELLOWCO"
+	Mapcolor 255 255 0
+}
+
+
+Lock 4 Doom
+{
+	TangoSkullRed
+	Message "$PD_REDS"
+	RemoteMessage "$PD_REDSO"
+	Mapcolor 255 0 0
+}
+
+
+Lock 5 Doom
+{
+	TangoSkullBlue
+	Message "$PD_BLUES"
+	RemoteMessage "$PD_BLUESO"
+	Mapcolor 0 0 255
+}
+
+
+Lock 6 Doom
+{
+	TangoSkullYellow
+	Message "$PD_YELLOWS"
+	RemoteMessage "$PD_YELLOWSO"
+	Mapcolor 255 255 0
+}
+
+
+Lock 129 Doom
+{
+	Any { Tangoredcard TangoSkullRed KeyGreen }
+	Message "$PD_REDK"
+	RemoteMessage "$PD_REDO"
+	Mapcolor 255 0 0
+}
+
+
+Lock 130 Doom
+{
+	Any { Tangobluecard TangoSkullBlue KeyBlue }
+	Message "$PD_BLUEK"
+	RemoteMessage "$PD_BLUEO"
+	Mapcolor 0 0 255
+}
+
+
+Lock 131 Doom
+{
+	Any { Tangoyellowcard TangoSkullYellow KeyYellow }
+	Message "$PD_YELLOWK"
+	RemoteMessage "$PD_YELLOWO"
+	Mapcolor 255 255 0
+}
+
+
+Lock 132 Doom
+{
+	Any { Tangoredcard TangoSkullRed }
+	Message "$PD_REDK"
+	RemoteMessage "$PD_REDO"
+	Mapcolor 255 0 0
+}
+
+
+Lock 133 Doom
+{
+	Any { Tangobluecard TangoSkullBlue }
+	Message "$PD_BLUEK"
+	RemoteMessage "$PD_BLUEO"
+	Mapcolor 0 0 255
+}
+
+
+Lock 134 Doom
+{
+	Any { Tangoyellowcard TangoSkullYellow }
+	Message "$PD_YELLOWK"
+	RemoteMessage "$PD_YELLOWO"
+	Mapcolor 255 255 0
+}
+
+Lock 100
+{
+	Message "$PD_ANY"
+	RemoteMessage "$PD_ANYOBJ"
+	Mapcolor 128 128 255
+}
+
+Lock 228
+{
+	Message "$PD_ANY"
+	RemoteMessage "$PD_ANYOBJ"
+	Mapcolor 128 128 255
+}
+
+Lock 229 Doom
+{
+	Any { Tangobluecard TangoSkullBlue KeyBlue}
+	Any { Tangoyellowcard TangoSkullYellow KeyYellow}
+	Any { Tangoredcard TangoSkullRed KeyGreen}
+	Message "$PD_ALL3"
+	RemoteMessage "$PD_ALL3O"
+}
+
+Lock 101 Doom
+{
+	Tangobluecard 
+	Tangoskullblue
+	Tangoyellowcard 
+	Tangoskullyellow
+	Tangoredcard
+	Tangoskullred
+	Message "$PD_ALL6"
+	RemoteMessage "$PD_ALL6O"
+}

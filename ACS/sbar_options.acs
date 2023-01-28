@@ -1,0 +1,29 @@
+#library "sbar_options"
+#include "zcommon.acs"
+
+script "sbar_options_refresh" ENTER
+{
+	while (1)
+	{
+		if (GetCVar("cl_tango_fullscreen_hud_style") == 1)
+		{
+			GiveInventory("UseBigHudAlt1", 1);
+		}
+		else
+		{
+			TakeInventory("UseBigHudAlt1", 1);
+		}
+		
+		
+		if (GetCVar("cl_tango_fullscreen_hud_use_colors") == 1)
+		{
+			GiveInventory("UseBigHudColoredNumbers", 1);
+		}
+		else
+		{
+			TakeInventory("UseBigHudColoredNumbers", 1);
+		}
+	
+		delay(35 * 5);
+	}
+}

@@ -1,0 +1,248 @@
+const int hell_knight_gib_angle_start = 150;
+const int hell_knight_gib_angle_end = 210;
+
+ACTOR TangoHellKnight : HellKnight replaces HellKnight
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoHellKnight"
+	Tag "Hell Knight"
+	+DONTHARMSPECIES
+	+DONTHARMCLASS
+	Species "Knight"
+	PainChance "Chaingun", 20
+	DamageFactor "PyroFire", 0.0
+
+	States
+	{
+	Spawn:
+		BOS2 A 10 A_Look
+		Loop
+	See:
+		BOS2 AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		BOS2 EF 8 A_FaceTarget
+		BOS2 G 8 A_CustomMeleeAttack(40, "baron/melee")
+		Goto See
+	Missile:
+		BOS2 EF 8 A_FaceTarget
+		BOS2 G 8 A_CustomMissile("BaronBall", 32)
+		Goto See
+	Pain:
+		BOS2 H 2
+		BOS2 H 2 A_Pain
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		HKD1 L -1
+		Stop
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		TNT1 A 0 A_JumpIfCloser(80, "DeathRandom1")
+		TNT1 A 0 A_JumpIfCloser(200, "FallBackDeath")
+		Goto RegularDeath
+		
+	DeathRandom1:
+		TNT1 A 0 A_Jump(180, "FallBackDeath")
+		Goto LegsDeath
+		
+	DeathRandom2:
+		TNT1 A 0 A_Jump(120, "FallBackDeath")
+		Goto RegularDeath
+		
+	DeathRandom3:
+		TNT1 A 0 A_Jump(100, "FallBackDeath")
+		TNT1 A 0 A_Jump(80, "LegsDeath")
+		TNT1 A 0 A_Jump(40, "HeadlessDeath")
+		Goto RegularDeath
+		
+	Death.Rocket:
+		Goto LegsDeath
+		
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(144, "DeathRandom3")
+		Goto RegularDeath
+		
+	Death.Bullet:
+	Death.Chaingun:
+		TNT1 A 0 A_Jump(140, "FallBackDeath")
+		TNT1 A 0 A_Jump(160, "HeadlessDeath")
+		Goto RegularDeath
+		
+
+	
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		HKD1 A 3
+		HKD1 B 3 A_Scream
+		// Smooth sprites commented out since it looks out of place with how
+		// smooth it is
+		// HKD1 CDEFGHIJ 3
+		HKD1 DFHJ 5
+		HKD1 K 3
+		HKD1 L -1
+		Stop
+	
+	HeadlessDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_CustomMissile("HellKnightHead", 56, 0, random (hell_knight_gib_angle_start, hell_knight_gib_angle_end), 2, random (10, 60))
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		HKD2 AAAAAAAAAAA 2 A_SpawnItemEx("NewFlyingBlood",0,0,52,Random(5,-5),Random(5,-5),Random(3,6),0,SXF_USEBLOODCOLOR)
+		HKD2 BBBBB 2 A_SpawnItemEx("NewFlyingBlood",0,0,42,Random(5,-5),Random(5,-5),Random(3,6),0,SXF_USEBLOODCOLOR)
+		HKD2 CCCCC 2 A_SpawnItemEx("NewFlyingBlood",0,0,22,Random(5,-5),Random(5,-5),Random(3,6),0,SXF_USEBLOODCOLOR)
+		HKD2 D -1
+		Stop
+	
+	FallBackDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 ThrustThing(angle*256/360+128, 8)
+		TNT1 A 0 ThrustThingZ(0, 10, 0, 1)
+		TNT1 A 0 A_Scream
+		HKD5 A 6
+		HKD5 B 6
+		HKD5 C 6
+		HKD5 D -1
+		Stop
+
+	
+	LegsDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		// spawn horns and other gibs
+		TNT1 A 0 A_CustomMissile("HellKnightHead", 60, 0, random (hell_knight_gib_angle_start, hell_knight_gib_angle_end), 2, random(10, 60))
+		TNT1 A 0 A_CustomMissile("HellKnightTorso", 40, 0, random (hell_knight_gib_angle_start, hell_knight_gib_angle_end), 2, random(10, 60))
+		TNT1 A 0 A_CustomMissile("HellKnightArm", 56, random(-2, 2), random (hell_knight_gib_angle_start, hell_knight_gib_angle_end), 2, random(10, 60))
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner1",0,0,40,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		HKD3 AAAAAABBBCCC 2 A_SpawnItemEx("NewFlyingBlood",0,0,30,Random(5,-5),Random(5,-5),Random(3,6),0,SXF_USEBLOODCOLOR)
+		HKD3 D -1
+		Stop
+  Raise:
+		HKD1 K 3
+		HKD1 JHFD 5
+		HKD1 BA 3
+		Goto See
+  }
+}
+
+// As of this writing, the only difference between this and the default
+// BaronBall actor is that the damage is normalized to 32, the spawn sprites
+// are renamed (since I included PNGified versions in this pk3), and the death
+// sprites are also renamed/include smooth frames from Smooth Doom. But I don't
+// like inheriting, so I took the whole actor definition still
+Actor TangoBaronBall replaces BaronBall
+{
+	Radius 6
+	Height 16
+	Speed 15
+	FastSpeed 20
+	Damage (36)
+	Projectile
+	+RANDOMIZE
+	RenderStyle Add
+	Alpha 1
+	SeeSound "baron/attack"
+	DeathSound "baron/shotx"
+	Decal "BaronScorch"
+	States
+	{
+	Spawn:
+		TKBL AB 4 Bright
+		Loop
+	Death:
+		BOOG ABCDEFGI 2 bright
+		Stop
+	}
+}
+
+ACTOR HellKnightArm
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		GHKA ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        GHKA I -1
+        Stop
+    }
+}
+
+ACTOR HellKnightTorso
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		GHKT ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        GHKT I -1
+        Stop
+    }
+}
+
+ACTOR HellKnightHead
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		HKHE ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        HKHE I -1
+        Stop
+    }
+}

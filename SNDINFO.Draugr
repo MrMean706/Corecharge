@@ -1,0 +1,21 @@
+draugr/bounce					dsdrbonc
+
+draugr/seekerfire				dsdrsekf
+draugr/seekerdeath				dsdrsekd
+
+draugr/death					DRAGDTH
+
+
+$random draugr/pain {draugr/pain1 draugr/pain2 draugr/pain3}
+draugr/pain1	DRAGPAI1
+draugr/pain2	DRAGPAI2
+draugr/pain3	DRAGPAI3
+
+$random draugr/see {draugr/see1 draugr/see2}
+draugr/see1		DRAGSIG1
+draugr/see2		DRAGSIG2
+
+$random draugr/active {draugr/active1 draugr/active2 draugr/active3}
+draugr/active1	DRAGACT1
+draugr/active2	DRAGACT2
+draugr/active3	DRAGACT3

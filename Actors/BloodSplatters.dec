@@ -1,0 +1,115 @@
+Actor NewBlood replaces Blood
+{
+	+CLIENTSIDEONLY
+	+NOGRAVITY
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+	Spray:
+		// We add these 3 dummy states at the beginning here to bypass hardcoded
+		// engine behavior for skipping frames in the blood actor depending
+		// on the amount of damage done
+		// https://zdoom.org/wiki/Classes:Blood
+		TNT1 AAA 0
+		TNT1 A 0 A_SpawnItemEx("BloodSpray", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_USEBLOODCOLOR)
+		TNT1 A 0 A_SpawnItemEx("NewFlyingBlood", 0, 0, 0, random(5, -5), random(5, -5), random(3, 6), 0, SXF_NOCHECKPOSITION | SXF_USEBLOODCOLOR)
+		Stop
+	}
+}
+
+Actor NewBloodSplatter : NewBlood replaces BloodSplatter {}
+
+Actor BloodSpray
+{
+	RenderStyle Translucent
+	Alpha 0.85
+	Scale 0.85
+	+NOGRAVITY
+	+CLIENTSIDEONLY
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(256, "TypeA", "TypeB")
+		Goto TypeA
+	TypeA:
+		GBL1 A 2 A_Jump(80, 1)
+		GBL1 B 2 A_Jump(80, 1)
+		GBL1 C 2 A_Jump(80, 1)
+		GBL1 D 2 A_Jump(80, 1)
+		GBL1 E 2 A_Jump(80, 1)
+		GBL1 F 2 A_Jump(80, 1)
+		GBL1 G 2 A_Jump(80, 1)
+		GBL1 H 2 A_Jump(80, 1)
+		GBL1 I 2
+		Stop
+	TypeB:
+		GBL2 A 2 A_Jump(80, 1)
+		GBL2 B 2 A_Jump(80, 1)
+		GBL2 C 2 A_Jump(80, 1)
+		GBL2 D 2 A_Jump(80, 1)
+		GBL2 E 2 A_Jump(80, 1)
+		GBL2 F 2 A_Jump(80, 1)
+		GBL2 G 2 A_Jump(80, 1)
+		GBL2 H 2
+		Stop
+	}
+}
+
+Actor NewFlyingBlood
+{
+	Scale 0.5
+	Health 1
+	Radius 2
+	Height 2
+	RenderStyle Translucent
+	Alpha 0.7
+	+MISSILE
+	+THRUACTORS
+	+CLIENTSIDEONLY
+	+CORPSE
+	+NOTELEPORT
+	+NOBLOCKMAP
+	+DONTSPLASH
+	+DOOMBOUNCE
+	BounceCount 2
+	BounceFactor 0.05
+	WallBounceFactor 0.05
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		FBLD AAABBBCCCDDD 1 A_SpawnItem("NewFlyingBloodTrail", 0, 0, 0, 1)
+	Crash:
+	Death:
+		TNT1 A 0
+		Stop
+	Toaster:
+		TNT1 A 0
+		Stop
+	}
+}
+
+Actor NewFlyingBloodTrail
+{
+	Scale 0.5
+	RenderStyle Translucent
+	Alpha 0.7
+	+CLIENTSIDEONLY
+	+NOTELEPORT
+	+NOBLOCKMAP
+	+DONTSPLASH
+	+LOWGRAVITY
+	+NOCLIP
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(96, "DoNothing")
+		FBLT ABCD 2 //A_FadeOut(0.18)
+		Stop
+	DoNothing:
+		TNT1 A 0
+		Stop
+	}
+}

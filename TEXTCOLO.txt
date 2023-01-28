@@ -1,0 +1,132 @@
+// The "__VeryLight" colors are currently used only in the custom index font for the status bar
+TangoWhiteVeryLight
+{
+	#BFBFBF  #EFEFEF
+Console:
+	#000000  #7F7F7F    0 127
+	#808080  #FFFFFF  128 256
+Flat:
+	#DFDFDF
+}
+
+TangoRedVeryLight
+{
+	#8F0000 #F60000    0 256
+Console:
+	#420000  #F60000
+Flat:
+	#F60000
+}
+
+TangoGreenVeryLight
+{
+	#298C28 #6DDE65    0 256
+Console:
+	#051205  #6DDE65
+Flat:
+	#6DDE65
+}
+
+// Replace the default gold with a nicer one that has proper outlines
+Gold
+{
+// 	#272727  #515151    0 128 // grey outline
+// 	#784918  #F3A718  129 207
+// 	#F3A82A  #FCD043  208 256
+	#070707 #232323    0 42 // grey outline
+	#784918  #F3A718  43 207
+ 	#F3A82A  #FCD043  208 256
+Console:
+	#000000  #7F7F00    0 127
+	#FFFF00  #FFFFFF  128 256
+Flat:
+	#EEEE33
+}
+
+Orange
+{
+	#070707 #232323    0 42 // grey outline
+	#5B2804  #FF8000  43 256
+Console:
+	#200000  #904000    0 127
+	#FF7F00  #FFFEFE  128 256
+Flat:
+	#FFAA00
+}
+
+TangoGreen
+{
+	#070707 #232323    0 70 // grey outline
+	#0F310D  #6DDE65  71 256
+Console:
+	#051205  #6DDE65
+Flat:
+	#6DDE65
+}
+
+TangoRedPure
+{
+	#170000  #F60000
+Console:
+	#170000  #F60000
+Flat:
+	#F60000
+}
+
+TangoRed
+{
+	#070707 #232323    0 70 // grey outline
+	#420000 #F60000 71 256
+Console:
+	#420000  #F60000
+Flat:
+	#F60000
+}
+
+TangoRedLight
+{
+	#070707 #232323    0 70 // grey outline
+	#420000 #F60000 71 256
+Console:
+	#420000  #F60000
+Flat:
+	#F60000
+}
+
+TangoBlue
+{
+	#070707 #232323    0 70 // grey outline
+	#001e52 #377fff 71 256
+Console:
+	#000D23  #005CFF
+Flat:
+	#005CFF
+}
+
+TangoPurple
+{
+	#070707 #232323    0 70 // grey outline
+	#120023 #8840FF 71 256
+Console:
+	#120023 #8840FF
+Flat:
+	#5B00F4
+}
+
+Green
+{
+	#051205  #6DDE65
+Console:
+	#051205  #6DDE65
+Flat:
+	#6DDE65
+}
+
+Blue
+{
+	#000D23  #005CFF
+Console:
+	#000D23  #005CFF
+Flat:
+	#005CFF
+}

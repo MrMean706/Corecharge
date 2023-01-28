@@ -1,0 +1,119 @@
+const float crit_multiplier = 1.8;
+
+ACTOR TangoMechaDemon : Demon replaces Demon
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoMechaDemon"
+	Tag "Mechademon"
+	SeeSound "mechademon/see"
+	AttackSound "mechademon/attack"
+	PainSound "mechademon/pain"
+	DeathSound "mechademon/death"
+	ActiveSound "mechademon/active"
+	PainChance "Chaingun", 30
+	Speed 13
+	FastSpeed 15
+	States
+  {
+	Spawn:
+		MDEM A 10 A_Look
+		Loop
+	See:
+		MDEM AABBCCDD 2 A_Chase
+		Loop
+	Melee:
+		MDEM EF 5 A_FaceTarget
+		MDEM G 5 A_CustomMeleeAttack(20, "mechademon/attack")
+		Goto See
+	Pain:
+		MDEM H 2
+		MDEM H 2 A_Pain
+		Goto See
+	Raise:
+		TNT1 A 0
+		MDEM N 5
+		MDEM MLK 4
+		MDEM JI 5
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		MDEM N -1
+		Stop
+		
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		Goto RegularDeath
+		
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(128, "HeadDeath")
+		Goto Death
+	
+	XDeath:
+		Goto HeadDeath
+	
+	Death.Rocket:
+		Goto HeadDeath
+	
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	HeadDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 ThrustThing(angle*256/360+128, 2)
+		TNT1 A 0 ThrustThingZ(0, 6, 0, 1)
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2")
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		MDD2 A 5
+		MDD2 B 5 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		MDD2 C 4 A_NoBlocking
+		MDD2 D -1
+		Stop
+
+
+	RegularDeath:
+		MDEM I 5 A_FaceTarget
+		MDEM J 5 A_Scream
+		MDEM KK 2 A_SpawnItemEx("NewFlyingBlood",0,0,14,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		MDEM L 4 A_NoBlocking
+		MDEM M 4
+		MDEM N -1
+		Stop
+
+	}
+}
+
+// Walk speed, bite speed reduced back to vanilla
+ACTOR TangoMechaDemonSlow : TangoMechaDemon
+{
+	Speed 10
+	FastSpeed 13
+	States
+  {
+	Melee:
+		MDEM EF 8 A_FaceTarget
+		MDEM G 8 A_CustomMeleeAttack(20, "mechademon/attack")
+		Goto See
+	}
+}
+
+ACTOR TangoMechaSpectre : TangoMechaDemon replaces Spectre 27003
+{
+	+SHADOW
+	RenderStyle OptFuzzy
+	Alpha 0.5
+	//$Title "TangoMechaSpectre"
+}
+
+Actor TangoMechaSpectreSlow : TangoMechaDemonSlow
+{
+	+SHADOW
+	RenderStyle OptFuzzy
+	Alpha 0.5
+	//$Title "TangoMechaSpectre"
+}

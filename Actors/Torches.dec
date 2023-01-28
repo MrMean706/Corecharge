@@ -1,0 +1,174 @@
+ACTOR TangoHangingLight144 29100
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 2
+	Height 144
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+	Spawn:
+		HLT1 A -1 Bright
+		Stop
+	}
+}
+
+ACTOR TangoHangingLight96 29101
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 2
+	Height 96
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+	Spawn:
+		HLT2 A -1 Bright
+		Stop
+	}
+}
+
+ACTOR TangoHangingLight66 29102
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 2
+	Height 66
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+	{
+	Spawn:
+		HLT3 A -1 Bright
+		Stop
+	}
+}
+
+Actor TangoWhiteTorch 29103
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TGRY ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+Actor TangoShortWhiteTorch 29104
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SGYT ABCD 4 BRIGHT
+		Loop
+	}
+}
+
+ACTOR TangoWhiteCandle 29105
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 4
+	Height 14
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		CANW A -1 Bright
+		Stop
+	}
+}
+
+ACTOR TangoGreenCandle 29106
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 4
+	Height 14
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		CANG A -1 Bright
+		Stop
+	}
+}
+
+Actor TangoRedLantern 29107
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 8
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		LANT A -1 BRIGHT
+		Stop
+	}
+}
+
+ACTOR TangoRedCandle 29108
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 4
+	Height 14
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		CANR A -1 Bright
+		Stop
+	}
+}
+
+Actor TangoStreetLamp 29109
+{
+	//$Category "Supercharge Lights"
+	//$Color 11
+	Radius 6
+	Height 128
+	ProjectilePassHeight 0
+	+SOLID
+	States
+	{
+	Spawn:
+		SLMP A 8
+		SLMP B 4
+		Loop
+	}
+}
+
+Actor TangoHangingLight144ZHeight : TangoHangingLight144 29110
+{
+	-SPAWNCEILING
+}
+
+Actor TangoHangingLight96ZHeight : TangoHangingLight96 29111
+{
+	-SPAWNCEILING
+}
+
+Actor TangoHangingLight66ZHeight : TangoHangingLight66 29112
+{
+	-SPAWNCEILING
+}

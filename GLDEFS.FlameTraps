@@ -1,0 +1,54 @@
+// copy of Doom Imp Fireball entry
+pointlight SPITTERBALL
+{
+    color 1.0 0.7 0.4
+    size 96
+	// attenuate 1
+}
+
+flickerlight SPITTERBALL_X1
+{
+    color 0.7 0.4 0.25
+    size 120
+    secondarySize 132
+    chance 0.25
+	// attenuate 1
+}
+
+flickerlight SPITTERBALL_X2
+{
+    color 0.4 0.2 0.1
+    size 144
+    secondarySize 156
+    chance 0.25
+	// attenuate 1
+}
+
+flickerlight SPITTERBALL_X3
+{
+    color 0.2 0.1 0.0
+    size 168
+    secondarySize 180
+    chance 0.25
+	// attenuate 1
+}
+
+pointlight JETFLAME
+{
+    color 0.4 0.2 0.1
+    size 24
+}
+
+object SpitterShot
+{
+    frame FARF { light SPITTERBALL }
+
+    frame BAL1C { light SPITTERBALL_X1 }
+    frame BAL1D { light SPITTERBALL_X2 }
+    frame BAL1E { light SPITTERBALL_X3 }
+}
+
+object JetFlame
+{
+    frame GFIR { light JETFLAME }
+}

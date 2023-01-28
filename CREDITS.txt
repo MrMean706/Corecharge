@@ -1,0 +1,248 @@
+NoozeArts
+	new stimpack and medkit pickup sprites (minor edits and brightmaps by Tango)
+sonic-o-fan, osjclatchford, Lazureus, id software:
+	nailgun weapon sprites
+osjclatchford:
+	nailgun ammo and pickup sprites
+TheShooter7, Mechadon:
+	nailgun code base
+Raven Software, id software:
+	nailgun sounds
+Captain Toenail:
+	flame trap code, GLDEFs, sprite edit (original sprites by id), and flame trap sound edits
+freesound.org (liamg-sfx, highpixel, cubicApocalypse):
+	flame trap sounds
+Raven software:
+	minigun firing sounds (Quake 4)
+phantombeta:
+	minigun sprites (based on sprites by id Software, modified by Eriance and Uboa)
+Markie
+	Scrap Gun eject sound edit
+osjclatchford (Descent into Heresy / quake-dih_3.pk3 / https://www.moddb.com/mods/osjcs-quake-descent-into-heresy/downloads/osjc-dih-revisisted):
+	grenade projectile sprites
+Tango:
+	new caco sprite modifications
+	brightmaps for any other sprites you don't see credited elsewhere
+	one-armed cyber baron sprites
+	gib spawners (just the generic spawners; all other gib stuff is credited to Sergeant Mark IV)
+	pyro demon gib sprites
+	BFG sprite darkening + green laser ribs edits
+	Wicked brightmaps/GLDEFS
+Cyantusk:
+	gold megasphere sprites
+Ultra64:
+	Stomper sprites
+	Scrap Gun sprites
+	Grenadier sprite edits
+	Shotgun Gothic skin sprites
+	Super Shotgun Gothic skin sprites
+	Wicked sprite edits
+Aurelius:
+	Scrap Gun sprite edits
+	minigun code
+	Wicked sprite edits to remove sprite mirroring
+Sapfiar:
+	all of the Supercharge-specific GLDEFS for monsters and projectiles and items
+Ribbiks (Finely Crafted Fetish Film):
+	SLMP*0 street lamp sprites
+Tormentor667:
+	sparkle sprites and code
+Per Kristian:
+	Smooth weapon sprites, which are the basis of many (all?) of the weapon sprites contained here
+	HQ Doom iwad sounds
+Nmn:
+	base of the SSG sprites from Stomper
+	rocket box ammo pickup (slightly modified by Tango)
+	new bullet box ammo pickup (slightly modified by Tango)
+NightFright:
+	"Improving PerK's smooth animations mod" mod, which was the code basis and original sprite source for all the weapons done by Uzver (see below)
+Uzver:
+	code basis and original sprite source for weapons (see https://forum.zdoom.org/viewtopic.php?f=37&t=31875); much of the work done here was built upon or unused by Tango, however
+Z86:
+	Smoother chainsaw, smooth BFG sprites
+Blox:
+	Improved gloved fists
+Virtue:
+	iwad texture and flat brightmaps
+	pickup, decor, player, chaingunguy, cyberdemon, cacodemon, pain elemental, hell knight brightmaps
+Gifty (Smooth Doom):
+	barrel sprites and brightmaps
+	cyberdemon smooth death animation sprites
+	cacodemon alternate death sprites (modified by Tango to fit new Caco sprites)
+	smooth key/skull key sprites and code
+	smooth revenant projectile sprites and code
+	smooth baron ball sprites and code
+	smooth soulsphere sprites and code
+	smooth armor bonus sprites
+	smooth weapon plasma sprites
+	smooth weapon plasma decorate code (modified by Tango)
+	smooth BFG sprites base (modified by Tango)
+Gifty: (DeadMarinev0.9.4.pk3 @ https://www.doomworld.com/forum/topic/98165-pixely-effects-mod-beta-dead-marine/)
+	new blood decals
+	blood decal code
+	new blood splatters (GBL* sprites)
+TiberiumSoul (Insanity's Requiem Mk. 2 v1.7):
+	scrap gun sounds
+	spider mastermind scrap projectile flesh hit sounds
+	assault rifle reloading sounds (open, in, click)
+	minigun pickup sound
+	minigun firing sounds
+	stomper sounds
+TiberiumSoul (ts_td_gzd_2.0.5.pk3)
+	stomper ammo and ammo box pickup sounds
+Daedalus (Complex Doom):
+	fusionite brightmaps
+	behemoth brightmaps
+	exile brightmaps
+	exile sprites
+	Tortured Soul projectile sprites (slight modifications by Tango)
+	blood sprites and code
+	bullet tracer sprites
+	bullet tracer code reference
+	bullet puff sprites
+	lost soul alternate sounds (currently disabled though)
+	pistol sound effects
+	pistol, shotgun, super shotgun, assault rifle, plasma gun sprites
+	pistol, shotgun, super shotgun, assault rifle, scrap gun code reference
+	pyro demon sounds
+	draugr sounds
+	imp ball trail sprites
+	BFG ball explosion sound
+	minigun windup/winddown sounds
+Jekyll Grim Payne (Beautiful Doom):
+	bullet casing code (slight modifications by Tango), bullet casing sprites
+	the two unused sounds in /sounds/bounce
+Xaser:
+	Tortured Soul DECORATE basis
+	rocket ammo single pickup sprite (from Argent, xa-argen_0.5.2.pk3, but slightly modified by Tango)
+Dreadopp:
+	Tortured Soul GLDEFS
+Assmaster:
+	Tortured Soul sprites
+id Software:
+	Tortured Soul sounds and sprite basis
+	Cacodemon Vortex ball death sound
+	health bonus pickup sound (PSX Doom)
+	Dark Imp sounds (PSX Doom)
+	player rocket explosion sounds (Doom 2016)
+	SSG firing sound (Doom 3 RoE)
+	Wicked sounds
+	grenade projectile bounce sounds (Quake)
+zrrion the insect:
+	clip pickup sprites
+Banjo Software, Raven Software, Rogue Entertainment, Eriance/Amuscaria:
+	Cacodemon Vortex ball see sound
+Amuscaria (formerly Eriance):
+	Cacodemon Vortex ball sprites
+	Behemoth sprites
+	Fusionite sprites
+	Draugr sprites
+	Diabolist sprites
+	player rocket explosion sprites
+	monster rocket explosion sprites (from Hell-Forged)
+	Wicked sprites
+	nailgun projectile sprites (from Hell-Forged)
+Amuscaria, Maelstrom:
+	Pyro Demon sprites
+Maelstrom:
+	Pyro Demon code base
+Jimmy:
+	Agathodemon sprites
+Raven Software:
+	warlock sprite basis
+	warlock sounds
+	spider mastermind attack projectile sprites (minor edit by Tango)
+	spider mastermind attack sound (from Quake 4)
+Ben2k9:
+	cyber baron sprite edit
+Ghastly Dragon:
+	warlock gldefs
+IMX:
+	imp sprites
+	demon sprites
+40oz:
+	base for the new caco sprites
+	smooth liquid sprites (VAVA##)
+Sergeant Mark IV:
+	hell knight alt deaths
+	baron gibs
+	the general gibs system (taken and modified from ketchupv5)
+	lost soul gib sprites
+	plasma zombie alt death sprites (modified by Tango but based on altdeaths from the Brutal Doom zombieman sprites)
+	plasma rifle pickup sprite (slight modifications by Tango)
+Gifty, Vdude
+	red-blooded versions of smooth hell knight+baron original death
+	red-blooded versions of baron xdeath
+Capcom (Megaman X5):
+	secret sound effect
+	BFG charge sound
+Yuzo Koshiro (Streets of Rage 2):
+	menu, intermission sound effects
+Konami (Castlevania: Symphony of the Night):
+	barrel hit sounds
+	draugr skull bouncing sound
+	pyro demon fade sounds
+NOVA2.wad:
+	TNQ* textures and flats (see GOTHIC folders for each). the filename prefixes show they were added by tourniquet, but not sure who actually made all those flats
+silentzorah (Doomzone):
+	DROK* rocket sprites (specifically comes from dzmod3.wad contained within doomzone.pk3)
+Revenant100 aka Marphy Black:
+	cyberdemon and spider mastermind sprites from Doom 2 Minor Sprite Fixing Project
+Captain Toenail, Ghastly_dragon:
+	plasma zombie sprites (downloaded from realm667)
+Doom Roguelike Monster Expansion:
+	Cacodemon projectile trail; credits from that wad's section ("Hell Crusader AKA Paladin") that includes these sprites:
+	"Sprites by Id Software, Raven Software, Wolfendoom, Eriance, Vader, HorrorMovieGuy, Finalizer, whoever made the ST Grenade"
+Huy Pham:
+	white candle sprites (CANDA0)
+Yholl, SoloSpaghetti, Sgt. Shivers, amv2k9, Kyle873 and Seryder (DoomRL Arsenal Monster Pack):
+	Diabolist altdeath2 sprites. I could not find more specific credits of who edited these sprites
+Id Software, Monolith Games:
+	Pyro Demon sounds
+Skelegant:
+	Machinegunguy code base, sprite modifications, sounds
+David G:
+	Machinegunguy sprite modifications
+DustedPandemonic:
+	key pickup sounds from Pandemonia-v1.0.1.pk3; pretty sure original source is Quake 1 though
+	all ammo and backpack pickup sounds from Pandemonia-v1.0.1.pk3 and Pandemonia-v1.1beta1.pk3
+	cacodemon bite sound, spider mastermind projectile wall hit sound, fist switch sound, bfg switch sound, crusher fire sound from Pandemonia-v1.2pre1.pk3
+Cybermeme (Cyber's Monster Randomizer: https://forum.zdoom.org/viewtopic.php?f=43&t=63901)
+	draugr death sound. I don't remember where all the other draugr sounds came from :(
+Boondorl (Doom Rebalanced 1.0: https://www.doomworld.com/forum/topic/103955-doom-rebalanced-a-simple-vanilla-styled-rebalance-mod/):
+	influence for the Scrapgun spawner code that fixes autoaim for the gun
+TeamTNT (retres.wad):
+	base for the slightly edited new index font used in the custom status bar
+m8f (idclever-starter-0.5.1.pk3):
+	the code for the pistol start logic, which I gutted and trimmed down a bit (full credit still goes to m8f though)
+Raven, Ettingrinder, the Hexen 64 devs:
+	hexen tree variant sprites
+whirledtsar:
+	hexen tree variant code
+Pompous Seed, DTDsphere + NightFright + m8f:
+	Fullscreen HUD (taken from Pompous Seed's Doom with Sprinkles https://forum.zdoom.org/viewtopic.php?f=43&t=64173 and modified by Tango)
+randomons-v1.2.5.0.pk3 (part of Dusted's Clusterfuck I think?):
+	player rocket explosion sounds
+Enjay:
+	tree sprites (TangoGreenTree 3 - 6)
+BloodyAcid (https://forum.zdoom.org/viewtopic.php?f=37&t=33595):
+	scrap shell box pickup base sprites
+DrVenom8, NightFright, TheUnbeholden, Virtue (Brightmaps Plus: https://forum.zdoom.org/viewtopic.php?t=64299)
+	spider mastermind brightmaps
+Legendary, Sentey, Strathos, Blood, Overlord, Arkore (lca-v1.5.8.pk3):
+	BFG fire sound
+Capcom (Devil May Cry 3):
+	Stomper explosion sounds
+	Wicked fireball sound
+Capcom (Megaman X8):
+	Stomper explosion sounds
+RonnieJamesDiner:
+	Spider Mastermind firing code changes
+	various dynamic lights fixes
+	Stomper mechanics ideas
+reflex17:
+	Stomper mechanics ideas
+Spectre01:
+	various bug reports and balance suggestions
+Skelegant:
+	rocket explosion spark sprites (SMXP*0) taken from Kira's Bizarre Adventure mod (and significantly downsized by Tango)

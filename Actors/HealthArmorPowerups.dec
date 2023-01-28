@@ -1,0 +1,214 @@
+ACTOR TangoHealthBonus : HealthBonus replaces HealthBonus
+{
+	Tag "Health Bonus"
+	Inventory.PickupSound "items/healthbonus"
+	Inventory.PickupMessage "$TANGO_HEALTH_BONUS"
+}
+
+Actor TangoStimpack : Stimpack replaces Stimpack
+{
+	Tag "Stimpack"
+	Inventory.PickupMessage "$TANGO_STIMPACK"
+	Inventory.PickupSound "items/health"
+	States
+	{
+	Spawn:
+		TSTM A -1
+		Stop
+	}
+}
+
+// Note the original actor name is medIkit, while I'm naming it medkit instead
+Actor TangoMedkit : Medikit replaces Medikit
+{
+	Tag "Medkit"
+	Inventory.PickupMessage "$TANGO_MEDKIT"
+	Health.LowMessage 25, "$TANGO_MEDKIT"
+	Inventory.PickupSound "items/health"
+	States
+	{
+	Spawn:
+		TMED A -1
+		Stop
+	}
+}
+
+Actor TangoArmorBonus : ArmorBonus replaces ArmorBonus
+{
+	Tag "Armor Bonus"
+	Inventory.PickupMessage "$TANGO_ARMOR_BONUS"
+	Inventory.Icon "SB-GARM"
+	States
+	{
+	Spawn:
+		NUBO A 20
+		NUBO BC 3
+		NUBO D 12
+		NUBO CB 3
+		Loop
+	}
+}
+
+Actor TangoGreenArmor : GreenArmor replaces GreenArmor
+{
+	Tag "Green Armor"
+	Inventory.PickupMessage "$TANGO_ARMOR_1"
+	Inventory.Icon "SB-GARM"
+}
+
+Actor TangoBlueArmor : BlueArmor replaces BlueArmor
+{
+	Tag "Blue Armor"
+	Inventory.PickupMessage "$TANGO_ARMOR_2"
+	Inventory.Icon "SB-BARM"
+	  States
+	{
+	Spawn:
+		BARM A 6
+		BARM B 7 Bright
+		Loop
+	}
+}
+
+Actor TangoBerserk : CustomInventory replaces Berserk
+{
+	Tag "Berserk"
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.PickupMessage "$TANGO_BERSERK"
+	Inventory.PickupSound "misc/p_pkup"
+	States
+	{
+	// Spawn states re-copied here just for the sake of appeasing UDB
+	Spawn:
+		PSTR A -1
+		Stop
+	Pickup:
+		TNT1 A 0 HealThing(100, 0)
+		TNT1 A 0 A_GiveInventory("TangoPowerStrength")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_berserk_long_flash") == 1, "LongFlash")
+		Goto ShortFlash
+	LongFlash:
+		TNT1 A 0 A_SetBlend("Red", .25, 35 * 20)
+		Stop
+	ShortFlash:
+		TNT1 A 0 A_SetBlend("Red", .25, 35)
+		Stop
+	}
+}
+
+Actor TangoPowerStrength : PowerStrength replaces PowerStrength
+{
+	Powerup.Duration 1
+	// If you use "Powerup.Color None" in zdoom 2.8.1, it turns the screen
+	// a really really dark red color to the point of obscuring your vision.
+	// So we use a color of all 0s instead.
+	Powerup.Color 0, 0, 0, 0.0
+	+INVENTORY.HUBPOWER
+}
+
+
+ACTOR TangoBlueArmorForMegasphere : TangoBlueArmor
+{
+//   Armor.SavePercent 50
+//   Armor.SaveAmount 200
+	Inventory.Icon "SB-BARM"
+}
+
+// For the pickup checks to work properly, this has to inherit from
+// CustomInventory instead of the Soulsphere itself
+Actor TangoSoulsphere : CustomInventory replaces Soulsphere
+{
+	Tag "Soulsphere"
+	-COUNTITEM
+	Inventory.PickupSound "misc/p_pkup"
+	Inventory.PickupMessage "$TANGO_SOULSPHERE"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		ZOUL ABCDEFGFEDCB 4 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 200, "PickupFail")
+		TNT1 A 0 A_GiveInventory("TangoSoulsphereHealth", 1)
+		TNT1 A 0 A_SetBlend("0 48 0", .5, 35)
+	SkipBlend:
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor TangoSoulsphereHealth : Health
+{
+	Inventory.Amount 100
+	Inventory.MaxAmount 200
+}
+
+Actor TangoMegasphere : CustomInventory replaces Megasphere
+{
+	Tag "Megasphere"
+	-COUNTITEM
+	Inventory.PickupMessage "$TANGO_MEGASPHERE"
+	Inventory.PickupSound "misc/p_pkup"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		BREC ABCDCB 6 Bright
+		Loop
+	ArmorCheck:
+		TNT1 A 0 A_JumpIfInventory("BasicArmor", 200, "PickupFail")
+		Goto PickupSuccess
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 200, "ArmorCheck")
+	PickupSuccess:
+		TNT1 A 0 A_GiveInventory("TangoBlueArmorForMegasphere", 1)
+		TNT1 A 0 A_GiveInventory("MegasphereHealth", 1)
+		// Note that A_SetBlend's color syntax is rr gg bb, so each one is out of 100
+		TNT1 A 0 A_SetBlend("84 73 26", .5, 35)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+
+Actor TangoInvulnerabilitySphere : InvulnerabilitySphere replaces InvulnerabilitySphere
+{
+	Tag "Invulnerability"
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.BIGPOWERUP
+	Inventory.MaxAmount 0
+	Powerup.Type "Invulnerable"
+	Powerup.Color GreenMap
+	Inventory.PickupMessage "$TANGO_INVULNERABILITY"
+	States
+	{
+	Spawn:
+		PINV ABCD 6 Bright
+		Loop
+	}
+}
+
+ACTOR TangoRadSuit : RadSuit replaces RadSuit
+{
+	Tag "Radiation Suit"
+	Height 46
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0
+	Inventory.PickupMessage "$TANGO_RADSUIT"
+	Powerup.Type "IronFeet"
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright
+		Stop
+	}
+}

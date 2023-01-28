@@ -1,0 +1,208 @@
+const int baron_gib_angle_start = 150;
+const int baron_gib_angle_end = 210;
+
+ACTOR TangoBaronOfHell : BaronOfHell replaces BaronOfHell
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoBaronOfHell"
+	Tag "Baron of Hell"
+	PainChance "Chaingun", 20
+	+DONTHARMSPECIES
+	+DONTHARMCLASS
+	Species "Knight"
+	DamageFactor "PyroFire", 0.0
+
+	States
+	{
+	Spawn:
+		TBOH A 10 A_Look
+		Loop
+	See:
+		TBOH AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		TBOH EF 8 A_FaceTarget
+		TBOH G 8 A_CustomMeleeAttack(40, "baron/melee")
+		Goto See
+	Missile:
+		TBOH EF 8 A_FaceTarget
+		TBOH G 8 A_CustomMissile("BaronBall", 32)
+		Goto See
+	Pain:
+		TBOH H 2
+		TBOH H 2 A_Pain
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		BHD1 L -1
+		Stop
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+// 		TNT1 A 0 A_JumpIfCloser(80, "Deathrandom1")
+// 		TNT1 A 0 A_JumpIfCloser(200, "FallBackDeath")
+		Goto RegularDeath
+		
+// 	Deathrandom1:
+// 		TNT1 A 0 A_Jump(180, "FallBackDeath")
+// 		Goto LegsDeath
+		
+// 	Deathrandom2:
+// 		TNT1 A 0 A_Jump(120, "FallBackDeath")
+// 		Goto RegularDeath
+		
+	Deathrandom3:
+// 		TNT1 A 0 A_Jump(100, "FallBackDeath")
+// 		TNT1 A 0 A_Jump(80, "LegsDeath")
+		TNT1 A 0 A_Jump(40, "HeadlessDeath")
+		TNT1 A 0 A_Jump(40, "ExplodeDeath")
+		Goto RegularDeath
+		
+	Death.Rocket:
+// 		TNT1 A 0 A_Jump(128, "LegsDeath")
+		Goto ExplodeDeath
+		
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(144, "Deathrandom3")
+		Goto RegularDeath
+		
+	Death.Bullet:
+	Death.Chaingun:
+// 		TNT1 A 0 A_Jump(140, "FallBackDeath")
+		TNT1 A 0 A_Jump(160, "HeadlessDeath")
+		Goto RegularDeath
+		
+
+	
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2",0,0,14,random(5,-5),random(5,-5),random(3,6),0,129)
+		BHD1 A 3
+		BHD1 B 3 A_Scream
+		// Smooth sprites commented out since it looks out of place with how
+		// smooth it is
+		// BHD1 CDEFGHIJ 3
+		BHD1 DFHJ 5
+		BHD1 K 3
+		BHD1 L -1 A_BossDeath
+		Stop
+	
+	HeadlessDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_CustomMissile("BaronHead", 56, 0, random (baron_gib_angle_start, baron_gib_angle_end), 2, random (10, 60))
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2",0,0,14,random(5,-5),random(5,-5),random(3,6),0,129)
+		BHD2 AAAAAAAAAAA 2 A_SpawnItemEx("NewFlyingBlood",0,0,52,random(5,-5),random(5,-5),random(3,6),0,SXF_USEBLOODCOLOR)
+		BHD2 BBBBB 2 A_SpawnItemEx("NewFlyingBlood",0,0,42,random(5,-5),random(5,-5),random(3,6),0,SXF_USEBLOODCOLOR)
+		BHD2 CCCCC 2 A_SpawnItemEx("NewFlyingBlood",0,0,22,random(5,-5),random(5,-5),random(3,6),0,SXF_USEBLOODCOLOR)
+		BHD2 D -1 A_BossDeath
+		Stop
+
+	ExplodeDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner1",0,0,14,random(5,-5),random(5,-5),random(3,6),0,129)
+		// Note that we skip a few frames here, ie, there are more sprites than
+		// are used here. Frame D is skipped, for example.
+		BHD6 ABCFGH 2 A_SpawnItemEx("NewFlyingBlood",0,0, random(32, 52),random(5,-5),random(5,-5),random(3,6),0,SXF_USEBLOODCOLOR)
+		BHD6 IKLNOP 2 A_SpawnItemEx("NewFlyingBlood",0,0, random(8, 32),random(5,-5),random(5,-5),random(3,6),0,SXF_USEBLOODCOLOR)
+		BHD6 Q -1 A_BossDeath
+		Stop
+
+  Raise:
+		BHD1 K 3
+		BHD1 JHFD 5
+		BHD1 BA 3
+		Goto See
+  }
+}
+
+// @TODO make proper sprites for this, and use this actor
+ACTOR BaronArm
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		GHKA ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,random(5,-5),random(5,-5),random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        GHKA I -1
+        Stop
+    }
+}
+
+// @TODO make proper sprites for this, and use this actor
+ACTOR BaronTorso
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		GHKT ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,random(5,-5),random(5,-5),random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        GHKT I -1
+        Stop
+    }
+}
+
+ACTOR BaronHead
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		BHHE ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,random(5,-5),random(5,-5),random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        BHHE I -1
+        Stop
+    }
+}

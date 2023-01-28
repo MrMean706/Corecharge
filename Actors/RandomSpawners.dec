@@ -1,0 +1,215 @@
+actor TangoImpSpawner : RandomSpawner
+{
+    DropItem "TangoImp"
+}
+
+actor TangoImpSpawnerHard : RandomSpawner
+{
+    DropItem "TangoImp"
+	DropItem "TangoDraugr"
+}
+
+actor TangoDraugrSpawner : RandomSpawner
+{
+	DropItem "TangoDraugr", 255, 95
+	DropItem "TangoDiabolistNoResurrect", 255, 5
+}
+
+actor TangoShotgunSpawner : RandomSpawner
+{
+	DropItem "TangoShotgun", 255, 80
+	DropItem "TangoSuperShotgun", 255, 20
+}
+
+actor TangoSuperShotgunSpawner : RandomSpawner
+{
+	DropItem "TangoSuperShotgun", 255, 95
+}
+
+actor TangoShellSpawner : RandomSpawner
+{
+	DropItem "TangoShell", 255, 90
+}
+
+actor TangoShellBoxSpawner : RandomSpawner
+{
+	DropItem "TangoShellBox", 255, 85
+}
+
+actor TangoPlasmaZombieSpawner : RandomSpawner
+{
+	DropItem "TangoPlasmaZombie"
+	DropItem "TangoShotgunGuy"
+}
+
+actor TangoBerserkSpawner : RandomSpawner
+{
+	DropItem "TangoBerserkScrapGunCacheSpawner", 255, 40
+}
+
+actor TangoScrapGunCacheSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoScrapGun", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 AA 0 A_SpawnItemEx("TangoScrapDrumPack", 0, 0, 0, frandom(-1, 1), frandom(-1, 1))
+		Stop
+	}
+}
+
+actor TangoBerserkScrapGunCacheSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoBerserk", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 A 0 A_SpawnItemEx("TangoScrapGun", 0, 0, 0, frandom(-1, 1), frandom(-1, 1))
+		TNT1 AA 0 A_SpawnItemEx("TangoScrapDrumPack", 0, 0, 0, frandom(-1, 1), frandom(-1, 1))
+		Stop
+	}
+}
+
+actor TangoStomperCacheSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoStomper", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 A 0 A_SpawnItemEx("TangoStomperBox", 0, 0, 0, frandom(-1, 1), frandom(-1, 1))
+		Stop
+	}
+}
+
+// Actor TangoRocketLauncherGiver : WeaponGiver
+// {
+
+// }
+
+actor TangoRocketLauncherSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoRocketLauncher", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 A 0 A_SpawnItemEx("TangoStomper", 0, 0, 0, frandom(-1, 1), frandom(-1, 1))
+		Stop
+	}
+}
+
+actor TangoRocketAmmoSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoRocketAmmo", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 A 0 A_SpawnItemEx("TangoStomperAmmo", 0, 0, 0, frandom(-1, 1), frandom(-1, 1), 0, 0, 0, 192)
+	End:
+		Stop
+	}
+}
+
+actor TangoRocketBoxSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("TangoRocketBox", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL | SXF_TRANSFERPOINTERS, 0, tid)
+		TNT1 A 0 A_SpawnItemEx("TangoStomperBox", 0, 0, 0, frandom(-1, 1), frandom(-1, 1), 0, 0, 0, 224)
+	End:
+		Stop
+	}
+}
+
+// Normal-ish spawners beyond this point, no difficulty upscaling attempted
+actor TangoHellKnightSpawner : RandomSpawner
+{
+    DropItem "TangoHellKnight"
+    DropItem "TangoPyroDemon"
+}
+
+actor TangoBaronOfHellSpawner : RandomSpawner
+{
+    DropItem "TangoBaronOfHell"
+    DropItem "TangoCyberBaron"
+}
+
+actor TangoCacodemonSpawner : RandomSpawner
+{
+    DropItem "TangoCacodemon"
+	// I'm disabling the Agathodemon until I can come up with some better
+	// behavior for it
+// 	DropItem "TangoAgathodemon"
+}
+
+actor TangoPainElementalSpawner : RandomSpawner
+{
+    DropItem "TangoTorturedSoul"
+	DropItem "TangoPainElemental"
+}
+
+actor TangoChaingunGuySpawner : RandomSpawner
+{
+    DropItem "TangoChaingunGuy", 255, 80
+    DropItem "TangoGrenadier", 255, 20
+}
+
+
+actor ChaingunSpawner replaces Chaingun
+{
+	//$Sprite "MGUNA0"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_chaingun_replace_assault_rifle") == 1, "SpawnChaingun")
+		Goto SpawnAssaultRifle
+	SpawnAssaultRifle:
+		TNT1 A 0 A_SpawnItemEx("TangoAssaultRifle", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | SXF_TRANSFERSCALE | SXF_TRANSFERSPECIAL, 0, tid)
+		Stop
+	SpawnChaingun:
+		TNT1 A 0 A_SpawnItemEx("TangoChaingun", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | SXF_TRANSFERSCALE | SXF_TRANSFERSPECIAL, 0, tid)
+		Stop
+	Finish:
+		TNT1 A 0 ACS_NamedExecute("tango_transfer_aprops", 0, tid)
+		Stop
+	}
+}
+
+// Currently broken :(
+// I am not sure of a good way to ensure total compatibility with spawners like
+// this. Doing things this way means that some actor flags set in UDMF are not
+// passed on (ie dormancy). I have an ACS script that tries to check + pass on
+// the dormant flag specifically, but it's failing for some reason. I'll revisit
+// this again at some point.
+actor BrokenTangoBaronOfHellSpawner // replaces BaronOfHell
+{
+    DropItem "TangoBaronOfHell"
+    DropItem "TangoCyberBaron"
+	States
+	{
+	
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_random_baron") == 1, "IsRandomEnabled")
+		Goto NormalSpawn
+	NormalSpawn:
+		TNT1 A 0 A_SpawnItemEx("TangoBaronOfHell", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | SXF_TRANSFERSCALE | SXF_TRANSFERSPECIAL, 0, tid)
+		Goto Finish
+	CyberBaronSpawn:
+		TNT1 A 0 A_SpawnItemEx("TangoCyberBaron", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | SXF_TRANSFERSCALE | SXF_TRANSFERSPECIAL, 0, tid)
+		Goto Finish
+	IsRandomEnabled:
+		TNT1 A 0 A_Jump(256, "CyberBaronSpawn", "NormalSpawn")
+		Stop
+	Finish:
+		TNT1 A 0 ACS_NamedExecute("tango_transfer_aprops", 0, tid)
+		Stop
+	}
+}

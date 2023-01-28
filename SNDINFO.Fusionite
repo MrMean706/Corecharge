@@ -1,0 +1,10 @@
+monsters/fusionfire			dsfusins
+monsters/fusionitepain		dsfupain
+
+$random weapons/hrfire { weapons/plasma1 weapons/plasma2 }
+$random weapons/hrballexplode { weapons/plasmax1 weapons/plasmax2 weapons/plasmax3 }
+weapons/plasma1			dsplas1
+weapons/plasma2			dsplas2
+weapons/plasmax1		DSD3PH1
+weapons/plasmax2		DSD3PH2
+weapons/plasmax3		DSD3PH3

@@ -1,0 +1,101 @@
+gameinfo
+{
+   playerclasses = "TangoPlayer"
+   // Add the event handler for m8f's idclever-starter-0.5.1 based code.
+   // This doesn't work in Zandronum, but luckily Zandro completely ignores
+   // AddEventHandlers, so we can keep it in here
+   AddEventHandlers = "t_m8f_is_EventHandler"
+}
+
+Automap
+{
+    Base = "Doom"
+    ShowLocks = True
+    Background = "01 05 01"
+    YourColor = "ff ff ff"
+    WallColor = "55 cc 4d"
+    TwoSidedWallColor = "14 40 12"
+    FloorDiffWallColor = "14 40 12"
+    CeilingDiffWallColor = "14 40 12"
+    ExtraFloorWallColor = "14 40 12"
+    ThingColor = "88 88 88"
+    ThingColor_Item = "20 9c fc"
+    ThingColor_CountItem = "fc f4 20"
+    ThingColor_Monster = "fc 00 00"
+    ThingColor_Friend = "00 33 33"
+    SpecialWallColor = "00 77 77"
+    SecretWallColor = "b7 47 00"
+    GridColor = "00 88 88"
+    XHairColor = "00 00 00"
+    NotSeenColor = "00 50 50"
+    LockedColor = "00 00 00"
+    IntraTeleportColor = "00 5c ff"
+    InterTeleportColor = "a2 18 46"
+    SecretSectorColor = "5b 00 f4"
+    AlmostBackgroundColor = "00 50 50"
+}
+
+clearskills
+
+// Redefine all the skills just so we can add the new replacement for Nightmare
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DamageFactor = 0.5
+	EasyBossBrain
+	SpawnFilter = Baby
+	PicName = "M_JKILL"
+	Name = "$SKILL_BABY"
+	Key = "i"
+}
+
+skill easy
+{
+	EasyBossBrain
+	SpawnFilter = Easy
+	PicName = "M_ROUGH"
+	Name = "$SKILL_EASY"
+	Key = "h"
+}
+
+skill normal
+{
+	SpawnFilter = Normal
+	PicName = "M_HURT"
+	Key = "h"
+	Name = "$SKILL_NORMAL"
+	DefaultSkill
+}
+
+skill hard
+{
+	SpawnFilter = Hard
+	PicName = "M_ULTRA"
+	Name = "$SKILL_HARD"
+	Key = "u"
+}
+
+skill hard_randomized
+{
+// 	PicName = "M_RANDOM"
+	Name = "Ultra-Randomized."
+	
+	SpawnFilter = Hard
+	MustConfirm = "$TANGO_SKILL_ULTRA_RANDOM"
+	Key = "n"
+	
+	ReplaceActor = "PainElemental", "TangoPainElementalSpawner"
+	ReplaceActor = "Cacodemon", "TangoCacodemonSpawner"
+	ReplaceActor = "HellKnight", "TangoHellKnightSpawner"
+	ReplaceActor = "BaronOfHell", "TangoBaronOfHellSpawner"
+	ReplaceActor = "ChaingunGuy", "TangoChaingunGuySpawner"
+	ReplaceActor = "Revenant", "TangoDraugrSpawner"
+	ReplaceActor = "Berserk", "TangoBerserkSpawner"
+	ReplaceActor = "SpiderMastermind", "TangoSpiderMastermindDropScrapGunCache"
+	ReplaceActor = "Cyberdemon", "TangoCyberDemonDropStomperCache"
+	ReplaceActor = "TangoWeakCyberdemon", "TangoWeakCyberDemonDropStomperCache"
+	ReplaceActor = "RocketLauncher", "TangoRocketLauncherSpawner"
+	ReplaceActor = "RocketAmmo", "TangoRocketAmmoSpawner"
+	ReplaceActor = "RocketBox", "TangoRocketBoxSpawner"
+}

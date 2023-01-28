@@ -1,0 +1,74 @@
+Actor TangoChaingun: Weapon 28706
+{
+	//$Category Weapons
+	//$Title "TangoChaingun"
+	Tag "Chaingun"
+	+WEAPON.AMMO_OPTIONAL
+	+WEAPON.NOALERT
+	decal "bulletchip"
+	Weapon.SlotNumber 4
+	Weapon.AmmoUse 1
+	Weapon.AmmoType "TangoBulletClip"
+	Inventory.PickupSound "items/assaultrifle"
+	Obituary "%o was gunned down by %k's Chaingun"
+	Inventory.PickupMessage "$TANGO_CHAINGUN"
+	Weapon.Kickback 50
+	Weapon.AmmoGive 20
+	
+	States
+	{
+	Spawn:
+		TCGN A -1
+		Stop
+	Ready:
+		TCGG A 1 A_WeaponReady
+		Loop
+	NoAmmo:
+		TCGG A 2 A_PlaySound("weapons/empty")
+		Goto Ready
+	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("NoAmmo")
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("chaingun/fire", CHAN_WEAPON)
+		// Positional calculations for the casing pulled from complex-doom.v27a5.pk3 - thanks Daedalus :D
+		TNT1 A 0 A_SpawnItemEx("ChaingunCasing", 20 * cos(pitch), 8, 30 - (30 * sin(pitch)), frandom(2, 4) * cos(pitch), frandom(3, 6), frandom(3, 6) * -sin(pitch), 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH)
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_screen_shake") == 0, "SkipShake1")
+		TNT1 A 0 Radius_Quake(1, 2, 0, 1, 0)
+		SkipShake1:
+		TCGG A 1 A_FireBullets(4, 2, -1, 13, "ChaingunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192)
+		TCGG B 1
+		TCGG C 1
+		// TCGG D 1 // SKIP
+		TNT1 A 0 A_JumpIfNoAmmo("NoAmmo")
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("chaingun/fire", CHAN_WEAPON)
+		TNT1 A 0 A_SpawnItemEx("ChaingunCasing", 20 * cos(pitch), 8, 30 - (30 * sin(pitch)), frandom(2, 4) * cos(pitch), frandom(3, 6), frandom(3, 6) * -sin(pitch), 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH)
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_screen_shake") == 0, "SkipShake2")
+		TNT1 A 0 Radius_Quake(1, 1, 0, 1, 0)
+		SkipShake2:
+		TCGG A 1 A_FireBullets(4, 2, -1, 13, "ChaingunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192)
+		TCGG B 1
+		TCGG C 1
+		TCGG D 1
+		TNT1 A 0 A_Refire
+		Goto FinishFire
+	FinishFire:
+		TCGG A 1 A_WeaponReady
+		TCGG BCD 2 A_WeaponReady
+		Goto Ready
+	Flash:
+		TCGF A 1 Bright A_Light1
+		TCGF B 1 Bright A_Light2
+		TNT1 A 2 A_Light1
+		Goto LightDone
+	Select:
+		TNT1 A 0 A_PlaySound("items/assaultrifle", CHAN_WEAPON)
+		TCGG A 0 A_Raise
+		Loop
+	Deselect:
+		TCGG A 0 A_Lower
+		Loop
+	}
+}

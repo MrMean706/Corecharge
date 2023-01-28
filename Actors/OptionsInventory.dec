@@ -1,0 +1,9 @@
+Actor UseBigHudAlt1 : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+Actor UseBigHudColoredNumbers : Inventory
+{
+	Inventory.MaxAmount 1
+}

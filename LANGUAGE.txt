@@ -1,0 +1,130 @@
+[enu default]
+/*
+	COLOR TABLE:
+	a 	██ 	reddish brick 	n 	██ 	light blue
+	b 	██ 	tan 			o 	██ 	cream
+	c 	██ 	gray 			p 	██ 	olive
+	d 	██ 	green 			q 	██ 	dark green
+	e 	██ 	brown 			r 	██ 	dark red
+	f 	██ 	gold 			s 	██ 	dark brown
+	g 	██ 	red 			t 	██ 	purple
+	h 	██ 	blue 			u 	██ 	dark gray
+	i 	██ 	orange 			v 	██ 	cyan
+	j 	██ 	white 			w 	██ 	ice
+	k 	██ 	yellow 			x 	██ 	fire
+	l 		use original 	y 	██ 	sapphire
+	m 	██ 	black 			z 	██ 	teal 
+*/
+
+// ** SECRET MESSAGE **
+SECRETMESSAGE = 			"\c[TangoPurple]Secret discovered!";
+
+// ** SKILL LEVELS **
+TANGO_SKILL_LIGHT =			"Light";
+TANGO_SKILL_LIGHT_CONFIRM =	"\c[TangoBlue]Identical to \c[TangoGreen]Casual \c[TangoBlue]difficulty, but take \c[TangoGreen]25% \c[TangoBlue]less damage.";
+TANGO_SKILL_EASY =			"Casual";
+TANGO_SKILL_EASY_CONFIRM =	"\c[TangoGreen]Forgiving monster encounters, with health and ammo aplenty.";
+TANGO_SKILL_NORMAL =		"Tough";
+TANGO_SKILL_NORMAL_CONFIRM ="\cfChallenging gameplay, but with ample health and ammo.";
+TANGO_SKILL_HARD =			"Extreme";
+TANGO_SKILL_HARD_CONFIRM =	"\c[TangoRedLight]For \cimasochists \c[TangoRedLight]only. Punishing monster encounters, and steep difficulty curve.";
+TANGO_SKILL_INSANE_CONFIRM ="\ciThe hidden difficulty! Insane and completely unbalanced. More ammo, more shotguns, and bigger baddies.";
+
+// ** REPLACEMENT SKILL LEVELS **
+TANGO_SKILL_ULTRA_RANDOM =	"\cgUltra-Violence, but with some monster species spawns randomized.";
+
+// ** WEAPONS **
+TANGO_BERSERK =				"\c[TangoRedLight]Berserk! \cc(\c[TangoRedLight]5x \ccfist damage)";
+TANGO_CHAINSAW =			"\c[TangoRedLight]Chainsaw \cc(Slot \c[TangoRedLight]1\cc)";
+TANGO_PISTOL =				"\c[TangoRedLight]Pistol \cc(Slot \c[TangoRedLight]2\cc)";
+TANGO_SHOTGUN =				"\c[TangoRedLight]Shotgun \cc(Slot \c[TangoRedLight]3\cc)";
+TANGO_SUPER_SHOTGUN =		"\c[TangoRedLight]Super Shotgun \cc(Slot \c[TangoRedLight]3\cc)";
+TANGO_ASSAULT_RIFLE =		"\c[TangoRedLight]Assault Rifle \cc(Slot \c[TangoRedLight]4\cc)";
+TANGO_SCRAP_GUN =			"\c[TangoRedLight]Scrap Gun \cc(Slot \c[TangoRedLight]4\cc)";
+TANGO_ROCKET_LAUNCHER =		"\c[TangoRedLight]Rocket Launcher \cc(Slot \c[TangoRedLight]5\cc)";
+TANGO_PLASMA_RIFLE =		"\c[TangoRedLight]Plasma Rifle \cc(Slot \c[TangoRedLight]6\cc)";
+TANGO_BFG =					"\c[TangoRedLight]BFG9000 \cc(Slot \c[TangoRedLight]7\cc)";
+
+TANGO_CHAINGUN =			"\c[TangoRedLight]Chaingun \cc(Slot \c[TangoRedLight]4\cc)";
+TANGO_STOMPER =				"\c[TangoRedLight]Stomper \cc(Slot \c[TangoRedLight]5\cc)";
+TANGO_MINIGUN =				"\c[TangoRedLight]Minigun \cc(Slot \c[TangoRedLight]6\cc)";
+TANGO_NAILGUN =				"\c[TangoRedLight]Nailgun \cc(Slot \c[TangoRedLight]4\cc)";
+
+
+// ** AMMO **
+TANGO_BACKPACK =			"\ciBackpack \cc(\c[TangoRedLight]2x \ccammo capacity)";
+TANGO_BULLET_CLIP =			"\ciBullet Clip \cc(\ci10\cc)";
+TANGO_BULLET_CLIP_HALF =	"\ciBullet Half Clip \cc(\ci5\cc)";
+TANGO_BULLET_BOX =			"\ciBullet Box \cc(\ci50\cc)";
+TANGO_SHELL =				"\ciShells \cc(\ci4\cc)";
+TANGO_SHELL_BOX =			"\ciShell Box \cc(\ci20\cc)";
+TANGO_SCRAP_DRUM =			"\ciScrap Drum \cc(\ci4\cc)";
+TANGO_SCRAP_DRUM_PACK =		"\ciScrap Drum Pack \cc(\ci20\cc)";
+TANGO_ROCKET =				"\ciRocket \cc(\ci1\cc)";
+TANGO_ROCKET_BOX =			"\ciRocket Box \cc(\ci5\cc)";
+TANGO_CELL =				"\ciCell \cc(\ci20\cc)";
+TANGO_CELL_PACK =			"\ciCell Pack \cc(\ci100\cc)";
+TANGO_STOMPER_AMMO =		"\ciStomper Missiles \cc(\ci3\cc)";
+TANGO_STOMPER_BOX =			"\ciStomper Missile Box \cc(\ci15\cc)";
+TANGO_NAILS =				"\ciNails \cc(\ci10\cc)";
+TANGO_NAIL_BOX =			"\ciNailbox \cc(\ci50\cc)";
+
+
+// ** PICKUPS **
+TANGO_HEALTH_BONUS =		"\c[TangoGreen]Health Bonus \cc(\c[TangoGreen]1 \ccHP)";
+TANGO_STIMPACK =			"\c[TangoGreen]Stimpack \cc(\c[TangoGreen]10 \ccHP)";
+TANGO_MEDKIT =				"\c[TangoGreen]Medkit \cc(\c[TangoGreen]25 \ccHP)";
+TANGO_SOULSPHERE =			"\c[TangoGreen]Soulsphere \cc(\c[TangoGreen]100 \ccHP)";
+
+TANGO_ARMOR_BONUS =			"\c[TangoGreen]Armor Bonus \cc(\c[TangoBlue]1 \ccAP)";
+// I'm naming these armor_1 and armor_2 for now because in the future I want to
+// redo the armor system a bit and make them the same color, and probably the
+// same resistance as well
+TANGO_ARMOR_1 =				"\c[TangoGreen]Green Armor \cc(\c[TangoBlue]100 \ccAP, \c[TangoGreen]33% \ccabsorption)";
+TANGO_ARMOR_2 =				"\c[TangoBlue]Blue Armor \cc(\c[TangoBlue]200 \ccAP, \c[TangoGreen]50% \ccabsorption)";
+
+TANGO_MEGASPHERE =			"\c[TangoGreen]Megasphere \cc(\c[TangoGreen]200 \ccHP, \c[TangoBlue]200 \ccAP)";
+TANGO_INVULNERABILITY =		"\c[TangoGreen]Invulnerability \cc(\c[TangoGreen]30 \ccseconds)";
+TANGO_RADSUIT =				"\c[TangoGreen]Radiation Suit \cc(\c[TangoGreen]60 \ccseconds)";
+
+// ** KEYS **
+TANGO_RED_CARD =			"\c[TangoRedLight]Red \ccKeycard";
+TANGO_BLUE_CARD =			"\c[TangoBlue]Blue \ccKeycard";
+TANGO_YELLOW_CARD =			"\ckYellow \ccKeycard";
+
+TANGO_RED_SKULL =			"\c[TangoRedLight]Red \ccSkullkey";
+TANGO_BLUE_SKULL =			"\c[TangoBlue]Blue \ccSkullkey";
+TANGO_YELLOW_SKULL =		"\ckYellow \ccSkullkey";
+
+// ** KEY USAGE **
+PD_BLUEC = "\c[TangoBlue]Blue \cckey required";
+PD_REDC = "\c[TangoRedLight]Red \cckey required";
+PD_YELLOWC = "\ckYellow \cckey required";
+PD_BLUES = "\c[TangoBlue]Blue \ccskull required";
+PD_REDS = "\c[TangoRedLight]Red \ccskull required";
+PD_YELLOWS = "\ckYellow \ccskull required";
+PD_ANY = "\ccAny key required";
+PD_ANYOBJ = "\ccAny key required";
+PD_ALL3 = "\ccAll 3 keys required";
+PD_ALL3O = "\ccAll 3 keys required";
+PD_ALL6 = "\ccAll 6 keys required";
+PD_ALL6O = "\ccAll 6 keys required";
+PD_ALLKEYS = "\ccAll keys required";
+
+// any key (card or skull), for doors, then objects
+PD_BLUEO = "\c[TangoBlue]Blue \cckey required";
+PD_REDO = "\c[TangoRedLight]Red \cckey required";
+PD_YELLOWO = "\ckYellow \cckey required";
+PD_BLUEK = "\c[TangoBlue]Blue \cckey required";
+PD_REDK = "\c[TangoRedLight]Red \cckey required";
+PD_YELLOWK = "\ckYellow \cckey required";
+
+// cards then skulls, for objects
+PD_BLUECO = "\c[TangoBlue]Blue \cccard required";
+PD_REDCO = "\c[TangoRedLight]Red \cccard required";
+PD_YELLOWCO = "\ckYellow \cccard required";
+PD_BLUESO = "\c[TangoBlue]Blue \ccskull required";
+PD_REDSO = "\c[TangoRedLight]Red \ccskull required";
+PD_YELLOWSO = "\ckYellow \ccskull required";
+
+// ** POWERUPS **

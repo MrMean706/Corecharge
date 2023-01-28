@@ -1,0 +1,29 @@
+Actor Rabbit 26400
+{
+	Tag "Rabbit"
+	Health 9999
+	Radius 8
+	Height 32
+	Mass 100
+	Speed 3
+	+CANPASS
+	+ISMONSTER
+	+THRUACTORS
+	+ACTIVATEMCROSS
+	States
+	{
+	Spawn:
+		TNT1 A 0
+	Spawn1:
+		TNT1 A 0 A_Jump(128, "Spawn2")
+		RABW A 10 A_Look
+		Loop
+	Spawn2:
+		RABW E 10 A_Look
+		Loop
+	// @TODO finish me
+	See:
+		TNT1 A 0
+		Stop
+	}
+}

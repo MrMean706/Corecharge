@@ -1,0 +1,157 @@
+decalgroup DefaultBulletChip
+{
+	BulletChip1	1
+	BulletChip2	1
+	BulletChip3	1
+	BulletChip4	1
+	BulletChip5	1
+}
+
+decal BulletChip
+{
+	Pic PUFFA0
+	Add 1.0
+	FullBright
+	Animator GoAway
+	X-scale 0.45
+	Y-scale 0.45
+	LowerDecal DefaultBulletChip
+}
+
+decal ScrapChip
+{
+	Pic BRBAK0
+	Add 1.0
+	FullBright
+	Animator GoAway
+	X-scale 0.10
+	Y-scale 0.10
+	LowerDecal DefaultBulletChip
+}
+
+generator TangoBFGBall			BFGLightning
+
+// The follow blood splats are taken directly from Gifty's DeadMarinev0.9.4.pk3
+// Credit Gifty if you plan on using!
+decal BloodSplat1
+{
+	pic BSPLAT1
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat2
+{
+	pic BSPLAT2
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat3
+{
+	pic BSPLAT3
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat4
+{
+	pic BSPLAT4
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat5
+{
+	pic BSPLAT5
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat6
+{
+	pic BSPLAT6
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decal BloodSplat7
+{
+	pic BSPLAT7
+// 	shade "BloodDefault"
+	randomflipx
+	randomflipy
+}
+
+decalgroup Bloodsplat
+{
+	BloodSplat1 1
+	BloodSplat2 1
+	BloodSplat3 1
+	BloodSplat4 1
+	BloodSplat5 1
+	BloodSplat6 1
+	BloodSplat7 1
+}
+
+//Blood smears
+decal BloodSmear1
+{
+	pic BSMEAR1
+// 	translucent 0.85
+	randomflipx
+	randomflipy
+}
+
+decal BloodSmear2
+{
+	pic BSMEAR2
+// 	translucent 0.85
+	randomflipx
+	randomflipy
+}
+
+decal BloodSmear3
+{
+	Pic BSMEAR3
+// 	translucent 0.85
+	randomflipx
+	randomflipy
+}
+
+decal BloodSmear4
+{
+	Pic BSMEAR4
+// 	translucent 0.85
+	randomflipx
+	randomflipy
+}
+
+decalgroup BloodSmear
+{
+	Bloodsmear1 1
+	Bloodsmear2 1
+	Bloodsmear3 1
+	Bloodsmear4 1
+}
+
+// ================
+// FLAME TRAPS
+// Taken from FlameTraps.pk3, see CREDITS for details
+// ================
+decal SpitterScorch
+{
+	pic SCORCH1
+	shade "00 00 00"
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+	animator GoAway2
+}

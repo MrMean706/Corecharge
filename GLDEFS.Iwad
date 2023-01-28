@@ -1,0 +1,230 @@
+// The contents of this file are taken from lights.pk3, which is packaged with
+// GZDoom. Specifically, these definitions come from the lights.pk3 that is
+// bundled with GZDoom 4.4.2
+
+// ----------------------
+// -- Doom Decorations --
+// ----------------------
+
+// Barrel
+pulselight BARREL
+{
+    color 0.0 0.3 0.0
+    size 20
+    secondarySize 21
+    interval 0.5
+    offset 0 36 0
+	dontlightself 1
+	
+}
+
+object ExplosiveBarrel
+{
+    frame BAR1  { light BARREL    }
+
+    frame BEXPC { light ROCKET_X1 }
+    frame BEXPD { light ROCKET_X2 }
+    frame BEXPE { light ROCKET_X3 }
+}
+
+// Floor lamp
+pointlight LAMP
+{
+    color 1.0 1.0 0.8
+    size 84
+    offset 0 44 0
+	
+}
+
+object Column
+{
+    frame COLU { light LAMP }
+}
+
+// Short tech lamp
+pulselight SMALLLAMP
+{
+    color 0.8 0.8 1.0
+    size 84
+    secondarySize 87
+    interval 0.4
+    offset 0 44 0
+	
+}
+
+object TechLamp2
+{
+    frame TLP2 { light SMALLLAMP }
+}
+
+// Tall tech lamp
+pulselight BIGLAMP
+{
+    color 0.8 0.8 1.0
+    size 96
+    secondarySize 99
+    interval 0.4
+    offset 0 72 0
+	
+}
+
+object TechLamp
+{
+    frame TLMP { light BIGLAMP }
+}
+
+// Tall red torch
+flickerlight2 BIGREDTORCH
+{
+    color 0.7 0.35 0.14
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	
+}
+
+object RedTorch
+{
+    frame TRED { light BIGREDTORCH }
+}
+
+// Tall green torch
+flickerlight2 BIGGREENTORCH
+{
+    color 0.2 0.7 0.2
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	
+}
+
+object GreenTorch
+{
+    frame TGRN { light BIGGREENTORCH }
+}
+
+// Tall blue torch
+flickerlight2 BIGBLUETORCH
+{
+    color 0.2 0.2 0.7
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	
+}
+
+object BlueTorch
+{
+    frame TBLU { light BIGBLUETORCH }
+}
+
+// Small red torch
+flickerlight2 SMALLREDTORCH
+{
+    color 0.7 0.35 0.14
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	
+}
+
+object ShortRedTorch
+{
+    frame SMRT { light SMALLREDTORCH }
+}
+
+// Small green torch
+flickerlight2 SMALLGREENTORCH
+{
+    color 0.2 0.7 0.2
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	
+}
+
+object ShortGreenTorch
+{
+    frame SMGT { light SMALLGREENTORCH }
+}
+
+// Small blue torch
+flickerlight2 SMALLBLUETORCH
+{
+    color 0.2 0.2 0.7
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 35 0
+	
+}
+
+object ShortBlueTorch
+{
+    frame SMBT { light SMALLBLUETORCH }
+}
+
+// Burning barrel
+flickerlight2 FIREBARREL
+{
+    color 1.0 0.9 0.4
+    size 72
+    secondarySize 81
+    interval 0.1
+    offset 0 32 0
+	
+}
+
+object BurningBarrel
+{
+    frame FCAN { light FIREBARREL }
+}
+
+// Skulls w/candles
+flickerlight2 SKULLCANDLES
+{
+    color 1.0 1.0 0.3
+    size 48
+    secondarySize 51
+    interval 0.1
+    offset 0 24 0
+	
+}
+
+object HeadCandles
+{
+    frame POL3 { light SKULLCANDLES }
+}
+
+// Candle
+pointlight CANDLE
+{
+    color 1.0 1.0 0.3
+    size 24
+    offset 0 16 0
+	
+}
+
+object Candlestick
+{
+    frame CAND { light CANDLE }
+}
+
+// Candelabra
+pointlight CANDELABRA
+{
+    color 1.0 1.0 0.3
+    size 67
+    offset 0 52 0
+	
+}
+
+object Candelabra
+{
+    frame CBRA { light CANDELABRA }
+}

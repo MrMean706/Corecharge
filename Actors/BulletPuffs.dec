@@ -1,0 +1,78 @@
+ACTOR TBulletPuff replaces BulletPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	Scale 0.5
+	Alpha 0.5
+	RenderStyle Add
+	DamageType Bullet
+	States
+	{
+	Spawn:
+		TNT1 AAA 0 nodelay A_SpawnItemEx("TBulletSpark", 0, 0, 0, frandom(0.1, 1.0), frandom(-1.0, 1.0), frandom(-0.5, 1.0), 0, SXF_NOCHECKPOSITION)
+		TNT1 A 0
+		PUFF ABCDEF 2
+		Stop
+	}
+}
+
+Actor ShotgunPuff : TBulletPuff
+{
+	DamageType Shotgun
+}
+
+Actor ChaingunPuff : TBulletPuff
+{
+	DamageType Chaingun
+}
+
+Actor TangoFistPuff : TBulletPuff
+{
+	SeeSound "*fist"
+// 	AttackSound "*fist"
+	+PUFFONACTORS
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		Stop
+	}
+}
+
+Actor TangoSawPuff : TBulletPuff
+{
+	DamageType Saw
+}
+
+Actor TangoBerserkFistPuff : TangoFistPuff
+{
+	// It would be cleaner to have the BerserkPuff have its own Berserk damagetype, but this works just fine I think
+	DamageType Rocket
+}
+
+ACTOR TBulletSpark
+{
+	Radius 2
+	Height 2
+	Speed 1
+	Projectile
+	Gravity 0.1
+	Scale 0.5
+	RenderStyle Add
+	Alpha 1.0
+	-NOGRAVITY
+	-SOLID
+	+DOOMBOUNCE
+	+EXPLODEONWATER
+	-CANBOUNCEWATER
+	+DONTSPLASH
+	+NOTELEPORT
+	+CLIENTSIDEONLY
+	States
+	{
+		Spawn:
+			TPUF A 4 bright
+			TPUF BBBBCCCCCC 1 bright A_FadeOut(0.1)
+			Stop
+	}
+}

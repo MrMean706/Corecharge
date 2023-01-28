@@ -1,0 +1,85 @@
+// Basically all the code in here was done by Gifty, taken from Smooth Doom
+
+Actor TangoRedCard : redcard replaces redcard
+{
+  Inventory.PickupSound "keycard/pickup"
+  Inventory.PickupMessage "$TANGO_RED_CARD"
+  States
+  {
+  Spawn:
+	RTAT abc 4 bright
+	RTAT def 4 bright
+	RTAT ghi 4 bright
+	RTAT jkl 4 bright
+	loop
+  }
+}
+
+Actor TangoBlueCard : bluecard replaces bluecard
+{
+  Inventory.PickupSound "keycard/pickup"
+  Inventory.PickupMessage "$TANGO_BLUE_CARD"
+  States
+  {
+  Spawn:
+	btat abc 4 bright
+	btat def 4 bright
+	btat ghi 4 bright
+	btat jkl 4 bright
+	loop
+  }
+}
+
+Actor TangoYellowCard : yellowcard replaces yellowcard
+{
+  Inventory.PickupSound "keycard/pickup"
+  Inventory.PickupMessage "$TANGO_YELLOW_CARD"
+  States
+  {
+  Spawn:
+	ytat abc 4 bright
+	ytat def 4 bright
+	ytat ghi 4 bright
+	ytat jkl 4 bright
+	loop
+  }
+}
+
+Actor TangoSkullRed : redskull replaces redskull
+{
+  Inventory.PickupSound "skullkey/pickup"
+  Inventory.PickupMessage "$TANGO_RED_SKULL"
+  states
+  {
+  Spawn:
+	RSKY abcd 4 bright
+	RSKY efgh 4 bright
+	loop
+  }
+}
+
+Actor TangoSkullBlue : blueskull replaces blueskull
+{
+  Inventory.PickupSound "skullkey/pickup"
+  Inventory.PickupMessage "$TANGO_BLUE_SKULL"
+  states
+  {
+  Spawn:
+	BSKY abcd 4 bright
+	BSKY efgh 4 bright
+	loop
+  }
+}
+
+Actor TangoSkullYellow : yellowskull replaces yellowskull
+{
+  Inventory.PickupSound "skullkey/pickup"
+  Inventory.PickupMessage "$TANGO_YELLOW_SKULL"
+  states
+  {
+  Spawn:
+	YSKY abcd 4 bright
+	YSKY efgh 4 bright
+	loop
+  }
+}

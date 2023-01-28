@@ -1,0 +1,188 @@
+DRYFIRE DRYFIRE
+RELOAD RELOAD
+BEPBEP BEPBEP
+PLREA PLREA
+PLREB PLREB
+RLREA RLREA
+RLREB RLREB
+CG_R1 CG_R1
+CG_R2 CG_R2
+CG_R3 CG_R3
+// note to self: I think everything above this line is unused, or most of it is
+// but double check to be sure before removing
+
+// Backpack
+items/getbackpack			GBPACK
+
+// General weapons
+weapons/empty DRYFIRE
+
+// Fist
+fist/select					FISTSELC
+
+// Pistol
+pistol/reload1				PSTREL1
+pistol/reload2				PSTREL2
+pistol/fire					PSTFIRE
+pistol/select				PSTSELC
+
+
+// Assault Rifle
+items/assaultrifle			dscget
+weapons/arfire				DSCGUN
+weapons/aropen				AROPEN
+weapons/arin				ARIN
+weapons/arclick				ARCLICK
+weapons/arright				ARRIGHT
+weapons/arleft				ARLEFT
+
+weapons/getclip				GCLIP
+weapons/getclipbox			GCLIPBOX
+
+$volume weapons/arfire 0.6
+
+// Shotgun
+weapons/shotguncock			dsshotck
+weapons/shotgunfire			ds12gfir
+weapons/shellin				dsshelin
+
+weapons/getshell			GSHELL
+weapons/getshellbox			GSHBOX
+
+$volume weapons/shotgunfire 0.6
+$volume weapons/shotguncock 0.6
+
+// Super Shotgun
+ssg/fire				ssgfire
+ssg/fireclassic			ssgfirec
+
+weapons/ssgclosegothic		SSGVCLOS
+weapons/ssgloadgothic		SSGVLOAD
+weapons/ssgopengothic		SSGVOPEN
+
+// Scrap gun
+weapons/scrapopen			SCOPEN
+weapons/scrapclose			SCCLOS
+$random weapons/scrapfire { weapons/scrapfire1 weapons/scrapfire2 weapons/scrapfire3 }
+weapons/scrapfire1			SCFIR1
+weapons/scrapfire2			SCFIR2
+weapons/scrapfire3			SCFIR3
+weapons/scrapload			SCLOAD
+items/scrapgun				SCSEL
+$volume weapons/scrapfire 0.6
+weapons/getscrapbox			GSBOX
+weapons/getscrapshell		GSSHELL
+scrapgun/rotate				SCROTATE
+scrapgun/eject				SCEJECT
+
+// Rocket launcher
+weapons/getrocket			GROCK
+weapons/getrocketbox		GROCKBOX
+weapons/rocketfly			ROCKFLY
+weapons/prockxp				PROCKXP
+// tango PLEASE fix your goddamn sound naming conventions
+// -tango
+rocketlauncher/select		ROCKSELC
+rocketlauncher/fire			RLAUFIR
+$limit weapons/prockxp		0
+
+// Plasma gun (sound taken from Complex Doom v27a3)
+items/plasmarifle			PLPICKU
+weapons/plasmafire			DSPLAS1
+// bounce sound found in xa-psych-b5b (Psych by Xaser and friends)
+weapons/plasmabounce		DSPLASBN
+// plasma explode sound taken from megaman x4
+weapons/plasmadie			DSPLAS2
+weapons/getcell				GCELL
+weapons/getcellbox			GCELLBOX
+plasmarifle/select			PLSELC
+
+// Stomper
+stomper/pickup				SSCRSUP
+stomper/fire1				SSCRFI1
+stomper/fire2				SSCRFI2
+stomper/fire3				SSCRFI3
+$random stomper/fire { stomper/fire1 stomper/fire2 stomper/fire3 }
+stomper/explode1			SSCRXP1
+stomper/explode2			SSCRXP2
+stomper/explode3			SSCRXP3
+$random stomper/explode		{ stomper/explode1 stomper/explode2 stomper/explode3 }
+weapons/getstomperrockets	GSROCK
+weapons/getstomperbox		GSROCKBO
+
+$limit stomper/missile		0
+$limit stomper/explode		0
+
+
+// BFG9000
+bfg/select					BFGSELC
+bfg/charge					BFGCHRG
+bfg/fire					BFGFIRE
+
+// Chaingun
+chaingun/fire				CGUNFIRE
+
+// Minigun
+minigun/pickup				SSMGNUP
+minigun/windup				SSMGNSTA
+minigun/winddown			SSMGNSTO
+minigun/rotate				SSMGNROT
+$RANDOM minigun/fire { minigun/fire1 minigun/fire2 minigun/fire3 }
+minigun/fire1				m_gun1
+minigun/fire2				m_gun2
+minigun/fire3				m_gun3
+
+// Nailgun
+Weapons/NailMGFire			NAILFIRE
+Weapons/NailHit				NAILHIT
+Weapons/NailHitBleed		NAILHTBD
+Weapons/NailFlight			NAILFLY
+
+$Limit Weapons/NailHit		0
+$Limit Weapons/NailHitBleed	0
+
+weapons/nailrotate1			NAILROT1
+weapons/nailrotate2			NAILROT2
+weapons/nailrotate3			NAILROT3
+weapons/nailrotate4			NAILROT4
+
+weapons/nailfire1			NAILFIR1
+weapons/nailfire2			NAILFIR2
+weapons/nailfire3			NAILFIR3
+
+$random weapons/nailrotate { weapons/nailrotate1 weapons/nailrotate2 weapons/nailrotate3 weapons/nailrotate4 }
+$random weapons/nailfire { weapons/nailfire1 weapons/nailfire2 weapons/nailfire3 }
+
+weapons/nailfiresuper		NAILFIRX
+weapons/nailricochet		NAILRICO
+
+
+// these sounds are from insanity's requiem mk2 (https://forum.zdoom.org/viewtopic.php?f=43&t=37130)
+$random sfx/nailric {sfx/nric1 sfx/nric2 sfx/nric3 sfx/nric4}
+sfx/nric1	nlrico1
+sfx/nric2	nlrico2
+sfx/nric3 	nlrico3
+sfx/nric4	nlrico4
+
+// also from insanity's requiem
+$random FleshImpact {bflesh/hit1 bflesh/hit2 bflesh/hit3 bflesh/hit4 bflesh/hit5 bflesh/hit6
+bflesh/hit7 bflesh/hit8 bflesh/hit9 bflesh/hit10 bflesh/hit11 bflesh/hit12 bflesh/hit13 bflesh/hit4
+bflesh/hit15 bflesh/hit16 bflesh/hit17}
+
+bflesh/hit1		bfhit01
+bflesh/hit2		bfhit02
+bflesh/hit3		bfhit03
+bflesh/hit4		bfhit04
+bflesh/hit5		bfhit05
+bflesh/hit6		bfhit06
+bflesh/hit7		bfhit07
+bflesh/hit8		bfhit08
+bflesh/hit9		bfhit09
+bflesh/hit10	bfhit10
+bflesh/hit11	bfhit11
+bflesh/hit12	bfhit12
+bflesh/hit13	bfhit13
+bflesh/hit14	bfhit14
+bflesh/hit15	bfhit15
+bflesh/hit16	bfhit16
+bflesh/hit17	bfhit17

@@ -1,0 +1,28 @@
+// Supercharge CVars
+server int sv_tango_monster_rocket_fly_sound = 0;
+user int cl_tango_berserk_long_flash = 0;
+// I'm disabling this cvar since I couldn't get it to actually work; probably
+// has something to do with inventory Pickup state quirkiness
+// user int cl_tango_soulsphere_flash = 1;
+user int cl_tango_fullscreen_hud_style = 0;
+user int cl_tango_fullscreen_hud_use_colors = 1;
+user int cl_tango_classic_ssg_fire_sound = 0;
+
+// Compatibility options
+server bool sv_tango_monster_projectile_vanilla_origin_cyberdemon = false;
+server bool sv_tango_monster_projectile_vanilla_origin_draugr = false;
+server bool sv_tango_monster_projectile_vanilla_origin_fusionite = false;
+server bool sv_tango_monster_projectile_vanilla_origin_behemoth = false;
+
+// Random spawners
+server bool sv_tango_enable_random_baron = false;
+
+// Gameplay options
+user bool t_m8f_wm_PistolStart = false;
+user bool cl_tango_auto_reload_when_empty = false;
+user bool cl_tango_enable_screen_shake = true;
+server bool sv_tango_rocket_screen_shake = true;
+user bool cl_tango_enable_recoil = true;
+server bool sv_tango_chaingun_replace_assault_rifle = false;
+server int sv_tango_shotgun_skin = 0;
+server int sv_tango_super_shotgun_skin = 0;

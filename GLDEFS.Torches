@@ -1,0 +1,118 @@
+// ** BIG WHITE TORCH **
+FlickerLight2 TangoBigWhiteTorch
+{
+	Color 0.4 0.4 0.4
+	Size 65
+	SecondarySize 74
+	Interval 0.1
+	Offset 0 60 0
+}
+
+Object TangoWhiteTorch
+{
+	Frame TGRY { Light TangoBigWhiteTorch }
+}
+
+// ** SMALL WHITE TORCH **
+FlickerLight2 TangoShortWhiteTorch
+{
+    Color 0.4 0.4 0.4
+    Size 47
+    SecondarySize 56
+    Interval 0.1
+    Offset 0 35 0
+}
+
+object TangoShortWhiteTorch
+{
+    frame SGYT { light TangoShortWhiteTorch }
+}
+
+// ** CANDLES **
+PointLight TangoWhiteCandle
+{
+    Color 1.0 1.0 0.3
+    Size 24
+    Offset 0 16 0
+}
+
+object TangoWhiteCandle
+{
+    frame CANW { light TangoWhiteCandle }
+}
+
+PointLight TangoGreenCandle
+{
+    Color 0.8 1.0 0.3
+    Size 24
+    Offset 0 16 0
+}
+
+object TangoGreenCandle
+{
+    frame CANG { light TangoGreenCandle }
+}
+
+PointLight TangoRedCandle
+{
+    Color 1.0 0.8 0.3
+    Size 24
+    Offset 0 16 0
+}
+
+object TangoRedCandle
+{
+    frame CANR { light TangoRedCandle }
+}
+
+// ** RED LANTERN **
+PointLight TangoRedLantern
+{
+    Color 0.6 0.6 0.4
+    Size 56
+    Offset 0 44 0
+}
+
+object TangoRedLantern
+{
+    frame LANT { light TangoRedLantern }
+}
+
+// ** HANGING LIGHTS **
+// 96
+// 66
+PointLight TangoHangingLight
+{
+    Color 0.6 0.6 0.4
+    Size 47
+    Offset 0 8 0
+}
+
+object TangoHangingLight144
+{
+    frame HLT1 { light TangoHangingLight }
+}
+
+object TangoHangingLight96
+{
+    frame HLT2 { light TangoHangingLight }
+}
+
+object TangoHangingLight66
+{
+    frame HLT3 { light TangoHangingLight }
+}
+
+FlickerLight2 TangoStreetLamp
+{
+    Color 0.6 0.6 0.4
+    Size 47
+    SecondarySize 56
+    Interval 0.1
+    Offset 0 108 0
+}
+
+object TangoStreetLamp
+{
+    frame SLMP { light TangoStreetLamp }
+}

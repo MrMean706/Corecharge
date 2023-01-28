@@ -1,0 +1,263 @@
+Actor TangoBackpack : Backpack replaces Backpack
+{
+	//$Title "TangoBackpack"
+	Tag "Backpack"
+	Inventory.PickupSound "items/getbackpack"
+	Inventory.PickupMessage "$TANGO_BACKPACK"
+}
+
+Actor TangoBulletClip : Ammo replaces Clip
+{
+	//$Title "TangoBulletClip"
+	Tag "Bullet Clip"
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	Inventory.PickupMessage "$TANGO_BULLET_CLIP"
+	Inventory.PickupSound "weapons/getclip"
+	Inventory.Icon "TCLPA0"
+	States
+	{
+	Spawn:
+		TCLP A -1
+		Stop
+	}
+}
+
+Actor TangoBulletClipHalf : TangoBulletClip
+{
+	//$Title "TangoBulletClipHalf"
+	Tag "Bullet Half Clip"
+	Inventory.PickupMessage "$TANGO_BULLET_CLIP_HALF"
+	Inventory.PickupSound "weapons/getclip"
+	Ammo.BackpackAmount 0
+	Inventory.Amount 5
+	Inventory.Icon "TCLPA0"
+	States
+	{
+	Spawn:
+		TCLH A -1
+		Stop
+	}
+}
+
+Actor TangoBulletBox : TangoBulletClip replaces ClipBox
+{
+	//$Title "TangoBulletBox"
+	Tag "Bullet Box"
+	Inventory.Amount 50
+	Inventory.PickupMessage "$TANGO_BULLET_BOX"
+	Inventory.PickupSound "weapons/getclipbox"
+	States
+	{
+	Spawn:
+		TAMB A -1
+		Stop
+	}
+}
+
+ACTOR TangoShell : Ammo replaces Shell
+{
+	//$Title "TangoShell"
+	Tag "Shells"
+	Inventory.PickupMessage "$TANGO_SHELL"
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SHELA0"
+	Inventory.PickupSound "weapons/getshell"
+	States
+	{
+	Spawn:
+		SHEL A -1
+		Stop
+	}
+}
+
+ACTOR TangoShellBox : TangoShell replaces ShellBox
+{
+	//$Title "TangoShellBox"
+	Tag "Shell Box"
+	Inventory.PickupMessage "$TANGO_SHELL_BOX"
+	Inventory.Amount 20
+	Inventory.PickupSound "weapons/getshellbox"
+	States
+	{
+	Spawn:
+		SBOX A -1
+		Stop
+	}
+}
+
+ACTOR TangoScrapDrum : Ammo 28701
+{
+	//$Title "TangoScrapDrum"
+	//$Category Ammunition
+	Tag "Scrap Drum"
+	Inventory.PickupMessage "$TANGO_SCRAP_DRUM"
+	Inventory.Amount 4
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 100
+	Inventory.Icon "SGASA0"
+	Inventory.PickupSound "weapons/getscrapshell"
+	States
+	{
+	Spawn:
+		SGAS A -1
+		Stop
+	}
+}
+
+ACTOR TangoScrapDrumPack : TangoScrapDrum 28702
+{
+	//$Title "TangoScrapDrumPack"
+	//$Category Ammunition
+	Tag "Scrap Drum Pack"
+	Inventory.PickupMessage "$TANGO_SCRAP_DRUM_PACK"
+	Inventory.Amount 20
+	Inventory.PickupSound "weapons/getscrapbox"
+	States
+	{
+	Spawn:
+		SGAL A -1
+		Stop
+	}
+}
+
+Actor TangoRocketAmmo : RocketAmmo replaces RocketAmmo
+{
+	//$Title "TangoRocketAmmo"
+	Tag "Rocket"
+	Inventory.Icon "TRCKA0"
+	Inventory.PickupMessage "$TANGO_ROCKET"
+	Inventory.PickupSound "weapons/getrocket"
+	Inventory.Amount 1
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 1
+	Ammo.BackpackMaxAmount 100
+	States
+	{
+	Spawn:
+		TRCK A -1
+		Stop
+	}
+}
+
+Actor TangoRocketBox : RocketBox replaces RocketBox
+{
+	//$Title "TangoRocketBox"
+	Tag "Rocket Box"
+	Inventory.PickupMessage "$TANGO_ROCKET_BOX"
+	Inventory.PickupSound "weapons/getrocketbox"
+}
+
+Actor TangoCell : Ammo replaces Cell
+{
+	//$Title "TangoCell"
+	Tag "Cell"
+	Inventory.Amount 20
+	Inventory.MaxAmount 300
+	Ammo.BackpackAmount 20
+	Ammo.BackpackMaxAmount 600
+	Inventory.PickupMessage "$TANGO_CELL"
+	Inventory.PickupSound "weapons/getcell"
+	Inventory.Icon "TCLLA0"
+	States
+	{
+	Spawn:
+		TCLL A -1
+		Stop
+	}
+}
+
+Actor TangoCellPack : TangoCell replaces CellPack
+{
+	//$Title "TangoCellPack"
+	Tag "Cell Pack"
+	Inventory.Amount 100
+	Inventory.PickupMessage "$TANGO_CELL_PACK"
+	Inventory.PickupSound "weapons/getcellbox"
+	Inventory.Icon "TCLKA0"
+	States
+	{
+	Spawn:
+		TCLK A -1
+		Stop
+	}
+}
+
+ACTOR TangoStomperAmmo : Ammo 28707
+{
+	//$Title "TangoStomperAmmo"
+	//$Category Ammunition
+	Tag "Stomper Missiles"
+	Inventory.PickupMessage "$TANGO_STOMPER_AMMO"
+	Inventory.Amount 3
+	Inventory.MaxAmount 50
+	Ammo.BackpackAmount 3
+	Ammo.BackpackMaxAmount 100
+	Inventory.PickupSound "weapons/getstomperrockets"
+	Inventory.Icon "STMPA0"
+	States
+	{
+	Spawn:
+		STMP A -1
+		Stop
+	}
+}
+
+ACTOR TangoStomperBox : TangoStomperAmmo 28708
+{
+	//$Title "TangoStomperBox"
+	//$Category Ammunition
+	Tag "Stomper Missile Box"
+	Inventory.PickupMessage "$TANGO_STOMPER_BOX"
+	Inventory.Amount 15
+	Inventory.PickupSound "weapons/getstomperbox"
+	States
+	{
+	Spawn:
+		STMB A -1
+		Stop
+	}
+}
+
+Actor TangoNails : Ammo 28709
+{
+	//$Title "TangoNails"
+	//$Category Ammunition
+	Radius 16
+	Height 8
+	Inventory.PickupMessage "$TANGO_NAILS"
+	Inventory.Icon "NLGAA0"
+	Inventory.Amount 10
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 10
+	Ammo.BackpackMaxAmount 400
+	States
+	{
+	Spawn:
+		NLGA A -1
+		Stop
+	}
+}
+
+Actor TangoNailBox : TangoNails 28710
+{
+	//$Title "TangoNailBox"
+	//$Category Ammunition
+	Radius 16
+	Height 8
+	Inventory.PickupMessage "$TANGO_NAIL_BOX"
+	Inventory.Icon "NLGAB0"
+	Inventory.Amount 50
+	States
+	{
+	Spawn:
+		NLGA B -1
+		Stop
+	}
+}

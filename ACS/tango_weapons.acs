@@ -1,0 +1,15 @@
+#library "tango_weapons"
+#include "zcommon.acs"
+
+script "tango_get_ar_spread_tokens" (void)
+{
+	SetResultValue(CheckInventory("AssaultRifleSpreadToken"));
+}
+
+Script "tango_get_minigun_input" (void)
+{
+	if(GetPlayerInput(-1, INPUT_BUTTONS) & BT_ATTACK)
+	{
+		GiveInventory("EmptyRoll",1);
+	}
+}

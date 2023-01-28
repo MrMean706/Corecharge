@@ -1,0 +1,8 @@
+FireballSpitter/Launch	DSGRGFIR
+FireballSpitter/Hit		DSGRGHIT
+FireballSpitter/Flight	DSGRGFLY
+$limit FireballSpitter/Flight 0
+$attenuation FireballSpitter/Flight 4
+
+FlameJetter/Fire		DSGRGFLY
+$attenuation FlameJetter/Fire 2

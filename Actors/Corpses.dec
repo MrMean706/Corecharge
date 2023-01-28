@@ -1,0 +1,49 @@
+Actor TangoDeadPlasmaZombie replaces DeadZombieMan
+{
+	States
+	{
+	Spawn:
+		ZBAM L -1
+		Stop
+	}
+}
+
+Actor TangoDeadShotgunGuy replaces DeadShotgunGuy
+{
+	States
+	{
+	Spawn:
+		SGUY L -1
+		Stop
+	}
+}
+
+Actor TangoDeadImp replaces DeadDoomImp
+{
+	States
+	{
+	Spawn:
+		BIMP M -1
+		Stop
+	}
+}
+
+Actor TangoDeadMechaDemon replaces DeadDemon
+{
+	States
+	{
+	Spawn:
+		MDEM N -1
+		Stop
+	}
+}
+
+Actor TangoDeadCacodemon replaces DeadCacodemon
+{
+	States
+	{
+	Spawn:
+		HEAD L -1
+		Stop
+	}
+}

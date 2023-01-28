@@ -1,0 +1,34 @@
+version "3.2.0"
+// Everything below this line, including the files included, come from m8f's
+// fantastic idclev-starter-0.5.1.pk3 mod. As per the license terms, the original
+// license has also been included below the only changes that I (tango) made
+// were to trim down the code to ONLY include the pistol start option, and add
+// a "t_" prefix to everything to prevent naming conflicts if the original
+// idclev-starter mod is loaded in addition.
+// - Tango
+
+/* MIT License
+ *
+ * Copyright (c) 2018 Alexander Kromm (mmaulwurff@gmail.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+#include "scripts/t_m8f_is_settings.zs"
+#include "scripts/t_m8f_is_event_handler.zs"

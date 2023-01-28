@@ -1,0 +1,125 @@
+ACTOR TangoLostSoul : LostSoul replaces LostSoul
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoLostSoul"
+	Tag "Lost Soul"
+	DamageFactor "PainElemental", 0.0
+	PainChance "Chaingun", 20
+	Health 60
+	Damage (12)
+	+NOBLOOD
+	States
+	{
+	Spawn:
+		SKUL AB 10 A_Look
+		Loop
+	See:
+		SKUL AB 6 A_Chase
+		Loop
+	Missile:
+		SKUL C 10 A_FaceTarget
+		SKUL D 4 A_SkullAttack
+		SKUL CD 4
+		Goto Missile+2
+	Pain:
+		SKUL E 3
+		SKUL E 3 A_Pain
+		Goto See
+	Death:
+		SSOU B 2 A_Scream
+		SSOU D 2 A_NoBlocking
+		TNT1 AAA 0 A_CustomMissile("LSpart1", 42, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile("LSpart3", 42, 0, random (0, 360), 2, random (0, 160))
+		TNT1 AA 0 A_CustomMissile("LSpart2", 42, 0, random (0, 360), 2, random (0, 160))
+		SSOU EF 2
+		SSOU GHIJ 2
+		Stop
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		Stop
+	}
+}
+
+
+// all the following code in this file is taken from Brutal Doom, with slight modifications
+ACTOR LSPart1
+{
+    Radius 2
+    Height 2
+    Speed 7
+	Mass 3
+	BounceFactor 0.4
+	+DOOMBOUNCE
+    +NOBLOCKMAP
+	+MISSILE
+    +NOTELEPORT
+    +DONTSPLASH
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+	+THRUACTORS
+    Scale 0.7
+    States
+    {
+    Spawn:
+		TNT1 A 0 Nodelay A_Jump(128, "Spawn2")
+		LGI1 ABCDEFGH 2
+		wait
+	Spawn2:
+		LGI1 HGFEDCBA 2
+		wait
+	Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_Jump(128, "Death2")
+		LGI1 A -1
+		stop
+	Death2:
+		LGI1 E -1
+        Stop
+    }
+}
+
+actor LSpart2 : LSpart1
+{
+states
+	{
+	spawn:
+		TNT1 A 0 NoDelay A_Jump(128, "Spawn2")
+		LGI2 ABCDEFGH 2
+		wait
+	Spawn2:
+		LGI2 HGFEDCBA 2
+		wait
+	Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_Jump(128, "Death2")
+		LGI2 A -1
+		stop
+	Death2:
+		LGI2 E -1
+        Stop
+	}
+}
+
+actor LSpart3 : LSpart1
+{
+states
+	{
+	spawn:
+		TNT1 A 0 NoDelay A_Jump(128, "Spawn2")
+		LGI3 ABCDEFGH 2
+		wait
+	Spawn2:
+		LGI3 HGFEDCBA 2
+		wait
+	Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_Jump(128, "Death2")
+		LGI3 A -1
+		stop
+	Death2:
+		LGI3 E -1
+        Stop
+	}
+}

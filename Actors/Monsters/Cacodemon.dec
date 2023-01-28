@@ -1,0 +1,123 @@
+const float cacodemon_crit_multiplier = 1.8;
+
+ACTOR TangoCacodemon : Cacodemon replaces Cacodemon
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoCacodemon"
+	Tag "Cacodemon"
+	Health 360
+	Radius 31
+	Height 56
+	Mass 900
+	Speed 8
+	PainChance 128
+	PainChance "Chaingun", 20
+	Monster
+	+FLOAT
+	+NOGRAVITY
+	+DONTHARMSPECIES
+	Species "Caco"
+	SeeSound "caco/sight"
+	PainSound "tangocacodemon/pain"
+	DeathSound "caco/death"
+	ActiveSound "caco/active"
+	Obituary "$OB_CACO"
+	HitObituary "$OB_CACOHIT"
+	States
+	{
+	Spawn:
+		HEAD A 10 A_Look
+		Loop
+	See:
+		HEAD A 3 A_Chase
+		Loop
+	Melee:
+	Missile:
+		HEAD BC 5 A_FaceTarget
+		HEAD D 5 A_CustomComboAttack("CacodemonVortexBall", 32, 28, "tangocacodemon/bite")
+		Goto See
+	Pain:
+		HEAD E 3
+		HEAD E 3 A_Pain
+		HEAD F 6
+		Goto See
+	Raise:
+		HEAD L 6 A_UnSetFloorClip
+		HEAD KJIHG 6
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		HEAD L -1 A_SetFloorClip
+		Stop
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		Goto RegularDeath
+		
+	Death.Rocket:
+		Goto ExplodeDeath
+	
+	XDeath:
+		Goto ExplodeDeath
+		
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom1")
+		Goto RegularDeath
+
+	DeathRandom1:
+		TNT1 A 0 A_Jump(120, "ExplodeDeath")
+		Goto RegularDeath
+		
+	
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2", 0, 0, 0, 0, 0, 0, angle*256/360+128)
+		HEAD G 5
+		HEAD H 5
+		HEAD IJ 5
+		HEAD K 5
+		HEAD L -1 A_SetFloorClip
+		Stop
+	
+
+	ExplodeDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner1")
+		HDD2 A 2
+		HDD2 BCDEFGHIJKLM 2 A_SpawnItemEx("NewFlyingBlood",0,0,24,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		HDD2 N -1 A_SetFloorClip
+		Stop
+  }
+}
+
+Actor CacodemonVortexBall
+{
+  Speed 6
+  Alpha 1
+  Projectile
+  Damage (24)
+  RenderStyle Add
+  SeeSound "vortexball/see"
+  DeathSound "vortexball/death"
+  +SEEKERMISSILE
+  States
+  {
+  Spawn:
+	CVOR ABCD 3
+	Loop
+  Death:
+	CVOR EFGHIJ 2 Bright
+	Stop
+  }
+}

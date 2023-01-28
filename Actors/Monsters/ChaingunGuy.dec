@@ -1,0 +1,226 @@
+ACTOR TangoChaingunGuy replaces ChaingunGuy
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoChaingunGuy"
+	Tag "Chaingun Guy"
+	Health 70
+	Radius 20
+	Height 56
+	Mass 100
+	Speed 8
+	PainChance 170
+	PainChance "Chaingun", 100
+	Monster
+	+FLOORCLIP
+	SeeSound "chainguy/sight"
+	PainSound "chainguy/pain"
+	DeathSound "chainguy/death"
+	ActiveSound "chainguy/active"
+	AttackSound "chainguy/attack"
+	Obituary "$OB_CHAINGUY"
+	Dropitem "Chaingun"
+	States
+	{
+	Spawn:
+		CGGY A 10 A_Look
+		Loop
+	See:
+		CGGY AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		CGGY E 10 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY F 4 Bright
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY E 4 Bright
+		CGGY F 1 Bright A_CPosRefire
+		Goto Missile+1
+	Pain:
+		CGGY G 3
+		CGGY G 3 A_Pain
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		CGGY N -1
+		Stop
+	Raise:
+		CGGY N 5
+		CGGY MLKJIH 5
+		Goto See
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		Goto RegularDeath
+		
+	XDeath:
+		Goto ExplodeDeath
+	
+	Death.Rocket:
+		Goto ExplodeDeath
+		
+	 Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom1")
+		Goto RegularDeath
+		
+	DeathRandom1:
+		TNT1 A 0 A_Jump(160, "BackDeath")
+		TNT1 A 0 ThrustThing(angle*256/360+128, 2)
+		TNT1 A 0 ThrustThingZ(0, 6, 0, 1)
+		Goto RegularDeath
+
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 AA 0 A_SpawnItemEx("NewFlyingBlood",0,0,random(16, 32),Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner4", 0, 0, 0, 0, 0, 0,0, 129)
+		CGGY H 5
+		TNT1 AAAA 0 A_SpawnItemEx("NewFlyingBlood",0,0,random(8, 24),Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		CGGY I 5
+		CGGY J 5
+		CGGY KLM 5
+		CGGY N -1
+		Stop
+ 
+
+	BackDeath:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2", 0, -1, 8, 0, 0, 0,0, 129)
+		TNT1 A 0 ThrustThing(angle*256/360+128, 4)
+		TNT1 A 0 ThrustThingZ(0, 20, 0, 1)
+		CGD2 A 3
+		CGD2 BCDEF 3
+	BackDeathAirLoop:
+		CGD2 D 2 A_CheckFloor("BackDeathFinish")
+		Loop
+	BackDeathFinish:
+		TNT1 A 0 A_Stop
+		TNT1 AAA 0 A_SpawnItemEx("NewFlyingBlood",0,0,16,Random(5,-5),Random(5,-5),Random(3,6),0,129)
+		CGD2 E 3
+		CGD2 F 3
+		CGD2 G -1
+		Stop
+	
+	ExplodeDeath:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2", 0, 0, 0, 0, 0, 0,0, 129)
+		CGGY O 5
+		CGGY P 5 A_XScream
+		CGGY Q 5 
+		CGGY RS 5
+		CGGY T -1
+		Stop
+  }
+}
+
+// More time in between bullets
+Actor TangoChaingunGuySlow : TangoChaingunGuy
+{
+	States
+	{
+	Missile:
+		CGGY E 10 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY F 6 Bright
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY E 6 Bright
+		CGGY F 1 Bright A_CPosRefire
+		Goto Missile+1
+	}
+}
+
+Actor TangoChaingunGuyDropAssaultRifle : TangoChaingunGuy 27709
+{
+	//$Title "TangoChaingunGuy (Drops AR)"
+	DropItem "TangoAssaultRifle"
+}
+
+Actor TangoChaingunGuyDropAssaultRifleSlow : TangoChaingunGuyDropAssaultRifle
+{
+	States
+	{
+	Missile:
+		CGGY E 10 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY F 6 Bright
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY E 6 Bright
+		CGGY F 1 Bright A_CPosRefire
+		Goto Missile+1
+	}
+}
+
+Actor TangoChaingunGuyDropChaingun : TangoChaingunGuy 27710
+{
+	//$Title "TangoChaingunGuy (Drops Chaingun)"
+	DropItem "TangoChaingun"
+}
+
+Actor TangoChaingunGuyDropChaingunSlow : TangoChaingunGuyDropChaingun
+{
+	States
+	{
+	Missile:
+		CGGY E 10 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY F 6 Bright
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY E 6 Bright
+		CGGY F 1 Bright A_CPosRefire
+		Goto Missile+1
+	}
+}
+
+Actor TangoChaingunGuyDropClip : TangoChaingunGuy 27711
+{
+	//$Title "TangoChaingunGuy (Drops Clip)"
+	DropItem "TangoBulletClip"
+}
+
+// More time in between bullets
+Actor TangoChaingunGuyDropClipSlow : TangoChaingunGuyDropClip
+{
+	States
+	{
+	Missile:
+		CGGY E 10 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY F 6 Bright
+		TNT1 A 0 A_SpawnItemEx("MonsterChaingunCasing",random(14,15),-15,random(32,33), random(1,2),0,random(4,6), random(-85,-95))
+		TNT1 A 0 A_PlaySound("chainguy/attack", CHAN_WEAPON)
+		TNT1 A 0 A_CustomBulletAttack(22.5, 0, 1, 9, "TBulletPuff", 0, CBAF_NORANDOM) // , "BulletTracer")
+		CGGY E 6 Bright
+		CGGY F 1 Bright A_CPosRefire
+		Goto Missile+1
+	}
+}

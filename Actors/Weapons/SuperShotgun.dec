@@ -1,0 +1,180 @@
+ACTOR TangoSuperShotgun : Weapon replaces SuperShotgun
+{
+	Tag "Super Shotgun"
+	+WEAPON.AMMO_OPTIONAL
+	+INVENTORY.UNDROPPABLE
+	+WEAPON.NOALERT
+	Weapon.SelectionOrder 400
+	Weapon.SlotNumber 3
+	decal bulletchip
+	Weapon.KickBack 150
+	Weapon.AmmoUse1 2
+	Weapon.AmmoGive1 8
+	Weapon.AmmoType1 "TangoShell"
+	Inventory.PickupMessage "$TANGO_SUPER_SHOTGUN"
+	Inventory.PickupSound "weapons/sshotl"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 1, "SpawnGothic")
+		SSGP A 1
+		Loop
+	Ready:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 1, "ReadyGothic")
+		SHT2 A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Deselect:
+		SHT2 A 0 A_Lower
+		Loop
+	Select:
+		TNT1 A 0 A_PlaySound("weapons/sshotl", CHAN_WEAPON)
+		SHT2 A 0 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 1, "FireGothic")
+		TNT1 A 0 A_JumpIfInventory("TangoShell",2,1)
+        Goto NoAmmo
+		
+		// We use shotgunpuff so that the bullets have the Shotgun damage type
+		TNT1 A 0 A_FireBullets (7.1, 7.1, 21, 10, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192) // , "BulletTracer", 0)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_Light1
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_screen_shake") == 0, "SkipShake")
+		TNT1 A 0 Radius_Quake(8, 3, 0, 1, 0)
+		SkipShake:
+		TNT1 A 0 A_AlertMonsters
+		
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil1")
+		TNT1 A 0 A_SetPitch(pitch - 1.2)
+		SkipRecoil1:
+
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_classic_ssg_fire_sound") == 1, "PlayClassicSound")
+		TNT1 A 0 A_PlaySound("ssg/fire", CHAN_WEAPON)
+		Goto PostSoundFire
+		
+		PlayClassicSound:
+		TNT1 A 0 A_PlaySound("ssg/fireclassic", CHAN_WEAPON)
+		Goto PostSoundFire
+		
+		PostSoundFire:
+		SH2F A 2 Bright A_GunFlash
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil2")
+		TNT1 A 0 A_SetPitch(pitch + 0.6)
+		SkipRecoil2:
+		SH2F B 1 Bright A_Light2
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil3")
+		TNT1 A 0 A_SetPitch(pitch + 0.6)
+		SkipRecoil3:
+		SH2F B 1 Bright
+		SHT2 A 1 A_Light0
+		SH2E A 1
+		TNT1 A 0 A_JumpIfInventory("TangoShell",2,1)
+		Goto NoAmmo
+		SHT2 B 1
+		SHT2 CD 1
+		SHT2 F 3
+		SHT2 EDCB 1
+		// SHT2 RQ 2
+		SH2E B 2
+		SHT2 GH 1
+		SH2E F 1 A_PlaySoundEx ("weapons/sshoto", CHAN_AUTO)
+		SHT2 I 1
+		TNT1 A 0 A_SpawnItemEx("ShotgunCasing",random(-4,-5),cos(pitch)*25,sin(-pitch)*25+random(20,22), random(2,3),0,random(5,7),	random(90,105))
+		TNT1 A 0 A_SpawnItemEx("ShotgunCasing",random(-6,-7),cos(pitch)*25,sin(-pitch)*25+random(20,22), random(2,3),0,random(5,7),	random(100,110))	
+		SH2E D 4
+		SHT2 J 2
+		SH2E EH 2
+		SHT2 K 2
+		SHT2 L 3 A_PlaySoundEx ("weapons/sshotl", CHAN_AUTO)
+		SHT2 M 2
+		SHT2 N 2
+		SHT2 OP 1
+		SH2E I 1 A_PlaySoundEx ("weapons/sshotc", CHAN_AUTO)
+		SH2E C 1
+		SH2E B 2
+		SHT2 QR 2
+		Goto Ready
+	NoAmmo:
+		SHT2 A 2 A_PlaySound("weapons/empty")
+		Goto Ready
+		
+		
+
+	SpawnGothic:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 0, "Spawn")
+		VSGP A 1
+		Loop
+	ReadyGothic:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 0, "Ready")
+		VHT2 A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	FireGothic:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_super_shotgun_skin") == 0, "Fire")
+		TNT1 A 0 A_JumpIfInventory("TangoShell",2,1)
+        Goto NoAmmoGothic
+		
+		// We use shotgunpuff so that the bullets have the Shotgun damage type
+		TNT1 A 0 A_FireBullets (7.1, 7.1, 21, 10, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192) // , "BulletTracer", 0)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_Light1
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_screen_shake") == 0, "SkipShakeGothic")
+		TNT1 A 0 Radius_Quake(8, 3, 0, 1, 0)
+		SkipShakeGothic:
+		TNT1 A 0 A_AlertMonsters
+		
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil1Gothic")
+		TNT1 A 0 A_SetPitch(pitch - 1.2)
+		SkipRecoil1Gothic:
+
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_classic_ssg_fire_sound") == 1, "PlayClassicSoundGothic")
+		TNT1 A 0 A_PlaySound("ssg/fire", CHAN_WEAPON)
+		Goto PostSoundFireGothic
+		
+		PlayClassicSoundGothic:
+		TNT1 A 0 A_PlaySound("ssg/fireclassic", CHAN_WEAPON)
+		Goto PostSoundFireGothic
+		
+		PostSoundFireGothic:
+		VH2F A 2 Bright A_GunFlash
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil2Gothic")
+		TNT1 A 0 A_SetPitch(pitch + 0.6)
+		SkipRecoil2Gothic:
+		VH2F B 1 Bright A_Light2
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_recoil") == 0, "SkipRecoil3Gothic")
+		TNT1 A 0 A_SetPitch(pitch + 0.6)
+		SkipRecoil3Gothic:
+		VH2F B 1 Bright
+		VHT2 A 1 A_Light0
+		VH2E A 1
+		TNT1 A 0 A_JumpIfInventory("TangoShell",2,1)
+		Goto NoAmmoGothic
+		VHT2 B 1
+		VHT2 CD 1
+		VHT2 F 3
+		VHT2 EDCB 1
+		// VHT2 RQ 2
+		VH2E B 2
+		VHT2 GH 1
+		VH2E F 1 A_PlaySoundEx ("weapons/ssgopengothic", CHAN_AUTO)
+		VHT2 I 1
+		TNT1 A 0 A_SpawnItemEx("ShotgunCasing",random(-4,-5),cos(pitch)*25,sin(-pitch)*25+random(20,22), random(2,3),0,random(5,7),	random(90,105))
+		TNT1 A 0 A_SpawnItemEx("ShotgunCasing",random(-6,-7),cos(pitch)*25,sin(-pitch)*25+random(20,22), random(2,3),0,random(5,7),	random(100,110))	
+		VH2E D 4
+		VHT2 J 2
+		VH2E EH 2
+		VHT2 K 2
+		VHT2 L 3 A_PlaySoundEx ("weapons/ssgloadgothic", CHAN_AUTO)
+		VHT2 M 2
+		VHT2 N 2
+		VHT2 OP 1
+		VH2E I 1 A_PlaySoundEx ("weapons/ssgclosegothic", CHAN_AUTO)
+		VH2E C 1
+		VH2E B 2
+		VHT2 QR 2
+		Goto ReadyGothic
+	NoAmmoGothic:
+		VHT2 A 2 A_PlaySound("weapons/empty")
+		Goto ReadyGothic
+	}
+}

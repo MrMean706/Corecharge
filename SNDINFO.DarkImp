@@ -1,0 +1,11 @@
+$random darkimp/sight		{ darkimp/sight1  darkimp/sight2 }
+$random darkimp/death		{ darkimp/death1  darkimp/death2 }
+darkimp/sight1			dsdisit1
+darkimp/sight2			dsdisit2
+darkimp/active			dsdiact
+darkimp/pain			dsdipain
+darkimp/melee			dsdiclaw
+darkimp/death1			dsdidth1
+darkimp/death2			dsdidth2
+darkimp/fbspawn			dsdifbs
+darkimp/fbdeath			dsdifbd

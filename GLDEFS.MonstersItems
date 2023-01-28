@@ -1,0 +1,1219 @@
+// These were all done by Sapfiar; thanks Sapfiar :D
+// But I had to comment all the "attenuated 1" lines for Zandro compatibility :(
+// - Tango
+
+// Blue armor
+pointlight BLUEARMOR1
+{
+    color 0.0 0.0 1.0
+    size 32
+}
+
+pointlight BLUEARMOR2
+{
+    color 0.0 0.0 1.0
+    size 16
+}
+
+object TangoBlueArmor
+{
+    frame BARMA { light BLUEARMOR1 }
+    frame BARMB { light BLUEARMOR2 }
+}
+
+// Green armor
+pointlight GREENARMOR1
+{
+    color 0.0 1.0 0.0
+    size 32
+}
+
+pointlight GREENARMOR2
+{
+    color 0.0 1.0 0.0
+    size 16
+}
+
+object TangoGreenArmor
+{
+    frame ARM1A { light GREENARMOR1 }
+    frame ARM1B { light GREENARMOR2 }
+}
+
+// Tango Armour Helmet
+pulselight ARMORBONUS
+{
+    color 0.1 0.3 0.1
+    size 16
+    secondarySize 32
+    interval 1.0
+	dontlightself 1
+	// attenuate 1
+    offset 0 10 0
+}
+
+object TangoArmorBonus
+{
+    frame NUBO { light ARMORBONUS }
+}
+
+// Tango Soul Sphere
+pulselight SoulSphere1
+{
+    color 0.0 1.0 0.0
+    size 60
+    secondarySize 63
+    interval 2.0
+    offset 0 16 0
+	// attenuate 1
+}
+
+object TangoSoulsphere
+{
+    frame ZOULA { light SoulSphere1 }
+    frame ZOULB { light SoulSphere1 }
+	frame ZOULC { light SoulSphere1 }
+    frame ZOULD { light SoulSphere1 }
+	frame ZOULE { light SoulSphere1 }
+    frame ZOULF { light SoulSphere1 }
+	frame ZOULG { light SoulSphere1 }
+}
+
+// Tango Mega Sphere
+pulselight MEGASPHERE
+{
+    color 1.0 1.0 0.0
+    size 60
+    secondarySize 63
+    interval 2.0
+    offset 0 16 0
+	// attenuate 1
+}
+
+object TangoMegasphere
+{
+    frame BREC { light MEGASPHERE }
+}
+
+// Tango Invulnerability Sphere
+pulselight INVULN
+{
+    color 0.3 1.0 0.3
+    size 60
+    secondarySize 63
+    interval 2.0
+    offset 0 16 0
+	// attenuate 1
+}
+
+object TangoInvulnerabilitySphere
+{
+    frame PINV { light INVULN }
+}
+
+// Tango Blue Card Key
+pulselight BLUEKEY
+{
+	color 0.106 0.427 1.000
+    size 16
+    secondarySize 27
+    interval 1.0
+    offset 0 10 0
+}
+
+pulselight YELLOWKEY
+{
+    color 1.0 1.0 0.0
+    size 16
+    secondarySize 27
+    interval 1.0
+    offset 0 10 0
+}
+
+pulselight REDKEY
+{
+    color 1.0 0.0 0.0
+    size 16
+    secondarySize 27
+    interval 1.0
+    offset 0 10 0
+}
+ 
+object TangoBlueCard
+{
+    frame btat { light BLUEKEY }
+}
+
+// Tango Yellow Card Key 
+object TangoYellowCard
+{
+    frame ytat { light YELLOWKEY }
+}
+
+// Tango Red Card Key
+object TangoRedCard
+{
+    frame RTAT { light REDKEY }
+}
+
+// Tango Blue Skull Key
+object TangoSkullBlue
+{
+    frame BSKY { light BLUEKEY }
+}
+
+// Tango Yellow Skull Key
+object TangoSkullYellow
+{
+    frame YSKY { light YELLOWKEY }
+}
+
+// Tango Red Skull Key
+object TangoSkullRed
+{
+    frame RSKY { light REDKEY }
+}
+
+// Tango Health Potion
+pointlight HEALTHPOTION
+{
+    color 0.0 0.0 1.0
+    size 16
+}
+
+object TangoHealthBonus
+{
+    frame BON1 { light HEALTHPOTION }
+}
+
+// Plasma Rifle
+pointlight PLASMABALL
+{
+    color 0.7 1.0 0.7
+    size 32
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.7 1.0 0.7
+    size 48
+    secondarySize 56
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.7 1.0 0.7
+    size 64
+    secondarySize 72
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.7 1.0 0.7
+    size 48
+    secondarySize 56
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.7 1.0 0.7
+    size 4
+    secondarySize 8
+    chance 0.4
+	// attenuate 1
+}
+
+object WeaponPlasmaBall
+{
+    frame BLPL { light PLASMABALL }
+
+    frame SPLSA { light PLASMA_X1 }
+	frame SPLSB { light PLASMA_X1 }
+	frame SPLSC { light PLASMA_X2 }
+	frame SPLSD { light PLASMA_X2 }
+	frame SPLSE { light PLASMA_X3 }
+	frame SPLSF { light PLASMA_X3 }
+	frame SPLSG { light PLASMA_X3 }
+	frame SPLSH { light PLASMA_X4 }
+	frame SPLSI { light PLASMA_X4 } 
+	frame SPLSJ { light PLASMA_X4 }
+	frame SPLSK { light PLASMA_X4 }
+	frame SPLSL { light PLASMA_X4 }
+}
+
+// BFG
+pointlight BFGBALL
+{
+    color 0.5 1.0 0.5
+    size 80
+}
+
+flickerlight BFGBALL_X1
+{
+    color 0.5 1.0 0.5
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+
+flickerlight BFGBALL_X2
+{
+    color 0.6 1.0 0.6
+    size 104
+    secondarySize 112
+    chance 0.3
+}
+
+flickerlight BFGBALL_X3
+{
+    color 0.7 1.0 0.7
+    size 120
+    secondarySize 128
+    chance 0.3
+}
+
+flickerlight BFGBALL_X4
+{
+    color 0.4 0.7 0.4
+    size 56
+    secondarySize 64
+    chance 0.3
+}
+
+flickerlight BFGBALL_X5
+{
+    color 0.1 0.3 0.1
+    size 48
+    secondarySize 56
+    chance 0.3
+}
+
+object TangoBFGBall
+{
+    frame TBBS { light BFGBALL }
+    frame TBBS { light BFGBALL }
+
+    frame TBBDA0 { light BFGBALL_X1 }
+    frame TBBDB0 { light BFGBALL_X2 }
+    frame TBBDC0 { light BFGBALL_X3 }
+    frame TBBDD0 { light BFGBALL_X1 }
+	frame TBBDE0 { light BFGBALL_X2 }
+	frame TBBDF0 { light BFGBALL_X3 }
+	frame TBBDG0 { light BFGBALL_X3 }
+    frame TBBDH0 { light BFGBALL_X4 }
+    frame TBBDI0 { light BFGBALL_X5 }
+	frame TBBDJ0 { light BFGBALL_X5 }
+	frame TBBDK0 { light BFGBALL_X5 }
+
+    frame TBEXA0 { light BFGBALL_X4 }
+}
+
+// Imp ball
+PointLight IMPBALL
+{
+	Color 1.0 0.4 0
+	Size 32
+}
+
+PointLight IMPBALL_X1
+{
+	Color 1.0 0.4 0
+	Size 32
+}
+
+PointLight IMPBALL_X2
+{
+	Color 1.0 0.4 0
+	Size 48
+}
+
+PointLight IMPBALL_X3
+{
+	Color 1.0 0.4 0
+	Size 20
+}
+
+// Exile Fire
+flickerlight EXILEFIRE1
+{
+    color 1.0 0.3 0.0
+    size 36
+    secondarySize 48
+    chance 0.3
+    offset 0 8 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE2
+{
+    color 1.0 0.3 0.0
+    size 60
+    secondarySize 72
+    chance 0.3
+    offset 0 24 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE3
+{
+    color 1.0 0.3 0.0
+    size 96
+    secondarySize 108
+    chance 0.3
+    offset 0 32 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE4
+{
+    color 1.0 0.3 0.0
+    size 96
+    secondarySize 108
+    chance 0.3
+    offset 0 40 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE5
+{
+    color 1.0 0.3 0.0
+    size 96
+    secondarySize 108
+    chance 0.3
+    offset 0 48 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE6
+{
+    color 1.0 0.3 0.0
+    size 72
+    secondarySize 84
+    chance 0.3
+    offset 0 64 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE7
+{
+    color 1.0 0.3 0.0
+    size 48
+    secondarySize 60
+    chance 0.3
+    offset 0 72 0
+	// attenuate 1
+}
+
+flickerlight EXILEFIRE8
+{
+    color 1.0 0.3 0.0
+    size 24
+    secondarySize 36
+    chance 0.3
+    offset 0 80 0
+	// attenuate 1
+}
+
+object ExileFire
+{
+    frame VIREA { light EXILEFIRE1 }
+    frame VIREB { light EXILEFIRE2 }
+    frame VIREC { light EXILEFIRE3 }
+    frame VIRED { light EXILEFIRE4 }
+    frame VIREE { light EXILEFIRE5 }
+    frame VIREF { light EXILEFIRE6 }
+    frame VIREG { light EXILEFIRE7 }
+    frame VIREH { light EXILEFIRE8 }
+}
+
+// Tango Diabolist
+
+flickerlight DIABFIREDUST
+{
+    color 1.0 0.3 0.0
+    size 24
+    secondarySize 36
+    chance 0.3
+	// attenuate 1
+}
+
+object DiabolistFireDust
+{
+    frame PLMDA { light DIABFIREDUST }
+    frame PLMDB { light DIABFIREDUST }
+    frame PLMDC { light DIABFIREDUST }
+    frame PLMDD { light DIABFIREDUST }
+    frame PLMDE { light DIABFIREDUST }
+    frame PLMDF { light DIABFIREDUST }
+}
+
+object DiabolistExplosion
+{
+    frame PLUMA { light EXILEFIRE4 }
+	frame PLUMB { light EXILEFIRE4 }
+	frame PLUMC { light EXILEFIRE4 }
+	frame PLUMD { light EXILEFIRE4 }
+	frame PLUME { light EXILEFIRE4 }
+	frame PLUMF { light EXILEFIRE5 }
+	frame PLUMG { light EXILEFIRE6 }
+	frame PLUMH { light EXILEFIRE7 }
+	frame PLUMI { light EXILEFIRE8 }
+	frame PLUMJ { light EXILEFIRE8 }
+}
+
+// Tango Fusionite Shot
+Pointlight FusionShot
+{
+Color 0.4 0.4 0.8
+Size 30
+}
+
+Pointlight FusionShot2
+{
+Color 0.4 0.4 0.8
+Size 35
+}
+
+Pointlight FusionShot3
+{
+Color 0.4 0.4 0.8
+Size 30
+}
+
+Pointlight FusionShot4
+{
+Color 0.4 0.4 0.8
+Size 25
+}
+
+Object FusionShot
+{
+Frame FS03A { Light FusionShot }
+Frame FS03B { Light FusionShot }
+Frame FS03C { Light FusionShot2 }
+Frame FS03D { Light FusionShot3 }
+Frame FS03E { Light FusionShot4 }
+}
+
+// Tango Caco Ball
+object CacodemonVortexBall
+{
+	frame CVORA { light EXILEFIRE4 }
+	frame CVORB { light EXILEFIRE4 }
+	frame CVORC { light EXILEFIRE4 }
+	frame CVORD { light EXILEFIRE4 }
+	frame CVORE { light EXILEFIRE4 }
+	frame CVORF { light EXILEFIRE4 }
+	frame CVORG { light EXILEFIRE4 }
+	frame CVORH { light EXILEFIRE4 }
+	frame CVORI { light EXILEFIRE4 }
+}
+
+// Tango Imp Ball
+object TangoImpBall
+{
+	frame BIBAA { light IMPBALL   }
+	frame BIBAB { light IMPBALL   }
+	
+	frame BIBAC { light IMPBALL_X1   }
+	frame BIBAD { light IMPBALL_X1   }
+	frame BIBAE { light IMPBALL_X1   }
+	frame BIBAF { light IMPBALL_X2   }
+	frame BIBAG { light IMPBALL_X2   }
+	frame BIBAH { light IMPBALL_X3   }
+	frame BIBAI { light IMPBALL_X3   }
+}
+
+// Draugr tracer
+pointlight TRACER
+{
+    color 1.0 0.5 0.3
+    size 72
+	// attenuate 1
+}
+
+flickerlight TRACER_X1
+{
+    color 1.0 0.5 0.2
+    size 96
+    secondarySize 108
+    chance 0.25
+	// attenuate 1
+}
+
+flickerlight TRACER_X2
+{
+    color 0.6 0.3 0.1
+    size 120
+    secondarySize 132
+    chance 0.25
+	// attenuate 1
+}
+
+flickerlight TRACER_X3
+{
+    color 0.3 0.1 0.0
+    size 144
+    secondarySize 156
+    chance 0.25
+	// attenuate 1
+}
+
+object DraugrTracer
+{
+    frame FATBA { light TRACER    }
+    frame FATBB { light TRACER    }
+
+    frame FBXPA { light TRACER_X1 }
+    frame FBXPB { light TRACER_X2 }
+    frame FBXPC { light TRACER_X3 }
+}
+
+// Tango Baron Ball
+object TangoBaronBall
+{
+	frame TKBLA { light BARONBALL }
+	frame TKBLB { light BARONBALL }
+
+	frame BOOGA { light BARONBALL_X1 }
+	frame BOOGB { light BARONBALL_X1 }
+	frame BOOGC { light BARONBALL_X1 }
+	frame BOOGD { light BARONBALL_X2 }
+	frame BOOGE { light BARONBALL_X2 }
+	frame BOOGF { light BARONBALL_X3 }
+	frame BOOGG { light BARONBALL_X3 }
+	frame BOOGH { light BARONBALL_X3 }
+}
+
+// Tango Monster Rocket
+pointlight ROCKET
+{
+    color 1.0 0.7 0.0
+    size 84
+	// attenuate 1
+}
+
+flickerlight ROCKET_X1
+{
+    color 1.0 0.7 0.5
+    size 96
+    secondarySize 108
+    chance 0.3
+	// attenuate 1
+}
+
+flickerlight ROCKET_X2
+{
+    color 0.5 0.3 0.2
+    size 120
+    secondarySize 132
+    chance 0.3
+	// attenuate 1
+}
+
+flickerlight ROCKET_X3
+{
+    color 0.3 0.1 0.1
+    size 144
+    secondarySize 156
+    chance 0.3
+	// attenuate 1
+}
+
+object TangoMonsterRocket
+{
+    frame TMRKA { light ROCKET    }
+
+    frame TMRXB { light ROCKET_X1 }
+    frame TMRXC { light ROCKET_X2 }
+    frame TMRXD { light ROCKET_X3 }
+	frame TMRXE { light ROCKET_X3 }
+    frame TMRXF { light ROCKET_X3 }
+	frame TMRXF { light ROCKET_X3 }
+}
+
+// Tango Plasma Zombie
+pointlight ZOMBIEPLASMABALL
+{
+    color 0.6 0.6 0.0
+    size 84
+	// attenuate 1
+}
+
+flickerlight ZOMBIEPLASMA_X1
+{
+    color 0.6 0.6 0.0
+    size 96
+    secondarySize 108
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight ZOMBIEPLASMA_X2
+{
+    color 0.6 0.6 0.0
+    size 120
+    secondarySize 132
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight ZOMBIEPLASMA_X3
+{
+    color 0.6 0.6 0.0
+    size 96
+    secondarySize 108
+    chance 0.4
+	// attenuate 1
+}
+
+flickerlight ZOMBIEPLASMA_X4
+{
+    color 0.6 0.6 0.0
+    size 12
+    secondarySize 24
+    chance 0.4
+	// attenuate 1
+}
+
+object PlasmaZombiePlasmaBall
+{
+	frame VLSSA { light ZOMBIEPLASMABALL }
+    frame VLSSB { light ZOMBIEPLASMABALL }
+	frame VLSSC { light ZOMBIEPLASMABALL }
+    frame VLSSD { light ZOMBIEPLASMABALL }
+	frame VLSSE { light ZOMBIEPLASMABALL }
+    frame VLSSF { light ZOMBIEPLASMABALL }
+	frame VLSSG { light ZOMBIEPLASMABALL }
+    frame VLSSH { light ZOMBIEPLASMABALL }
+
+    frame VLSEa { light ZOMBIEPLASMABALL_X1 }
+    frame VLSEb { light ZOMBIEPLASMABALL_X2 }
+    frame VLSEc { light ZOMBIEPLASMABALL_X2 }
+    frame VLSEd { light ZOMBIEPLASMABALL_X3 }
+    frame VLSEe { light ZOMBIEPLASMABALL_X3 }
+	frame VLSEf { light ZOMBIEPLASMABALL_X3 }
+	frame VLSEg { light ZOMBIEPLASMABALL_X3 }
+    frame VLSEh { light ZOMBIEPLASMABALL_X3 }
+    frame VLSEi { light ZOMBIEPLASMABALL_X4 }
+    frame VLSEj { light ZOMBIEPLASMABALL_X4 }
+    frame VLSEk { light ZOMBIEPLASMABALL_X4 }
+	frame VLSEl { light ZOMBIEPLASMABALL_X4 }
+}
+
+// Tango Pyro Demon
+FLICKERLIGHT PyroComet1
+{
+Color 1 0.8 0
+Size 50
+SecondarySize 56
+Chance 0.2
+}
+
+POINTLIGHT PyroCometExplode1
+{
+Color 1 0.8 0
+OffSet 0 0 0
+Size 66
+}
+
+POINTLIGHT PyroCometExplode2
+{
+Color 1 0.8 0
+OffSet 0 0 0
+Size 70
+}
+
+POINTLIGHT PyroCometExplode3
+{
+Color 1 0.8 0
+OffSet 0 0 0
+Size 72
+}
+
+POINTLIGHT PyroCometExplode4
+{
+Color 1 0.8 0
+OffSet 0 0 0
+Size 62
+}
+
+POINTLIGHT PyroCometExplode5
+{
+Color 1 0.8 0
+OffSet 0 0 0
+Size 54
+}
+
+FlickerLight2 PyroDemonFloorFire_X1
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 5
+ SecondarySize 15
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X2
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 15
+ SecondarySize 25
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X3
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 35
+ SecondarySize 50
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X4
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 34
+ SecondarySize 49
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X5
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 32
+ SecondarySize 47
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X6
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 30
+ SecondarySize 43
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X7
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 25
+ SecondarySize 39
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X8
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 20
+ SecondarySize 33
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X9
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 15
+ SecondarySize 27
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X10
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 5
+ SecondarySize 21
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X11
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 4
+ SecondarySize 15
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X12
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 3
+ SecondarySize 9
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X13
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 2
+ SecondarySize 7
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X14
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 1
+ SecondarySize 5
+ Interval 2.0
+}
+
+FlickerLight2 PyroDemonFloorFire_X15
+{
+ Color 0.8 0.4 0.0
+ Offset 0 0 0
+ Size 0
+ SecondarySize 2
+ Interval 2.0
+}
+
+Object PyroDemonComet
+{
+Frame PCMT { Light PyroComet1 }
+
+Frame PCMTJ { Light PyroCometExplode1 }
+Frame PCMTK { Light PyroCometExplode2 }
+Frame PCMTL { Light PyroCometExplode3 }
+Frame PCMTM { Light PyroCometExplode4 }
+Frame PCMTN { Light PyroCometExplode5 }
+
+Frame PCMD { Light PyroCometExplode5 }
+}
+
+object PyroDemonFloorFire
+{
+Frame PYFFA { Light PyroDemonFloorFire_X1 }
+Frame PYFFB { Light PyroDemonFloorFire_X2 }
+Frame PYFFC { Light PyroDemonFloorFire_X3 }
+Frame PYFFD { Light PyroDemonFloorFire_X4 }
+Frame PYFFE { Light PyroDemonFloorFire_X5 }
+Frame PYFFF { Light PyroDemonFloorFire_X6 }
+Frame PYFFG { Light PyroDemonFloorFire_X7 }
+Frame PYFFH { Light PyroDemonFloorFire_X8 }
+Frame PYFFI { Light PyroDemonFloorFire_X9 }
+Frame PYFFJ { Light PyroDemonFloorFire_X10 }
+Frame PYFFK { Light PyroDemonFloorFire_X11 }
+Frame PYFFL { Light PyroDemonFloorFire_X12 }
+Frame PYFFM { Light PyroDemonFloorFire_X13 }
+Frame PYFFN { Light PyroDemonFloorFire_X14 }
+Frame PYFFO { Light PyroDemonFloorFire_X15 }
+}
+
+// Tango Rocket Weapon
+object TangoWeaponRocket
+{
+	frame DROKA { light IMPBALL   }
+	
+	frame DRKEA { light IMPBALL_X1   }
+	frame DRKEB { light IMPBALL_X2   }
+	frame DRKEC { light IMPBALL_X2   }
+	frame DRKED { light IMPBALL_X2   }
+	frame DRKEE { light IMPBALL_X1   }
+	frame DRKEF { light IMPBALL_X3   }
+	
+	frame DRKSA { light IMPBALL_X3   }
+	frame DRKSB { light IMPBALL_X3   }
+}
+
+// Tango Behemoth
+object BehemothComet
+{
+    frame COMEA { light PyroComet1 }
+	frame COMEB { light PyroComet1 }
+	frame COMEC { light PyroComet1 }
+	
+	Frame COMED { Light PyroCometExplode1 }
+    Frame COMEE { Light PyroCometExplode2 }
+    Frame COMEF { Light PyroCometExplode3 }
+    Frame COMEG { Light PyroCometExplode4 }
+    Frame COMEH { Light PyroCometExplode5 }
+	Frame COMEI { Light PyroCometExplode5 }
+}
+
+FLICKERLIGHT VileExplosion1
+{
+Color 1.0 0.2 0
+OffSet 0 12 0
+Size 40
+SecondarySize 50
+Chance 0.2
+}
+
+OBJECT TangoExile
+{
+Frame VILEG { Light VileExplosion1 }
+Frame VILEH { Light VileExplosion1 }
+Frame VILEI { Light VileExplosion1 }
+Frame VILEJ { Light VileExplosion1 }
+Frame VILEK { Light VileExplosion1 }
+Frame VILEL { Light VileExplosion1 }
+Frame VILEM { Light VileExplosion1 }
+Frame VILEN { Light VileExplosion1 }
+Frame VILEO { Light VileExplosion1 }
+Frame VILEP { Light VileExplosion1 }
+Frame VILE[ { Light VileExplosion1 }
+Frame VILE^ { Light VileExplosion1 }
+Frame VILE] { Light VileExplosion1 }
+}
+
+FLICKERLIGHT VileFire1
+{
+Color 1.0 0.4 0
+OffSet 0 26 0
+Size 38
+SecondarySize 48
+Chance 0.2
+}
+
+OBJECT TangoDiabolist
+{
+Frame DIABG { Light VileFire1 }
+Frame DIABH { Light VileFire1 }
+Frame DIABI { Light VileFire1 }
+Frame DIABJ { Light VileFire1 }
+Frame DIABK { Light VileFire1 }
+Frame DIABL { Light VileFire1 }
+Frame DIABM { Light VileFire1 }
+Frame DIABN { Light VileFire1 }
+Frame DIABO { Light VileFire1 }
+Frame DIABP { Light VileFire1 }
+}
+
+PointLight MastermindShot1
+{
+	Color 1.0 0.4 0
+	Size 12
+}
+
+Object SpiderScrap
+{
+	Frame SSCR { Light MastermindShot1 }
+}
+
+
+PointLight StomperMissile
+{
+	Color 1.0 0.4 0
+	Size 20
+}
+
+object TangoStomperMissile1
+{
+	frame CRMS { light StomperMissile }
+}
+
+object TangoStomperMissile2
+{
+	frame CRMS { light StomperMissile }
+}
+
+object TangoStomperMissile3
+{
+	frame CRMS { light StomperMissile }
+}
+
+PointLight StomperMissileExplosion1
+{
+	Color 1.0 0.4 0
+	Size 24
+}
+
+PointLight StomperMissileExplosion2
+{
+	Color 1.0 0.4 0
+	Size 40
+}
+
+PointLight StomperMissileExplosion3
+{
+	Color 1.0 0.4 0
+	Size 16
+}
+
+object TangoStomperMissileExplosion
+{
+	frame CME1A { light StomperMissileExplosion1 }
+	frame CME1B { light StomperMissileExplosion2 }
+	frame CME1C { light StomperMissileExplosion2 }
+	frame CME1D { light StomperMissileExplosion2 }
+	frame CME1E { light StomperMissileExplosion1 }
+	frame CME1F { light StomperMissileExplosion3 }
+	frame CME1G { light StomperMissileExplosion3 }
+	
+	frame CME2A { light StomperMissileExplosion1 }
+	frame CME2B { light StomperMissileExplosion2 }
+	frame CME2C { light StomperMissileExplosion2 }
+	frame CME2D { light StomperMissileExplosion1 }
+	frame CME2E { light StomperMissileExplosion3 }
+	
+	frame CME3A { light StomperMissileExplosion1 }
+	frame CME3B { light StomperMissileExplosion2 }
+	frame CME3C { light StomperMissileExplosion2 }
+	frame CME3D { light StomperMissileExplosion2 }
+	frame CME3E { light StomperMissileExplosion1 }
+	frame CME3F { light StomperMissileExplosion3 }
+}
+
+Flickerlight2 WickedballA
+{
+ Color 1.0 0.0 0.0
+ Offset 0 4 0
+ Size 20
+ SecondarySize 25
+ Interval 0.005
+}
+
+Flickerlight2 WickedballB
+{
+ Color 1.0 0.0 0.0
+ Offset 0 4 0
+ Size 30
+ SecondarySize 35
+ Interval 0.005
+}
+
+Flickerlight2 WickedballJ
+{
+ Color 0.9 0.0 0.0
+ Offset 0 4 0
+ Size 50
+ SecondarySize 55
+ Interval 0.005
+}
+
+Flickerlight2 WickedballK
+{
+ Color 0.8 0.0 0.0
+ Offset 0 4 0
+ Size 55
+ SecondarySize 60
+ Interval 0.005
+}
+
+Flickerlight2 WickedballL
+{
+ Color 0.4 0.0 0.0
+ Offset 0 4 0
+ Size 58
+ SecondarySize 64
+ Interval 0.005
+}
+
+Flickerlight2 WickedballM
+{
+ Color 0.2 0.0 0.0
+ Offset 0 4 0
+ Size 60
+ SecondarySize 66
+ Interval 0.005
+}
+
+Flickerlight2 WickedballN
+{
+ Color 0.1 0.0 0.0
+ Offset 0 4 0
+ Size 61
+ SecondarySize 67
+ Interval 0.005
+}
+
+Object Wickedshot1
+{
+ Frame WIBLA { Light WickedballA }
+ Frame WIBLB { Light WickedballA }
+ Frame WIBLC { Light WickedballA }
+ Frame WIBLD { Light WickedballA }
+ Frame WIBLJ { Light WickedballJ }
+ Frame WIBLK { Light WickedballK }
+ Frame WIBLL { Light WickedballL }
+ Frame WIBLM { Light WickedballM }
+ Frame WIBLN { Light WickedballN }
+}
+
+Object Wickedshot2
+{
+ Frame WIBLA { Light WickedballA }
+ Frame WIBLB { Light WickedballA }
+ Frame WIBLC { Light WickedballA }
+ Frame WIBLD { Light WickedballA }
+ Frame WIBLJ { Light WickedballJ }
+ Frame WIBLK { Light WickedballK }
+ Frame WIBLL { Light WickedballL }
+ Frame WIBLM { Light WickedballM }
+ Frame WIBLN { Light WickedballN }
+}
+
+Object Wickedshot3
+{
+ Frame WIBLA { Light WickedballA }
+ Frame WIBLB { Light WickedballA }
+ Frame WIBLC { Light WickedballA }
+ Frame WIBLD { Light WickedballA }
+ Frame WIBLJ { Light WickedballJ }
+ Frame WIBLK { Light WickedballK }
+ Frame WIBLL { Light WickedballL }
+ Frame WIBLM { Light WickedballM }
+ Frame WIBLN { Light WickedballN }
+}
+
+
+PointLight GrenadeIdle
+{
+	Color 1.0 0.4 0
+	Size 24
+}
+
+object TangoGrenade
+{
+	frame GREN { light GrenadeIdle }
+	frame GREXA { light IMPBALL_X1   }
+	frame GREXB { light IMPBALL_X2   }
+	frame GREXC { light IMPBALL_X2   }
+	frame GREXD { light IMPBALL_X2   }
+	frame GREXE { light IMPBALL_X1   }
+	frame GREXF { light IMPBALL_X3   }
+}
+
+object TangoGrenadeFast
+{
+	frame GREN { light GrenadeIdle }
+	frame GREXA { light IMPBALL_X1   }
+	frame GREXB { light IMPBALL_X2   }
+	frame GREXC { light IMPBALL_X2   }
+	frame GREXD { light IMPBALL_X2   }
+	frame GREXE { light IMPBALL_X1   }
+	frame GREXF { light IMPBALL_X3   }
+}
+
+object TangoGrenadeStill
+{
+	frame GREN { light GrenadeIdle }
+	frame GREXA { light IMPBALL_X1   }
+	frame GREXB { light IMPBALL_X2   }
+	frame GREXC { light IMPBALL_X2   }
+	frame GREXD { light IMPBALL_X2   }
+	frame GREXE { light IMPBALL_X1   }
+	frame GREXF { light IMPBALL_X3   }
+}
+
+
+// End 

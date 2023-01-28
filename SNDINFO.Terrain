@@ -1,0 +1,11 @@
+//splashes (duped from Heretic and Hexen, since they don't load in Doom natively by default)
+world/drip gloop
+world/watersplash gloop
+world/lavasizzle acid5
+world/sludgegloop muck5
+//you can override the limit values so multiple splashes can play simultaneously
+//note that this sounds bad if multiple splashes play all at once (such as when firing a shotgun into liquid), so override these values at your own discretion
+/*$Limit world/drip 4
+$Limit world/watersplash 4
+$Limit world/lavasizzle 4
+$Limit world/sludgegloop 4*/

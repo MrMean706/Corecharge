@@ -1,0 +1,74 @@
+Pointlight TorturedSoulBall1
+{
+	Color 0.2 1.0 0.2
+	Size 48
+}
+
+Pointlight TorturedSoulBallDeath1
+{
+	Color 0.1 0.5 0.1
+	Size 48
+}
+
+Pointlight TorturedSoulBallDeath2
+{
+	Color 0.1 0.5 0.1
+	Size 24
+}
+
+Pointlight TorturedSoulBallDeath3
+{
+	Color 0.1 0.5 0.1
+	Size 12
+}
+
+Object TorturedSoulBall
+{
+	Frame HEFGA { Light TorturedSoulBall1 }
+	Frame HEFGB { Light TorturedSoulBall1 }
+	Frame HEFGC { Light TorturedSoulBallDeath1 }
+	Frame HEFGD { Light TorturedSoulBallDeath1 }
+	Frame HEFGE { Light TorturedSoulBallDeath2 }
+	Frame HEFGF { Light TorturedSoulBallDeath2 }
+	Frame HEFGG { Light TorturedSoulBallDeath3 }
+	Frame HEFGH { Light TorturedSoulBallDeath3 }
+}
+
+Pointlight TorturedSoulDeath1
+{
+Color 0.4 1.0 0.0
+Size 35
+}
+
+Pointlight TorturedSoulDeath2
+{
+Color 0.5 1.0 0.0
+Size 45
+}
+
+Pointlight TorturedSoulDeath3
+{
+Color 0.3 0.6 0.0
+Size 40
+}
+
+Pointlight TorturedSoulDeath4
+{
+Color 0.2 0.4 0.0
+Size 40
+}
+
+Pointlight TorturedSoulDeath5
+{
+Color 0.1 0.2 0.0
+Size 35
+}
+
+Object TangoTorturedSoul
+{
+Frame TORTJ { Light TorturedSoulDeath1 }
+Frame TORTK { Light TorturedSoulDeath2 }
+Frame TORTL { Light TorturedSoulDeath3 }
+Frame TORTM { Light TorturedSoulDeath4 }
+Frame TORTN { Light TorturedSoulDeath5 }
+}

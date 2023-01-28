@@ -1,0 +1,102 @@
+// Old GZDoom sub-options-menu stuff:
+// AddOptionMenu "OptionsMenu"
+// {
+// 	StaticText " "
+// 	Submenu "Supercharge Options", "SuperchargeOptions"
+// }
+
+// Zandronum doesn't support AddOptionMenu as of this writing, so we have to
+// redefine the main menu and add the Supercharge options there instead. This
+// does make it more visible to players that Supercharge has its own options,
+// so I'm ok with having to make this change anyway
+ListMenu "MainMenu"
+{
+	// Font "DBIGFONT", "untranslated", "untranslated"
+
+	StaticPatch 94, 2, "M_DOOM"
+	Position 97, 72
+	IfOption(ReadThis)
+	{
+		Position 97, 64
+	}
+
+	TextItem "New Game", "n", "PlayerclassMenu"
+	TextItem "Options","o", "OptionsMenu"
+	TextItem "SC Options", "c", "SuperchargeOptions"
+	TextItem "Load Game", "l", "LoadGameMenu"
+	TextItem "Save Game", "s", "SaveGameMenu"
+	ifOption(ReadThis)
+	{
+		TextItem "Read This!", "r", "ReadThisMenu"
+	}
+	TextItem "Quit", "q", "QuitMenu"
+}
+
+OptionMenu "SuperchargeOptions"
+{
+	Position -15
+	Title		"Supercharge Options"
+	
+	StaticText "HUD Options", 1
+	Option		"Large HUD section order**", "cl_tango_fullscreen_hud_style", "HudOrderOptions"
+	Option		"Large HUD colored numbers", "cl_tango_fullscreen_hud_use_colors", "OnOff"
+	
+	StaticText ""
+	StaticText "Graphics/Audio Options", 1
+	Option		"Max VFX (gibs, ammo casing, etc.)", "sv_corpsequeuesize", "MaxVfx"
+	Option		"Weapon screen shake", "cl_tango_enable_screen_shake", "OnOff"
+	Option		"Rocket explosion screen shake", "sv_tango_rocket_screen_shake", "OnOff"
+	Option		"Weapon self-correcting recoil", "cl_tango_enable_recoil", "OnOff"
+ 	Option		"Monster-fired rocket flight noise", "sv_tango_monster_rocket_fly_sound", "OnOff"
+	Option		"Classic SSG fire sound", "cl_tango_classic_ssg_fire_sound", "OnOff"
+	Option		"Vanilla-style long Berserk pickup flash", "cl_tango_berserk_long_flash", "OnOff"
+	Option		"Shotgun Skin", "sv_tango_shotgun_skin", "ShotgunSkinOptions"
+	Option		"Super Shotgun Skin", "sv_tango_super_shotgun_skin", "ShotgunSkinOptions"
+	// Option		"Soulsphere colored pickup flash", "cl_tango_soulsphere_flash", "OnOff"
+	
+	StaticText ""
+	StaticText "Gameplay Options", 1
+	Option     "Pistol start (GZDoom only)", "t_m8f_wm_PistolStart", "OnOff"
+	Option     "Auto reload weapons on empty", "cl_tango_auto_reload_when_empty", "OnOff"
+	Option     "Use Chaingun instead of Assault Rifle*", "sv_tango_chaingun_replace_assault_rifle", "OnOff"
+	
+	
+	StaticText ""
+	StaticText "Compatibility Options", 1
+	Option     "Use vanilla projectile origins for Cyberdemon", "sv_tango_monster_projectile_vanilla_origin_cyberdemon", "OnOff"
+	Option     "Use vanilla projectile origins for Draugr", "sv_tango_monster_projectile_vanilla_origin_draugr", "OnOff"
+	Option     "Use vanilla projectile origins for Fusionite", "sv_tango_monster_projectile_vanilla_origin_fusionite", "OnOff"
+	Option     "Use vanilla projectile origins for Behemoth", "sv_tango_monster_projectile_vanilla_origin_behemoth", "OnOff"
+	
+	
+// 	StaticText ""
+// 	StaticText "Randomization Options", 1
+// 	Option     "Random Baron spawns", "sv_tango_enable_random_baron", "OnOff"
+
+	StaticText ""
+	StaticText 	"* = Requires map restart to take effect"
+	StaticText 	"** = Requires several seconds in-game to take effect"
+}
+
+OptionValue "HudOrderOptions"
+{
+	0, "Ammo / Health / Armor (Vanilla)"
+	1, "Health / Armor / Ammo"
+}
+
+OptionValue "ShotgunSkinOptions"
+{
+	0, "Default"
+	1, "Gothic"
+}
+
+OptionValue "MaxVfx"
+{
+	1, "1"
+	50, "50"
+	100, "100"
+	500, "500"
+	1000, "1000"
+	5000, "5000"
+	10000, "10000"
+}

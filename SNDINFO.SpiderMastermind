@@ -1,0 +1,15 @@
+spidermastermind/scrapattack		DSSMMFIR
+//spidermastermind/scrapdie			DSSMMSDI
+
+spidermastermind/scrapwall			DSSMMSDI
+
+$random zspidermastermind/scrapwall {spidermastermind/scrapwall1 spidermastermind/scrapwall2 spidermastermind/scrapwall3 spidermastermind/scrapwall4}
+spidermastermind/scrapwall1	DSSMMSW1
+spidermastermind/scrapwall2	DSSMMSW2
+spidermastermind/scrapwall3	DSSMMSW3
+spidermastermind/scrapwall4	DSSMMSW4
+
+$random spidermastermind/scraphit {spidermastermind/scraphit1 spidermastermind/scraphit2 spidermastermind/scraphit3}
+spidermastermind/scraphit1	DSSMMSH1
+spidermastermind/scraphit2	DSSMMSH2
+spidermastermind/scraphit3	DSSMMSH3

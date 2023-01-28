@@ -1,0 +1,12 @@
+monster/wiksit                  zswiksit
+$random monster/wikact		{ monster/wikac1    monster/wikac2 }
+monster/wikac1                  zswikac1
+monster/wikac2                  zswikac2
+monster/wikatk                  zswikatk
+monster/wikpai                  zswikpai
+monster/wikdth                  zswikdth
+wicked/fireballseek				ZSWIKFS
+weapons/firmfi                  zsfirmfi
+weapons/firex5                  zsfirex5
+monster/tenpn1                  zstenpn1
+monster/tenpn2                  zstenpn2

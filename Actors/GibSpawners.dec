@@ -1,0 +1,123 @@
+//150 - 210
+const int gib_angle_start = 150;
+const int gib_angle_end = 210;
+const int gib_pitch_end = 45;
+
+Actor GenericXDeathSpawner1
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath2", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath3", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath4", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath5", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("Brains3", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 AAAA 0 A_CustomMissile ("SmallBrainPiece", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAAAAAA 0 A_CustomMissile ("SuperWallRedBlood", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 AAAA 0 A_CustomMissile ("Instestin", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		Stop
+	}
+}
+
+// less stuff; used for revenants I guess
+Actor GenericXDeathSpawner2
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath2", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath3", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath4", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath5", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAAAAAA 0 A_CustomMissile ("SuperWallRedBlood", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 AAAA 0 A_CustomMissile ("Instestin", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		Stop
+	}
+}
+
+// more flying blood, boss monsters
+Actor GenericXDeathSpawner3
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AAA 0 A_CustomMissile ("XDeath1", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAA 0 A_CustomMissile ("XDeath2", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAA 0 A_CustomMissile ("XDeath3", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath4", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath5", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAA 0 A_CustomMissile ("SmallBrainPiece", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAA 0 A_CustomMissile ("SmallBrainPiece", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("Brains3", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathGuts", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAAAAA 0 A_CustomMissile ("Instestin", 52, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 55, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		Stop
+	}
+}
+
+// much less stuff; regular archvile death
+Actor GenericXDeathSpawner4
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAA 0 A_CustomMissile ("NewBlood", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAAA 0 A_CustomMissile ("Instestin", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		Stop
+	}
+}
+
+// just like spawner 2, but has imp-specific bits
+Actor GenericXDeathSpawner5
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AA 0 A_CustomMissile ("XDeath2", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath3", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath4", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeath5", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("Brains6", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 AAAAAAAA 0 A_CustomMissile ("SuperWallRedBlood", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 AAAA 0 A_CustomMissile ("Instestin", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		Stop
+	}
+}
+
+// exactly like 4, but without intestine
+Actor GenericXDeathSpawner6
+{
+	+NOBLOCKMAP
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 AAA 0 A_CustomMissile ("NewBlood", 32, 0, random(gib_angle_start, gib_angle_end), 2, random (0, gib_pitch_end))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 40, 0, random(gib_angle_start, gib_angle_end), 2, random (-5, 5))
+		Stop
+	}
+}

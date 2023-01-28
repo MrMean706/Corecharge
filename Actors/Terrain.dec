@@ -1,0 +1,182 @@
+//mud--a brown variant of the "sludge" that better fits Doom's brown sludgy textures
+ACTOR MudChunk
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP 
+	+MISSILE 
+	+DROPOFF
+	+NOTELEPORT
+	+LOWGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		MUDS ABCD 8
+		Stop
+	Death:
+		MUDS D 6
+		Stop
+	}
+}
+
+ACTOR MudSplash
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		MUDS EFGH 6
+		Stop
+	}
+}
+
+//note that all other "chunk" actors utilized in "TERRAIN" are stock classes included with zDoom's .PK3 file
+
+
+// ================================
+// TAR
+// ================================
+ACTOR TarChunk : MudChunk
+{
+	States
+	{
+	Spawn:
+		TARS ABCD 8
+		Stop
+	Death:
+		TARS D 6
+		Stop
+	}
+}
+
+ACTOR TarSplash : MudSplash
+{
+	States
+	{
+	Spawn:
+		TARS EFGH 6
+		Stop
+	}
+}
+
+// ================================
+// ICE WATER
+// ================================
+
+ACTOR IceWaterSplash
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP 
+	+MISSILE 
+	+DROPOFF
+	+NOTELEPORT
+	+LOWGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	+DONTBLAST
+	States
+	{
+	Spawn:
+		ICES ABC 8
+		ICES D 16
+		Stop
+	Death:
+		ICES D 10
+		Stop
+	}
+}
+
+
+ACTOR IceWaterSplashBase
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	+DONTBLAST
+	States
+	{
+	Spawn:
+		ICES EFGHIJK 5
+		Stop
+	}
+}
+
+// ================================
+// YELLOW LAVA
+// ================================
+ACTOR YellowLavaSplash
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	+DONTBLAST
+	States
+	{
+	Spawn:
+		YLAV ABCDEF 5 Bright
+		Stop
+	}
+}
+
+ACTOR YellowLavaSmoke
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	RenderStyle Translucent
+	DefaultAlpha
+	States
+	{
+	Spawn:
+		YLAV GHIJK 5 Bright
+		Stop
+	}
+}
+
+// ================================
+// PINK SLIME
+// ================================
+ACTOR PinkSlimeChunk
+{
+	Radius 2
+	Height 4
+	+NOBLOCKMAP 
+	+MISSILE 
+	+DROPOFF
+	+NOTELEPORT
+	+LOWGRAVITY
+	+CANNOTPUSH
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		PSLM ABCD 8
+		Stop
+	Death:
+		PSLM D 6
+		Stop
+	}
+}
+
+ACTOR PinkSlimeSplash
+{
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOGRAVITY
+	+DONTSPLASH
+	States
+	{
+	Spawn:
+		PSLM EFGH 6
+		Stop
+	}
+}

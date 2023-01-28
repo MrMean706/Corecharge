@@ -1,0 +1,379 @@
+height 0;
+monospacefonts true, "0";
+
+statusbar fullscreen, fullscreenoffsets
+{
+	// base sbar
+	drawimage "SB-BAKL", 0, -32;
+	drawimage "SB-BAKR", -106, -16;
+
+    // health
+	drawimage "SB-STIM", 5, -11;
+	InInventory "TangoPowerStrength"
+	{
+		drawimage "SB-BSRK", 5, -11;
+	}
+	drawbar "SB-HB1", "SB-EB", health (100), horizontal, interpolate(10), 23, -9;
+	drawbar "SB-HB2", "SB-EBX2", health (200), horizontal, interpolate(10), 23, -9;
+	// The crit health (last argument below; 50 at time of writing) should be same as
+	// the health referenced in the shotgun to determine when to speed up
+	// shotty shots and reloads
+    drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, health, interpolate(30), 76, -10, 0, TangoRedVeryLight, 50;
+
+    // armor
+	drawbar "SB-AB1", "SB-EB", armor (100), horizontal, interpolate(10), 103, -9;
+	drawbar "SB-AB2", "SB-EBX2", armor (200), horizontal, interpolate(10), 103, -9;
+    drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, armor, whennotzero, interpolate(30), 156, -10;
+	drawimage armoricon, 85, -11;
+// 	drawswitchableimage armortype TangoArmorBonus, "nullimage", "SB-GARM", 85, -11;
+// 	drawswitchableimage armortype TangoGreenArmor, "nullimage", "SB-GARM", 85, -11;
+// 	drawswitchableimage armortype TangoBlueArmor, "nullimage", "SB-BARM", 85, -11;
+
+	
+
+    // ammo
+    // drawimage ammoicon1, -14, -4, centerbottom;
+    drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo1, -21, -10;
+
+    usesammo
+    {
+		WeaponAmmo "TangoShell"
+		{
+			drawimage "SB-MSHL", -14, -11;
+		}
+		
+		WeaponAmmo "TangoScrapDrum"
+		{
+			drawimage "SB-MSCL", -14, -11;
+		}
+		
+		WeaponAmmo "TangoBulletClip"
+		{
+			drawimage "SB-MCLP", -14, -11;
+		}
+		
+		WeaponAmmo "RocketAmmo"
+		{
+			drawimage "SB-MROK", -14, -11;
+		}
+		
+		WeaponAmmo "TangoCell"
+		{
+			drawimage "SB-MCLL", -14, -11;
+		}
+		
+		WeaponAmmo "TangoStomperAmmo"
+		{
+			drawimage "SB-MSTO", -14, -11;
+		}
+		
+        //secondary ammo and inventory
+        usessecondaryammo
+        {
+            // drawimage ammoicon2, -14, -22, centerbottom;
+            drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo2, -40, -10;
+            inventorybarnotvisible
+            {
+                drawselectedinventory centerbottom, alwaysshowcounter, SMALLFONT, -14, -39, -26, -56, untranslated;
+            }
+        }
+        //no secondary ammo
+        usessecondaryammo not
+        {
+            inventorybarnotvisible
+            {
+                drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, SMALLFONT, -14, -21, -26, -38, untranslated;
+            }
+        }
+    }
+    
+    // no ammo but inventory
+    usesammo not
+    {
+        inventorybarnotvisible
+        {
+            drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, SMALLFONT, -14, -3, -26, -20, untranslated;
+        }
+    }
+
+    gamemode deathmatch
+    {
+        drawnumber 2, SMALLFONT, untranslated, frags, drawshadow, -3, 1;
+    }
+	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", -99, -11;
+    drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", -87, -11;
+    drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", -74, -11;
+}
+
+//************************
+//		LARGE SBAR
+//************************
+statusbar normal, fullscreenoffsets
+{
+   	// SPLIT VERSION
+	// LEFT PANEL (SP)
+	GameMode singleplayer, cooperative, deathmatch
+	{
+		InInventory "UseBigHudAlt1", 1
+		{
+			DrawImage "HUD_LFT2", 0, -32;
+		}
+		InInventory Not "UseBigHudAlt1"
+		{
+			DrawImage "HUD_LEFT", 0, -32;
+		}
+		
+	}
+
+	// LEFT PANEL (MP)
+	// I'm commenting this out because I removed the weird unknown patch that
+	// was present in HUD_MP2 (and a few other versions of the sbar textures)
+	// that may be part of Zandro maybe but is otherwise unexplained. That patch
+	// was the only thing differentiating HUD_MP2 from HUD_LEFT, so since it's
+	// gone, there's no need for this multiplayer version check. Accordingly,
+	// I also added "cooperative, deathmatch" to the clause above for the left
+	// HUD graphic.
+	// - Tango, August 18 2020
+	// GameMode 
+	// {
+		// DrawImage translatable "HUD_MP2", 0, -32;
+	// }
+
+	// RIGHT PANEL
+	InInventory "UseBigHudAlt1", 1
+	{
+		DrawImage "HUD_RGT2", -131, -32;
+	}
+	InInventory Not "UseBigHudAlt1"
+	{
+		DrawImage "HUD_RGHT", -144, -32;
+	}
+	
+	// BOOM COLORS %
+	InInventory "UseBigHudAlt1", 1
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			// Health
+			DrawString HUDFONT_DOOM, white, "%", 57, -29;
+			// Armor
+			DrawString HUDFONT_DOOM, white, "%", 115, -29;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			// Health
+			DrawString HUDFONT_DOOM, untranslated, "%", 57, -29;
+			// Armor
+			DrawString HUDFONT_DOOM, untranslated, "%", 115, -29;
+		}
+	}
+	
+	InInventory Not "UseBigHudAlt1"
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			// Health
+			DrawString HUDFONT_DOOM, white, "%", 104, -29;
+			// Armor
+			DrawString HUDFONT_DOOM, white, "%", -85, -29;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			// Health
+			DrawString HUDFONT_DOOM, untranslated, "%", 104, -29;
+			// Armor
+			DrawString HUDFONT_DOOM, untranslated, "%", -85, -29;
+		}
+	}
+	
+
+	// AMMO
+	InInventory "UseBigHudAlt1", 1
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			drawnumber 3, HUDFONT_DOOM, orange, ammo1, -87, -29, 0;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, -87, -29, 0;
+		}
+	}
+	InInventory Not "UseBigHudAlt1"
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			drawnumber 3, HUDFONT_DOOM, orange, ammo1, 44, -29, 0;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, -29, 0;
+		}
+	}
+
+	// HEALTH
+	InInventory "UseBigHudAlt1", 1
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			DrawNumber 3, HUDFONT_DOOM, white, health, interpolate(30), 43, -29, 0, TangoRedPure, 50, green, 101;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			DrawNumber 3, HUDFONT_DOOM, untranslated, health, interpolate(30), 43, -29, 0, untranslated, 50, untranslated, 101;
+		}
+	}
+	InInventory Not "UseBigHudAlt1"
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			DrawNumber 3, HUDFONT_DOOM, white, health, interpolate(30), 90, -29, 0, TangoRedPure, 50, green, 101;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			DrawNumber 3, HUDFONT_DOOM, untranslated, health, interpolate(30), 90, -29, 0, untranslated, 50, untranslated, 101;
+		}
+	}
+
+	// ARMOR
+	InInventory "UseBigHudAlt1", 1
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			DrawNumber 3, HUDFONT_DOOM, green, armor, interpolate(30), 101, -29, 0, TangoRedPure, 0, blue, 101;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			DrawNumber 3, HUDFONT_DOOM, untranslated, armor, interpolate(30), 101, -29, 0, untranslated, 0, untranslated, 101;
+		}
+	}
+	InInventory Not "UseBigHudAlt1"
+	{
+		InInventory "UseBigHudColoredNumbers", 1
+		{
+			DrawNumber 3, HUDFONT_DOOM, green, armor, interpolate(30), -99, -29, 0, TangoRedPure, 0, blue, 101;
+		}
+		InInventory Not "UseBigHudColoredNumbers"
+		{
+			DrawNumber 3, HUDFONT_DOOM, untranslated, armor, interpolate(30), -99, -29, 0, untranslated, 0, untranslated, 101;
+		}
+	}
+
+	// MUGSHOT
+	InInventory "UseBigHudAlt1", 1
+	{
+		DrawSelectedInventory alternateonempty, INDEXFONT_DOOM, 116, -32 { DrawMugShot "STF", 5, XDEATHFACE, 116, -32; }
+	}
+	InInventory Not "UseBigHudAlt1"
+	{
+		DrawSelectedInventory alternateonempty, INDEXFONT_DOOM, 107, -32 { DrawMugShot "STF", 5, XDEATHFACE, 107, -32; }
+	}
+	
+
+	// KEYS
+	DrawSwitchableImage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", -81, -29;
+	DrawSwitchableImage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", -81, -19;
+	DrawSwitchableImage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", -81, -9;
+
+	// AMMO OVERVIEW
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammo(TangoBulletClip), interpolate(30), -32, -27;
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammo(TangoShell), interpolate(30), -32, -21;
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammo(RocketAmmo), interpolate(30), -32, -15;
+	Drawnumber 3, INDEXFONT_DOOM, Untranslated, ammo(TangoCell), interpolate(30), -32, -9;
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammocapacity(TangoBulletClip), interpolate(30), -6, -27;
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammocapacity(TangoShell), interpolate(30), -6, -21;
+	DrawNumber 3, INDEXFONT_DOOM, Untranslated, ammocapacity(RocketAmmo), interpolate(30), -6, -15;
+	Drawnumber 3, INDEXFONT_DOOM, Untranslated, ammocapacity(TangoCell), interpolate(30), -6, -9;
+
+	// FRAGS
+		GameMode deathmatch, teamgame
+	{
+		DrawNumber 3, HUDFONT_DOOM, Untranslated, frags, 102, -29;
+	}
+
+}
+
+
+statusbar automap, fullscreenoffsets
+{
+	// ** TOTAL AMMO TALLIES **
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoStomperAmmo), interpolate(30), -25, -46;
+	drawimage "GINDNUMS", -24, -46;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoStomperAmmo), interpolate(30), -6, -46;
+	drawimage "SM-MSTO", -46, -47;
+	
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoScrapDrum), interpolate(30), -25, -39;
+	drawimage "GINDNUMS", -24, -39;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoScrapDrum), interpolate(30), -6, -39;
+	drawimage "SM-MSCL", -46, -40;
+	
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoBulletClip), interpolate(30), -25, -32;
+	drawimage "GINDNUMS", -24, -32;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoBulletClip), interpolate(30), -6, -32;
+	drawimage "SM-MCLP", -46, -33;
+	
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoShell), interpolate(30), -25, -25;
+	drawimage "GINDNUMS", -24, -25;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoShell), interpolate(30), -6, -25;
+	drawimage "SM-MSHL", -46, -26;
+	
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(RocketAmmo), interpolate(30), -25, -18;
+	drawimage "GINDNUMS", -24, -18;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(RocketAmmo), interpolate(30), -6, -18;
+	drawimage "SM-MROK", -46, -19;
+	
+	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoCell), interpolate(30), -25, -11;
+	drawimage "GINDNUMS", -24, -11;
+	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoCell), interpolate(30), -6, -11;
+	drawimage "SM-MCLL", -46, -12;
+
+	// ** SELECTED AMMO HIGHLIGHT **
+    usesammo
+    {
+		WeaponAmmo "TangoStomperAmmo"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoStomperAmmo), interpolate(30), -25, -46;
+		}
+	
+		WeaponAmmo "TangoShell"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoShell), interpolate(30), -25, -25;
+		}
+		
+		WeaponAmmo "TangoScrapDrum"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoScrapDrum), interpolate(30), -25, -39;
+		}
+		
+		WeaponAmmo "TangoBulletClip"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoBulletClip), interpolate(30), -25, -32;
+		}
+		
+		WeaponAmmo "RocketAmmo"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(RocketAmmo), interpolate(30), -25, -18;
+		}
+		
+		WeaponAmmo "TangoCell"
+		{
+			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoCell), interpolate(30), -25, -11;
+		}
+    }
+}
+
+//===========================
+// STANDARD INVENTORY STUFF, UNMODIFIED FROM ORIGINAL ZDOOM PK3
+//===========================
+
+
+
+statusbar inventory // Standard bar overlay (ZDoom Addition)
+{
+    drawinventorybar Doom, 7, TANGO_INDEXFONT, 50, 170;
+}
+
+statusbar inventoryfullscreen // ZDoom HUD overlay.
+{
+    drawinventorybar Doom, translucent, 7, TANGO_INDEXFONT, 50, 170;
+}

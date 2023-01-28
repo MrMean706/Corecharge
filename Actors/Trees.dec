@@ -1,0 +1,566 @@
+Actor TangoTreeBase
+{
+	Radius 12
+	Height 64
+	ProjectilePassHeight -16
+	+SOLID
+}
+
+ACTOR TangoGreenTree1 : TangoTreeBase 28800
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 16
+	Height 48
+	States
+	{
+	Spawn:
+		GTR1 A -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree2 : TangoTreeBase 28801
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR2 A -1
+		Stop
+	}
+}
+
+ACTOR TangoSnowTree1 : TangoTreeBase 28802
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 16
+	Height 48
+	States
+	{
+	Spawn:
+		STR1 A -1
+		Stop
+	}
+}
+
+ACTOR TangoSnowTree2 : TangoTreeBase 28803
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		STR2 A -1
+		Stop
+	}
+}
+
+ACTOR TangoBush1A 28804
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 12
+	Height 24
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 A -1
+		Stop
+	}
+}
+
+ACTOR TangoBush1B : TangoBush1A 28805
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		BUS1 B -1
+		Stop
+	}
+}
+
+ACTOR TangoBush1C : TangoBush1A 28806
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		BUS1 C -1
+		Stop
+	}
+}
+
+ACTOR TangoBushTall1 28807
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 12
+	Height 46
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS1 D -1
+		Stop
+	}
+}
+
+ACTOR TangoBushTall1A : TangoBush1A 28808
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		BUS1 E -1
+		Stop
+	}
+}
+
+ACTOR TangoBushTall1B : TangoBushTall1 28809
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		BUS1 F -1
+		Stop
+	}
+}
+
+ACTOR TangoTreeA : TangoTreeBase 28810
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 16
+	Height 64
+	States
+	{
+	Spawn:
+	    TREE A -1
+		Stop
+	}
+}
+
+ACTOR TangoTreeB : TangoTreeBase 28811
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREE B -1
+		Stop
+	}
+}
+
+ACTOR TangoTreeC : TangoTreeBase 28812
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREE C -1
+		Stop
+	}
+}
+
+ACTOR TangoTreeD : TangoTreeBase 28813
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREE D -1
+		Stop
+	}
+}
+
+ACTOR TangoPalmTree : TangoTreeBase 28814
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Height 96
+	States
+	{
+	Spawn:
+	    PALM A -1
+		Stop
+	}
+}
+
+ACTOR TangoPlantA 28815
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 16
+	Height 64
+	-SOLID
+	+NOBLOCKMAP
+	States
+	{
+	Spawn:
+	    PLNT A -1
+		Stop
+	}
+}
+
+ACTOR TangoPlantB : TangoPlantA 28816
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    PLNT B -1
+		Stop
+	}
+}
+
+ACTOR TangoPlantC : TangoPlantA 28817
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    PLNT C -1
+		Stop
+	}
+}
+
+ACTOR TangoPlantD : TangoPlantA 28818
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    PLNT D -1
+		Stop
+	}
+}
+
+
+ACTOR TangoRedTreeA : TangoTreeBase 28819
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TRER A -1
+		Stop
+	}
+}
+
+ACTOR TangoRedTreeB : TangoTreeBase 28820
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TRER B -1
+		Stop
+	}
+}
+
+ACTOR TangoRedTreeC : TangoTreeBase 28821
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TRER C -1
+		Stop
+	}
+}
+
+ACTOR TangoRedTreeD : TangoTreeBase 28822
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TRER D -1
+		Stop
+	}
+}
+
+// HEXEN TREE VARIANTS
+ACTOR TangoLeaflessTree2 28823
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 15
+	Height 160
+	+SOLID
+	States
+	{
+		Spawn:
+			TRE8 A -1
+			Stop
+	}
+}
+
+ACTOR TangoGnarledTree3 28824
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 15
+	Height 100
+	+SOLID
+	States
+	{
+		Spawn:
+			TRE9 A -1
+			Stop
+	}
+}
+
+ACTOR TangoTreeLarge3 28825
+{
+	Radius 15
+	Height 180
+	+Solid
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+		Spawn:
+		 TR64 A -1
+	}
+}
+
+ACTOR TangoTreeLarge4 : TangoTreeLarge3 28826
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+		Spawn:
+		 TR64 B -1
+	}
+}
+
+ACTOR TangoLeafSpawner64 : LeafSpawner 28827
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		LEF4 A 0 NoDelay A_Jump(128, "Spawn2")
+		Goto Spawn1
+	Spawn1:
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf3", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf3", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf3", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf3", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+	Spawn2:
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf4", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf4", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf4", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+		TNT1 A 0 A_SpawnItemEx ("TangoLeaf4", random (0, 128), random (0, 128), random (0, 64), random (3, 5), 0, 0, 0, 0, 128)
+	Goto SpawnWait
+	
+	SpawnWait:
+		TNT1 A 20
+		Goto Spawn
+	}
+}
+
+ACTOR TangoLeaf3 : Leaf1 28828
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+		Spawn:
+		 LEF4 ABC 4
+		 LEF4 D 4 A_LeafThrust
+		 LEF4 EFG 4
+		 LEF4 H 4 A_LeafThrust
+		 LEF4 IAB 4
+		 LEF4 C 4 A_LeafThrust
+		 LEF4 DEF 4
+		 LEF4 G 4 A_LeafThrust
+		 LEF4 HI 4
+		 Stop
+		Death:
+		 LEF5 J 10 A_LeafCheck
+		 Wait
+	}
+}
+
+ACTOR TangoLeaf4 : Leaf1 28829
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+		Spawn:
+		 LEF5 ABC 4
+		 LEF5 D 4 A_LeafThrust
+		 LEF5 EFG 4
+		 LEF5 H 4 A_LeafThrust
+		 LEF5 I 4
+		 LEF5 AB 4
+		 LEF5 C 4 A_LeafThrust
+		 LEF5 DEF 4
+		 LEF5 G 4 A_LeafThrust
+		 LEF5 HI 4
+		 Stop
+	}
+}
+
+ACTOR TangoYellowTreeA : TangoTreeBase 28830
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREY A -1
+		Stop
+	}
+}
+
+ACTOR TangoYellowTreeB : TangoTreeBase 28831
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREY B -1
+		Stop
+	}
+}
+
+ACTOR TangoYellowTreeC : TangoTreeBase 28832
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREY C -1
+		Stop
+	}
+}
+
+ACTOR TangoYellowTreeD : TangoTreeBase 28833
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+	    TREY D -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree3 : TangoTreeBase 28834
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR3 A -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree4 : TangoTreeBase 28835
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR4 A -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree5: TangoTreeBase 28836
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR5 A -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree6: TangoTreeBase 28837
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR6 A -1
+		Stop
+	}
+}
+
+ACTOR TangoBush3 28838
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 12
+	Height 24
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS3 A -1
+		Stop
+	}
+}
+
+ACTOR TangoBush4 28839
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	Radius 12
+	Height 24
+	+SOLID
+	States
+	{
+	Spawn:
+		BUS4 A -1
+		Stop
+	}
+}
+
+ACTOR TangoGreenTree7: TangoTreeBase 28840
+{
+	//$Category "Supercharge Trees"
+	//$Color 3
+	States
+	{
+	Spawn:
+		GTR7 A -1
+		Stop
+	}
+}

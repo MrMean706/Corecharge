@@ -1,0 +1,312 @@
+ACTOR TangoDraugr replaces Revenant
+{
+	//$Category Monsters
+	//$Color 12
+	//$Title "TangoDraugr"
+	Tag "Draugr"
+	Health 300	
+	Radius 20
+	Height 56
+	GibHealth 150
+	Mass 500
+	Speed 10
+	PainChance 100
+	PainChance "Chaingun", 20
+	Monster
+	MeleeThreshold 196
+	+MISSILEMORE 
+	+FLOORCLIP
+	SeeSound "draugr/see"
+	PainSound "draugr/pain"
+	DeathSound "draugr/death"
+	ActiveSound "draugr/active"
+	MeleeSound "skeleton/melee"
+	HitObituary "%o was punched by a Draugr."
+	Obituary "%o couldn't evade a Draugr's fireball."
+	States
+	{
+	Spawn:
+		DRGR A 10 A_Look
+		Loop
+	See:
+		DRGR AABBCCDDEEFF 2 A_Chase
+		Loop
+	Melee:
+		DRGR J 0 A_FaceTarget
+		DRGR J 6 A_SkelWhoosh
+		DRGR K 6 A_FaceTarget
+		DRGR L 6 A_CustomMeleeAttack(28, "skeleton/melee")
+		Goto See
+	Missile:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_projectile_origin_draugr") == 1, "VanillaOriginMissile")
+		DRGR G 5 A_FaceTarget
+		DRGR G 5 A_FaceTarget
+		DRGR H 4 Bright A_CustomMissile("DraugrTracer", 64, -18)
+		DRGR I 10 A_FaceTarget
+		Goto See
+	VanillaOriginMissile:
+		DRGR G 5 A_FaceTarget
+		DRGR G 5 A_FaceTarget
+		DRGR H 4 Bright A_SkelMissile
+		DRGR I 10 A_FaceTarget
+		Goto See
+	Pain:
+		DRGR M 5
+		DRGR M 5 A_Pain
+		Goto See
+	Raise:
+		DRGR S 5
+		DRGR RQPON 5
+		Goto See
+	Death.Massacre:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		DRGR S -1
+		Stop
+		
+	// ****************************
+	// DAMAGE TYPE DEATH SWITCHES
+	// ****************************
+	Death:
+		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom2")
+		Goto RegularDeath
+		
+	Death.Rocket:
+		Goto LegsDeath
+	
+	XDeath:
+		Goto LegsDeath
+	
+	Death.Shotgun:
+		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom1")
+		Goto LegsDeath
+	
+	DeathRandom1:
+		TNT1 A 0 A_Jump(128, "OneLegDeath")
+		Goto LegsDeath
+		
+	DeathRandom2:
+		TNT1 A 0 A_Jump(200, "LegsDeath", "OneLegDeath")
+		Goto RegularDeath
+
+	
+		
+	// ****************************
+	// DEATH ANIMATIONS
+	// ****************************
+	RegularDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+		DRGR NO 5
+		DRGR P 6 A_Scream
+		DRGR Q 6
+		DRGR R 6
+		DRGR S -1
+		Stop
+	
+	
+	LegsDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("DraugrHead", 0, 0, 60, -20, 0, 6, 0)
+		TNT1 A 0 A_CustomMissile("DraugrTorso", 32, 0, random (150, 210), 2, random(0, 30))
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2", 0, 0, 32, 0, 0, 0,0, 129)
+		DDH2 AAAAAA 4 A_SpawnItemEx("NewFlyingBlood",0,0,30,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH2 BB 4 A_SpawnItemEx("NewFlyingBlood",0,0,20,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH2 CC 4 A_SpawnItemEx("NewFlyingBlood",0,0,20,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH2 D -1
+		Stop
+		
+		
+	OneLegDeath:		
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_CustomMissile("DraugrFullTorso", 0, 0, random (-20, 20), 2, random(10, 20))
+		TNT1 A 0 A_CustomMissile("DraugrLeg", 0, -16, random (180, 210), 2, random(15, 30))
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner2", 0, 0, 32, 0, 0, 0,0, 129)
+		DDH3 AAA 4 A_SpawnItemEx("NewFlyingBlood",0,0,30,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH3 B 4 A_SpawnItemEx("NewFlyingBlood",0,0,20,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH3 C 4 A_SpawnItemEx("NewFlyingBlood",0,0,20,Random(5,-5),Random(5,-5),Random(3,6),0)
+		DDH3 D -1
+		Stop
+	}
+}
+
+// Fires slower missiles that have less chance of tracing
+Actor TangoDraugrSlow : TangoDraugr
+{
+	States
+	{
+	Missile:
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_projectile_origin_draugr") == 1, "VanillaOriginMissile")
+		DRGR G 5 A_FaceTarget
+		DRGR G 5 A_FaceTarget
+		DRGR H 4 Bright A_CustomMissile("DraugrTracerSlow", 64, -18)
+		DRGR I 10 A_FaceTarget
+		Goto See
+	VanillaOriginMissile:
+		DRGR G 5 A_FaceTarget
+		DRGR G 5 A_FaceTarget
+		DRGR H 4 Bright A_CustomMissile("DraugrTracerSlow", 40, 0)
+		DRGR I 10 A_FaceTarget
+		Goto See
+	}
+}
+
+ACTOR DraugrTracer : RevenantTracer replaces RevenantTracer
+{
+	Damage (45)
+	+DONTSEEKINVISIBLE
+	// -ZDOOMTRANS
+	RenderStyle "Normal"
+	States
+	{
+	Death:
+		RBXP ABCDEF 2 Bright
+		Stop
+	}
+}
+
+Actor DraugrTracerSlow : DraugrTracer
+{
+	Speed 8
+	States
+	{
+	Spawn:
+		FATB AB 2 Bright
+		FATB AB 2 Bright A_Tracer
+		Loop
+	}
+}
+
+ACTOR DraugrHead
+{
+    Radius 8
+    Height 16
+	Speed 7
+	Gravity 0.6
+	Mass 4
+	BounceFactor 0.6
+	wallbouncefactor 0.5
+	BounceCount 12
+	BounceType Doom
+	Scale 0.5
+	BounceSound "draugr/bounce"
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+	+THRUACTORS
+    +NOTELEPORT
+    States
+    {
+    Spawn:
+		DHED ABCDEFGH 3
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_PlaySound("draugr/bounce")
+		DHED A 0 A_Jump(64, "DeathB")
+		DHED A 0 A_Jump(64, "DeathC")
+		DHED A 0 A_Jump(64, "DeathD")
+	DeathA:
+		DHED C -1
+        Stop
+	DeathB:
+		DHED B -1
+        Stop
+	DeathC:
+		DHED F -1
+        Stop
+	DeathD:
+        DHED H -1
+        Stop
+    }
+}
+
+ACTOR DraugrTorso
+{
+    Radius 2
+    Height 2
+	Speed 5
+	Gravity 0.3
+	Mass 4
+	BounceFactor 0.4
+	wallbouncefactor 0.2
+	BounceType Doom
+	Scale 0.5
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+    States
+    {
+    Spawn:
+		DTOR ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        DTOR I -1
+        Stop
+    }
+}
+
+ACTOR DraugrFullTorso
+{
+    Radius 2
+    Height 8
+	Speed 5
+	Gravity 0.5
+	Mass 4
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+    States
+    {
+    Spawn:
+		DTOP A 3
+	FlyLoop:
+		DTOP B 3
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_PlaySound("misc/xdeath")
+		TNT1 A 0 A_SpawnItemEx("GenericXDeathSpawner6", 0, 0, 8, 0, 0, 0,0, 129)
+		DTOP CDE 4
+        DTOP F -1
+        Stop
+    }
+}
+
+ACTOR DraugrLeg
+{
+    Radius 2
+    Height 2
+	Speed 8
+	Gravity 0.5
+	Mass 2
+	Scale 0.5
+	+MISSILE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +NOBLOCKMAP
+    +NOTELEPORT
+	+THRUACTORS
+    States
+    {
+    Spawn:
+		DLEG ABCDEFGH 3 A_SpawnItemEx("NewFlyingBlood",0,0,8,Random(5,-5),Random(5,-5),Random(3,6),0, SXF_USEBLOODCOLOR)
+		Loop
+    Death:
+		TNT1 A 0 A_QueueCorpse
+        DLEG I -1
+        Stop
+    }
+}

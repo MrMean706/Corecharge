@@ -1,0 +1,95 @@
+#library "tango_cvars"
+#include "zcommon.acs"
+
+// script "tango_cvar_soulsphere_flash" (void)
+// {
+// 	SetResultValue(GetCVar("cl_tango_soulsphere_flash"));
+// }
+
+script "tango_cvar_shotgun_skin" (void)
+{
+	SetResultValue(GetCVar("sv_tango_shotgun_skin"));
+}
+
+script "tango_cvar_super_shotgun_skin" (void)
+{
+	SetResultValue(GetCVar("sv_tango_super_shotgun_skin"));
+}
+
+script "tango_cvar_rocket_screen_shake" (void)
+{
+	SetResultValue(GetCVar("sv_tango_rocket_screen_shake"));
+}
+
+script "tango_cvar_classic_ssg_fire_sound" (void)
+{
+	SetResultValue(GetCVar("cl_tango_classic_ssg_fire_sound"));
+}
+
+script "tango_cvar_enable_recoil" (void)
+{
+	SetResultValue(GetCVar("cl_tango_enable_recoil"));
+}
+
+script "tango_cvar_berserk_long_flash" (void)
+{
+	SetResultValue(GetCVar("cl_tango_berserk_long_flash"));
+}
+
+script "tango_cvar_auto_reload" (void)
+{
+	SetResultValue(GetCVar("cl_tango_auto_reload_when_empty"));
+}
+
+script "tango_cvar_enable_screen_shake" (void)
+{
+	SetResultValue(GetCVar("cl_tango_enable_screen_shake"));
+}
+
+script "tango_cvar_monster_rocket_fly_sound" (void)
+{
+	SetResultValue(GetCVar("sv_tango_monster_rocket_fly_sound"));
+}
+
+script "tango_cvar_projectile_origin_cyberdemon" (void)
+{
+	SetResultValue(GetCVar("sv_tango_monster_projectile_vanilla_origin_cyberdemon"));
+}
+
+script "tango_cvar_projectile_origin_draugr" (void)
+{
+	SetResultValue(GetCVar("sv_tango_monster_projectile_vanilla_origin_draugr"));
+}
+
+script "tango_cvar_projectile_origin_fusionite" (void)
+{
+	SetResultValue(GetCVar("sv_tango_monster_projectile_vanilla_origin_fusionite"));
+}
+
+script "tango_cvar_projectile_origin_behemoth" (void)
+{
+	SetResultValue(GetCVar("sv_tango_monster_projectile_vanilla_origin_behemoth"));
+}
+
+script "tango_cvar_chaingun_replace_assault_rifle" (void)
+{
+	SetResultValue(GetCVar("sv_tango_chaingun_replace_assault_rifle"));
+}
+
+// Everything beyond here is just proof-of-concept; it's currently not working
+// entirely properly because the transfer_props script doesn't seem to be able
+// to pick up when a spawner has the dormant flag set :(
+script "tango_cvar_enable_random_baron" (void)
+{
+	SetResultValue(GetCVar("sv_tango_enable_random_baron"));
+}
+
+script "tango_transfer_aprops" (int new_tid)
+{
+	Print(s:"doing stuff; is dormant? ", i:GetActorProperty(0, APROP_Dormant));
+	if (GetActorProperty(0, APROP_Dormant))
+	{
+		Print(s:"Current thing is dormant, other TID is", i:new_tid);
+		Thing_Deactivate(new_tid);
+	}
+}
