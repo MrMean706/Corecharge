@@ -1,31 +1,3 @@
-BRIGHTMAP SPRITE AGAHA1 { MAP "brightmaps/sprites/AGAHA1.png" }
-BRIGHTMAP SPRITE AGAHA2A8 { MAP "brightmaps/sprites/AGAHA2A8.png" }
-BRIGHTMAP SPRITE AGAHA3A7 { MAP "brightmaps/sprites/AGAHA3A7.png" }
-BRIGHTMAP SPRITE AGAHA4A6 { MAP "brightmaps/sprites/AGAHA4A6.png" }
-BRIGHTMAP SPRITE AGAHA5 { MAP "brightmaps/sprites/AGAHA5.png" }
-BRIGHTMAP SPRITE AGAHB1 { MAP "brightmaps/sprites/AGAHB1.png" }
-BRIGHTMAP SPRITE AGAHB2B8 { MAP "brightmaps/sprites/AGAHB2B8.png" }
-BRIGHTMAP SPRITE AGAHB3B7 { MAP "brightmaps/sprites/AGAHB3B7.png" }
-BRIGHTMAP SPRITE AGAHB4B6 { MAP "brightmaps/sprites/AGAHB4B6.png" }
-BRIGHTMAP SPRITE AGAHB5 { MAP "brightmaps/sprites/AGAHB5.png" }
-BRIGHTMAP SPRITE AGAHC1 { MAP "brightmaps/sprites/AGAHC1.png" }
-BRIGHTMAP SPRITE AGAHC2C8 { MAP "brightmaps/sprites/AGAHC2C8.png" }
-BRIGHTMAP SPRITE AGAHC3C7 { MAP "brightmaps/sprites/AGAHC3C7.png" }
-BRIGHTMAP SPRITE AGAHC4C6 { MAP "brightmaps/sprites/AGAHC4C6.png" }
-BRIGHTMAP SPRITE AGAHC5 { MAP "brightmaps/sprites/AGAHC5.png" }
-BRIGHTMAP SPRITE AGAHD1 { MAP "brightmaps/sprites/AGAHD1.png" }
-BRIGHTMAP SPRITE AGAHD2D8 { MAP "brightmaps/sprites/AGAHD2D8.png" }
-BRIGHTMAP SPRITE AGAHD3D7 { MAP "brightmaps/sprites/AGAHD3D7.png" }
-BRIGHTMAP SPRITE AGAHD4D6 { MAP "brightmaps/sprites/AGAHD4D6.png" }
-BRIGHTMAP SPRITE AGAHD5 { MAP "brightmaps/sprites/AGAHD5.png" }
-BRIGHTMAP SPRITE AGAHE1 { MAP "brightmaps/sprites/AGAHE1.png" }
-BRIGHTMAP SPRITE AGAHE2E8 { MAP "brightmaps/sprites/AGAHE2E8.png" }
-BRIGHTMAP SPRITE AGAHE3E7 { MAP "brightmaps/sprites/AGAHE3E7.png" }
-BRIGHTMAP SPRITE AGAHE4E6 { MAP "brightmaps/sprites/AGAHE4E6.png" }
-BRIGHTMAP SPRITE AGAHE5 { MAP "brightmaps/sprites/AGAHE5.png" }
-BRIGHTMAP SPRITE AGAHF1 { MAP "brightmaps/sprites/AGAHF1.png" }
-BRIGHTMAP SPRITE AGAHF2F8 { MAP "brightmaps/sprites/AGAHF2F8.png" }
-BRIGHTMAP SPRITE AGAHF3F7 { MAP "brightmaps/sprites/AGAHF3F7.png" }
 BRIGHTMAP SPRITE BAR1A0 { MAP "brightmaps/sprites/BAR1A0.png" }
 BRIGHTMAP SPRITE BAR1B0 { MAP "brightmaps/sprites/BAR1B0.png" }
 BRIGHTMAP SPRITE BAR1C0 { MAP "brightmaps/sprites/BAR1C0.png" }
@@ -181,86 +153,6 @@ BRIGHTMAP SPRITE CBADR5 { MAP "brightmaps/sprites/CBADR5.png" }
 BRIGHTMAP SPRITE CBADR6 { MAP "brightmaps/sprites/CBADR6.png" }
 BRIGHTMAP SPRITE CBADR7 { MAP "brightmaps/sprites/CBADR7.png" }
 BRIGHTMAP SPRITE CBADR8 { MAP "brightmaps/sprites/CBADR8.png" }
-BRIGHTMAP SPRITE CBARA1 { MAP "brightmaps/sprites/CBARA1.png" }
-BRIGHTMAP SPRITE CBARA2 { MAP "brightmaps/sprites/CBARA2.png" }
-BRIGHTMAP SPRITE CBARA3 { MAP "brightmaps/sprites/CBARA3.png" }
-BRIGHTMAP SPRITE CBARA4 { MAP "brightmaps/sprites/CBARA4.png" }
-BRIGHTMAP SPRITE CBARA5 { MAP "brightmaps/sprites/CBARA5.png" }
-BRIGHTMAP SPRITE CBARA6 { MAP "brightmaps/sprites/CBARA6.png" }
-BRIGHTMAP SPRITE CBARA7 { MAP "brightmaps/sprites/CBARA7.png" }
-BRIGHTMAP SPRITE CBARA8 { MAP "brightmaps/sprites/CBARA8.png" }
-BRIGHTMAP SPRITE CBARB1 { MAP "brightmaps/sprites/CBARB1.png" }
-BRIGHTMAP SPRITE CBARB2 { MAP "brightmaps/sprites/CBARB2.png" }
-BRIGHTMAP SPRITE CBARB3 { MAP "brightmaps/sprites/CBARB3.png" }
-BRIGHTMAP SPRITE CBARB4 { MAP "brightmaps/sprites/CBARB4.png" }
-BRIGHTMAP SPRITE CBARB5 { MAP "brightmaps/sprites/CBARB5.png" }
-BRIGHTMAP SPRITE CBARB6 { MAP "brightmaps/sprites/CBARB6.png" }
-BRIGHTMAP SPRITE CBARB7 { MAP "brightmaps/sprites/CBARB7.png" }
-BRIGHTMAP SPRITE CBARB8 { MAP "brightmaps/sprites/CBARB8.png" }
-BRIGHTMAP SPRITE CBARC1 { MAP "brightmaps/sprites/CBARC1.png" }
-BRIGHTMAP SPRITE CBARC2 { MAP "brightmaps/sprites/CBARC2.png" }
-BRIGHTMAP SPRITE CBARC3 { MAP "brightmaps/sprites/CBARC3.png" }
-BRIGHTMAP SPRITE CBARC4 { MAP "brightmaps/sprites/CBARC4.png" }
-BRIGHTMAP SPRITE CBARC5 { MAP "brightmaps/sprites/CBARC5.png" }
-BRIGHTMAP SPRITE CBARC6 { MAP "brightmaps/sprites/CBARC6.png" }
-BRIGHTMAP SPRITE CBARC7 { MAP "brightmaps/sprites/CBARC7.png" }
-BRIGHTMAP SPRITE CBARC8 { MAP "brightmaps/sprites/CBARC8.png" }
-BRIGHTMAP SPRITE CBARD1 { MAP "brightmaps/sprites/CBARD1.png" }
-BRIGHTMAP SPRITE CBARD2 { MAP "brightmaps/sprites/CBARD2.png" }
-BRIGHTMAP SPRITE CBARD3 { MAP "brightmaps/sprites/CBARD3.png" }
-BRIGHTMAP SPRITE CBARD4 { MAP "brightmaps/sprites/CBARD4.png" }
-BRIGHTMAP SPRITE CBARD5 { MAP "brightmaps/sprites/CBARD5.png" }
-BRIGHTMAP SPRITE CBARD6 { MAP "brightmaps/sprites/CBARD6.png" }
-BRIGHTMAP SPRITE CBARD7 { MAP "brightmaps/sprites/CBARD7.png" }
-BRIGHTMAP SPRITE CBARD8 { MAP "brightmaps/sprites/CBARD8.png" }
-BRIGHTMAP SPRITE CBARE1 { MAP "brightmaps/sprites/CBARE1.png" }
-BRIGHTMAP SPRITE CBARE2 { MAP "brightmaps/sprites/CBARE2.png" }
-BRIGHTMAP SPRITE CBARE3 { MAP "brightmaps/sprites/CBARE3.png" }
-BRIGHTMAP SPRITE CBARE4 { MAP "brightmaps/sprites/CBARE4.png" }
-BRIGHTMAP SPRITE CBARE5 { MAP "brightmaps/sprites/CBARE5.png" }
-BRIGHTMAP SPRITE CBARE6 { MAP "brightmaps/sprites/CBARE6.png" }
-BRIGHTMAP SPRITE CBARE7 { MAP "brightmaps/sprites/CBARE7.png" }
-BRIGHTMAP SPRITE CBARE8 { MAP "brightmaps/sprites/CBARE8.png" }
-BRIGHTMAP SPRITE CBARF1 { MAP "brightmaps/sprites/CBARF1.png" }
-BRIGHTMAP SPRITE CBARF2 { MAP "brightmaps/sprites/CBARF2.png" }
-BRIGHTMAP SPRITE CBARF3 { MAP "brightmaps/sprites/CBARF3.png" }
-BRIGHTMAP SPRITE CBARF4 { MAP "brightmaps/sprites/CBARF4.png" }
-BRIGHTMAP SPRITE CBARF5 { MAP "brightmaps/sprites/CBARF5.png" }
-BRIGHTMAP SPRITE CBARF6 { MAP "brightmaps/sprites/CBARF6.png" }
-BRIGHTMAP SPRITE CBARF7 { MAP "brightmaps/sprites/CBARF7.png" }
-BRIGHTMAP SPRITE CBARF8 { MAP "brightmaps/sprites/CBARF8.png" }
-BRIGHTMAP SPRITE CBARH1 { MAP "brightmaps/sprites/CBARH1.png" }
-BRIGHTMAP SPRITE CBARH2 { MAP "brightmaps/sprites/CBARH2.png" }
-BRIGHTMAP SPRITE CBARH3 { MAP "brightmaps/sprites/CBARH3.png" }
-BRIGHTMAP SPRITE CBARH4 { MAP "brightmaps/sprites/CBARH4.png" }
-BRIGHTMAP SPRITE CBARH5 { MAP "brightmaps/sprites/CBARH5.png" }
-BRIGHTMAP SPRITE CBARH6 { MAP "brightmaps/sprites/CBARH6.png" }
-BRIGHTMAP SPRITE CBARH7 { MAP "brightmaps/sprites/CBARH7.png" }
-BRIGHTMAP SPRITE CBARH8 { MAP "brightmaps/sprites/CBARH8.png" }
-BRIGHTMAP SPRITE CBARP1 { MAP "brightmaps/sprites/CBARP1.png" }
-BRIGHTMAP SPRITE CBARP2 { MAP "brightmaps/sprites/CBARP2.png" }
-BRIGHTMAP SPRITE CBARP3 { MAP "brightmaps/sprites/CBARP3.png" }
-BRIGHTMAP SPRITE CBARP4 { MAP "brightmaps/sprites/CBARP4.png" }
-BRIGHTMAP SPRITE CBARP5 { MAP "brightmaps/sprites/CBARP5.png" }
-BRIGHTMAP SPRITE CBARP6 { MAP "brightmaps/sprites/CBARP6.png" }
-BRIGHTMAP SPRITE CBARP7 { MAP "brightmaps/sprites/CBARP7.png" }
-BRIGHTMAP SPRITE CBARP8 { MAP "brightmaps/sprites/CBARP8.png" }
-BRIGHTMAP SPRITE CBARQ1 { MAP "brightmaps/sprites/CBARQ1.png" }
-BRIGHTMAP SPRITE CBARQ2 { MAP "brightmaps/sprites/CBARQ2.png" }
-BRIGHTMAP SPRITE CBARQ3 { MAP "brightmaps/sprites/CBARQ3.png" }
-BRIGHTMAP SPRITE CBARQ4 { MAP "brightmaps/sprites/CBARQ4.png" }
-BRIGHTMAP SPRITE CBARQ5 { MAP "brightmaps/sprites/CBARQ5.png" }
-BRIGHTMAP SPRITE CBARQ6 { MAP "brightmaps/sprites/CBARQ6.png" }
-BRIGHTMAP SPRITE CBARQ7 { MAP "brightmaps/sprites/CBARQ7.png" }
-BRIGHTMAP SPRITE CBARQ8 { MAP "brightmaps/sprites/CBARQ8.png" }
-BRIGHTMAP SPRITE CBARR1 { MAP "brightmaps/sprites/CBARR1.png" }
-BRIGHTMAP SPRITE CBARR2 { MAP "brightmaps/sprites/CBARR2.png" }
-BRIGHTMAP SPRITE CBARR3 { MAP "brightmaps/sprites/CBARR3.png" }
-BRIGHTMAP SPRITE CBARR4 { MAP "brightmaps/sprites/CBARR4.png" }
-BRIGHTMAP SPRITE CBARR5 { MAP "brightmaps/sprites/CBARR5.png" }
-BRIGHTMAP SPRITE CBARR6 { MAP "brightmaps/sprites/CBARR6.png" }
-BRIGHTMAP SPRITE CBARR7 { MAP "brightmaps/sprites/CBARR7.png" }
-BRIGHTMAP SPRITE CBARR8 { MAP "brightmaps/sprites/CBARR8.png" }
 BRIGHTMAP SPRITE CBD1A0 { MAP "brightmaps/sprites/CBD1A0.png" }
 BRIGHTMAP SPRITE CBD1B0 { MAP "brightmaps/sprites/CBD1B0.png" }
 BRIGHTMAP SPRITE CBD1C0 { MAP "brightmaps/sprites/CBD1C0.png" }
@@ -416,124 +308,6 @@ BRIGHTMAP SPRITE CYBRL0 { MAP "brightmaps/sprites/CYBRL0.png" }
 BRIGHTMAP SPRITE CYBRM0 { MAP "brightmaps/sprites/CYBRM0.png" }
 BRIGHTMAP SPRITE CYBRN0 { MAP "brightmaps/sprites/CYBRN0.png" }
 BRIGHTMAP SPRITE CYBRO0 { MAP "brightmaps/sprites/CYBRO0.png" }
-BRIGHTMAP SPRITE DIA2A1 { MAP "brightmaps/sprites/DIA2A1.png" }
-BRIGHTMAP SPRITE DIA2A2 { MAP "brightmaps/sprites/DIA2A2.png" }
-BRIGHTMAP SPRITE DIA2A3 { MAP "brightmaps/sprites/DIA2A3.png" }
-BRIGHTMAP SPRITE DIA2A4 { MAP "brightmaps/sprites/DIA2A4.png" }
-BRIGHTMAP SPRITE DIA2A5 { MAP "brightmaps/sprites/DIA2A5.png" }
-BRIGHTMAP SPRITE DIA2A6 { MAP "brightmaps/sprites/DIA2A6.png" }
-BRIGHTMAP SPRITE DIA2A7 { MAP "brightmaps/sprites/DIA2A7.png" }
-BRIGHTMAP SPRITE DIA2A8 { MAP "brightmaps/sprites/DIA2A8.png" }
-BRIGHTMAP SPRITE DIA2B1 { MAP "brightmaps/sprites/DIA2B1.png" }
-BRIGHTMAP SPRITE DIA2B2 { MAP "brightmaps/sprites/DIA2B2.png" }
-BRIGHTMAP SPRITE DIA2B3 { MAP "brightmaps/sprites/DIA2B3.png" }
-BRIGHTMAP SPRITE DIA2B4 { MAP "brightmaps/sprites/DIA2B4.png" }
-BRIGHTMAP SPRITE DIA2B5 { MAP "brightmaps/sprites/DIA2B5.png" }
-BRIGHTMAP SPRITE DIA2B6 { MAP "brightmaps/sprites/DIA2B6.png" }
-BRIGHTMAP SPRITE DIA2B7 { MAP "brightmaps/sprites/DIA2B7.png" }
-BRIGHTMAP SPRITE DIA2B8 { MAP "brightmaps/sprites/DIA2B8.png" }
-BRIGHTMAP SPRITE DIA2C1 { MAP "brightmaps/sprites/DIA2C1.png" }
-BRIGHTMAP SPRITE DIA2C2 { MAP "brightmaps/sprites/DIA2C2.png" }
-BRIGHTMAP SPRITE DIA2C3 { MAP "brightmaps/sprites/DIA2C3.png" }
-BRIGHTMAP SPRITE DIA2C4 { MAP "brightmaps/sprites/DIA2C4.png" }
-BRIGHTMAP SPRITE DIA2C5 { MAP "brightmaps/sprites/DIA2C5.png" }
-BRIGHTMAP SPRITE DIA2C6 { MAP "brightmaps/sprites/DIA2C6.png" }
-BRIGHTMAP SPRITE DIA2C7 { MAP "brightmaps/sprites/DIA2C7.png" }
-BRIGHTMAP SPRITE DIA2C8 { MAP "brightmaps/sprites/DIA2C8.png" }
-BRIGHTMAP SPRITE DIABA1D1 { MAP "brightmaps/sprites/DIABA1D1.png" }
-BRIGHTMAP SPRITE DIABA2D8 { MAP "brightmaps/sprites/DIABA2D8.png" }
-BRIGHTMAP SPRITE DIABA7D3 { MAP "brightmaps/sprites/DIABA7D3.png" }
-BRIGHTMAP SPRITE DIABA8D2 { MAP "brightmaps/sprites/DIABA8D2.png" }
-BRIGHTMAP SPRITE DIABB1E1 { MAP "brightmaps/sprites/DIABB1E1.png" }
-BRIGHTMAP SPRITE DIABB2E8 { MAP "brightmaps/sprites/DIABB2E8.png" }
-BRIGHTMAP SPRITE DIABB8E2 { MAP "brightmaps/sprites/DIABB8E2.png" }
-BRIGHTMAP SPRITE DIABC1F1 { MAP "brightmaps/sprites/DIABC1F1.png" }
-BRIGHTMAP SPRITE DIABC2F8 { MAP "brightmaps/sprites/DIABC2F8.png" }
-BRIGHTMAP SPRITE DIABC8F2 { MAP "brightmaps/sprites/DIABC8F2.png" }
-BRIGHTMAP SPRITE DIABG1 { MAP "brightmaps/sprites/DIABG1.png" }
-BRIGHTMAP SPRITE DIABG2 { MAP "brightmaps/sprites/DIABG2.png" }
-BRIGHTMAP SPRITE DIABG3 { MAP "brightmaps/sprites/DIABG3.png" }
-BRIGHTMAP SPRITE DIABG4 { MAP "brightmaps/sprites/DIABG4.png" }
-BRIGHTMAP SPRITE DIABG5 { MAP "brightmaps/sprites/DIABG5.png" }
-BRIGHTMAP SPRITE DIABG6 { MAP "brightmaps/sprites/DIABG6.png" }
-BRIGHTMAP SPRITE DIABG7 { MAP "brightmaps/sprites/DIABG7.png" }
-BRIGHTMAP SPRITE DIABG8 { MAP "brightmaps/sprites/DIABG8.png" }
-BRIGHTMAP SPRITE DIABH1 { MAP "brightmaps/sprites/DIABH1.png" }
-BRIGHTMAP SPRITE DIABH2 { MAP "brightmaps/sprites/DIABH2.png" }
-BRIGHTMAP SPRITE DIABH3 { MAP "brightmaps/sprites/DIABH3.png" }
-BRIGHTMAP SPRITE DIABH4 { MAP "brightmaps/sprites/DIABH4.png" }
-BRIGHTMAP SPRITE DIABH5 { MAP "brightmaps/sprites/DIABH5.png" }
-BRIGHTMAP SPRITE DIABH6 { MAP "brightmaps/sprites/DIABH6.png" }
-BRIGHTMAP SPRITE DIABH7 { MAP "brightmaps/sprites/DIABH7.png" }
-BRIGHTMAP SPRITE DIABH8 { MAP "brightmaps/sprites/DIABH8.png" }
-BRIGHTMAP SPRITE DIABI1 { MAP "brightmaps/sprites/DIABI1.png" }
-BRIGHTMAP SPRITE DIABI2 { MAP "brightmaps/sprites/DIABI2.png" }
-BRIGHTMAP SPRITE DIABI3 { MAP "brightmaps/sprites/DIABI3.png" }
-BRIGHTMAP SPRITE DIABI4 { MAP "brightmaps/sprites/DIABI4.png" }
-BRIGHTMAP SPRITE DIABI5 { MAP "brightmaps/sprites/DIABI5.png" }
-BRIGHTMAP SPRITE DIABI6 { MAP "brightmaps/sprites/DIABI6.png" }
-BRIGHTMAP SPRITE DIABI7 { MAP "brightmaps/sprites/DIABI7.png" }
-BRIGHTMAP SPRITE DIABI8 { MAP "brightmaps/sprites/DIABI8.png" }
-BRIGHTMAP SPRITE DIABJ1 { MAP "brightmaps/sprites/DIABJ1.png" }
-BRIGHTMAP SPRITE DIABJ2 { MAP "brightmaps/sprites/DIABJ2.png" }
-BRIGHTMAP SPRITE DIABJ3 { MAP "brightmaps/sprites/DIABJ3.png" }
-BRIGHTMAP SPRITE DIABJ4 { MAP "brightmaps/sprites/DIABJ4.png" }
-BRIGHTMAP SPRITE DIABJ5 { MAP "brightmaps/sprites/DIABJ5.png" }
-BRIGHTMAP SPRITE DIABJ6 { MAP "brightmaps/sprites/DIABJ6.png" }
-BRIGHTMAP SPRITE DIABJ7 { MAP "brightmaps/sprites/DIABJ7.png" }
-BRIGHTMAP SPRITE DIABJ8 { MAP "brightmaps/sprites/DIABJ8.png" }
-BRIGHTMAP SPRITE DIABK1 { MAP "brightmaps/sprites/DIABK1.png" }
-BRIGHTMAP SPRITE DIABK2 { MAP "brightmaps/sprites/DIABK2.png" }
-BRIGHTMAP SPRITE DIABK3 { MAP "brightmaps/sprites/DIABK3.png" }
-BRIGHTMAP SPRITE DIABK4 { MAP "brightmaps/sprites/DIABK4.png" }
-BRIGHTMAP SPRITE DIABK5 { MAP "brightmaps/sprites/DIABK5.png" }
-BRIGHTMAP SPRITE DIABK6 { MAP "brightmaps/sprites/DIABK6.png" }
-BRIGHTMAP SPRITE DIABK7 { MAP "brightmaps/sprites/DIABK7.png" }
-BRIGHTMAP SPRITE DIABK8 { MAP "brightmaps/sprites/DIABK8.png" }
-BRIGHTMAP SPRITE DIABL1 { MAP "brightmaps/sprites/DIABL1.png" }
-BRIGHTMAP SPRITE DIABL2 { MAP "brightmaps/sprites/DIABL2.png" }
-BRIGHTMAP SPRITE DIABL3 { MAP "brightmaps/sprites/DIABL3.png" }
-BRIGHTMAP SPRITE DIABL4 { MAP "brightmaps/sprites/DIABL4.png" }
-BRIGHTMAP SPRITE DIABL5 { MAP "brightmaps/sprites/DIABL5.png" }
-BRIGHTMAP SPRITE DIABL6 { MAP "brightmaps/sprites/DIABL6.png" }
-BRIGHTMAP SPRITE DIABL7 { MAP "brightmaps/sprites/DIABL7.png" }
-BRIGHTMAP SPRITE DIABL8 { MAP "brightmaps/sprites/DIABL8.png" }
-BRIGHTMAP SPRITE DIABM1 { MAP "brightmaps/sprites/DIABM1.png" }
-BRIGHTMAP SPRITE DIABM2 { MAP "brightmaps/sprites/DIABM2.png" }
-BRIGHTMAP SPRITE DIABM3 { MAP "brightmaps/sprites/DIABM3.png" }
-BRIGHTMAP SPRITE DIABM4 { MAP "brightmaps/sprites/DIABM4.png" }
-BRIGHTMAP SPRITE DIABM5 { MAP "brightmaps/sprites/DIABM5.png" }
-BRIGHTMAP SPRITE DIABM6 { MAP "brightmaps/sprites/DIABM6.png" }
-BRIGHTMAP SPRITE DIABM7 { MAP "brightmaps/sprites/DIABM7.png" }
-BRIGHTMAP SPRITE DIABM8 { MAP "brightmaps/sprites/DIABM8.png" }
-BRIGHTMAP SPRITE DIABN1 { MAP "brightmaps/sprites/DIABN1.png" }
-BRIGHTMAP SPRITE DIABN2 { MAP "brightmaps/sprites/DIABN2.png" }
-BRIGHTMAP SPRITE DIABN3 { MAP "brightmaps/sprites/DIABN3.png" }
-BRIGHTMAP SPRITE DIABN4 { MAP "brightmaps/sprites/DIABN4.png" }
-BRIGHTMAP SPRITE DIABN5 { MAP "brightmaps/sprites/DIABN5.png" }
-BRIGHTMAP SPRITE DIABN6 { MAP "brightmaps/sprites/DIABN6.png" }
-BRIGHTMAP SPRITE DIABN7 { MAP "brightmaps/sprites/DIABN7.png" }
-BRIGHTMAP SPRITE DIABN8 { MAP "brightmaps/sprites/DIABN8.png" }
-BRIGHTMAP SPRITE DIABO1 { MAP "brightmaps/sprites/DIABO1.png" }
-BRIGHTMAP SPRITE DIABO2 { MAP "brightmaps/sprites/DIABO2.png" }
-BRIGHTMAP SPRITE DIABO3 { MAP "brightmaps/sprites/DIABO3.png" }
-BRIGHTMAP SPRITE DIABO4 { MAP "brightmaps/sprites/DIABO4.png" }
-BRIGHTMAP SPRITE DIABO5 { MAP "brightmaps/sprites/DIABO5.png" }
-BRIGHTMAP SPRITE DIABO6 { MAP "brightmaps/sprites/DIABO6.png" }
-BRIGHTMAP SPRITE DIABO7 { MAP "brightmaps/sprites/DIABO7.png" }
-BRIGHTMAP SPRITE DIABO8 { MAP "brightmaps/sprites/DIABO8.png" }
-BRIGHTMAP SPRITE DIABP1 { MAP "brightmaps/sprites/DIABP1.png" }
-BRIGHTMAP SPRITE DIABP2 { MAP "brightmaps/sprites/DIABP2.png" }
-BRIGHTMAP SPRITE DIABP3 { MAP "brightmaps/sprites/DIABP3.png" }
-BRIGHTMAP SPRITE DIABP4 { MAP "brightmaps/sprites/DIABP4.png" }
-BRIGHTMAP SPRITE DIABP5 { MAP "brightmaps/sprites/DIABP5.png" }
-BRIGHTMAP SPRITE DIABP6 { MAP "brightmaps/sprites/DIABP6.png" }
-BRIGHTMAP SPRITE DIABP7 { MAP "brightmaps/sprites/DIABP7.png" }
-BRIGHTMAP SPRITE DIABP8 { MAP "brightmaps/sprites/DIABP8.png" }
-BRIGHTMAP SPRITE DIABQ1 { MAP "brightmaps/sprites/DIABQ1.png" }
-BRIGHTMAP SPRITE DIABQ2 { MAP "brightmaps/sprites/DIABQ2.png" }
-BRIGHTMAP SPRITE DIABQ3 { MAP "brightmaps/sprites/DIABQ3.png" }
-BRIGHTMAP SPRITE DIABQ4 { MAP "brightmaps/sprites/DIABQ4.png" }
 BRIGHTMAP SPRITE DRGRA1 { MAP "brightmaps/sprites/DRGRA1.png" }
 BRIGHTMAP SPRITE DRGRA2 { MAP "brightmaps/sprites/DRGRA2.png" }
 BRIGHTMAP SPRITE DRGRA6 { MAP "brightmaps/sprites/DRGRA6.png" }
@@ -695,11 +469,6 @@ BRIGHTMAP SPRITE HKD4D0 { MAP "brightmaps/sprites/HKD4D0.png" }
 BRIGHTMAP SPRITE HKD5A0 { MAP "brightmaps/sprites/HKD5A0.png" }
 BRIGHTMAP SPRITE HKD5B0 { MAP "brightmaps/sprites/HKD5B0.png" }
 BRIGHTMAP SPRITE HKD5C0 { MAP "brightmaps/sprites/HKD5C0.png" }
-BRIGHTMAP SPRITE MGPOF1 { MAP "brightmaps/sprites/MGPOF1.png" }
-BRIGHTMAP SPRITE MGPOF2F8 { MAP "brightmaps/sprites/MGPOF2F8.png" }
-BRIGHTMAP SPRITE MGPOF3F7 { MAP "brightmaps/sprites/MGPOF3F7.png" }
-BRIGHTMAP SPRITE MGPOF4F6 { MAP "brightmaps/sprites/MGPOF4F6.png" }
-BRIGHTMAP SPRITE MGPOF5 { MAP "brightmaps/sprites/MGPOF5.png" }
 BRIGHTMAP SPRITE PAINA1 { MAP "brightmaps/sprites/PAINA1.png" }
 BRIGHTMAP SPRITE PAINA2A8 { MAP "brightmaps/sprites/PAINA2A8.png" }
 BRIGHTMAP SPRITE PAINA3A7 { MAP "brightmaps/sprites/PAINA3A7.png" }
@@ -768,86 +537,6 @@ BRIGHTMAP SPRITE PMAPD0 { MAP "brightmaps/sprites/PMAPD0.png" }
 BRIGHTMAP SPRITE PSTRA0 { MAP "brightmaps/sprites/PSTRA0.png" }
 BRIGHTMAP SPRITE PVISA0 { MAP "brightmaps/sprites/PVISA0.png" }
 BRIGHTMAP SPRITE PVISB0 { MAP "brightmaps/sprites/PVISB0.png" }
-BRIGHTMAP SPRITE PYD2A0 { MAP "brightmaps/sprites/PYD2A0.png" }
-BRIGHTMAP SPRITE PYD2B0 { MAP "brightmaps/sprites/PYD2B0.png" }
-BRIGHTMAP SPRITE PYROA1C1 { MAP "brightmaps/sprites/PYROA1C1.png" }
-BRIGHTMAP SPRITE PYROA2C8 { MAP "brightmaps/sprites/PYROA2C8.png" }
-BRIGHTMAP SPRITE PYROA3C7 { MAP "brightmaps/sprites/PYROA3C7.png" }
-BRIGHTMAP SPRITE PYROA4C6 { MAP "brightmaps/sprites/PYROA4C6.png" }
-BRIGHTMAP SPRITE PYROA5C5 { MAP "brightmaps/sprites/PYROA5C5.png" }
-BRIGHTMAP SPRITE PYROA6C4 { MAP "brightmaps/sprites/PYROA6C4.png" }
-BRIGHTMAP SPRITE PYROA7C3 { MAP "brightmaps/sprites/PYROA7C3.png" }
-BRIGHTMAP SPRITE PYROA8C2 { MAP "brightmaps/sprites/PYROA8C2.png" }
-BRIGHTMAP SPRITE PYROB1D1 { MAP "brightmaps/sprites/PYROB1D1.png" }
-BRIGHTMAP SPRITE PYROB2D8 { MAP "brightmaps/sprites/PYROB2D8.png" }
-BRIGHTMAP SPRITE PYROB3D7 { MAP "brightmaps/sprites/PYROB3D7.png" }
-BRIGHTMAP SPRITE PYROB4D6 { MAP "brightmaps/sprites/PYROB4D6.png" }
-BRIGHTMAP SPRITE PYROB5D5 { MAP "brightmaps/sprites/PYROB5D5.png" }
-BRIGHTMAP SPRITE PYROB6D4 { MAP "brightmaps/sprites/PYROB6D4.png" }
-BRIGHTMAP SPRITE PYROB7D3 { MAP "brightmaps/sprites/PYROB7D3.png" }
-BRIGHTMAP SPRITE PYROB8D2 { MAP "brightmaps/sprites/PYROB8D2.png" }
-BRIGHTMAP SPRITE PYROE1I1 { MAP "brightmaps/sprites/PYROE1I1.png" }
-BRIGHTMAP SPRITE PYROE2I8 { MAP "brightmaps/sprites/PYROE2I8.png" }
-BRIGHTMAP SPRITE PYROE3I7 { MAP "brightmaps/sprites/PYROE3I7.png" }
-BRIGHTMAP SPRITE PYROE4I6 { MAP "brightmaps/sprites/PYROE4I6.png" }
-BRIGHTMAP SPRITE PYROE5I5 { MAP "brightmaps/sprites/PYROE5I5.png" }
-BRIGHTMAP SPRITE PYROE6I4 { MAP "brightmaps/sprites/PYROE6I4.png" }
-BRIGHTMAP SPRITE PYROE7I3 { MAP "brightmaps/sprites/PYROE7I3.png" }
-BRIGHTMAP SPRITE PYROE8I2 { MAP "brightmaps/sprites/PYROE8I2.png" }
-BRIGHTMAP SPRITE PYROF1J1 { MAP "brightmaps/sprites/PYROF1J1.png" }
-BRIGHTMAP SPRITE PYROF2J8 { MAP "brightmaps/sprites/PYROF2J8.png" }
-BRIGHTMAP SPRITE PYROF3J7 { MAP "brightmaps/sprites/PYROF3J7.png" }
-BRIGHTMAP SPRITE PYROF4J6 { MAP "brightmaps/sprites/PYROF4J6.png" }
-BRIGHTMAP SPRITE PYROF5J5 { MAP "brightmaps/sprites/PYROF5J5.png" }
-BRIGHTMAP SPRITE PYROF6J4 { MAP "brightmaps/sprites/PYROF6J4.png" }
-BRIGHTMAP SPRITE PYROF7J3 { MAP "brightmaps/sprites/PYROF7J3.png" }
-BRIGHTMAP SPRITE PYROF8J2 { MAP "brightmaps/sprites/PYROF8J2.png" }
-BRIGHTMAP SPRITE PYROG1K1 { MAP "brightmaps/sprites/PYROG1K1.png" }
-BRIGHTMAP SPRITE PYROG2K8 { MAP "brightmaps/sprites/PYROG2K8.png" }
-BRIGHTMAP SPRITE PYROG3K7 { MAP "brightmaps/sprites/PYROG3K7.png" }
-BRIGHTMAP SPRITE PYROG4K6 { MAP "brightmaps/sprites/PYROG4K6.png" }
-BRIGHTMAP SPRITE PYROG5K5 { MAP "brightmaps/sprites/PYROG5K5.png" }
-BRIGHTMAP SPRITE PYROG6K4 { MAP "brightmaps/sprites/PYROG6K4.png" }
-BRIGHTMAP SPRITE PYROG7K3 { MAP "brightmaps/sprites/PYROG7K3.png" }
-BRIGHTMAP SPRITE PYROG8K2 { MAP "brightmaps/sprites/PYROG8K2.png" }
-BRIGHTMAP SPRITE PYROH1L1 { MAP "brightmaps/sprites/PYROH1L1.png" }
-BRIGHTMAP SPRITE PYROH2L8 { MAP "brightmaps/sprites/PYROH2L8.png" }
-BRIGHTMAP SPRITE PYROH3L7 { MAP "brightmaps/sprites/PYROH3L7.png" }
-BRIGHTMAP SPRITE PYROH4L6 { MAP "brightmaps/sprites/PYROH4L6.png" }
-BRIGHTMAP SPRITE PYROH5L5 { MAP "brightmaps/sprites/PYROH5L5.png" }
-BRIGHTMAP SPRITE PYROH6L4 { MAP "brightmaps/sprites/PYROH6L4.png" }
-BRIGHTMAP SPRITE PYROH7L3 { MAP "brightmaps/sprites/PYROH7L3.png" }
-BRIGHTMAP SPRITE PYROH8L2 { MAP "brightmaps/sprites/PYROH8L2.png" }
-BRIGHTMAP SPRITE PYROM1 { MAP "brightmaps/sprites/PYROM1.png" disablefullbright }
-BRIGHTMAP SPRITE PYROM2M8 { MAP "brightmaps/sprites/PYROM2M8.png" disablefullbright }
-BRIGHTMAP SPRITE PYROM3M7 { MAP "brightmaps/sprites/PYROM3M7.png" disablefullbright }
-BRIGHTMAP SPRITE PYROM4M6 { MAP "brightmaps/sprites/PYROM4M6.png" disablefullbright }
-BRIGHTMAP SPRITE PYROM5 { MAP "brightmaps/sprites/PYROM5.png" disablefullbright }
-BRIGHTMAP SPRITE PYRON1 { MAP "brightmaps/sprites/PYRON1.png" disablefullbright }
-BRIGHTMAP SPRITE PYRON2N8 { MAP "brightmaps/sprites/PYRON2N8.png" disablefullbright }
-BRIGHTMAP SPRITE PYRON3N7 { MAP "brightmaps/sprites/PYRON3N7.png" disablefullbright }
-BRIGHTMAP SPRITE PYRON4N6 { MAP "brightmaps/sprites/PYRON4N6.png" disablefullbright }
-BRIGHTMAP SPRITE PYRON5 { MAP "brightmaps/sprites/PYRON5.png" disablefullbright }
-BRIGHTMAP SPRITE PYROO1 { MAP "brightmaps/sprites/PYROO1.png" disablefullbright }
-BRIGHTMAP SPRITE PYROO2O8 { MAP "brightmaps/sprites/PYROO2O8.png" disablefullbright }
-BRIGHTMAP SPRITE PYROO3O7 { MAP "brightmaps/sprites/PYROO3O7.png" disablefullbright }
-BRIGHTMAP SPRITE PYROO4O6 { MAP "brightmaps/sprites/PYROO4O6.png" disablefullbright }
-BRIGHTMAP SPRITE PYROO5 { MAP "brightmaps/sprites/PYROO5.png" disablefullbright }
-BRIGHTMAP SPRITE PYROP1 { MAP "brightmaps/sprites/PYROP1.png" disablefullbright }
-BRIGHTMAP SPRITE PYROP2P8 { MAP "brightmaps/sprites/PYROP2P8.png" disablefullbright }
-BRIGHTMAP SPRITE PYROP3P7 { MAP "brightmaps/sprites/PYROP3P7.png" disablefullbright }
-BRIGHTMAP SPRITE PYROP4P6 { MAP "brightmaps/sprites/PYROP4P6.png" disablefullbright }
-BRIGHTMAP SPRITE PYROP5 { MAP "brightmaps/sprites/PYROP5.png" disablefullbright }
-BRIGHTMAP SPRITE PYROQ1 { MAP "brightmaps/sprites/PYROQ1.png" }
-BRIGHTMAP SPRITE PYROQ2 { MAP "brightmaps/sprites/PYROQ2.png" }
-BRIGHTMAP SPRITE PYROQ3 { MAP "brightmaps/sprites/PYROQ3.png" }
-BRIGHTMAP SPRITE PYROQ4 { MAP "brightmaps/sprites/PYROQ4.png" }
-BRIGHTMAP SPRITE PYROQ5 { MAP "brightmaps/sprites/PYROQ5.png" }
-BRIGHTMAP SPRITE PYROQ6 { MAP "brightmaps/sprites/PYROQ6.png" }
-BRIGHTMAP SPRITE PYROQ7 { MAP "brightmaps/sprites/PYROQ7.png" }
-BRIGHTMAP SPRITE PYROQ8 { MAP "brightmaps/sprites/PYROQ8.png" }
-BRIGHTMAP SPRITE PYROR0 { MAP "brightmaps/sprites/PYROR0.png" }
-BRIGHTMAP SPRITE PYROS0 { MAP "brightmaps/sprites/PYROS0.png" }
 BRIGHTMAP SPRITE SGUYA1 { MAP "brightmaps/sprites/SGUYA1.png" }
 BRIGHTMAP SPRITE SGUYA2 { MAP "brightmaps/sprites/SGUYA2.png" }
 BRIGHTMAP SPRITE SGUYA3 { MAP "brightmaps/sprites/SGUYA3.png" }
@@ -939,49 +628,7 @@ BRIGHTMAP SPRITE SSOUH0 { MAP "brightmaps/sprites/SSOUH0.png" }
 BRIGHTMAP SPRITE SSOUI0 { MAP "brightmaps/sprites/SSOUI0.png" }
 BRIGHTMAP SPRITE SSOUJ0 { MAP "brightmaps/sprites/SSOUJ0.png" }
 BRIGHTMAP SPRITE TMEDA0 { MAP "brightmaps/sprites/TMEDA0.png" }
-BRIGHTMAP SPRITE TORTA1 { MAP "brightmaps/sprites/TORTA1.png" }
-BRIGHTMAP SPRITE TORTA2A8 { MAP "brightmaps/sprites/TORTA2A8.png" }
-BRIGHTMAP SPRITE TORTA3A7 { MAP "brightmaps/sprites/TORTA3A7.png" }
-BRIGHTMAP SPRITE TORTB1 { MAP "brightmaps/sprites/TORTB1.png" }
-BRIGHTMAP SPRITE TORTB2B8 { MAP "brightmaps/sprites/TORTB2B8.png" }
-BRIGHTMAP SPRITE TORTB3B7 { MAP "brightmaps/sprites/TORTB3B7.png" }
-BRIGHTMAP SPRITE TORTC1 { MAP "brightmaps/sprites/TORTC1.png" }
-BRIGHTMAP SPRITE TORTC2C8 { MAP "brightmaps/sprites/TORTC2C8.png" }
-BRIGHTMAP SPRITE TORTC3C7 { MAP "brightmaps/sprites/TORTC3C7.png" }
-BRIGHTMAP SPRITE TORTD1 { MAP "brightmaps/sprites/TORTD1.png" }
-BRIGHTMAP SPRITE TORTD2D8 { MAP "brightmaps/sprites/TORTD2D8.png" }
-BRIGHTMAP SPRITE TORTD3D7 { MAP "brightmaps/sprites/TORTD3D7.png" }
-BRIGHTMAP SPRITE TORTE1 { MAP "brightmaps/sprites/TORTE1.png" }
-BRIGHTMAP SPRITE TORTE2E8 { MAP "brightmaps/sprites/TORTE2E8.png" }
-BRIGHTMAP SPRITE TORTE3E7 { MAP "brightmaps/sprites/TORTE3E7.png" }
-BRIGHTMAP SPRITE TORTE4E6 { MAP "brightmaps/sprites/TORTE4E6.png" }
-BRIGHTMAP SPRITE TORTF1 { MAP "brightmaps/sprites/TORTF1.png" }
-BRIGHTMAP SPRITE TORTF2F8 { MAP "brightmaps/sprites/TORTF2F8.png" }
-BRIGHTMAP SPRITE TORTF3F7 { MAP "brightmaps/sprites/TORTF3F7.png" }
-BRIGHTMAP SPRITE TORTF4F6 { MAP "brightmaps/sprites/TORTF4F6.png" }
-BRIGHTMAP SPRITE TORTF5 { MAP "brightmaps/sprites/TORTF5.png" }
-BRIGHTMAP SPRITE TORTG1 { MAP "brightmaps/sprites/TORTG1.png" }
-BRIGHTMAP SPRITE TORTG2G8 { MAP "brightmaps/sprites/TORTG2G8.png" }
-BRIGHTMAP SPRITE TORTG3G7 { MAP "brightmaps/sprites/TORTG3G7.png" }
-BRIGHTMAP SPRITE TORTH0 { MAP "brightmaps/sprites/TORTH0.png" }
-BRIGHTMAP SPRITE TORTI0 { MAP "brightmaps/sprites/TORTI0.png" }
-BRIGHTMAP SPRITE TORTJ0 { MAP "brightmaps/sprites/TORTJ0.png" }
-BRIGHTMAP SPRITE TORTK0 { MAP "brightmaps/sprites/TORTK0.png" }
-BRIGHTMAP SPRITE TORTL0 { MAP "brightmaps/sprites/TORTL0.png" }
-BRIGHTMAP SPRITE TORTM0 { MAP "brightmaps/sprites/TORTM0.png" }
-BRIGHTMAP SPRITE TORTN0 { MAP "brightmaps/sprites/TORTN0.png" }
-BRIGHTMAP SPRITE TRBLA0 { MAP "brightmaps/sprites/TRBLA0.png" }
-BRIGHTMAP SPRITE TRBLB0 { MAP "brightmaps/sprites/TRBLB0.png" }
-BRIGHTMAP SPRITE TRBLC0 { MAP "brightmaps/sprites/TRBLC0.png" }
-BRIGHTMAP SPRITE TRBLD0 { MAP "brightmaps/sprites/TRBLD0.png" }
-BRIGHTMAP SPRITE TRBLE0 { MAP "brightmaps/sprites/TRBLE0.png" }
-BRIGHTMAP SPRITE TRPSA0 { MAP "brightmaps/sprites/TRPSA0.png" }
-BRIGHTMAP SPRITE TRPSB0 { MAP "brightmaps/sprites/TRPSB0.png" }
-BRIGHTMAP SPRITE TRPSC0 { MAP "brightmaps/sprites/TRPSC0.png" }
-BRIGHTMAP SPRITE TRPSD0 { MAP "brightmaps/sprites/TRPSD0.png" }
-BRIGHTMAP SPRITE TRPSE0 { MAP "brightmaps/sprites/TRPSE0.png" }
-BRIGHTMAP SPRITE TRPSF0 { MAP "brightmaps/sprites/TRPSF0.png" }
-BRIGHTMAP SPRITE TRPSG0 { MAP "brightmaps/sprites/TRPSG0.png" }
+
 BRIGHTMAP SPRITE TSTMA0 { MAP "brightmaps/sprites/TSTMA0.png" }
 BRIGHTMAP SPRITE VIL2A1 { MAP "brightmaps/sprites/VIL2A1.png" }
 BRIGHTMAP SPRITE VIL2A2 { MAP "brightmaps/sprites/VIL2A2.png" }
@@ -1234,23 +881,6 @@ BRIGHTMAP SPRITE spidp0 { MAP "brightmaps/sprites/spidp0.png" }
 BRIGHTMAP SPRITE spidq0 { MAP "brightmaps/sprites/spidq0.png" }
 BRIGHTMAP SPRITE spidr0 { MAP "brightmaps/sprites/spidr0.png" }
 
-BRIGHTMAP SPRITE HAEDA1 { MAP "brightmaps/sprites/HAEDA1.png" }
-BRIGHTMAP SPRITE HAEDA2A8 { MAP "brightmaps/sprites/HAEDA2A8.png" }
-BRIGHTMAP SPRITE HAEDB1 { MAP "brightmaps/sprites/HAEDB1.png" }
-BRIGHTMAP SPRITE HAEDB2B8 { MAP "brightmaps/sprites/HAEDB2B8.png" }
-BRIGHTMAP SPRITE HAEDB3B7 { MAP "brightmaps/sprites/HAEDB3B7.png" }
-BRIGHTMAP SPRITE HAEDB4B6 { MAP "brightmaps/sprites/HAEDB4B6.png" }
-BRIGHTMAP SPRITE HAEDB5 { MAP "brightmaps/sprites/HAEDB5.png" }
-BRIGHTMAP SPRITE HAEDC1 { MAP "brightmaps/sprites/HAEDC1.png" }
-BRIGHTMAP SPRITE HAEDC2C8 { MAP "brightmaps/sprites/HAEDC2C8.png" }
-BRIGHTMAP SPRITE HAEDC3C7 { MAP "brightmaps/sprites/HAEDC3C7.png" }
-BRIGHTMAP SPRITE HAEDC4C6 { MAP "brightmaps/sprites/HAEDC4C6.png" }
-BRIGHTMAP SPRITE HAEDC5 { MAP "brightmaps/sprites/HAEDC5.png" }
-BRIGHTMAP SPRITE HAEDD1 { MAP "brightmaps/sprites/HAEDD1.png" }
-BRIGHTMAP SPRITE HAEDD2D8 { MAP "brightmaps/sprites/HAEDD2D8.png" }
-BRIGHTMAP SPRITE HAEDE1 { MAP "brightmaps/sprites/HAEDE1.png" }
-BRIGHTMAP SPRITE HAEDE2E8 { MAP "brightmaps/sprites/HAEDE2E8.png" }
-
 BRIGHTMAP SPRITE BFGGA0 { MAP "brightmaps/sprites/BFGGA0.png" }
 BRIGHTMAP SPRITE BFGGB0 { MAP "brightmaps/sprites/BFGGB0.png" }
 BRIGHTMAP SPRITE BFGGC0 { MAP "brightmaps/sprites/BFGGC0.png" }
@@ -1261,68 +891,4 @@ BRIGHTMAP SPRITE BFGRF0 { MAP "brightmaps/sprites/BFGRF0.png" }
 BRIGHTMAP SPRITE SLMPA0 { MAP "brightmaps/sprites/SLMPA0.png" }
 BRIGHTMAP SPRITE SLMPB0 { MAP "brightmaps/sprites/SLMPB0.png" }
 
-BRIGHTMAP SPRITE WICKA1 { MAP "brightmaps/sprites/WICKA1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKA2 { MAP "brightmaps/sprites/WICKA2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKA3 { MAP "brightmaps/sprites/WICKA3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKA7 { MAP "brightmaps/sprites/WICKA7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKA8 { MAP "brightmaps/sprites/WICKA8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKB1 { MAP "brightmaps/sprites/WICKB1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKB2 { MAP "brightmaps/sprites/WICKB2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKB3 { MAP "brightmaps/sprites/WICKB3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKB7 { MAP "brightmaps/sprites/WICKB7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKB8 { MAP "brightmaps/sprites/WICKB8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKC1 { MAP "brightmaps/sprites/WICKC1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKC2 { MAP "brightmaps/sprites/WICKC2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKC3 { MAP "brightmaps/sprites/WICKC3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKC7 { MAP "brightmaps/sprites/WICKC7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKC8 { MAP "brightmaps/sprites/WICKC8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKD1 { MAP "brightmaps/sprites/WICKD1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKD2 { MAP "brightmaps/sprites/WICKD2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKD3 { MAP "brightmaps/sprites/WICKD3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKD7 { MAP "brightmaps/sprites/WICKD7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKD8 { MAP "brightmaps/sprites/WICKD8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKE1 { MAP "brightmaps/sprites/WICKE1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKE2 { MAP "brightmaps/sprites/WICKE2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKE8 { MAP "brightmaps/sprites/WICKE8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKF1 { MAP "brightmaps/sprites/WICKF1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKF2 { MAP "brightmaps/sprites/WICKF2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKF7 { MAP "brightmaps/sprites/WICKF7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKF8 { MAP "brightmaps/sprites/WICKF8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKG1 { MAP "brightmaps/sprites/WICKG1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKG2 { MAP "brightmaps/sprites/WICKG2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKG7 { MAP "brightmaps/sprites/WICKG7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKG8 { MAP "brightmaps/sprites/WICKG8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKH1 { MAP "brightmaps/sprites/WICKH1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKH2 { MAP "brightmaps/sprites/WICKH2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKH7 { MAP "brightmaps/sprites/WICKH7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKH8 { MAP "brightmaps/sprites/WICKH8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKI1 { MAP "brightmaps/sprites/WICKI1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKI2 { MAP "brightmaps/sprites/WICKI2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKI3 { MAP "brightmaps/sprites/WICKI3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKI7 { MAP "brightmaps/sprites/WICKI7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKI8 { MAP "brightmaps/sprites/WICKI8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKJ1 { MAP "brightmaps/sprites/WICKJ1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKJ2 { MAP "brightmaps/sprites/WICKJ2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKJ3 { MAP "brightmaps/sprites/WICKJ3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKJ7 { MAP "brightmaps/sprites/WICKJ7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKJ8 { MAP "brightmaps/sprites/WICKJ8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK1 { MAP "brightmaps/sprites/WICKK1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK2 { MAP "brightmaps/sprites/WICKK2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK3 { MAP "brightmaps/sprites/WICKK3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK4 { MAP "brightmaps/sprites/WICKK4.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK5 { MAP "brightmaps/sprites/WICKK5.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK6 { MAP "brightmaps/sprites/WICKK6.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK7 { MAP "brightmaps/sprites/WICKK7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKK8 { MAP "brightmaps/sprites/WICKK8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKL1 { MAP "brightmaps/sprites/WICKL1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKL2 { MAP "brightmaps/sprites/WICKL2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKL3 { MAP "brightmaps/sprites/WICKL3.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKL7 { MAP "brightmaps/sprites/WICKL7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKL8 { MAP "brightmaps/sprites/WICKL8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKM1 { MAP "brightmaps/sprites/WICKM1.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKM2 { MAP "brightmaps/sprites/WICKM2.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKM7 { MAP "brightmaps/sprites/WICKM7.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKM8 { MAP "brightmaps/sprites/WICKM8.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKN0 { MAP "brightmaps/sprites/WICKN0.png" DisableFullBright }
-BRIGHTMAP SPRITE WICKO0 { MAP "brightmaps/sprites/WICKO0.png" DisableFullBright }
 BRIGHTMAP SPRITE TRCKA0 { MAP "brightmaps/sprites/TRCKA0.png" }
