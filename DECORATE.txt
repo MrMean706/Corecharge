@@ -52,7 +52,6 @@
 #include "actors/monsters/LostSoul.dec"
 #include "actors/monsters/ShotgunGuy.dec"
 #include "actors/monsters/Cacodemon.dec"
-#include "actors/monsters/Agathodemon.dec"
 #include "actors/monsters/Exile.dec"
 #include "actors/monsters/ChaingunGuy.dec"
 #include "actors/monsters/CyberBaron.dec"
