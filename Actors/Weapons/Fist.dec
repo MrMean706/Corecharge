@@ -1,6 +1,8 @@
 Actor TangoFist : Fist replaces Fist
 {
 	Tag "Fist"
+    Weapon.SlotNumber 1
+    
 	States
 	{
 	Select:

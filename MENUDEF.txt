@@ -50,9 +50,6 @@ OptionMenu "SuperchargeOptions"
  	Option		"Monster-fired rocket flight noise", "sv_tango_monster_rocket_fly_sound", "OnOff"
 	Option		"Classic SSG fire sound", "cl_tango_classic_ssg_fire_sound", "OnOff"
 	Option		"Vanilla-style long Berserk pickup flash", "cl_tango_berserk_long_flash", "OnOff"
-	Option		"Shotgun Skin", "sv_tango_shotgun_skin", "ShotgunSkinOptions"
-	Option		"Super Shotgun Skin", "sv_tango_super_shotgun_skin", "ShotgunSkinOptions"
-	// Option		"Soulsphere colored pickup flash", "cl_tango_soulsphere_flash", "OnOff"
 	
 	StaticText ""
 	StaticText "Gameplay Options", 1
@@ -77,12 +74,6 @@ OptionValue "HudOrderOptions"
 {
 	0, "Ammo / Health / Armor (Vanilla)"
 	1, "Health / Armor / Ammo"
-}
-
-OptionValue "ShotgunSkinOptions"
-{
-	0, "Default"
-	1, "Gothic"
 }
 
 OptionValue "MaxVfx"

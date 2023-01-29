@@ -23,6 +23,3 @@ user bool cl_tango_auto_reload_when_empty = false;
 user bool cl_tango_enable_screen_shake = true;
 server bool sv_tango_rocket_screen_shake = true;
 user bool cl_tango_enable_recoil = true;
-server bool sv_tango_chaingun_replace_assault_rifle = false;
-server int sv_tango_shotgun_skin = 0;
-server int sv_tango_super_shotgun_skin = 0;

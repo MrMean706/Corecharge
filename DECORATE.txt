@@ -30,7 +30,6 @@
 #include "actors/weapons/Fist.dec"
 #include "actors/weapons/Chainsaw.dec"
 #include "actors/weapons/Pistol.dec"
-#include "actors/weapons/Shotgun.dec"
 #include "actors/weapons/SuperShotgun.dec"
 #include "actors/weapons/AssaultRifle.dec"
 #include "actors/weapons/RocketLauncher.dec"
