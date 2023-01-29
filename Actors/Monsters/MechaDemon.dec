@@ -102,7 +102,7 @@ ACTOR TangoMechaDemonSlow : TangoMechaDemon
 	}
 }
 
-ACTOR TangoMechaSpectre : TangoMechaDemon replaces Spectre 27003
+ACTOR TangoMechaSpectre : TangoMechaDemon replaces Spectre
 {
 	+SHADOW
 	RenderStyle OptFuzzy
