@@ -29,5 +29,6 @@ Class TangoPlayer : Doomplayer replaces Doomplayer
         Player.StartItem "ShotgunAmmo", 8;
         Player.StartItem "AssaultRifleAmmo", 48;
         Player.StartItem "PlasmaRifleAmmo", 40;
+        Species "CorechargePlayer";
     }
 }

@@ -1,3 +1,6 @@
+BadMojo
+	Bear Taser sprites (originally from Dual Laser)
+Supercharge Credits:
 NoozeArts
 	new stimpack and medkit pickup sprites (minor edits and brightmaps by Tango)
 sonic-o-fan, osjclatchford, Lazureus, id software:
