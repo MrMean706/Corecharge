@@ -1,7 +1,10 @@
 version "3.2.0"
 
+#include "actors/utilities/ReloadableWeapon.zs"
+#include "actors/utilities/Movement.zs"
+
 #include "actors/Player.zs"
-#include "actors/ReloadableWeapon.zs"
+
 #include "actors/weapons/shotgun.zs"
 #include "actors/weapons/BearTaser.zs"
 

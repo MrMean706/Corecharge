@@ -1,6 +1,7 @@
 Class BearTaser : Weapon replaces Chainsaw
 {
     bool isReloading;
+    Actor currentDart;
     Default
     {
         Tag "Bear Taser";
@@ -36,10 +37,11 @@ Class BearTaser : Weapon replaces Chainsaw
     Fire:
 		DUAL A 1 
         {
-        A_FireProjectile ("TaserDart",0,true,14,0,0,0);
+        Actor unused;
+        [unused, invoker.currentDart] = A_FireProjectile ("TaserDart",0,true,14,0,0,0);
         A_GunFlash();
         }
-        DUAL AB 2 A_PlaySound ("weapons/FIRELASERS", CHAN_WEAPON);
+        DUAL AB 2 A_PlaySound ("weapons/BearTaser/FIRELASERS", CHAN_WEAPON);
         DUAL CD 1;
 		DUAL DC 1;
 		DUAL BA 5;
@@ -113,6 +115,8 @@ Class ArcDestination : Actor
     Default
     {
         +FRIENDLY;
+        +MTHRUSPECIES;
+        +ALLOWTHRUFLAGS;
         +THRUSPECIES;
         Species "CorechargePlayer";
     }
@@ -126,26 +130,39 @@ Class ArcDestination : Actor
 
 Class TaserShock : Inventory
 {
+    const Stiffness = 1.5;//Scales how hard the taser's wire pulls
     Actor origin;   //Actor who originally fired the taser
-    //TODO
     int shockCounter;
-    static void CreateArc(Actor source, Actor destination)
+    static void CreateArc(Actor source, Actor destination, double driftSpeed = 0.0)
     {
-        Console.printf("Source position: %d, %d, %d",source.x, source.y, source.z);
+        //Console.printf("Source position: %d, %d, %d",source.x, source.y, source.z);
         ArcDestination dummyDestination = ArcDestination(Spawn("ArcDestination", destination.pos));
         dummyDestination.bFriendly = true;
         dummyDestination.A_Face(source,0,180,0,0,FAF_MIDDLE);
         dummyDestination.A_CustomRailgun(
-            0,0,"","FF0000",
+            0,0,"","Red",
             RGF_SILENT | RGF_FULLBRIGHT | RGF_EXPLICITANGLE ,
             0,3, //aim and jaggedness
             "None", // pufftype
             0, 0, //spread
             source.Distance3D(destination), 3, // range and duration
             1.0, // particle spacing
-            0 // drift speed
+            driftSpeed
         );
         dummyDestination.Destroy();
+    }
+    void BreakLine()
+    {
+        if(owner && origin)
+        {
+            //TODO:
+            //Snapping sound effect
+            //Girthier, messier arc
+            CreateArc(origin,owner,1.0);
+            //Pull owner towards origin
+            //Movement.DoKnockback(owner,(origin.pos - owner.pos).Unit() * ,origin.mass);
+        }
+        Destroy();
     }
     Default
     {
@@ -155,19 +172,27 @@ Class TaserShock : Inventory
     override void DoEffect()
     {
         super.DoEffect();
-        if (!owner || (owner.health <= 0))
+        double lineDistance = owner.Distance3D(origin);
+        if (!owner || (owner.health <= 0) || lineDistance > 250)
         {
-            Destroy();
+            BreakLine();
             return;
+        }
+        if (lineDistance > 200)
+        {
+            Vector3 ToOrigin = (origin.pos - owner.pos).Unit();
+            double WireForce = Stiffness * (lineDistance - 200);
+            origin.vel -= ToOrigin * (WireForce / origin.mass);
+            owner.vel += ToOrigin * (WireForce / owner.mass);
+            //TODO: 
+            //Play higher pitch sound to warn player 
+            //Pull origin and target together
+            
         }
         shockCounter++;
         if (shockCounter >= 4)
         {
             shockCounter = 0;
-            //Warp(owner,0,0,0,0,WARPF_NOCHECKPOSITION);
-            //spawned = TaserDOT(SpawnMissile(owner,"TaserDOT"));
-            //if (!origin) Console.printf("Taser shock has no origin!");
-            //f (spawned && origin) spawned.target = origin;
             CreateArc(origin,owner);
             owner.DamageMobj(self, origin, 11, self.DamageType, DMG_INFLICTOR_IS_PUFF);
         }

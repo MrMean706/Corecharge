@@ -1,5 +1,8 @@
 BadMojo
 	Bear Taser sprites (originally from Dual Laser)
+kenny.nl(Interface Sounds pack)
+	Bear Taser clicking sound (scroll_001.ogg)
+
 Supercharge Credits:
 NoozeArts
 	new stimpack and medkit pickup sprites (minor edits and brightmaps by Tango)
