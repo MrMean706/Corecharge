@@ -1,12 +1,17 @@
 Class BearTaser : Weapon replaces Chainsaw
 {
     bool isReloading;
-    Actor currentDart;
+    TaserShock currentShock;
+    
+    void SetCurrentShock(TaserShock newShock)
+    {
+        currentShock = newShock;
+    }
     Default
     {
         Tag "Bear Taser";
-        +WEAPON.AMMO_OPTIONAL;
         +WEAPON.NOALERT;
+        +WEAPON.AMMO_OPTIONAL
         Weapon.SlotNumber 1;
         //decal "bulletchip";
         Weapon.AmmoUse 1;
@@ -37,9 +42,11 @@ Class BearTaser : Weapon replaces Chainsaw
     Fire:
 		DUAL A 1 
         {
-        Actor unused;
-        [unused, invoker.currentDart] = A_FireProjectile ("TaserDart",0,true,14,0,0,0);
+        if (CountInv("TaserAmmo") == 0)
+            return ResolveState("NoAmmo");
+        A_FireProjectile ("TaserDart",0,true,14,0,0,0);
         A_GunFlash();
+        return ResolveState(null);
         }
         DUAL AB 2 A_PlaySound ("weapons/BearTaser/FIRELASERS", CHAN_WEAPON);
         DUAL CD 1;
@@ -48,9 +55,23 @@ Class BearTaser : Weapon replaces Chainsaw
 		DUAL A 10  A_ReFire();
 		DUAL A 5;
 		Goto Ready;
+    NoAmmo:
+    DUAL A 2 offset(0,34) A_PlaySound("weapons/empty");
+    Goto Ready;
     Flash:
 		DUAL EF 1 Bright A_Light1;
 		Goto Lightdone;
+    Reload:
+        DUAL A 1 offset(0,34);
+		DUAL A 1 offset(5,38);
+		DUAL A 1 offset(10,42);
+		DUAL A 2 offset(20,46);
+        DUAL B 4 offset(30,52)
+        {
+        A_GiveInventory("TaserAmmo", 1);
+        if (invoker.currentShock) invoker.currentShock.BreakLine();
+        } //TODO: Sound
+        Goto Ready;
     }
 }
 
@@ -76,7 +97,12 @@ Class TaserDart : FastProjectile
         if (victim == target)
             return 1;
         TaserShock StatusEffect = TaserShock(victim.GiveInventoryType("TaserShock"));
-        if (StatusEffect) StatusEffect.origin = target;
+        if (StatusEffect) 
+        {
+            StatusEffect.origin = target;
+            BearTaser originWeapon = BearTaser(target.FindInventory("BearTaser"));
+            if (originWeapon) originWeapon.SetCurrentShock(StatusEffect);
+        }
         return -1;
     }
     
@@ -173,7 +199,7 @@ Class TaserShock : Inventory
     {
         super.DoEffect();
         double lineDistance = owner.Distance3D(origin);
-        if (!owner || (owner.health <= 0) || lineDistance > 250)
+        if (!owner || (owner.health <= 0) || lineDistance > 250 || owner.CountInv("TaserAmmo") > 0)
         {
             BreakLine();
             return;
