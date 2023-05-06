@@ -1,5 +1,6 @@
-BadMojo
-	Bear Taser sprites (originally from Dual Laser)
+Mor'Ladim
+	Bear Taser sprites (originally from The Electrocutioneer from Bullet-Eye)
+	Some of the Electrocutioneer's code
 kenny.nl(Interface Sounds pack)
 	Bear Taser clicking sound (scroll_001.ogg)
 
