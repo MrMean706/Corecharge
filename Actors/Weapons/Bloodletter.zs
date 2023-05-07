@@ -72,7 +72,10 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             // Positional calculations for the casing pulled from complex-doom.v27a5.pk3 - thanks Daedalus :D
             A_SpawnItemEx("9mmCasing", 30 * cos(pitch), 0, 30 - (30 * sin(pitch)), frandom(2, 4) * cos(pitch), frandom(3, 6), frandom(3, 6) * -sin(pitch), 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
             }
-            _WBD D 2 Offset( 0, 80) A_WeaponReady(WRF_ALLOWRELOAD);
+            _WBD D 2 Offset( 0, 80) 
+            {
+            A_WeaponReady(WRF_ALLOWRELOAD);
+            }
             _WBD E 1 Offset( 0, 94);
 			_WBD E 1 Offset( 0, 108);
 			_WBD E 2 Offset( 0, 95);
@@ -182,7 +185,14 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 			#### A 0 A_StartSound("weapons/bloodletterreloadstage3", CHAN_WEAPON);
 			#### A 1 A_WeaponOffset(0, 83);
 			//#### A 0 A_ReloadWeapon();
-			#### A 6 A_WeaponOffset(0, 80);
+			#### A 6 
+            {
+                A_WeaponOffset(0, 80);
+                int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);
+                self.TakeInventory("TangoBulletClip",toLoad);
+                self.GiveInventory("PistolAmmo",toLoad);
+                A_WeaponReady(WRF_ALLOWRELOAD);
+            }
 			#### A 4 A_WeaponOffset(0, 60);
 			#### A 2 A_WeaponOffset(0, 43);
 			Goto Ready;
