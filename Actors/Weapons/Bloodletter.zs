@@ -10,6 +10,30 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         return CVar.GetCVar("cl_tango_enable_recoil", owner.player).GetBool();
     }
     
+    override void AttachToOwner(Actor other)
+    {
+        other.TakeInventory("TangoPistol", 1);
+        super.AttachToOwner(other);
+    }
+    
+    override bool HandlePickup(Inventory item)
+    {
+        //Code taken from Weapon::HandlePickup
+        if (item is "TangoPistol" ) 
+        {
+            if (Weapon(item).PickupForAmmo (self))
+			{
+				item.bPickupGood = true;
+			}
+			if (MaxAmount > 1) //[SP] If amount<maxamount do another pickup test of the weapon itself!
+			{
+				return Super.HandlePickup (item);
+			}
+			return true;
+        }
+        return super.HandlePickup(item);
+    }
+    
     void AltAttack()
     {
         FTranslatedLineTarget victim;
