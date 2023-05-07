@@ -16,7 +16,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         Actor unused;
         int damageDealt;
         double pitch = AimLineAttack(angle, 90);
-        [unused, damageDealt] = LineAttack(angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
+        [unused, damageDealt] = owner.LineAttack(angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
         Console.printf("Checking Linetarget");
         if (damageDealt) 
             Console.printf("Refreshing Ammo");
@@ -130,7 +130,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             A_WeaponOffset(0, 82);
             }
 			_WBD G 1 A_WeaponOffset(-85, 115);
-			_WBD G 0 A_FireBullets(0, 0, 1, 20, "BloodletterMagnumMeleePuffSwipe", FBF_EXPLICITANGLE, 180);
+			_WBD G 0 { invoker.AltAttack(); }
 			_WBD G 1 A_WeaponOffset(-154, 131);
 			_WBD G 1 A_WeaponOffset(-215, 141);
 			_WBD G 1 A_WeaponOffset(-336, 157);
