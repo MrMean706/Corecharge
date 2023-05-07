@@ -40,7 +40,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 	States
 	{
 		Spawn:
-			PBLD A 1;
+			TBLD A 1;
 			Loop;
 		Ready:
 			_WBD A 1 A_WeaponReady(WRF_ALLOWRELOAD);
