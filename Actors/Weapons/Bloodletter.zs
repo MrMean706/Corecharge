@@ -10,6 +10,19 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         return CVar.GetCVar("cl_tango_enable_recoil", owner.player).GetBool();
     }
     
+    void AltAttack()
+    {
+        FTranslatedLineTarget victim;
+        Actor unused;
+        int damageDealt;
+        double pitch = AimLineAttack(angle, 90);
+        [unused, damageDealt] = LineAttack(angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
+        Console.printf("Checking Linetarget");
+        if (damageDealt) 
+            Console.printf("Refreshing Ammo");
+            owner.SetInventory("PistolAmmo", Ammo1.MaxAmount);
+    }
+    
     Default
 	{
         //Shared with Pistol
@@ -103,14 +116,14 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 			_WBD G 1 A_WeaponOffset(150, 74);
 			_WBD G 1 
             {
-                A_FireBullets(0, 0, 1, 20, "BloodletterMagnumMeleePuffSwipe", FBF_EXPLICITANGLE, 180);
+                invoker.AltAttack(); 
                 A_WeaponOffset(30, 77);
             }
 			_WBD G 1 
             {
             Radius_Quake(3, 3, 0, 1, 0);
             A_StartSound("weapons/bloodletterslashpool", CHAN_AUTO, 0, 1);
-            A_FireBullets(0, 0, 1, 90, "BloodletterMagnumMeleePuffMain", FBF_EXPLICITANGLE | FBF_NORANDOM, 180);
+            invoker.AltAttack();
             A_SpawnItemEx("BloodletterSlashFX", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
             A_SpawnItemEx("BloodletterSlashFXSweetener", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
             A_SpawnItemEx("BloodletterSlashFXSweetener2", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
@@ -132,17 +145,17 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 			TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSECONDARY|WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_ALLOWUSER1|WRF_ALLOWUSER4);
 			_WBD G 1 A_WeaponOffset(300, 72);
 			_WBD G 1 A_WeaponOffset(150, 74);
-			_WBD G 0 A_FireBullets(0, 0, 1, 20, "BloodletterMagnumMeleePuffSwipe", FBF_EXPLICITANGLE, 180);
+			_WBD G 0 { invoker.AltAttack(); }
 			_WBD G 1 A_WeaponOffset(30, 77);
 			_WBD A 0 Radius_Quake(3, 3, 0, 1, 0);			
 			_WBD G 0 A_StartSound("weapons/bloodletterslashpool", CHAN_AUTO, 0, 1);
-			_WBD A 0 A_FireBullets(0, 0, 1, 90, "BloodletterMagnumMeleePuffMain", FBF_EXPLICITANGLE | FBF_NORANDOM, 180);
+			_WBD A 0 { invoker.AltAttack(); }
 			_WBD A 0 A_SpawnItemEx("BloodletterSlashFX", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
 			_WBD A 0 A_SpawnItemEx("BloodletterSlashFXSweetener", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
 			_WBD A 0 A_SpawnItemEx("BloodletterSlashFXSweetener2", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
 			_WBD G 1 A_WeaponOffset(0, 82);
 			_WBD G 1 A_WeaponOffset(-85, 115);
-			_WBD G 0 A_FireBullets(0, 0, 1, 20, "BloodletterMagnumMeleePuffSwipe", FBF_EXPLICITANGLE, 180);
+			_WBD G 0 { invoker.AltAttack(); }
 
 			_WBD G 1 A_WeaponOffset(-154, 131);
 			_WBD G 1 A_WeaponOffset(-215, 141);
