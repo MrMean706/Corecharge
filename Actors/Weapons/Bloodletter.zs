@@ -134,7 +134,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 			_WBD G 1 A_WeaponOffset(-154, 131);
 			_WBD G 1 A_WeaponOffset(-215, 141);
 			_WBD G 1 A_WeaponOffset(-336, 157);
-			TNT1 A 2 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSECONDARY|WRF_ALLOWRELOAD);
+			TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY|WRF_ALLOWRELOAD);
 			_WBD A 0 A_ReFire("AltHold");
 			_WBD A 1 Offset( 0, 45);
 			_WBD A 1 Offset( 0, 38);
