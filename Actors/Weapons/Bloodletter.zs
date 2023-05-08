@@ -43,6 +43,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         [unused, damageDealt] = owner.LineAttack(owner.angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
         if (damageDealt > 0) 
         {
+            if (owner.CountInv("PistolAmmo") < Ammo1.MaxAmount) owner.A_StartSound("weapons/bloodletterreloadstage1", CHAN_AUTO);
             owner.SetInventory("PistolAmmo", Ammo1.MaxAmount);
         }
     }
@@ -160,25 +161,26 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             }
             #### A 1 A_WeaponOffset(0, 60);
 			#### A 1 A_WeaponOffset(0, 80); 
-            #### A 0 A_StartSound("weapons/bloodletterreloadstage1", CHAN_WEAPON);
 			#### A 1 A_WeaponOffset(6, 83);
             #### A 12 A_WeaponOffset(4, 83);
             #### A 10 A_WeaponOffset(3, 83);
-            #### A 0 A_StartSound("weapons/bloodletterreloadstage2", CHAN_WEAPON);
             #### A 1 A_WeaponOffset(2, 84);
             #### A 1 
             {
                 A_PlaySound("pistol/reload2", CHAN_AUTO);
                 A_WeaponOffset(1, 85);
+                
+                int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);
+                self.TakeInventory("TangoBulletClip",toLoad);
+                self.GiveInventory("PistolAmmo",toLoad);
+                A_WeaponReady(WRF_ALLOWRELOAD);
             }
             
-            #### A 6 A_WeaponOffset(1, 84);
+            #### A 2 A_WeaponOffset(1, 84);
             //4
+			/*#### A 5 A_WeaponOffset(1, 84);
 			#### A 5 A_WeaponOffset(1, 84);
-			#### A 5 A_WeaponOffset(1, 84);
-			#### A 0 A_StartSound("weapons/bloodletterreloadstage3", CHAN_WEAPON);
 			#### A 1 A_WeaponOffset(0, 83);
-			//#### A 0 A_ReloadWeapon();
 			#### A 6 
             {
                 A_WeaponOffset(0, 80);
@@ -188,7 +190,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
                 A_WeaponReady(WRF_ALLOWRELOAD);
             }
 			#### A 4 A_WeaponOffset(0, 60);
-			#### A 2 A_WeaponOffset(0, 43);
+			#### A 2 A_WeaponOffset(0, 43);*/
 			Goto Ready;
 		Flash:
 			TNT1 A 1 Bright A_Light1;

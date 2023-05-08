@@ -26,6 +26,21 @@ pistol/reload2				PSTREL2
 pistol/fire					PSTFIRE
 pistol/select				PSTSELC
 
+// Bloodletter - Morladim - Bullet-Eye
+$Random weapons/bloodletterslashpool { weapons/bloodletterslash1 weapons/bloodletterslash2 weapons/bloodletterslash3 }
+$Limit weapons/bloodletterslashpool 0
+
+weapons/bloodletterslash1 BLODLTS1 //Blizzard - World of Warcraft
+$Limit weapons/bloodletterslash1 0
+
+weapons/bloodletterslash2 BLODLTS2 //Blizzard - World of Warcraft
+$Limit weapons/bloodletterslash2 0
+
+weapons/bloodletterslash3 BLODLTS3 //Blizzard - World of Warcraft
+$Limit weapons/bloodletterslash3 0
+
+weapons/bloodletterreloadstage1 BLDLTRE1 //Capcom - Resident Evil 5
+$Limit weapons/bloodletterreloadstage1 0
 
 // Assault Rifle
 items/assaultrifle			dscget
