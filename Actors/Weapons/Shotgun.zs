@@ -2,10 +2,10 @@ Class ShotgunAmmo : Ammo
 {
 	Default
     {
-        Inventory.Amount 8;
-        Inventory.MaxAmount 8;
+        Inventory.Amount 6;
+        Inventory.MaxAmount 6;
         Ammo.BackpackAmount 0;
-        Ammo.BackpackMaxAmount 8;
+        Ammo.BackpackMaxAmount 6;
         +Inventory.IGNORESKILL
     }
 }
