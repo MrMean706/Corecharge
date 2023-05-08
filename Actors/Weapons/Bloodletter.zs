@@ -145,7 +145,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
 			TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY|WRF_ALLOWRELOAD);
 			_WBD A 1 Offset( 0, 45);
 			_WBD A 1 Offset( 0, 38);
-			_WBD A 15 Offset( 0, 32);
+			_WBD A 2 Offset( 0, 32);
 			Goto Ready;
         Reload:
         //Should total to 29 tics
