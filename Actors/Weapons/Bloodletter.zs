@@ -39,12 +39,14 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         FTranslatedLineTarget victim;
         Actor unused;
         int damageDealt;
-        double pitch = AimLineAttack(angle, 90);
-        [unused, damageDealt] = owner.LineAttack(angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
+        double pitch = owner.AimLineAttack(owner.angle, 90);
+        [unused, damageDealt] = owner.LineAttack(owner.angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
         Console.printf("Checking Linetarget");
-        if (damageDealt) 
+        if (damageDealt > 0) 
+        {
             Console.printf("Refreshing Ammo");
             owner.SetInventory("PistolAmmo", Ammo1.MaxAmount);
+        }
     }
     
     Default
