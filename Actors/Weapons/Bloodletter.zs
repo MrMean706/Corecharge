@@ -109,19 +109,6 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             // Positional calculations for the casing pulled from complex-doom.v27a5.pk3 - thanks Daedalus :D
             A_SpawnItemEx("9mmCasing", 30 * cos(pitch), 0, 30 - (30 * sin(pitch)), frandom(2, 4) * cos(pitch), frandom(3, 6), frandom(3, 6) * -sin(pitch), 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
             }
-            _WBD D 2 Offset( 0, 80) 
-            {
-            A_WeaponReady(WRF_ALLOWRELOAD);
-            }
-            _WBD E 1 Offset( 0, 94);
-			_WBD E 1 Offset( 0, 108);
-			_WBD E 2 Offset( 0, 95);
-			_WBD E 2 Offset( 0, 80);
-			_WBD F 2 Offset( 0, 76);
-			_WBD A 1 Offset( 0, 62);
-			_WBD A 1 Offset( 0, 52);
-			_WBD A 1 Offset( 0, 42);
-			_WBD A 15 Offset( 0, 32);
             Goto Ready;
         CheckAutoReload:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_auto_reload") == 1, "ReloadPreBuffer");
@@ -133,62 +120,32 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             _WBD A 2 A_PlaySound("weapons/empty");
             Goto Ready;
 		AltFire:
+            TNT1 A 0 { invoker.AltAttack(); }
 			_WBD A 1 Offset( 0, 55);
 			_WBD A 1 Offset( 0, 67);
 			TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSECONDARY|WRF_ALLOWRELOAD|WRF_NOBOB);
 			_WBD G 1 A_WeaponOffset(300, 72);
+            TNT1 A 0 { invoker.AltAttack(); }
 			_WBD G 1 A_WeaponOffset(150, 74);
-			_WBD G 1 
-            {
-                invoker.AltAttack(); 
-                A_WeaponOffset(30, 77);
-            }
+			_WBD G 1 A_WeaponOffset(30, 77);
 			_WBD G 1 
             {
             Radius_Quake(3, 3, 0, 1, 0);
             A_StartSound("weapons/bloodletterslashpool", CHAN_AUTO, 0, 1);
-            invoker.AltAttack();
             A_SpawnItemEx("BloodletterSlashFX", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
             A_SpawnItemEx("BloodletterSlashFXSweetener", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
             A_SpawnItemEx("BloodletterSlashFXSweetener2", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
             A_WeaponOffset(0, 82);
             }
 			_WBD G 1 A_WeaponOffset(-85, 115);
-			_WBD G 0 { invoker.AltAttack(); }
+            TNT1 A 0 { invoker.AltAttack(); }
 			_WBD G 1 A_WeaponOffset(-154, 131);
 			_WBD G 1 A_WeaponOffset(-215, 141);
 			_WBD G 1 A_WeaponOffset(-336, 157);
 			TNT1 A 2 A_WeaponReady(WRF_NOSECONDARY|WRF_ALLOWRELOAD);
-			_WBD A 0 A_ReFire("AltHold");
 			_WBD A 1 Offset( 0, 45);
 			_WBD A 1 Offset( 0, 38);
 			_WBD A 15 Offset( 0, 32);
-			Goto Ready;
-		AltHold:
-			TNT1 A 12;
-			TNT1 A 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSECONDARY|WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_ALLOWUSER1|WRF_ALLOWUSER4);
-			_WBD G 1 A_WeaponOffset(300, 72);
-			_WBD G 1 A_WeaponOffset(150, 74);
-			_WBD G 0 { invoker.AltAttack(); }
-			_WBD G 1 A_WeaponOffset(30, 77);
-			_WBD A 0 Radius_Quake(3, 3, 0, 1, 0);			
-			_WBD G 0 A_StartSound("weapons/bloodletterslashpool", CHAN_AUTO, 0, 1);
-			_WBD A 0 { invoker.AltAttack(); }
-			_WBD A 0 A_SpawnItemEx("BloodletterSlashFX", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
-			_WBD A 0 A_SpawnItemEx("BloodletterSlashFXSweetener", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
-			_WBD A 0 A_SpawnItemEx("BloodletterSlashFXSweetener2", 45 * cos(pitch), 0, 35 - (40 * sin(pitch)), vel.x, vel.y, vel.z, 0, SXF_ABSOLUTEVELOCITY|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH);
-			_WBD G 1 A_WeaponOffset(0, 82);
-			_WBD G 1 A_WeaponOffset(-85, 115);
-			_WBD G 0 { invoker.AltAttack(); }
-
-			_WBD G 1 A_WeaponOffset(-154, 131);
-			_WBD G 1 A_WeaponOffset(-215, 141);
-			_WBD G 1 A_WeaponOffset(-336, 157);
-			_WBD A 0 A_ReFire("AltHold");
-			TNT1 A 2 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSECONDARY|WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_ALLOWUSER1|WRF_ALLOWUSER4);
-			_WBD A 1 Offset( 0, 45);
-			_WBD A 1 Offset( 0, 38);
-			_WBD A 15 Offset( 0, 32);			
 			Goto Ready;
         Reload:
         //Should total to 29 tics
@@ -264,10 +221,6 @@ class BloodletterMagnumMeleePuffMain : Actor
 			TNT1 A 1;
 			Stop;
 		XDeath:
-			TNT1 A 0
-			{
-				//TODO: reload player's pistol ammo
-			}
 			TNT1 A 0 A_SetScale(1.5);
 			TNT1 A 0 A_StartSound("weapons/bloodlettermeleehit", CHAN_BODY, 0, 1);
 			TNT1 A 0 A_SetRoll(random(0,359));
