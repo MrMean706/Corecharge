@@ -27,7 +27,6 @@
 
 /*** WEAPONS ***/
 #include "actors/weapons/General.dec"
-#include "actors/weapons/Fist.dec"
 #include "actors/weapons/Pistol.dec"
 #include "actors/weapons/SuperShotgun.dec"
 #include "actors/weapons/AssaultRifle.dec"
