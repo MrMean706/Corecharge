@@ -40,7 +40,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         Actor unused;
         int damageDealt;
         double pitch = owner.AimLineAttack(owner.angle, 90);
-        [unused, damageDealt] = owner.LineAttack(owner.angle, 90, pitch, 20, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
+        [unused, damageDealt] = owner.LineAttack(owner.angle, 90, pitch, 11, 'Melee', "BloodletterMagnumMeleePuffMain", LAF_ISMELEEATTACK);
         if (damageDealt > 0) 
         {
             if (owner.CountInv("PistolAmmo") < Ammo1.MaxAmount) owner.A_StartSound("weapons/bloodletterreloadstage1", CHAN_AUTO);
