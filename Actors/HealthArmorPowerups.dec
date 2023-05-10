@@ -70,33 +70,6 @@ Actor TangoBlueArmor : BlueArmor replaces BlueArmor
 	}
 }
 
-Actor TangoBerserk : CustomInventory replaces Berserk
-{
-	Tag "Berserk"
-	+COUNTITEM
-	+INVENTORY.ALWAYSPICKUP
-	Inventory.PickupMessage "$TANGO_BERSERK"
-	Inventory.PickupSound "misc/p_pkup"
-	States
-	{
-	// Spawn states re-copied here just for the sake of appeasing UDB
-	Spawn:
-		PSTR A -1
-		Stop
-	Pickup:
-		TNT1 A 0 HealThing(100, 0)
-		TNT1 A 0 A_GiveInventory("TangoPowerStrength")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_berserk_long_flash") == 1, "LongFlash")
-		Goto ShortFlash
-	LongFlash:
-		TNT1 A 0 A_SetBlend("Red", .25, 35 * 20)
-		Stop
-	ShortFlash:
-		TNT1 A 0 A_SetBlend("Red", .25, 35)
-		Stop
-	}
-}
-
 Actor TangoPowerStrength : PowerStrength replaces PowerStrength
 {
 	Powerup.Duration 1

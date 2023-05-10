@@ -20,6 +20,12 @@ weapons/empty DRYFIRE
 // Fist
 fist/select					FISTSELC
 
+// Axe
+weapons/axecut SPLICE
+weapons/axebang CLANG
+weapons/axeswing SWISH
+silent DSEMPTY //only in new Zdooms
+
 // Pistol
 pistol/reload1				PSTREL1
 pistol/reload2				PSTREL2

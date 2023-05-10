@@ -19,7 +19,21 @@ Class TangoFist : Fist replaces Fist
 		Loop;
 	Fire:
 		PKFS LBCD 1;
-		PKFS E 2 A_CustomPunch(30, true, 0, "TangoFistPuff", 64);
+		PKFS E 2 
+        {
+            Actor unused;
+            int actualDamage;
+            FTranslatedLineTarget t;
+            double pitch = AimLineAttack(angle, 64, null, 0., ALF_CHECK3D);
+            [unused, actualDamage] = LineAttack(angle, 64, pitch, 60, 'Melee', "TangoFistPuff", LAF_ISMELEEATTACK, t);
+            
+            if ((actualDamage > 0)) A_DamageSelf(min(5,health - 1), 'Melee');
+            // Turn to face the hit actor.
+            if (t.linetarget)
+            {
+                angle = t.angleFromSource;
+            }
+        }
 		Goto PunchFinish;
 	PunchFinish:
 		PKFS FGHI 2;

@@ -1,12 +1,20 @@
 Mor'Ladim
 	Bloodletter sprites 
-	Some of the Bloodletter's code
+	Bloodletter's code (Heavily modified by MrMean)
 kenny.nl(Interface Sounds pack)
 	Bear Taser clicking sound (scroll_001.ogg)
 Blizzard
 	Bloodletter sound effects
 Capcom
 	Bloodletter sound effects
+
+Axe Credits:
+Submitted: TheMightyHeracross
+Decorate: TheMightyHeracross, Blue Shadow (Modified by MrMean)
+Sounds: Rogue, 3D Realms
+Sprites: Mike12, scalliano
+Sprite Edit: idgamer
+Idea Base: scalliano's axe zombie
 
 Supercharge Credits:
 NoozeArts

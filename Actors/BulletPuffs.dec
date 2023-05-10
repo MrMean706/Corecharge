@@ -39,6 +39,13 @@ Actor TangoFistPuff : TBulletPuff
 	}
 }
 
+Actor AxeHitPuff : TangoFistPuff
+{
+    SeeSound "weapons/axecut"
+    AttackSound "weapons/axebang"
+}
+
+
 Actor TangoSawPuff : TBulletPuff
 {
 	DamageType Saw
