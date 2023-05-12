@@ -48,6 +48,9 @@ $Limit weapons/bloodletterslash3 0
 weapons/bloodletterreloadstage1 BLDLTRE1 //Capcom - Resident Evil 5
 $Limit weapons/bloodletterreloadstage1 0
 
+weapons/bloodlettermeleehit BLDLTMHT
+$Limit weapons/bloodlettermeleehit 0
+
 // Assault Rifle
 items/assaultrifle			dscget
 weapons/arfire				DSCGUN

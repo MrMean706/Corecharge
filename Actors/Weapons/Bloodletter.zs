@@ -177,20 +177,6 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             }
             
             #### A 2 A_WeaponOffset(1, 84);
-            //4
-			/*#### A 5 A_WeaponOffset(1, 84);
-			#### A 5 A_WeaponOffset(1, 84);
-			#### A 1 A_WeaponOffset(0, 83);
-			#### A 6 
-            {
-                A_WeaponOffset(0, 80);
-                int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);
-                self.TakeInventory("TangoBulletClip",toLoad);
-                self.GiveInventory("PistolAmmo",toLoad);
-                A_WeaponReady(WRF_ALLOWRELOAD);
-            }
-			#### A 4 A_WeaponOffset(0, 60);
-			#### A 2 A_WeaponOffset(0, 43);*/
 			Goto Ready;
 		Flash:
 			TNT1 A 1 Bright A_Light1;

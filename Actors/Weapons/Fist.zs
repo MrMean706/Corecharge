@@ -34,8 +34,6 @@ Class TangoFist : Fist replaces Fist
                 angle = t.angleFromSource;
             }
         }
-		Goto PunchFinish;
-	PunchFinish:
 		PKFS FGHI 2;
 		PKFS JKL 1;
 		PUNG A 5 A_ReFire();

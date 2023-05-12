@@ -1,5 +1,21 @@
 Class Axe : Fist Replaces Berserk
 {
+    int viewWidth;
+    
+    override void Tick()
+    {
+        int unused1, unused2;
+        Super.Tick();
+        [unused1, unused2, viewWidth] = Screen.GetViewWindow();
+    }
+    
+    override void AttachToOwner(Actor other)
+    {
+        other.TakeInventory("TangoFist", 1);
+        if (other.health < 100) other.health = 100;
+        super.AttachToOwner(other);
+    }
+
      Default
     {
         Weapon.SlotNumber 1;
@@ -16,23 +32,33 @@ Class Axe : Fist Replaces Berserk
 		Stop;
 	Select:
         TNT1 A 0 A_PlaySound("fist/select", CHAN_WEAPON);
-		AXEG A 0 A_Raise();
+		AXEG H 0 A_Raise();
 		Loop;
 	Deselect:
-		AXEG A 0 A_Lower();
+		AXEG H 0 A_Lower();
 		Wait;
 	Ready:
-		AXEG A 1 A_WeaponReady();
+		AXEG H 1 A_WeaponReady();
 		Loop;
 	Fire:
-		AXEG ABCDE 3;
-		TNT1 A 4;
-		AXEG I 2 A_PlaySound("weapons/axeswing", CHAN_WEAPON);
-		AXEG J 2 A_CustomPunch(110, 1, 0, "AxeHitPuff");
-		AXEG K 2;
-		TNT1 A 4;
-		AXEG EDCBA 2;
-		AXEG A 6;
-		Goto Ready;
+        AXEG G 2;
+        AXEG HI 1 A_PlaySound("weapons/axeswing", CHAN_WEAPON);
+		AXEG J 2 
+        {
+            FTranslatedLineTarget t;
+            double pitch = AimLineAttack(angle, 64, null, 0., ALF_CHECK3D);
+            LineAttack(angle, 64, pitch, 120, 'Melee', "TangoFistPuff", LAF_ISMELEEATTACK, t);
+            
+            // Turn to face the hit actor.
+            if (t.linetarget) angle = t.angleFromSource;
+        }
+        AXEG K 2;
+        TNT1 A 6;
+        AXEG K 2;
+        AXEG JIH 1;
+        AXEG G 1;
+        AXEG F 1;
+        AXEG F 5 A_ReFire();
+        Goto Ready;
 	}
 }
