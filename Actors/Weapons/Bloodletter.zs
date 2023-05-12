@@ -1,15 +1,5 @@
 class Bloodletter : ReloadableWeapon replaces Chainsaw
-{
-	bool shouldScreenShake()
-    {
-        return CVar.GetCVar("cl_tango_enable_screen_shake", owner.player).GetBool();
-    }
-    
-    bool shouldRecoil()
-    {
-        return CVar.GetCVar("cl_tango_enable_recoil", owner.player).GetBool();
-    }
-    
+{ 
     override void AttachToOwner(Actor other)
     {
         other.TakeInventory("TangoPistol", 1);
@@ -99,13 +89,13 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
             A_PlaySound("pistol/fire", CHAN_WEAPON);
             A_GunFlash();
             A_Light1();
-            if (invoker.shouldScreenShake()) Radius_Quake(1, 2, 0, 1, 0);
-            if (invoker.shouldRecoil()) A_SetPitch(pitch - 0.5);
+            if (TangoPlayer(self).shouldScreenShake()) Radius_Quake(1, 2, 0, 1, 0);
+            if (TangoPlayer(self).shouldRecoil()) A_SetPitch(pitch - 0.5);
             return ResolveState(null);
             }
             _WBD C 1
             {
-            if (invoker.shouldRecoil()) A_SetPitch(pitch + 0.25);
+            if (TangoPlayer(self).shouldRecoil()) A_SetPitch(pitch + 0.25);
             A_Light0();
             // Positional calculations for the casing pulled from complex-doom.v27a5.pk3 - thanks Daedalus :D
             A_SpawnItemEx("9mmCasing", 30 * cos(pitch), 0, 30 - (30 * sin(pitch)), frandom(2, 4) * cos(pitch), frandom(3, 6), frandom(3, 6) * -sin(pitch), 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
