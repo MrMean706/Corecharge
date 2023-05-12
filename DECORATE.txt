@@ -29,7 +29,6 @@
 #include "actors/weapons/General.dec"
 #include "actors/weapons/Pistol.dec"
 #include "actors/weapons/SuperShotgun.dec"
-#include "actors/weapons/AssaultRifle.dec"
 #include "actors/weapons/RocketLauncher.dec"
 #include "actors/weapons/PlasmaRifle.dec"
 #include "actors/weapons/BFG.dec"

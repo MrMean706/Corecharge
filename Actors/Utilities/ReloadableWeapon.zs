@@ -1,5 +1,16 @@
 Class ReloadableWeapon : Weapon
 {
+    bool shouldRecoil()
+    {
+        return CVar.GetCVar("cl_tango_enable_recoil", owner.player).GetBool();
+    }
+
+    bool shouldScreenShake()
+    {
+        return CVar.GetCVar("cl_tango_enable_screen_shake", owner.player).GetBool();
+    }
+    
+
     override bool HandlePickup (Inventory item)
 	{
         TangoPlayer tangoOwner = TangoPlayer(Owner);
@@ -28,11 +39,11 @@ Class ReloadableWeapon : Weapon
     
     bool shouldFullReload(Inventory item, TangoPlayer tangoOwner)
     {
-        A_Log("");
         if (tangoOwner == null) return false;
         if (item is AmmoType2) return true;
         if ((item is "ReloadableWeapon") && (ReloadableWeapon(item).AmmoType2 == AmmoType2)) return true;
         if ((item is "Weapon")&&(Weapon(item).AmmoType1 == AmmoType2)) return true;
+        if (item is "BackpackItem") return true;
         return false;
     }
     

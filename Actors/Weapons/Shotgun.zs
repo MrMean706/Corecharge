@@ -12,16 +12,6 @@ Class ShotgunAmmo : Ammo
 
 Class TangoShotgun : ReloadableWeapon replaces Shotgun
 {    
-    bool shouldScreenShake()
-    {
-        return CVar.GetCVar("cl_tango_enable_screen_shake", owner.player).GetBool();
-    }
-    
-    bool shouldRecoil()
-    {
-        return CVar.GetCVar("cl_tango_enable_recoil", owner.player).GetBool();
-    }
-
     Default
     {
         Tag "Shotgun";
@@ -58,20 +48,20 @@ Class TangoShotgun : ReloadableWeapon replaces Shotgun
         A_AlertMonsters();
         A_PlaySound("weapons/shotgunfire", CHAN_WEAPON);
         A_FireBullets(3.6, 1.5, 10, 9, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192);
-        if (invoker.shouldScreenShake()) Radius_Quake(5, 3, 0, 1, 0);
+        if (TangoPlayer(self).shouldScreenShake()) Radius_Quake(5, 3, 0, 1, 0);
         A_GunFlash();
         A_Light1();
-        if (invoker.shouldRecoil()) A_SetPitch(pitch - 1.0);
+        if (TangoPlayer(self).shouldRecoil()) A_SetPitch(pitch - 1.0);
         return ResolveState(null);
         }
 		SHTF B 1 Bright
         {
-        if (invoker.shouldRecoil()) A_SetPitch(pitch + 0.5);
+        if (TangoPlayer(self).shouldRecoil()) A_SetPitch(pitch + 0.5);
         A_Light2();
         }
 		SHTF C 1
         {
-        if (invoker.shouldRecoil()) A_SetPitch(pitch + 0.5);
+        if (TangoPlayer(self).shouldRecoil()) A_SetPitch(pitch + 0.5);
         A_Light0();
         }
 		SHTF DEF 1;

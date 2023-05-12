@@ -31,4 +31,14 @@ Class TangoPlayer : Doomplayer replaces Doomplayer
         Player.StartItem "PlasmaRifleAmmo", 40;
         Species "CorechargePlayer";
     }
+    
+    bool shouldRecoil()
+    {
+        return CVar.GetCVar("cl_tango_enable_recoil", player).GetBool();
+    }
+
+    bool shouldScreenShake()
+    {
+        return CVar.GetCVar("cl_tango_enable_screen_shake", player).GetBool();
+    }
 }

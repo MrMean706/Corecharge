@@ -8,7 +8,7 @@ Actor PlasmaRifleAmmo : Ammo
 	+IGNORESKILL
 }
 
-Actor TangoPlasmaRifle : PlasmaRifle replaces PlasmaRifle
+Actor TangoPlasmaRifle : ReloadableWeapon replaces PlasmaRifle
 {
 	Tag "Plasma Rifle"
 	+WEAPON.NOALERT
