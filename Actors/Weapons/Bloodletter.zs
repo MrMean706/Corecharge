@@ -34,7 +34,7 @@ class Bloodletter : ReloadableWeapon replaces Chainsaw
         if (damageDealt > 0) 
         {
             if (owner.CountInv("PistolAmmo") < Ammo1.MaxAmount) owner.A_StartSound("weapons/bloodletterreloadstage1", CHAN_AUTO);
-            owner.SetInventory("PistolAmmo", Ammo1.MaxAmount);
+            owner.GiveInventory("PistolAmmo", 2);
         }
     }
     
