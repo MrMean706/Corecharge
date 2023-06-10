@@ -2,7 +2,7 @@ Class BloodGhost: Actor
 {
     Default
     {
-        Health 40;
+        Health 20;
         Radius 16;
         Height 56;
         Speed 16;
@@ -54,14 +54,18 @@ Class BloodGhost: Actor
         GHST P -1 A_SetFloorClip;
         Stop;
     xDeath:
-        POSS I 0 A_xScream;
-        tnt1 a 0 A_SpawnDebris ("GhostBlood",FALSE,random (1,5),random (1,5));
-        tnt1 a 0 A_SpawnDebris ("GhostGib1",FALSE,random (1,5),random (1,3));
-        tnt1 a 0 A_SpawnDebris ("GhostGib2",FALSE,random (1,5),random (1,3));
-        tnt1 a 0 A_SpawnDebris ("GhostGib3",FALSE,random (1,5),random (1,3));
-        tnt1 a 0 A_SpawnDebris ("GhostGib4",FALSE,random (1,5),random (1,3));
-        tnt1 a 0 A_SpawnDebris ("GhostGib5",FALSE,random (1,5),random (1,3));
-        tnt1 a 1 A_SpawnDebris ("GhostGib6",FALSE,random (1,5),random (1,3));
+        TNT1 A 1
+        {
+            A_NoBlocking();
+            A_xScream();
+            A_SpawnDebris ("GhostBlood",FALSE,random (1,5),random (1,5));
+            A_SpawnDebris ("GhostGib1",FALSE,random (1,5),random (1,3));
+            A_SpawnDebris ("GhostGib2",FALSE,random (1,5),random (1,3));
+            A_SpawnDebris ("GhostGib3",FALSE,random (1,5),random (1,3));
+            A_SpawnDebris ("GhostGib4",FALSE,random (1,5),random (1,3));
+            A_SpawnDebris ("GhostGib5",FALSE,random (1,5),random (1,3));
+            A_SpawnDebris ("GhostGib6",FALSE,random (1,5),random (1,3));
+        }
         Stop;
     }
 }
