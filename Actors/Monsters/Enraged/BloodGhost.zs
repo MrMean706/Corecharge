@@ -1,6 +1,5 @@
 Class BloodGhost: Actor
 {
-    //TODO
     Default
     {
         Health 40;
@@ -24,28 +23,32 @@ Class BloodGhost: Actor
     States
     {
     Spawn:
-        GHST AB 10 A_Look;
-        Loop
+        GHST AABB 3 A_Look;
+        Loop;
     See:
-        GHST AABB 8 A_Chase;
+        GHST AABB 3 A_Chase;
         Loop;
     Missile:
         #### # 0 A_FaceTarget;
-        GHST E 6 Bright A_CustomMissile("PlasmaZombiePlasmaBall", 32, 8);
-        GHST A 4;
+        #### # 0 A_Chase(null, null);
+        GHST E 6 Bright A_SpawnProjectile("PlasmaZombiePlasmaBall", 32, 8);
+        GHST A 4 A_Chase(null, null);
+        #### # 0 A_Chase(null, null);
         GHST E 6 Bright A_CustomComboAttack("TangoImpBall", 32, 16, "whit2");
-        Goto See;
+        #### # 0 A_Chase(null, null);
+        GHST B 4  A_MonsterRefire(0,"See");
+        Goto Missile;
     Pain:
         GHST F 3 Fast;
         GHST F 3 Fast A_Pain;
-        Goto See
+        Goto See;
     Death:
         GHST F 4;
         GHST G 4 A_ScreamAndUnblock;
         GHST H 4;
         GHST I 4;
         GHST JKLM 4;
-        GHST N 4 A_ChangeFlag(NOGRAVITY,false);
+        GHST N 4 {bNOGRAVITY = false;}
         GHST O -1;
     Crash:
         GHST P -1 A_SetFloorClip;
@@ -61,6 +64,7 @@ Class BloodGhost: Actor
         tnt1 a 1 A_SpawnDebris ("GhostGib6",FALSE,random (1,5),random (1,3));
         Stop;
     }
+}
     
 Class GhostBlood: Actor
 {
