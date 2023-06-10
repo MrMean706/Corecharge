@@ -1,6 +1,6 @@
 const float crit_multiplier = 1.8;
 
-ACTOR TangoMechaDemon : Demon replaces Demon
+ACTOR TangoMechaDemon : Demon 
 {
 	//$Category Monsters
 	//$Color 12
@@ -89,7 +89,7 @@ ACTOR TangoMechaDemon : Demon replaces Demon
 }
 
 // Walk speed, bite speed reduced back to vanilla
-ACTOR TangoMechaDemonSlow : TangoMechaDemon
+ACTOR TangoMechaDemonSlow : TangoMechaDemon replaces Demon
 {
 	Speed 10
 	FastSpeed 13
@@ -102,7 +102,7 @@ ACTOR TangoMechaDemonSlow : TangoMechaDemon
 	}
 }
 
-ACTOR TangoMechaSpectre : TangoMechaDemon replaces Spectre
+ACTOR TangoMechaSpectre : TangoMechaDemon 
 {
 	+SHADOW
 	RenderStyle OptFuzzy
@@ -110,7 +110,7 @@ ACTOR TangoMechaSpectre : TangoMechaDemon replaces Spectre
 	//$Title "TangoMechaSpectre"
 }
 
-Actor TangoMechaSpectreSlow : TangoMechaDemonSlow
+Actor TangoMechaSpectreSlow : TangoMechaDemonSlow replaces Spectre
 {
 	+SHADOW
 	RenderStyle OptFuzzy
