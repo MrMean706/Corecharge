@@ -1,5 +1,12 @@
+BloodFiend Credits
+Code: Eriance, Ghastly (ZScript conversion)
+Sounds: Id Software, Raven Software, Midway
+GLDefs: Sandypaper (Brightmaps)
+Sprites: Id Software
+Sprite Edit: Eriance
+Idea Base: Doom Demon
+
 Jackbox Credits:
---- Credits ---
 Submitted: Ichor
 Decorate: Ichor
 GLDefs: Ichor

@@ -2,18 +2,21 @@ Class Taunting
 {
     static play void TryEnrage(Actor victim, Actor inflictor, Actor source)
     {
-        Actor enraged;
         name victimSpecies = victim.GetSpecies();
         Console.printf("victimSpecies: %s",victimSpecies);
+        class<Actor> enrageTo;
         Switch (victimSpecies)
         {
             case 'ZombieMan':
             case 'ShotgunGuy':
             case 'ChaingunGuy':
             case 'DoomImp':
-                Enrage(victim,"BloodGhost", inflictor, source);
+                enrageTo = "BloodGhost";
                 break;
         }
+        if (victim is enrageTo)
+            return;
+        Enrage(victim, enrageTo, inflictor, source);    
     }
     static play void Enrage(Actor victim, class<Actor> enraged, Actor inflictor, Actor source)
     {
