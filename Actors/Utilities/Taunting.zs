@@ -16,7 +16,7 @@ Class Taunting
         }
         if (victim is enrageTo)
             return;
-        Enrage(victim, enrageTo, inflictor, source);    
+        if (enrageTo) Enrage(victim, enrageTo, inflictor, source);    
     }
     static play void Enrage(Actor victim, class<Actor> enraged, Actor inflictor, Actor source)
     {
@@ -25,8 +25,12 @@ Class Taunting
         Actor newVictim;
         
         victim.A_DamageSelf(victim.health + abs(victim.GetGibHealth()) + 1, "Normal", DMSS_NOPROTECT | DMSS_NOFACTOR);   //Gib the victim
+        if(!enraged)
+            return;
         newVictim = Actor.Spawn(enraged,pos);
         newVictim.damageMobj(inflictor, source, newVictim.health - (health / 2), "Normal", DMG_NO_ARMOR | DMG_FORCED | DMG_NO_FACTOR | DMG_NO_PROTECT | DMG_NO_ENHANCE);
+        inflictor.A_AlertMonsters();
+        Console.printf("Enraged enemy health: %d",newVictim.health);
         newVictim.target = source;
     }
 }
