@@ -20,6 +20,12 @@ weapons/empty DRYFIRE
 // Fist
 fist/select					FISTSELC
 
+//Bait/Jack In the Box
+$limit jackbomb/music 4
+
+jackbomb/throw		JBOMBFIR
+jackbomb/music		JBOMBMUS
+
 // Axe
 weapons/axecut SPLICE
 weapons/axebang CLANG
