@@ -1,3 +1,12 @@
+Jackbox Credits:
+--- Credits ---
+Submitted: Ichor
+Decorate: Ichor
+GLDefs: Ichor
+Sounds: Blood, typical jack-in-the-box music
+Sprites: American McGee's Alice
+Idea Base: World's Most Interesting Bomb
+
 Blood Ghost Credits:
 Submitted: KILLA DIO
 Code: KILLA DIO, Some death code from Gothic
