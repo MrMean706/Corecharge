@@ -1,3 +1,11 @@
+Blood Ghost Credits:
+Submitted: KILLA DIO
+Code: KILLA DIO, Some death code from Gothic
+GLDefs: KILLA DIO
+Sounds: KILLA DIO, Freedoom, Librequake (sounds contributed to Librequake by KILLA DIO)
+Sprites: 3D Realms
+Sprite Edit: KILLA DIO
+
 Mor'Ladim
 	Bloodletter sprites 
 	Bloodletter's code (Heavily modified by MrMean)

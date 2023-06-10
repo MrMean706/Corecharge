@@ -740,4 +740,26 @@ Object SpiderScrap
 	Frame SSCR { Light MastermindShot1 }
 }
 
+//Corecharge BloodGhost
+Pointlight Bloodghost
+{
+    color 256 0 0
+    size 30
+} 
+object Bloodghost
+{
+    Frame GHSTE { light Bloodghost }
+}
+pulselight BloodghostPickup
+{
+    color 256 0 0
+    size 10
+    secondarySize 20
+    interval 5
+} 
+object GhostHealthBonus
+{
+    Frame GHPK { light BloodghostPickup }
+}
+
 // End 
