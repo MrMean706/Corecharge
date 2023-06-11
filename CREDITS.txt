@@ -1,6 +1,6 @@
 Gazer Credits
 Sprites: RNG Breadbug
-Link that still functions: dead.air (by Xaser)
+Download link that still functions: dead.air (by Xaser)
 
 BloodFiend Credits
 Code: Eriance, Ghastly (ZScript conversion)

@@ -1,4 +1,4 @@
-Class Axe : Fist Replaces Berserk
+Class Axe : TangoFist Replaces Berserk
 {
     int viewWidth;
     

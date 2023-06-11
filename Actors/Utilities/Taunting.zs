@@ -15,8 +15,10 @@ Class Taunting
                 break;
             case 'Demon':
                 enrageTo = "BloodFiend";
+                break;
             case 'Caco':
                 enrageTo = "Gazer";
+                break;
         }
         if (victim is enrageTo)
             return;
