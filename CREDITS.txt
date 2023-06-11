@@ -1,3 +1,7 @@
+Gazer Credits
+Sprites: RNG Breadbug
+Link that still functions: dead.air (by Xaser)
+
 BloodFiend Credits
 Code: Eriance, Ghastly (ZScript conversion)
 Sounds: Id Software, Raven Software, Midway

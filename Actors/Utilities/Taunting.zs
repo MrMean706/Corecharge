@@ -13,6 +13,10 @@ Class Taunting
             case 'DoomImp':
                 enrageTo = "BloodGhost";
                 break;
+            case 'Demon':
+                enrageTo = "BloodFiend";
+            case 'Caco':
+                enrageTo = "Gazer";
         }
         if (victim is enrageTo)
             return;

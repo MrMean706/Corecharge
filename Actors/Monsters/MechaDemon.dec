@@ -1,10 +1,10 @@
 const float crit_multiplier = 1.8;
 
-ACTOR TangoMechaDemon : Demon 
+ACTOR MechaDemon : Demon Replaces Demon
 {
 	//$Category Monsters
 	//$Color 12
-	//$Title "TangoMechaDemon"
+	//$Title "MechaDemon"
 	Tag "Mechademon"
 	SeeSound "mechademon/see"
 	AttackSound "mechademon/attack"
@@ -12,8 +12,6 @@ ACTOR TangoMechaDemon : Demon
 	DeathSound "mechademon/death"
 	ActiveSound "mechademon/active"
 	PainChance "Chaingun", 30
-	Speed 13
-	FastSpeed 15
 	States
   {
 	Spawn:
@@ -23,8 +21,8 @@ ACTOR TangoMechaDemon : Demon
 		MDEM AABBCCDD 2 A_Chase
 		Loop
 	Melee:
-		MDEM EF 5 A_FaceTarget
-		MDEM G 5 A_CustomMeleeAttack(20, "mechademon/attack")
+		MDEM EF 8 A_FaceTarget
+		MDEM G 8 A_CustomMeleeAttack(20, "mechademon/attack")
 		Goto See
 	Pain:
 		MDEM H 2
@@ -88,32 +86,10 @@ ACTOR TangoMechaDemon : Demon
 	}
 }
 
-// Walk speed, bite speed reduced back to vanilla
-ACTOR TangoMechaDemonSlow : TangoMechaDemon replaces Demon
-{
-	Speed 10
-	FastSpeed 13
-	States
-  {
-	Melee:
-		MDEM EF 8 A_FaceTarget
-		MDEM G 8 A_CustomMeleeAttack(20, "mechademon/attack")
-		Goto See
-	}
-}
-
-ACTOR TangoMechaSpectre : TangoMechaDemon 
+ACTOR MechaSpectre : MechaDemon replaces Spectre
 {
 	+SHADOW
 	RenderStyle OptFuzzy
 	Alpha 0.5
-	//$Title "TangoMechaSpectre"
-}
-
-Actor TangoMechaSpectreSlow : TangoMechaDemonSlow replaces Spectre
-{
-	+SHADOW
-	RenderStyle OptFuzzy
-	Alpha 0.5
-	//$Title "TangoMechaSpectre"
+	//$Title "MechaSpectre"
 }

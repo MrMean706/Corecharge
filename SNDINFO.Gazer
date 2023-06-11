@@ -1,0 +1,5 @@
+enemies/gazer/attack     "sounds/enemies/gazer/attack.ogg"
+enemies/gazer/attackx    "sounds/enemies/gazer/attackx.wav"
+enemies/gazer/active     "sounds/enemies/gazer/active.ogg"
+enemies/gazer/pain       "sounds/enemies/gazer/pain.ogg"
+enemies/gazer/death      "sounds/enemies/gazer/death.ogg"

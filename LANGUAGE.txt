@@ -127,4 +127,6 @@ PD_BLUESO = "\c[TangoBlue]Blue \ccskull required";
 PD_REDSO = "\c[TangoRedLight]Red \ccskull required";
 PD_YELLOWSO = "\ckYellow \ccskull required";
 
-// ** POWERUPS **
+// ** MONSTERS **
+DED_OB_GAZER       = "%o was dead-eyed by a gazer.";
+DED_OB_GAZER_H     = "%o lost a staring contest to a gazer.";
