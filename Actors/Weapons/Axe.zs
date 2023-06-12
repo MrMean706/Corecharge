@@ -1,14 +1,5 @@
 Class Axe : TangoFist Replaces Berserk
-{
-    int viewWidth;
-    
-    override void Tick()
-    {
-        int unused1, unused2;
-        Super.Tick();
-        [unused1, unused2, viewWidth] = Screen.GetViewWindow();
-    }
-    
+{   
     override void AttachToOwner(Actor other)
     {
         other.TakeInventory("TangoFist", 1);

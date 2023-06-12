@@ -66,7 +66,9 @@ Class TangoFist : Fist replaces Fist
         }
         JBOX HIJKLMNO 1;
         TNT1 A 8;
-        Goto Ready;
+        //Using A_Jump instead of a goto causes it to resolve at runtime instead of compile time.
+        //This allows subclasses to return to their own ready state instead of the fists'
+        TNT1 A 0 A_Jump(256,'Ready'); 
     Flash:
         DYNG A 2 Bright
         {

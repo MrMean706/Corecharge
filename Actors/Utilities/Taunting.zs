@@ -16,9 +16,28 @@ Class Taunting
             case 'Demon':
                 enrageTo = "BloodFiend";
                 break;
+            case 'LostSoul':
+                break;//TODO
+            case 'BaronOfHell':
+                enrageTo = "Afrit";
+                break;
             case 'Caco':
                 enrageTo = "Gazer";
                 break;
+            case 'PainElemental':
+                break;//TODO
+            case 'Revenant':
+                break;//TODO
+            case 'Fatso':
+                break;//TODO
+            case 'Arachnotron':
+                break;//TODO
+            case 'Archvile':
+                break;//TODO
+            case 'Cyberdemon':
+                break;//TODO
+            case 'SpiderMastermind':
+                break;//TODO
         }
         if (victim is enrageTo)
             return;

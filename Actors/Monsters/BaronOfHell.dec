@@ -10,7 +10,7 @@ ACTOR TangoBaronOfHell : BaronOfHell replaces BaronOfHell
 	PainChance "Chaingun", 20
 	+DONTHARMSPECIES
 	+DONTHARMCLASS
-	Species "Knight"
+	//Species "Knight"
 	DamageFactor "PyroFire", 0.0
 
 	States

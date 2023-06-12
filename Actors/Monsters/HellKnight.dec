@@ -9,7 +9,7 @@ ACTOR TangoHellKnight : HellKnight replaces HellKnight
 	Tag "Hell Knight"
 	+DONTHARMSPECIES
 	+DONTHARMCLASS
-	Species "Knight"
+	//Species "Knight"
 	PainChance "Chaingun", 20
 	DamageFactor "PyroFire", 0.0
 
