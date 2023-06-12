@@ -1,215 +1,36 @@
-BrightMap Sprite SAR2A1
-{
-Map BMSAR2A1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2A2A8
-{
-Map BMSAR2A2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2A3A7
-{
-Map BMSAR2A3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2B1
-{
-Map BMSAR2B1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2B2B8
-{
-Map BMSAR2B2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2B3B7
-{
-Map BMSAR2B3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2C1
-{
-Map BMSAR2C1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2C2C8
-{
-Map BMSAR2C2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2C3C7
-{
-Map BMSAR2C3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2D1
-{
-Map BMSAR2D1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2D2D8
-{
-Map BMSAR2D2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2D3D7
-{
-Map BMSAR2D3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2E1
-{
-Map BMSAR2E1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2E2
-{
-Map BMSAR2E2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2E8
-{
-Map BMSAR2E8
-DisableFullBright
-}
-
-BrightMap Sprite SAR2F1
-{
-Map BMSAR2F1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2F2
-{
-Map BMSAR2F2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2F8
-{
-Map BMSAR2F8
-DisableFullBright
-}
-
-BrightMap Sprite SAR2G1
-{
-Map BMSAR2G1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2G2
-{
-Map BMSAR2G2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2G8
-{
-Map BMSAR2G8
-DisableFullBright
-}
-
-BrightMap Sprite SAR2H1
-{
-Map BMSAR2H1
-DisableFullBright
-}
-
-BrightMap Sprite SAR2H2
-{
-Map BMSAR2H2
-DisableFullBright
-}
-
-BrightMap Sprite SAR2H3
-{
-Map BMSAR2H3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2H4
-{
-Map BMSAR2H4
-DisableFullBright
-}
-
-BrightMap Sprite SAR2H8
-{
-Map BMSAR2H3
-DisableFullBright
-}
-
-BrightMap Sprite SAR2I0
-{
-Map BMSAR2I0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2O0
-{
-Map BMSAR2O0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2P0
-{
-Map BMSAR2P0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2Q0
-{
-Map BMSAR2Q0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2R0
-{
-Map BMSAR2R0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2S0
-{
-Map BMSAR2S0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2T0
-{
-Map BMSAR2T0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2U0
-{
-Map BMSAR2U0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2V0
-{
-Map BMSAR2V0
-DisableFullBright
-}
-
-BrightMap Sprite SAR2W0
-{
-Map BMSAR2W0
-DisableFullBright
-}
+BrightMap Sprite SAR2A1 { Map "brightmaps/BloodFiend/BMSAR2A1.png" DisableFullBright }
+BrightMap Sprite SAR2A2A8 { Map "brightmaps/BloodFiend/BMSAR2A2.png" DisableFullBright }
+BrightMap Sprite SAR2A3A7 { Map "brightmaps/BloodFiend/BMSAR2A3.png" DisableFullBright }
+BrightMap Sprite SAR2B1 { Map "brightmaps/BloodFiend/BMSAR2B1.png" DisableFullBright }
+BrightMap Sprite SAR2B2B8 { Map "brightmaps/BloodFiend/BMSAR2B2.png" DisableFullBright }
+BrightMap Sprite SAR2B3B7 { Map "brightmaps/BloodFiend/BMSAR2B3.png" DisableFullBright }
+BrightMap Sprite SAR2C1 { Map "brightmaps/BloodFiend/BMSAR2C1.png" DisableFullBright }
+BrightMap Sprite SAR2C2C8 { Map "brightmaps/BloodFiend/BMSAR2C2.png" DisableFullBright }
+BrightMap Sprite SAR2C3C7 { Map "brightmaps/BloodFiend/BMSAR2C3.png" DisableFullBright }
+BrightMap Sprite SAR2D1 { Map "brightmaps/BloodFiend/BMSAR2D1.png" DisableFullBright }
+BrightMap Sprite SAR2D2D8 { Map "brightmaps/BloodFiend/BMSAR2D2.png" DisableFullBright }
+BrightMap Sprite SAR2D3D7 { Map "brightmaps/BloodFiend/BMSAR2D3.png" DisableFullBright }
+BrightMap Sprite SAR2E1 { Map "brightmaps/BloodFiend/BMSAR2E1.png" DisableFullBright }
+BrightMap Sprite SAR2E2 { Map "brightmaps/BloodFiend/BMSAR2E2.png" DisableFullBright }
+BrightMap Sprite SAR2E8 { Map "brightmaps/BloodFiend/BMSAR2E8.png" DisableFullBright }
+BrightMap Sprite SAR2F1 { Map "brightmaps/BloodFiend/BMSAR2F1.png" DisableFullBright }
+BrightMap Sprite SAR2F2 { Map "brightmaps/BloodFiend/BMSAR2F2.png" DisableFullBright }
+BrightMap Sprite SAR2F8 { Map "brightmaps/BloodFiend/BMSAR2F8.png" DisableFullBright }
+BrightMap Sprite SAR2G1 { Map "brightmaps/BloodFiend/BMSAR2G1.png" DisableFullBright }
+BrightMap Sprite SAR2G2 { Map "brightmaps/BloodFiend/BMSAR2G2.png" DisableFullBright }
+BrightMap Sprite SAR2G8 { Map "brightmaps/BloodFiend/BMSAR2G8.png" DisableFullBright }
+BrightMap Sprite SAR2H1 { Map "brightmaps/BloodFiend/BMSAR2H1.png" DisableFullBright }
+BrightMap Sprite SAR2H2 { Map "brightmaps/BloodFiend/BMSAR2H2.png" DisableFullBright }
+BrightMap Sprite SAR2H3 { Map "brightmaps/BloodFiend/BMSAR2H3.png" DisableFullBright }
+BrightMap Sprite SAR2H4 { Map "brightmaps/BloodFiend/BMSAR2H4.png" DisableFullBright }
+BrightMap Sprite SAR2H8 { Map "brightmaps/BloodFiend/BMSAR2H3.png" DisableFullBright }
+BrightMap Sprite SAR2I0 { Map "brightmaps/BloodFiend/BMSAR2I0.png" DisableFullBright }
+BrightMap Sprite SAR2O0 { Map "brightmaps/BloodFiend/BMSAR2O0.png" DisableFullBright }
+BrightMap Sprite SAR2P0 { Map "brightmaps/BloodFiend/BMSAR2P0.png" DisableFullBright }
+BrightMap Sprite SAR2Q0 { Map "brightmaps/BloodFiend/BMSAR2Q0.png" DisableFullBright }
+BrightMap Sprite SAR2R0 { Map "brightmaps/BloodFiend/BMSAR2R0.png" DisableFullBright }
+BrightMap Sprite SAR2S0 { Map "brightmaps/BloodFiend/BMSAR2S0.png" DisableFullBright }
+BrightMap Sprite SAR2T0 { Map "brightmaps/BloodFiend/BMSAR2T0.png" DisableFullBright }
+BrightMap Sprite SAR2U0 { Map "brightmaps/BloodFiend/BMSAR2U0.png" DisableFullBright }
+BrightMap Sprite SAR2V0 { Map "brightmaps/BloodFiend/BMSAR2V0.png" DisableFullBright }
+BrightMap Sprite SAR2W0 { Map "brightmaps/BloodFiend/BMSAR2W0.png" DisableFullBright }
