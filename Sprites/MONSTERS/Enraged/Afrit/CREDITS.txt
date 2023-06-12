@@ -1,5 +1,0 @@
-Code: Nanami, Ghastly_dragon
-GLDefs: Keksdose, Herculine (Brightmaps)
-Sounds: Id Software
-Sprites: Id Software
-Sprite Edit: Espi, Ebola

@@ -1,3 +1,10 @@
+Afrit Credits:
+Code: Nanami, Ghastly_dragon
+GLDefs: Keksdose, Herculine (Brightmaps)
+Sounds: Id Software
+Sprites: Id Software
+Sprite Edit: Espi, Ebola
+
 Gazer Credits
 Sprites: RNG Breadbug
 Download link that still functions: dead.air (by Xaser)
