@@ -19,6 +19,8 @@ version "3.2.0"
 #include "actors/monsters/Enraged/BloodFiend.zs"
 #include "actors/monsters/Enraged/Gazer.zs"
 #include "actors/monsters/Enraged/Afrit.zs"
+#include "actors/monsters/Enraged/Carrionnette.zs"
+#include "actors/monsters/Enraged/SoulOfPain.zs"
 
 
 // Everything below this line, including the files included, come from m8f's

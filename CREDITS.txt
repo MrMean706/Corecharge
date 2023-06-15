@@ -1,3 +1,10 @@
+Carrionnette:
+Code: Inkoalawetrust
+Sounds: Id Software (Doom/Doom II), Raven Software (Heretic), Valve Software (Half-Life 1)
+Sprites: Id Software (Doom/Doom II), 3D Realms (Shadow Warrior prototypes), Eriance (Projectile)
+Sprite Edit: PGE
+Idea Base: Prototype Coolie Ghost looked like it would fit on Revenant legs
+
 Afrit Credits:
 Code: Nanami, Ghastly_dragon
 GLDefs: Keksdose, Herculine (Brightmaps)

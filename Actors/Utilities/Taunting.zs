@@ -25,9 +25,11 @@ Class Taunting
                 enrageTo = "Gazer";
                 break;
             case 'PainElemental':
+                enrageTo = "SoulOfPain";
                 break;//TODO
             case 'Revenant':
-                break;//TODO
+                enrageTo = "Carrionnette";
+                break;
             case 'Fatso':
                 break;//TODO
             case 'Arachnotron':

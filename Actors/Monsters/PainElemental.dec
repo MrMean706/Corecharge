@@ -1,4 +1,4 @@
-ACTOR TangoPainElemental replaces PainElemental
+ACTOR TangoPainElemental: PainElemental replaces PainElemental
 {
 	//$Category Monsters
 	//$Color 12
