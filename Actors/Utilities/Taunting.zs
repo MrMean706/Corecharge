@@ -17,7 +17,8 @@ Class Taunting
                 enrageTo = "BloodFiend";
                 break;
             case 'LostSoul':
-                break;//TODO
+                enrageTo = "Blot";
+                break;
             case 'BaronOfHell':
                 enrageTo = "Afrit";
                 break;

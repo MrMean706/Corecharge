@@ -1,3 +1,13 @@
+Blot:
+Code: Captain Toenail
+Sounds: Doom, Captain Toenail
+Sprites: Doom, Hexen
+Sprite Edit: Captain Toenail
+
+Soul of Pain:
+Sprites: Neural Upscale Project (hidfan)
+Code: Modified from Supercharge's lost soul
+
 Carrionnette:
 Code: Inkoalawetrust
 Sounds: Id Software (Doom/Doom II), Raven Software (Heretic), Valve Software (Half-Life 1)
