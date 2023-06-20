@@ -81,27 +81,6 @@ Class Blot: Actor
     }
 }
 
-/*Class BlotDamage: Actor
-{
-    Default
-    {
-        Radius 2;
-        Height 2;
-        Speed 0;
-        DamageType "Blot";
-        Projectile;
-        +NODAMAGETHRUST;
-        +BLOODLESSIMPACT;
-    }
-
-		States
-		{
-			Spawn:
-				TNT1 A 1 NoDelay A_Explode (1, 40, 0);
-				Stop;
-		}
-}*/
-
 Class BlotSmoke: Actor
 {
     Default
