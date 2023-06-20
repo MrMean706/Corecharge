@@ -1,4 +1,4 @@
-Actor TangoRocketLauncherAlt : RocketLauncher replaces RocketLauncher
+Actor TangoRocketLauncherAlt : RocketLauncher
 {
 	Tag "Rocket Launcher"
 	+WEAPON.NOALERT
@@ -65,7 +65,7 @@ Actor TangoRocketLauncherAlt : RocketLauncher replaces RocketLauncher
 	}
 }
 
-Actor TangoRocketLauncher : RocketLauncher replaces RocketLauncher
+Actor TangoRocketLauncher : RocketLauncher
 {
 	Tag "Rocket Launcher"
 	+WEAPON.NOALERT

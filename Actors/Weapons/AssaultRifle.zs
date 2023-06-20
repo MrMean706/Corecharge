@@ -15,7 +15,7 @@ Class AssaultRifleAmmo : Ammo
 	
 }
 
-Class TangoAssaultRifle : ReloadableWeapon replaces Chaingun
+Class TangoAssaultRifle : ReloadableWeapon
 {
     const MAX_TOKENS = double(20);
     int spreadTokens;

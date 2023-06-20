@@ -1,4 +1,4 @@
-Class Axe : TangoFist Replaces Berserk
+Class Axe : TangoFist
 {   
     override void AttachToOwner(Actor other)
     {

@@ -1,4 +1,4 @@
-class Bloodletter : ReloadableWeapon replaces Chainsaw
+class Bloodletter : ReloadableWeapon
 { 
     override void AttachToOwner(Actor other)
     {

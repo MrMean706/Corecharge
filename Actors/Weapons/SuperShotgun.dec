@@ -1,4 +1,4 @@
-ACTOR TangoSuperShotgun : Weapon replaces SuperShotgun
+ACTOR TangoSuperShotgun : Weapon
 {
 	Tag "Super Shotgun"
 	+WEAPON.AMMO_OPTIONAL

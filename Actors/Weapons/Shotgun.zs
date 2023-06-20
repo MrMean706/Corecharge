@@ -10,7 +10,7 @@ Class ShotgunAmmo : Ammo
     }
 }
 
-Class TangoShotgun : ReloadableWeapon replaces Shotgun
+Class TangoShotgun : ReloadableWeapon
 {    
     Default
     {

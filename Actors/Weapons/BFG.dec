@@ -1,4 +1,4 @@
-Actor TangoBFG9000 : BFG9000 replaces BFG9000
+Actor TangoBFG9000 : BFG9000
 {	
 	Tag "BFG"
 	+WEAPON.NOALERT

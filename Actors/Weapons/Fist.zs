@@ -1,4 +1,4 @@
-Class TangoFist : Fist replaces Fist
+Class TangoFist : Fist
 {
     int baitChargeTime;
     

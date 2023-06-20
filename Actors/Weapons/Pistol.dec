@@ -8,7 +8,7 @@ Actor PistolAmmo : Ammo
 	+IGNORESKILL
 }
 
-Actor TangoPistol : ReloadableWeapon replaces Pistol
+Actor TangoPistol : ReloadableWeapon
 {
 	Tag "Pistol"
 	+WEAPON.AMMO_OPTIONAL
