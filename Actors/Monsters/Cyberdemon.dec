@@ -1,4 +1,4 @@
-ACTOR TangoCyberdemon : Cyberdemon replaces Cyberdemon
+ACTOR TangoCyberdemon : Cyberdemon
 {
 	//$Category "Monsters"
 	//$Color 12
@@ -24,13 +24,13 @@ ACTOR TangoCyberdemon : Cyberdemon replaces Cyberdemon
 	Missile:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_projectile_origin_cyberdemon") == 1, "VanillaOriginMissile")
 		CYBR E 6 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 4
 		CYBR E 12 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 4
 		CYBR E 12 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 4
 		Goto See
 	VanillaOriginMissile:
@@ -76,13 +76,13 @@ Actor TangoCyberdemonSlow : TangoCyberdemon
 	Missile:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_projectile_origin_cyberdemon") == 1, "VanillaOriginMissile")
 		CYBR E 12 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 4
 		CYBR E 12 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 4
 		CYBR E 12 A_FaceTarget
-		CYBR F 8 Bright A_CustomMissile("Rocket", 50, -24)
+		CYBR F 8 Bright A_CustomMissile("TangoMonsterRocket", 50, -24)
 		CYBR E 8
 		Goto See
 	VanillaOriginMissile:

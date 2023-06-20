@@ -1,4 +1,4 @@
-ACTOR TangoLostSoul : LostSoul replaces LostSoul
+ACTOR TangoLostSoul : LostSoul
 {
 	//$Category Monsters
 	//$Color 12

@@ -1,5 +1,5 @@
 // currently the behemoth has an extra death animation from Brutal Doom that's unused (death3, BED3 sprites)
-ACTOR TangoBehemoth : Fatso replaces Fatso
+ACTOR TangoBehemoth : Fatso
 {
 	//$Category Monsters
 	//$Color 12

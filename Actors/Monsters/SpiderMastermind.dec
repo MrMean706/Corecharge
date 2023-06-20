@@ -1,4 +1,4 @@
-ACTOR TangoSpiderMastermind replaces SpiderMastermind
+ACTOR TangoSpiderMastermind
 {
 	//$Category Monsters
 	//$Color 12

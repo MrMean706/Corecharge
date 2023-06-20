@@ -1,7 +1,7 @@
 const int hell_knight_gib_angle_start = 150;
 const int hell_knight_gib_angle_end = 210;
 
-ACTOR TangoHellKnight : HellKnight replaces HellKnight
+ACTOR TangoHellKnight : HellKnight
 {
 	//$Category Monsters
 	//$Color 12

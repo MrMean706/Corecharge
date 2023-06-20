@@ -1,6 +1,6 @@
 const float crit_multiplier = 1.8;
 
-ACTOR MechaDemon : Demon Replaces Demon
+ACTOR MechaDemon : Demon
 {
 	//$Category Monsters
 	//$Color 12

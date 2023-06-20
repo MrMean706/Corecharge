@@ -1,4 +1,4 @@
-Actor TangoMonsterRocket : Rocket replaces Rocket
+Actor TangoMonsterRocket : Rocket
 {
 	DamageType "Rocket"
 	Damage (80)

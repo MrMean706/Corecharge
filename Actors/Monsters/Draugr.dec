@@ -1,4 +1,4 @@
-ACTOR TangoDraugr: Revenant replaces Revenant
+ACTOR TangoDraugr: Revenant
 {
 	//$Category Monsters
 	//$Color 12

@@ -1,4 +1,4 @@
-ACTOR TangoExile : ArchVile replaces Archvile
+ACTOR TangoExile : ArchVile
 {
 	//$Category "Monsters"
 	//$Color 12

@@ -1,4 +1,4 @@
-ACTOR TangoChaingunGuy: Chaingunguy replaces ChaingunGuy
+ACTOR TangoChaingunGuy: Chaingunguy
 {
 	//$Category Monsters
 	//$Color 12

@@ -3,7 +3,7 @@ const int fusionite_gib_angle_end = 210;
 
 const int fusion_shot_height = 18;
 
-Actor TangoFusionite : Arachnotron replaces Arachnotron
+Actor TangoFusionite : Arachnotron
 {
 	//$Category "Monsters"
 	//$Color 12

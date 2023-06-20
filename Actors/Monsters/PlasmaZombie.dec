@@ -1,4 +1,4 @@
-Actor TangoPlasmaZombieDropsClip: ZombieMan replaces ZombieMan
+Actor TangoZombieMan: ZombieMan
 {
 	//$Category Monsters
 	//$Color 12
@@ -152,41 +152,6 @@ Actor TangoPlasmaZombieDropsClip: ZombieMan replaces ZombieMan
 		Stop
 	}
 }
-
-Actor TangoPlasmaZombie : TangoPlasmaZombieDropsClip 27706
-{
-	//$Category Monsters
-	//$Color 12
-	//$Title "TangoPlasmaZombie"
-	Tag "Plasma Zombie"
-	States
-	{
-	// Copied code of the death switches from the regular version of the monster,
-	// but with all the lines to spawn half clip items removed
-	// ****************************
-	// DAMAGE TYPE DEATH SWITCHES
-	// ****************************
-	Death:
-		Goto RegularDeath
-		
-	Death.Bullet:
-	Death.Chaingun:
-		TNT1 A 0 A_Jump(140, "HeadDeath")
-		Goto RegularDeath
-
-	Death.Shotgun:
-	Death.Plasma:
-		TNT1 A 0 A_JumpIfCloser(200, "DeathRandom1")
-		Goto RegularDeath
-	
-	Death.Rocket:
-		Goto LegsDeath
-	
-	XDeath:
-		Goto LegsDeath
-	}
-}
-
 
 ACTOR PlasmaZombiePlasmaBall
 {
