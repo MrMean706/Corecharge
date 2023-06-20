@@ -1,4 +1,4 @@
-Actor TangoDeadPlasmaZombie replaces DeadZombieMan
+Actor TangoDeadZombieMan
 {
 	States
 	{
@@ -8,7 +8,7 @@ Actor TangoDeadPlasmaZombie replaces DeadZombieMan
 	}
 }
 
-Actor TangoDeadShotgunGuy replaces DeadShotgunGuy
+Actor TangoDeadShotgunGuy
 {
 	States
 	{
@@ -18,7 +18,7 @@ Actor TangoDeadShotgunGuy replaces DeadShotgunGuy
 	}
 }
 
-Actor TangoDeadImp replaces DeadDoomImp
+Actor TangoDeadImp
 {
 	States
 	{
@@ -28,7 +28,7 @@ Actor TangoDeadImp replaces DeadDoomImp
 	}
 }
 
-Actor TangoDeadMechaDemon replaces DeadDemon
+Actor TangoDeadMechaDemon
 {
 	States
 	{
@@ -38,7 +38,7 @@ Actor TangoDeadMechaDemon replaces DeadDemon
 	}
 }
 
-Actor TangoDeadCacodemon replaces DeadCacodemon
+Actor TangoDeadCacodemon
 {
 	States
 	{

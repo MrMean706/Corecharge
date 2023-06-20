@@ -1,5 +1,7 @@
 /*
 Using spawners instead of replacing monsters directly so that I can just remove this file to use the individual actors in a non-Corecharge project.
+NOTE:
+If trying to use individual actors within a non-corecharge mapset, remove both this file and BloodSplatters.dec
 */
 // MONSTERS
 Class BaronSpawner:             RandomSpawner replaces BaronOfHell      { Default { DropItem "TangoBaronOfHell";}}
@@ -28,7 +30,7 @@ Class PlasmaRifleSpawner:       RandomSpawner replaces PlasmaRifle      { Defaul
 Class RocketLauncherSpawner:    RandomSpawner replaces RocketLauncher   { Default { DropItem "TangoRocketLauncher";}}
 Class ShotgunSpawner:           RandomSpawner replaces Shotgun          { Default { DropItem "TangoShotgun";}}
 Class SuperShotgunSpawner:      RandomSpawner replaces SuperShotgun     { Default { DropItem "TangoSuperShotgun";}}
-// MISC
+// AMMO
 Class BulletClipSpawner:        RandomSpawner replaces  Clip  { Default { DropItem "TangoBulletClip";}}
 Class BulletBoxSpawner:         RandomSpawner replaces ClipBox   { Default { DropItem "TangoBulletBox";}}
 Class ShellSpawner:             RandomSpawner replaces Shell   { Default { DropItem "TangoShell";}}
@@ -37,12 +39,15 @@ Class RocketAmmoSpawner:        RandomSpawner replaces RocketAmmo   { Default { 
 Class RocketBoxSpawner:         RandomSpawner replaces RocketBox   { Default { DropItem "TangoRocketBox";}}
 Class CellSpawner:              RandomSpawner replaces Cell   { Default { DropItem "TangoCell";}}
 Class CellPackSpawner:          RandomSpawner replaces CellPack   { Default { DropItem "TangoCellPack";}}
-/*Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+// CORPSES
+Class DeadZombieManSpawner:     RandomSpawner replaces DeadZombieMan   { Default { DropItem "TangoDeadZombieMan";}}
+Class DeadShotgunGuySpawner:    RandomSpawner replaces DeadShotgunGuy   { Default { DropItem "TangoDeadShotgunGuy";}}
+Class DeadImpSpawner:           RandomSpawner replaces DeadDoomImp   { Default { DropItem "TangoDeadImp";}}
+Class DeadDemonSpawner:         RandomSpawner replaces DeadDemon   { Default { DropItem "TangoDeadMechaDemon";}}
+Class DeadCacodemonSpawner:     RandomSpawner replaces DeadCacodemon   { Default { DropItem "TangoDeadCacodemon";}}
+// MISC
+Class BarrelSpawner:      RandomSpawner replaces ExplosiveBarrel   { Default { DropItem "TangoBarrel";}}
+Class BulletPuffSpawner:      RandomSpawner replaces BulletPuff   { Default { DropItem "TBulletPuff";}}
+
 Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}*/
 //TODO: player

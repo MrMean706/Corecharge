@@ -1,7 +1,7 @@
 // the following code is essentially identical to the barrel code from Smooth Doom by Gifty,
 // but is rewritten and has very slight modifications (added pain state, modified quake)
 
-ACTOR TangoBarrel : ExplosiveBarrel replaces ExplosiveBarrel
+ACTOR TangoBarrel : ExplosiveBarrel
 {
 	//$Title "TangoBarrel"
 	Tag "Explosive Barrel"

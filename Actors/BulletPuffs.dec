@@ -1,4 +1,4 @@
-ACTOR TBulletPuff replaces BulletPuff
+ACTOR TBulletPuff
 {
 	+NOBLOCKMAP
 	+NOGRAVITY
