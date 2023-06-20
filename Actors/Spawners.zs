@@ -28,7 +28,21 @@ Class PlasmaRifleSpawner:       RandomSpawner replaces PlasmaRifle      { Defaul
 Class RocketLauncherSpawner:    RandomSpawner replaces RocketLauncher   { Default { DropItem "TangoRocketLauncher";}}
 Class ShotgunSpawner:           RandomSpawner replaces Shotgun          { Default { DropItem "TangoShotgun";}}
 Class SuperShotgunSpawner:      RandomSpawner replaces SuperShotgun     { Default { DropItem "TangoSuperShotgun";}}
-//Class Spawner:                  RandomSpawner replaces                  { Default { DropItem "Tango";}}
-//Class Spawner:                  RandomSpawner replaces                  { Default { DropItem "Tango";}}
 // MISC
+Class BulletClipSpawner:        RandomSpawner replaces  Clip  { Default { DropItem "TangoBulletClip";}}
+Class BulletBoxSpawner:         RandomSpawner replaces ClipBox   { Default { DropItem "TangoBulletBox";}}
+Class ShellSpawner:             RandomSpawner replaces Shell   { Default { DropItem "TangoShell";}}
+Class ShellBoxSpawner:          RandomSpawner replaces ShellBox   { Default { DropItem "TangoShellBox";}}
+Class RocketAmmoSpawner:        RandomSpawner replaces RocketAmmo   { Default { DropItem "TangoRocketAmmo";}}
+Class RocketBoxSpawner:         RandomSpawner replaces RocketBox   { Default { DropItem "TangoRocketBox";}}
+Class CellSpawner:              RandomSpawner replaces Cell   { Default { DropItem "TangoCell";}}
+Class CellPackSpawner:          RandomSpawner replaces CellPack   { Default { DropItem "TangoCellPack";}}
+/*Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}*/
 //TODO: player

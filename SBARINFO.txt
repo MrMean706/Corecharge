@@ -42,11 +42,6 @@ statusbar fullscreen, fullscreenoffsets
 			drawimage "SB-MSHL", -14, -11;
 		}
 		
-		WeaponAmmo "TangoScrapDrum"
-		{
-			drawimage "SB-MSCL", -14, -11;
-		}
-		
 		WeaponAmmo "TangoBulletClip"
 		{
 			drawimage "SB-MCLP", -14, -11;
@@ -60,11 +55,6 @@ statusbar fullscreen, fullscreenoffsets
 		WeaponAmmo "TangoCell"
 		{
 			drawimage "SB-MCLL", -14, -11;
-		}
-		
-		WeaponAmmo "TangoStomperAmmo"
-		{
-			drawimage "SB-MSTO", -14, -11;
 		}
 		
         //secondary ammo and inventory
@@ -297,15 +287,6 @@ statusbar normal, fullscreenoffsets
 statusbar automap, fullscreenoffsets
 {
 	// ** TOTAL AMMO TALLIES **
-	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoStomperAmmo), interpolate(30), -25, -46;
-	drawimage "GINDNUMS", -24, -46;
-	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoStomperAmmo), interpolate(30), -6, -46;
-	drawimage "SM-MSTO", -46, -47;
-	
-	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoScrapDrum), interpolate(30), -25, -39;
-	drawimage "GINDNUMS", -24, -39;
-	drawnumber 3, TANGO_INDEXFONT_GRAY, untranslated, ammocapacity(TangoScrapDrum), interpolate(30), -6, -39;
-	drawimage "SM-MSCL", -46, -40;
 	
 	drawnumber 3, TANGO_INDEXFONT, TangoWhiteVeryLight, ammo(TangoBulletClip), interpolate(30), -25, -32;
 	drawimage "GINDNUMS", -24, -32;
@@ -330,19 +311,10 @@ statusbar automap, fullscreenoffsets
 	// ** SELECTED AMMO HIGHLIGHT **
     usesammo
     {
-		WeaponAmmo "TangoStomperAmmo"
-		{
-			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoStomperAmmo), interpolate(30), -25, -46;
-		}
 	
 		WeaponAmmo "TangoShell"
 		{
 			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoShell), interpolate(30), -25, -25;
-		}
-		
-		WeaponAmmo "TangoScrapDrum"
-		{
-			drawnumber 3, TANGO_INDEXFONT, TangoGreenVeryLight, ammo(TangoScrapDrum), interpolate(30), -25, -39;
 		}
 		
 		WeaponAmmo "TangoBulletClip"
