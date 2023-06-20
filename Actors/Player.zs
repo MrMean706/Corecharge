@@ -1,4 +1,4 @@
-Class TangoPlayer : Doomplayer replaces Doomplayer
+Class TangoPlayer : Doomplayer
 {	
     array<ReloadableWeapon> reloadableWeapons;
     void FullReload(Class<Ammo> ammoClass)

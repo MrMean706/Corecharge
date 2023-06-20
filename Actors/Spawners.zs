@@ -1,7 +1,11 @@
 /*
 Using spawners instead of replacing monsters directly so that I can just remove this file to use the individual actors in a non-Corecharge project.
 NOTE:
-If trying to use individual actors within a non-corecharge mapset, remove both this file and BloodSplatters.dec
+If trying to use individual actors within a non-corecharge mapset, remove the following:
+    this file
+    BloodSplatters.dec
+    HealthArmorPowerups.dec
+    Keys.dec
 */
 // MONSTERS
 Class BaronSpawner:             RandomSpawner replaces BaronOfHell      { Default { DropItem "TangoBaronOfHell";}}
@@ -48,6 +52,10 @@ Class DeadCacodemonSpawner:     RandomSpawner replaces DeadCacodemon   { Default
 // MISC
 Class BarrelSpawner:      RandomSpawner replaces ExplosiveBarrel   { Default { DropItem "TangoBarrel";}}
 Class BulletPuffSpawner:      RandomSpawner replaces BulletPuff   { Default { DropItem "TBulletPuff";}}
-
+Class PlayerSpawner:      RandomSpawner replaces DoomPlayer   { Default { DropItem "TangoPlayer";}}
+/*Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
 Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
-//TODO: player
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}
+Class Spawner:      RandomSpawner replaces    { Default { DropItem "Tango";}}*/
