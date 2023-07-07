@@ -2,13 +2,13 @@ class WeaponReloadInfoFactoryList : Thinker
 {
     array<WeaponReloadInfoFactory> factories;
 
-	MyGlobalVariables Init()
+	WeaponReloadInfoFactoryList Init()
 	{
 		SetStatNum(STAT_INFO);	// this is merely to let the thinker iterator find it quicker.
 		return self;
 	}
 	
-	static MyGlobalVariables Get()
+	static WeaponReloadInfoFactoryList Get()
 	{
 		ThinkerIterator it = ThinkerIterator.Create("WeaponReloadInfoFactoryList");
 		let p = WeaponReloadInfoFactoryList(it.Next());
@@ -31,7 +31,7 @@ class WeaponReloadInfoFactoryList : Thinker
         
         for (int i = 0; i < singleton.factories.Size(); i++)
         {
-            if (singleton.factories.TryGetWeaponReloadInfo(infoSource, output) break;
+            if (singleton.factories.TryGetWeaponReloadInfo(infoSource, output)) break;
         }
         return output;
     }
