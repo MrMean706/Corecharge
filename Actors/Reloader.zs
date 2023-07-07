@@ -60,8 +60,7 @@ Class Reloader: Inventory
         if (!weapon)
             return;
         WeaponReloadInfo currentReloadInfo = WeaponReloadInfoFactoryList.GetWeaponReloadInfo(Weapon.GetClassName());
-        if (!currentReloadInfo)
-            return;
+        if (!currentReloadInfo.unloadedClass || !currentReloadInfo.loadedClass) return;
         Inventory loadedAmmo = owner.FindInventory(currentReloadInfo.loadedClass);
         if (!loadedAmmo) 
             return;
