@@ -1,11 +1,8 @@
-Class WeaponReloadInfoFactory: EventHandler
+Class WeaponReloadInfoFactory: EventHandler abstract
 {
     override void WorldLoaded(WorldEvent e)
     {
-        //TODO
+        WeaponReloadInfoFactory.Push(self);
     }
-    bool TryGetWeaponReloadInfo(Weapon infoSource, out WeaponReloadInfo output)
-    {
-        //TODO
-    }
+    abstract bool TryGetWeaponReloadInfo(Weapon infoSource, out WeaponReloadInfo output);
 }

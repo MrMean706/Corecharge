@@ -19,14 +19,21 @@ class WeaponReloadInfoFactoryList : Thinker
 		return p;
 	}
     
-    static void Add(WeaponReloadInfoFactory toAdd)
+    static void Push(WeaponReloadInfoFactory toPush)
     {
-        //TODO, remember that this is static
+        WeaponReloadInfoFactoryList.Get().factories.Push(toPush);
     }
     
     static WeaponReloadInfo GetWeaponReloadInfo(Weapon infoSource)
     {
-        //TODO
+        WeaponReloadInfoFactoryList singleton = WeaponReloadInfoFactoryList.Get();
+        WeaponReloadInfo output = new("WeaponReloadInfo");
+        
+        for (int i = 0; i < singleton.factories.Size(); i++)
+        {
+            if (singleton.factories.TryGetWeaponReloadInfo(infoSource, output) break;
+        }
+        return output;
     }
 }
 
