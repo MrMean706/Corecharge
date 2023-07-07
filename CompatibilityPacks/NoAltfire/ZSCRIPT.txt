@@ -1,0 +1,7 @@
+/*
+WeaponReloadInfoFactory that works for mods whose weapons reload ammotype1 from ammotype2
+*/
+Class NoAltfireReloadInfoFactory: WeaponReloadInfoFactory
+{
+    //TODO
+}
