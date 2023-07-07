@@ -3,5 +3,6 @@ WeaponReloadInfoFactory that works for mods whose weapons reload ammotype1 from 
 */
 Class NoAltfireReloadInfoFactory: WeaponReloadInfoFactory
 {
+    override bool TryGetWeaponReloadInfo(Name infoSource, out WeaponReloadInfo output);
     //TODO
 }

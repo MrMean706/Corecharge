@@ -4,5 +4,5 @@ Class WeaponReloadInfoFactory: EventHandler abstract
     {
         WeaponReloadInfoFactory.Push(self);
     }
-    abstract bool TryGetWeaponReloadInfo(Name infoSource, out WeaponReloadInfo output);
+    abstract bool TryGetWeaponReloadInfo(Weapon infoSource, out WeaponReloadInfo output);
 }

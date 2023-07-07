@@ -24,7 +24,7 @@ class WeaponReloadInfoFactoryList : Thinker
         WeaponReloadInfoFactoryList.Get().factories.Push(toPush);
     }
     
-    static WeaponReloadInfo GetWeaponReloadInfo(Name infoSource)
+    static WeaponReloadInfo GetWeaponReloadInfo(Weapon infoSource)
     {
         WeaponReloadInfoFactoryList singleton = WeaponReloadInfoFactoryList.Get();
         WeaponReloadInfo output = new("WeaponReloadInfo");
