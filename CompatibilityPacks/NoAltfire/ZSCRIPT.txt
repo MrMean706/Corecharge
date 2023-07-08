@@ -7,7 +7,8 @@ Class NoAltfireReloadInfoFactory: WeaponReloadInfoFactory
     {
         if(!infoSource.AmmoType1 || !infoSource.AmmoType2)
             return false;
-        output.loadedClass = output.AmmoType1;
-        output.unloadedClass = output.AmmoType2;
+        output.loadedClass = infoSource.AmmoType1;
+        output.unloadedClass = infoSource.AmmoType2;
+        return true;
     }
 }

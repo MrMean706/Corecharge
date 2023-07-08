@@ -4,7 +4,7 @@ class WeaponReloadInfoFactoryList : Thinker
 
 	WeaponReloadInfoFactoryList Init()
 	{
-		SetStatNum(STAT_INFO);	// this is merely to let the thinker iterator find it quicker.
+		ChangeStatNum(STAT_INFO);	// this is merely to let the thinker iterator find it quicker.
 		return self;
 	}
 	
@@ -31,7 +31,7 @@ class WeaponReloadInfoFactoryList : Thinker
         
         for (int i = 0; i < singleton.factories.Size(); i++)
         {
-            if (singleton.factories.TryGetWeaponReloadInfo(infoSource, output)) break;
+            if (singleton.factories[i].TryGetWeaponReloadInfo(infoSource, output)) break;
         }
         return output;
     }
