@@ -25,17 +25,15 @@ Class Reloader: Inventory
     bool shouldShift;
      override bool HandlePickup (Inventory item)
 	{
-        console.printf("Reloader::HandlePickup");
         if ((item is "Weapon") && owner) shouldShift = true;
         Inventory playerInv = owner.Inv;
         Weapon playerWeapon;
         TryReload(owner.player.ReadyWeapon, item);
         while (playerInv)
         {
-            console.printf("playerInv: %s", playerInv.GetClassName());
             playerWeapon = Weapon(playerInv);
             if (playerWeapon) TryReload(playerWeapon, item);
-            playerInv = playerInv.Inv; //NextInv();
+            playerInv = playerInv.Inv; 
         }
         bool result = Super.HandlePickup(item);
 		return result;
@@ -88,13 +86,6 @@ Class Reloader: Inventory
                 [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,weaponPickup.AmmoGive1,currentReloadInfo);
                 weaponPickup.AmmoGive1 -= ammoLoaded;
                 pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
-            }
-            if (weaponPickup is "TangoShotgun")
-            {
-                console.printf("Trying to load from TangoShotgun");
-                if (weaponPickup.AmmoType2) console.printf("AmmoType2: %s", weaponPickup.AmmoType2.GetClassName());
-                console.printf("UnloadedClass: %s", currentReloadInfo.unloadedClass.GetClassName());
-                console.printf("AmmountGive2: %d", weaponPickup.AmmoGive2);
             }
             if (ammoUntilFull && (weaponPickup.AmmoType2 == currentReloadInfo.unloadedClass))
             {

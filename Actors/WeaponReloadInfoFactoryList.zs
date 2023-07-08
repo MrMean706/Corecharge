@@ -4,13 +4,13 @@ class WeaponReloadInfoFactoryList : Thinker
 
 	WeaponReloadInfoFactoryList Init()
 	{
-		ChangeStatNum(STAT_INFO);	// this is merely to let the thinker iterator find it quicker.
+		ChangeStatNum(STAT_STATIC);
 		return self;
 	}
 	
 	static WeaponReloadInfoFactoryList Get()
 	{
-		ThinkerIterator it = ThinkerIterator.Create("WeaponReloadInfoFactoryList");
+		ThinkerIterator it = ThinkerIterator.Create("WeaponReloadInfoFactoryList", STAT_STATIC);
 		let p = WeaponReloadInfoFactoryList(it.Next());
 		if (p == null)
 		{
@@ -21,14 +21,14 @@ class WeaponReloadInfoFactoryList : Thinker
     
     static void Push(WeaponReloadInfoFactory toPush)
     {
-        WeaponReloadInfoFactoryList.Get().factories.Push(toPush);
+        let singleton = WeaponReloadInfoFactoryList.Get();
+        singleton.factories.Push(toPush);
     }
     
     static WeaponReloadInfo GetWeaponReloadInfo(Weapon infoSource)
     {
         WeaponReloadInfoFactoryList singleton = WeaponReloadInfoFactoryList.Get();
         WeaponReloadInfo output = new("WeaponReloadInfo");
-        
         for (int i = 0; i < singleton.factories.Size(); i++)
         {
             if (singleton.factories[i].TryGetWeaponReloadInfo(infoSource, output)) break;
