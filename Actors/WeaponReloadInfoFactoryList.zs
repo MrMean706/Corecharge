@@ -23,6 +23,11 @@ class WeaponReloadInfoFactoryList : Thinker
     {
         let singleton = WeaponReloadInfoFactoryList.Get();
         singleton.factories.Push(toPush);
+        if (DEBUG_RELOAD_HELPER)
+        {
+            console.printf("Pushed new factory. Current List: ");
+            console.printf(singleton.ToString());
+        }
     }
     
     static WeaponReloadInfo GetWeaponReloadInfo(Weapon infoSource)
@@ -32,6 +37,21 @@ class WeaponReloadInfoFactoryList : Thinker
         for (int i = 0; i < singleton.factories.Size(); i++)
         {
             if (singleton.factories[i].TryGetWeaponReloadInfo(infoSource, output)) break;
+        }
+        if (DEBUG_RELOAD_HELPER)
+        {
+            console.printf("Created reload info:");
+            if (output) console.printf(output.ToString());
+        }
+        return output;
+    }
+    
+    string ToString()
+    {
+        String output = String.Format("%p = %s", self, self.GetClassName());
+        for (int i = 0; i < factories.Size(); i++)
+        {
+            output = output .. "\n" .. factories[i].ToString();
         }
         return output;
     }

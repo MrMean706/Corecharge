@@ -14,4 +14,16 @@ Class WeaponReloadInfo
             return null;
         return ammoVar.GetString();
     }
+    
+    string ToString()
+    {
+        return String.Format("%p = %s (unloadedClass: %s, loadedClass: %s, soundName: %s)", self, GetClassName(), TryGetClassName(unloadedClass), TryGetClassName(loadedClass), soundName);
+    }
+    
+    string TryGetClassName(Class<Actor> actor)
+    {
+        if (actor)
+            return actor.GetClassName();
+        return "null";
+    }
 }

@@ -52,7 +52,8 @@ Class Reloader: Inventory
         if (!weapon)
             return;
         WeaponReloadInfo currentReloadInfo = WeaponReloadInfoFactoryList.GetWeaponReloadInfo(Weapon);
-        if (!currentReloadInfo.unloadedClass || !currentReloadInfo.loadedClass) return;
+        if (!currentReloadInfo.unloadedClass || !currentReloadInfo.loadedClass) 
+            return;
         Inventory loadedAmmo = owner.FindInventory(currentReloadInfo.loadedClass);
         if (!loadedAmmo) 
             return;
@@ -63,6 +64,15 @@ Class Reloader: Inventory
     //AmmoType2 should be ammo NOT currently loaded
     protected void ReloadInternal(Weapon weapon, WeaponReloadInfo currentReloadInfo, Inventory loadedAmmo, Inventory unloadedAmmo = null, Inventory item = null)
     {
+        if (DEBUG_RELOAD_HELPER)
+        {
+            console.printf("ReloadInternal parameters:");
+            console.printf(String.Format("%p = %s",weapon,weapon.GetClassName()));
+            console.printf(currentReloadInfo.ToString());
+            console.printf(String.Format("%p = %s",loadedAmmo,loadedAmmo.GetClassName()));
+            if (unloadedAmmo) console.printf(String.Format("%p = %s",unloadedAmmo,unloadedAmmo.GetClassName()));
+            if (item) console.printf(String.Format("%p = %s",item,item.GetClassName()));
+        }
         int ammoLoaded;
         int ammoUntilFull = loadedAmmo.MaxAmount - loadedAmmo.Amount;
         bool pickupHadAmmo = false;

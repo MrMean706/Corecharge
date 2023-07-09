@@ -5,7 +5,7 @@ Class WeaponReloadInfoFactory: EventHandler abstract
         WeaponReloadInfoFactoryList.Push(self);
         Super.WorldLoaded(e);
     }
-    bool TryGetWeaponReloadInfo(Weapon infoSource, out WeaponReloadInfo output)
+    virtual bool TryGetWeaponReloadInfo(Weapon infoSource, out WeaponReloadInfo output)
     {
         if(output == null) return false;
         if(!infoSource.AmmoType1 || !infoSource.AmmoType2)
@@ -13,5 +13,10 @@ Class WeaponReloadInfoFactory: EventHandler abstract
         output.loadedClass = infoSource.AmmoType1;
         output.unloadedClass = infoSource.AmmoType2;
         return true;
+    }
+    
+    string ToString()
+    {
+        return string.format("%p = %s", self, self.GetClassName());
     }
 }
