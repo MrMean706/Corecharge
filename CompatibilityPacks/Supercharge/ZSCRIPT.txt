@@ -1,0 +1,4 @@
+Class SuperchargeReloadInfoFactory: WeaponReloadInfoFactory
+{
+    //TODO
+}
