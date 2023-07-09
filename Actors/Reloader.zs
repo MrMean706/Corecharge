@@ -1,11 +1,5 @@
 /*
-Invetnory item that provides the owner with instant reloads when picking up ammo.
-*/
-
-/*
-TODO: 
-Shotguns don't always make noise when picked up
-Shotguns sometimes can't be picked up even when not full on ammo
+Inventory item that provides the owner with instant reloads when picking up ammo.
 */
 
 Class ReloaderGiver: EventHandler
@@ -109,9 +103,13 @@ Class Reloader: Inventory
             fail to trigger the reload on pickup.
             */
             [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,ammoUntilFull,currentReloadInfo);
-             pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 
+             pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
         }    
-        if (pickupHadAmmo) item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
+        if (pickupHadAmmo) 
+        {
+            if (currentReloadInfo.soundName) A_StartSound(currentReloadInfo.soundName, CHAN_AUTO);
+            item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
+        }
     }
     
     protected int, int LoadAmmo(int ammoUntilFull, int maxLoad, WeaponReloadInfo currentReloadInfo)
