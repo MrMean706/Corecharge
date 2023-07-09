@@ -97,7 +97,7 @@ Class Reloader: Inventory
         }
         if (pickupHadAmmo) 
         {
-            if (currentReloadInfo.soundName) A_StartSound(currentReloadInfo.soundName, CHAN_AUTO);
+            if (currentReloadInfo.soundName) owner.A_StartSound(currentReloadInfo.soundName, CHAN_AUTO);
             item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
         }
     }
