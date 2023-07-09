@@ -4,13 +4,13 @@ class WeaponReloadInfoFactoryList : Thinker
 
 	WeaponReloadInfoFactoryList Init()
 	{
-		ChangeStatNum(STAT_STATIC);
+		ChangeStatNum(STAT_INFO);
 		return self;
 	}
 	
 	static WeaponReloadInfoFactoryList Get()
 	{
-		ThinkerIterator it = ThinkerIterator.Create("WeaponReloadInfoFactoryList", STAT_STATIC);
+		ThinkerIterator it = ThinkerIterator.Create("WeaponReloadInfoFactoryList", STAT_INFO);
 		let p = WeaponReloadInfoFactoryList(it.Next());
 		if (p == null)
 		{

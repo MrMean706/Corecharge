@@ -4,6 +4,7 @@ Class WeaponReloadInfo
 {
     Class<Inventory> unloadedClass;
     Class<Inventory> loadedClass;
+    String sound;
     
     static protected Class<Inventory> getAmmoClassFromCVar(bool getLoaded, Name weaponClassName)
     {

@@ -108,8 +108,8 @@ Class Reloader: Inventory
             I would rather give extra free ammo if the player picks one up while low on ammo than 
             fail to trigger the reload on pickup.
             */
-             owner.GiveInventory(currentReloadInfo.loadedClass, ammoUntilFull);
-             pickupHadAmmo = true;
+            [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,ammoUntilFull,currentReloadInfo);
+             pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 
         }    
         if (pickupHadAmmo) item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
     }
