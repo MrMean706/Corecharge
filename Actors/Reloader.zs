@@ -66,45 +66,25 @@ Class Reloader: Inventory
         int ammoLoaded;
         int ammoUntilFull = loadedAmmo.MaxAmount - loadedAmmo.Amount;
         bool pickupHadAmmo = false;
-        if (ammoUntilFull && (item is currentReloadInfo.unloadedClass))
-        {
-            [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,item.Amount,currentReloadInfo);
-            item.Amount -= ammoLoaded;
-            pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
-        }
+        if (item is currentReloadInfo.unloadedClass) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,item.Amount);
         Weapon weaponPickup = Weapon(item);
         if (weaponPickup)
         {
-            if (ammoUntilFull && (weaponPickup.AmmoType1 == currentReloadInfo.unloadedClass))
-            {
-                [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,weaponPickup.AmmoGive1,currentReloadInfo);
-                weaponPickup.AmmoGive1 -= ammoLoaded;
-                pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
-            }
-            if (ammoUntilFull && (weaponPickup.AmmoType2 == currentReloadInfo.unloadedClass))
-            {
-                [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,weaponPickup.AmmoGive2,currentReloadInfo);
-                weaponPickup.AmmoGive2 -= ammoLoaded;
-                pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
-            }
+            if (weaponPickup.AmmoType1 == currentReloadInfo.unloadedClass) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,weaponPickup.AmmoGive1);
+            if (weaponPickup.AmmoType2 == currentReloadInfo.unloadedClass) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,weaponPickup.AmmoGive2);
         }
         if (item is "BackpackItem") pickupHadAmmo = true;
-        if (ammoUntilFull && pickupHadAmmo && unloadedAmmo)
+        if (pickupHadAmmo && unloadedAmmo) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,unloadedAmmo.Amount);
+        /*
+        I don't know how to reduce how much ammo a backpack gives.
+        I would rather give extra free ammo if the player picks one up while low on ammo than 
+        fail to trigger the reload on pickup.
+        */
+        if (ammoUntilFull && (item is "BackpackItem")) 
         {
-            [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,unloadedAmmo.Amount,currentReloadInfo);
-            owner.TakeInventory(currentReloadInfo.unloadedClass, ammoLoaded);
-            
+            int temp = -1;  //Creating a temp var, because output params do not accept constants
+            LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo, temp);
         }
-        if (ammoUntilFull && (item is "BackpackItem"))
-        {
-            /*
-            I don't know how to reduce how much ammo a backpack gives.
-            I would rather give extra free ammo if the player picks one up while low on ammo than 
-            fail to trigger the reload on pickup.
-            */
-            [ammoLoaded, ammoUntilFull] = LoadAmmo(ammoUntilFull,ammoUntilFull,currentReloadInfo);
-             pickupHadAmmo = pickupHadAmmo || (ammoLoaded > 0);
-        }    
         if (pickupHadAmmo) 
         {
             if (currentReloadInfo.soundName) A_StartSound(currentReloadInfo.soundName, CHAN_AUTO);
@@ -112,12 +92,16 @@ Class Reloader: Inventory
         }
     }
     
-    protected int, int LoadAmmo(int ammoUntilFull, int maxLoad, WeaponReloadInfo currentReloadInfo)
+    protected void LoadAmmo(WeaponReloadInfo currentReloadInfo, Inventory loadedAmmo, out bool pickupHadAmmo, out int unloadedCount)
     {
-        int ammoLoaded =  min(ammoUntilFull, maxLoad);
+        int ammoUntilFull = loadedAmmo.MaxAmount - loadedAmmo.Amount;
+        if (!ammoUntilFull)
+            return;
+        int ammoLoaded =  ammoUntilFull;
+        if ((unloadedCount >= 0) && (unloadedCount < ammoLoaded)) ammoLoaded = unloadedCount;
         owner.GiveInventory(currentReloadInfo.loadedClass, ammoLoaded);
-        ammoUntilFull -= ammoLoaded;
-        return ammoLoaded, ammoUntilFull;
+        if (unloadedCount >= 0) unloadedCount -= ammoLoaded;
+        pickupHadAmmo != ammoLoaded;
     }
     
     Default
