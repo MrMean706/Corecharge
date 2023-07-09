@@ -38,11 +38,11 @@ class WeaponReloadInfoFactoryList : Thinker
         {
             if (singleton.factories[i].TryGetWeaponReloadInfo(infoSource, output)) break;
         }
-        if (DEBUG_RELOAD_HELPER)
+        /*if (DEBUG_RELOAD_HELPER)
         {
             console.printf("Created reload info:");
             if (output) console.printf(output.ToString());
-        }
+        }*/
         return output;
     }
     

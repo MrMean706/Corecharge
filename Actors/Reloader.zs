@@ -111,7 +111,13 @@ Class Reloader: Inventory
         if ((unloadedCount >= 0) && (unloadedCount < ammoLoaded)) ammoLoaded = unloadedCount;
         owner.GiveInventory(currentReloadInfo.loadedClass, ammoLoaded);
         if (unloadedCount >= 0) unloadedCount -= ammoLoaded;
-        pickupHadAmmo != ammoLoaded;
+        pickupHadAmmo = pickupHadAmmo || ammoLoaded;
+        if (DEBUG_RELOAD_HELPER)
+        {
+            console.printf("Loaded Ammo");
+            console.printf("Pickup Had Ammo? %d", pickupHadAmmo);
+            console.printf("unloadedCount: %d", unloadedCount);
+        }
     }
     
     Default
