@@ -1,5 +1,6 @@
 gameinfo
 {
+   AddEventHandlers = "CorechargeReloadInfoFactory"
    playerclasses = "TangoPlayer"
    // Add the event handler for m8f's idclever-starter-0.5.1 based code.
    // This doesn't work in Zandronum, but luckily Zandro completely ignores
