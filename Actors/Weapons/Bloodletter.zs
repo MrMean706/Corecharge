@@ -1,4 +1,4 @@
-class Bloodletter : ReloadableWeapon
+class Bloodletter : Weapon
 { 
     override void AttachToOwner(Actor other)
     {
@@ -160,10 +160,9 @@ class Bloodletter : ReloadableWeapon
                 A_PlaySound("pistol/reload2", CHAN_AUTO);
                 A_WeaponOffset(1, 85);
                 
-                invoker.InstantReload();
-                /*int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);
+                int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);
                 self.TakeInventory("TangoBulletClip",toLoad);
-                self.GiveInventory("PistolAmmo",toLoad);*/
+                self.GiveInventory("PistolAmmo",toLoad);
                 A_WeaponReady(WRF_ALLOWRELOAD);
             }
             

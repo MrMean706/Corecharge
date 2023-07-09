@@ -15,7 +15,7 @@ Class AssaultRifleAmmo : Ammo
 	
 }
 
-Class TangoAssaultRifle : ReloadableWeapon
+Class TangoAssaultRifle : Weapon
 {
     const MAX_TOKENS = double(20);
     int spreadTokens;
