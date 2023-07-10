@@ -91,7 +91,12 @@ Class TangoPlasmaRifle : Weapon
 		TNT1 A 0 A_Takeinventory("TangoCell",1)	;
 		Goto ReloadRepeat;
 	ReloadFinish:
-		PLZR K 8;
+		PLZR K 8
+        {
+            A_Blast();
+            Reloader reloader = Reloader(self.FindInventory("Reloader", true));
+            if (reloader) reloader.TryReloadEverything();
+        }
 		PLZR J 4;
 		PLZR I 1;
 		PLZR L 1;
