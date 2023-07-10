@@ -49,7 +49,7 @@ Class TangoFist : Fist
 		PKFS JKL 1;
 		PUNG A 5 A_ReFire();
 		Goto Ready;
-    Altfire:
+    /*Altfire:
         TNT1 A 2
         {
             invoker.baitChargeTime++;
@@ -68,7 +68,7 @@ Class TangoFist : Fist
         TNT1 A 8;
         //Using A_Jump instead of a goto causes it to resolve at runtime instead of compile time.
         //This allows subclasses to return to their own ready state instead of the fists'
-        TNT1 A 0 A_Jump(256,'Ready'); 
+        TNT1 A 0 A_Jump(256,'Ready'); */
     Flash:
         DYNG A 2 Bright
         {
@@ -88,7 +88,7 @@ Class TangoFist : Fist
 	}
 }
 
-Class JackBox: Actor
+/*Class JackBox: Actor
 {
     override int DoSpecialDamage(Actor victim, int damage, Name damagetype)
     {
@@ -131,7 +131,7 @@ Class JackBox: Actor
             //TODO: PlaySound
             A_Explode(100,128,0,true,128);
             //A_SpawnItemEx("JackBombProj",0,0,0,0,0,0,0,32,0)
-        }*/
+        }
         Stop;
     }
-}
+}*/

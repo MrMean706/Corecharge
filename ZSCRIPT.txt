@@ -3,7 +3,7 @@ version "3.2.0"
 /*** GENERAL/COMMON ***/
 //include "actors/utilities/Movement.zs"
 #include "actors/utilities/CorechargeOptions.zs"
-#include "actors/utilities/Taunting.zs"
+//#include "actors/utilities/Taunting.zs"
 #include "actors/utilities/CorechargeReloadInfoFactory.zs"
 #include "actors/Player.zs"
 
@@ -17,6 +17,7 @@ version "3.2.0"
 
 /*** MONSTERS ***/
 #include "actors/Spawners.zs"
+/*
 #include "actors/monsters/Enraged/BloodGhost.zs"
 #include "actors/monsters/Enraged/BloodFiend.zs"
 #include "actors/monsters/Enraged/Blot.zs"
@@ -24,6 +25,7 @@ version "3.2.0"
 #include "actors/monsters/Enraged/Afrit.zs"
 #include "actors/monsters/Enraged/Carrionnette.zs"
 #include "actors/monsters/Enraged/SoulOfPain.zs"
+*/
 
 
 // Everything below this line, including the files included, come from m8f's
