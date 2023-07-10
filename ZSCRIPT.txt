@@ -13,6 +13,7 @@ version "3.2.0"
 #include "actors/weapons/Bloodletter.zs"
 #include "actors/weapons/Shotgun.zs"
 #include "actors/weapons/AssaultRifle.zs"
+#include "actors/weapons/PlasmaRifle.zs"
 
 /*** MONSTERS ***/
 #include "actors/Spawners.zs"
