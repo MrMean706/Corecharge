@@ -52,7 +52,7 @@ Class TangoPlasmaRifle : Weapon
             if (CountInv("PlasmaRifleAmmo") == 0)
                 return ResolveState("CheckAutoReload");
             A_AlertMonsters();
-            A_FireCustomMissile("WeaponPlasmaBall");
+            A_FireProjectile("WeaponPlasmaBall");
             // We want a chance to skip the screen shake effect because it can
 		// be grating if it happens on every single shot
             if (TangoPlayer(self).shouldScreenShake() && (Random(1,256) >= 96)) Radius_Quake(2, 2, 0, 1, 0);
