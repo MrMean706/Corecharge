@@ -47,19 +47,19 @@ Class TangoPlasmaRifle : Weapon
 		PKPL A 2 A_PlaySound("weapons/empty");
 		Goto Ready;
 	Fire:
-		TNT1 A 0 A_JumpIfNoAmmo("Reload");
-
-		TNT1 A 0 A_AlertMonsters;
-		TNT1 A 0 A_FireCustomMissile("WeaponPlasmaBall");
-		// We want a chance to skip the screen shake effect because it can
+		PLSF A 1 Bright
+        {
+            if (CountInv("PlasmaRifleAmmo") == 0)
+                return ResolveState("CheckAutoReload");
+            A_AlertMonsters();
+            A_FireCustomMissile("WeaponPlasmaBall");
+            // We want a chance to skip the screen shake effect because it can
 		// be grating if it happens on every single shot
-		TNT1 A 0 A_Jump(96, 1);
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_enable_screen_shake") == 0, "SkipShake");
-		TNT1 A 0 Radius_Quake(2, 2, 0, 1, 0);
-		SkipShake:
-		TNT1 A 0 A_Light1;
-		TNT1 A 0 A_PlaySound("weapons/plasmafire", CHAN_WEAPON);
-		PLSF A 1 Bright;
+            if (TangoPlayer(self).shouldScreenShake() && (Random(1,256) >= 96)) Radius_Quake(2, 2, 0, 1, 0);
+            A_Light1();
+            A_PlaySound("weapons/plasmafire", CHAN_WEAPON);
+            return ResolveState(null);
+        }
 		PLSF B 1 Bright A_Light0;
 		PLSF A 1 Bright;
 		PLSF B 1 Bright A_Refire;
