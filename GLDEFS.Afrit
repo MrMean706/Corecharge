@@ -1,5 +1,5 @@
 //Brightmaps
-
+/*
 BrightMap Sprite FRITA1 { Map "brightmaps/afrit/BMFRITA1.png" DisableFullBright }
 BrightMap Sprite FRITA2A8 { Map "brightmaps/afrit/BMFRITA2.png" DisableFullBright }
 BrightMap Sprite FRITA3A7 { Map "brightmaps/afrit/BMFRITA3.png" DisableFullBright }
@@ -320,3 +320,4 @@ Frame COMTG { Light Comet5 }
 Frame COMTH { Light Comet6 }
 Frame COMTI { Light Comet7 }
 }
+*/
