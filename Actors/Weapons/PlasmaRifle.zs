@@ -93,8 +93,8 @@ Class TangoPlasmaRifle : Weapon
 	ReloadFinish:
 		PLZR K 8
         {
-            A_Blast();
-            //TODO: AOE effect
+            A_RadiusThrust(5000, 600, RTF_NOIMPACTDAMAGE | RTF_NOTMISSILE, 3000);
+			ShockwaveRing.Spawn(self); 
             Reloader reloader = Reloader(self.FindInventory("Reloader", true));
             if (reloader) reloader.TryReloadEverything();
         }

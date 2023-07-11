@@ -1,58 +1,7 @@
-Blot:
-Code: Captain Toenail
-Sounds: Doom, Captain Toenail
-Sprites: Doom, Hexen
-Sprite Edit: Captain Toenail
-
-Soul of Pain:
-Sprites: Neural Upscale Project (hidfan)
-Code: Modified from Supercharge's lost soul
-
-Carrionnette:
-Code: Inkoalawetrust
-Sounds: Id Software (Doom/Doom II), Raven Software (Heretic), Valve Software (Half-Life 1)
-Sprites: Id Software (Doom/Doom II), 3D Realms (Shadow Warrior prototypes), Eriance (Projectile)
-Sprite Edit: PGE
-Idea Base: Prototype Coolie Ghost looked like it would fit on Revenant legs
-
-Afrit Credits:
-Code: Nanami, Ghastly_dragon
-GLDefs: Keksdose, Herculine (Brightmaps)
-Sounds: Id Software
-Sprites: Id Software
-Sprite Edit: Espi, Ebola
-
-Gazer Credits
-Sprites: RNG Breadbug
-Download link that still functions: dead.air (by Xaser)
-
-BloodFiend Credits
-Code: Eriance, Ghastly (ZScript conversion)
-Sounds: Id Software, Raven Software, Midway
-GLDefs: Sandypaper (Brightmaps)
-Sprites: Id Software
-Sprite Edit: Eriance
-Idea Base: Doom Demon
-
-Jackbox Credits:
-Submitted: Ichor
-Decorate: Ichor
-GLDefs: Ichor
-Sounds: Blood, typical jack-in-the-box music
-Sprites: American McGee's Alice
-Idea Base: World's Most Interesting Bomb
-
-Blood Ghost Credits:
-Submitted: KILLA DIO
-Code: KILLA DIO, Some death code from Gothic
-GLDefs: KILLA DIO
-Sounds: KILLA DIO, Freedoom, Librequake (sounds contributed to Librequake by KILLA DIO)
-Sprites: 3D Realms
-Sprite Edit: KILLA DIO
-
 Mor'Ladim
 	Bloodletter sprites 
 	Bloodletter's code (Heavily modified by MrMean)
+	Shockwave sprites and code
 kenny.nl(Interface Sounds pack)
 	Bear Taser clicking sound (scroll_001.ogg)
 Blizzard
