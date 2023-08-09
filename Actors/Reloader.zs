@@ -17,8 +17,29 @@ Class ReloaderGiver: EventHandler
 Class Reloader: Inventory
 {
     bool shouldShift;
-     override bool HandlePickup (Inventory item)
+    override bool HandlePickup (Inventory item)
 	{
+        TryReloadEverything(item);
+        bool result = Super.HandlePickup(item);
+		return result;
+	}
+    
+    override void Tick()
+    {
+        if (shouldShift)
+        {
+            //Guarantee that the reloader is earlier in the owner's inventory than any weapons
+            //Needed to make sure this HandlePickup gets called before duplicate weapon handling
+            Actor tempOwner = owner;
+            owner.RemoveInventory(self);
+            CallTryPickup(tempOwner);
+            shouldShift = false;
+        }
+        super.Tick();
+    }
+    
+    void TryReloadEverything(Inventory item = null)
+    {
         if ((item is "Weapon") && owner) shouldShift = true;
         Inventory playerInv = owner.Inv;
         Weapon playerWeapon;
@@ -29,25 +50,9 @@ Class Reloader: Inventory
             if (playerWeapon) TryReload(playerWeapon, item);
             playerInv = playerInv.Inv; 
         }
-        bool result = Super.HandlePickup(item);
-		return result;
-	}
+    }
     
-    override void Tick()
-    {
-            if (shouldShift)
-            {
-                //Guarantee that the reloader is earlier in the owner's inventory than any weapons
-                //Needed to make sure this HandlePickup gets called before duplicate weapon handling
-                Actor tempOwner = owner;
-                owner.RemoveInventory(self);
-                CallTryPickup(tempOwner);
-                shouldShift = false;
-            }
-            super.Tick();
-        }
-    
-    void TryReload(Weapon weapon, Inventory item)
+    void TryReload(Weapon weapon, Inventory item = null)
     {  
         if (!weapon)
             return;
@@ -84,7 +89,7 @@ Class Reloader: Inventory
             if (weaponPickup.AmmoType2 == currentReloadInfo.unloadedClass) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,weaponPickup.AmmoGive2);
         }
         if (item is "BackpackItem") pickupHadAmmo = true;
-        if (pickupHadAmmo && unloadedAmmo) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,unloadedAmmo.Amount);
+        if ((pickupHadAmmo || !item) && unloadedAmmo) LoadAmmo(currentReloadInfo,loadedAmmo,pickupHadAmmo,unloadedAmmo.Amount);
         /*
         I don't know how to reduce how much ammo a backpack gives.
         I would rather give extra free ammo if the player picks one up while low on ammo than 
@@ -98,7 +103,7 @@ Class Reloader: Inventory
         if (pickupHadAmmo) 
         {
             if (currentReloadInfo.soundName) owner.A_StartSound(currentReloadInfo.soundName, CHAN_AUTO);
-            item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
+            if (item) item.bPickupGood = true;    //Code that should set this later won't run if a weapon's AmmoGive is reduced to 0
         }
     }
     

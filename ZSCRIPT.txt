@@ -1,6 +1,6 @@
 version "4.10.0"
 
-Const DEBUG_RELOAD_HELPER = 1;
+Const DEBUG_RELOAD_HELPER = 0;
 
 #include "actors/Reloader.zs"
 #include "actors/WeaponReloadInfo.zs"
