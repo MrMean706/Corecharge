@@ -1,4 +1,11 @@
-version "3.2.0"
+version "4.10.0"
+
+/*Reload Helper*/
+Const DEBUG_RELOAD_HELPER = 0;
+#include "actors/Reloader.zs"
+#include "actors/WeaponReloadInfo.zs"
+#include "actors/WeaponReloadInfoFactory.zs"
+#include "actors/WeaponReloadInfoFactoryList.zs"
 
 /*** GENERAL/COMMON ***/
 //include "actors/utilities/Movement.zs"
