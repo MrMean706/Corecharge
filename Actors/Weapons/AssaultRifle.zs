@@ -6,10 +6,10 @@ Class AssaultRifleAmmo : Ammo
 {
     Default
     {
-        Inventory.Amount 30;
-        Inventory.MaxAmount 30;
+        Inventory.Amount 20;
+        Inventory.MaxAmount 20;
         Ammo.BackpackAmount 0;
-        Ammo.BackpackMaxAmount 30;
+        Ammo.BackpackMaxAmount 20;
         +Inventory.IGNORESKILL
     }
 	
