@@ -14,6 +14,7 @@ Class Axe : TangoFist
         Inventory.PickupMessage "You claimed yourself a powerful axe!";
         Tag "Axe";
         Obituary "%k butchered %o with his axe!";
+        Inventory.PickupMessage "$TANGO_BERSERK";
     }
 	
 	States

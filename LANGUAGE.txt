@@ -34,8 +34,8 @@ TANGO_SKILL_INSANE_CONFIRM ="\ciThe hidden difficulty! Insane and completely unb
 TANGO_SKILL_ULTRA_RANDOM =	"\cgUltra-Violence, but with some monster species spawns randomized.";
 
 // ** WEAPONS **
-TANGO_BERSERK =				"\c[TangoRedLight]Berserk! \cc(\c[TangoRedLight]5x \ccfist damage)";
-TANGO_CHAINSAW =			"\c[TangoRedLight]Chainsaw \cc(Slot \c[TangoRedLight]1\cc)";
+TANGO_BERSERK =				"\c[TangoRedLight]Axe! \cc(\c[TangoRedLight]2x \ccfist damage and no self damage.)";
+TANGO_BLOODLETTER =			"\c[TangoRedLight]Bloodletter. Altfire to steal blood. \cc(Slot \c[TangoRedLight]1\cc)";
 TANGO_PISTOL =				"\c[TangoRedLight]Pistol \cc(Slot \c[TangoRedLight]2\cc)";
 TANGO_SHOTGUN =				"\c[TangoRedLight]Shotgun \cc(Slot \c[TangoRedLight]3\cc)";
 TANGO_SUPER_SHOTGUN =		"\c[TangoRedLight]Super Shotgun \cc(Slot \c[TangoRedLight]3\cc)";

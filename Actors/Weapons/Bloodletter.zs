@@ -52,7 +52,7 @@ class Bloodletter : Weapon
         Weapon.AmmoType2 "TangoBulletClip";
         Weapon.AmmoGive2 0;
         Weapon.SlotNumber 2;
-        //Inventory.PickupMessage "$TANGO_PISTOL"
+        Inventory.PickupMessage "$TANGO_BLOODLETTER";
         
         //Unique
         Scale 0.5;
