@@ -86,7 +86,7 @@ class Bloodletter : Weapon
                 return ResolveState("CheckAutoReload");
             A_AlertMonsters();
             A_FireBullets(0, 0, 1, 22, "TBulletPuff", FBF_USEAMMO|FBF_NORANDOM, 8192);
-            A_PlaySound("pistol/fire", CHAN_WEAPON);
+            A_StartSound("pistol/fire", CHAN_WEAPON);
             A_GunFlash();
             A_Light1();
             if (TangoPlayer(self).shouldScreenShake()) Radius_Quake(1, 2, 0, 1, 0);
@@ -108,7 +108,7 @@ class Bloodletter : Weapon
             _WBD A 1 A_WeaponReady(WRF_NOFIRE);
             Goto Reload;
         NoAmmo:
-            _WBD A 2 A_PlaySound("weapons/empty");
+            _WBD A 2 A_StartSound("weapons/empty");
             Goto Ready;
 		AltFire:
             TNT1 A 0 { invoker.AltAttack(); }
@@ -147,7 +147,7 @@ class Bloodletter : Weapon
             #### A 1 
             {
             A_WeaponOffset(0, 43);
-            A_PlaySound("pistol/reload1", CHAN_AUTO);
+            A_StartSound("pistol/reload1", CHAN_AUTO);
             }
             #### A 1 A_WeaponOffset(0, 60);
 			#### A 1 A_WeaponOffset(0, 80); 
@@ -157,7 +157,7 @@ class Bloodletter : Weapon
             #### A 1 A_WeaponOffset(2, 84);
             #### A 1 
             {
-                A_PlaySound("pistol/reload2", CHAN_AUTO);
+                A_StartSound("pistol/reload2", CHAN_AUTO);
                 A_WeaponOffset(1, 85);
                 
                 int toLoad = min(invoker.Ammo2.Amount, invoker.Ammo1.MaxAmount - invoker.Ammo1.Amount);

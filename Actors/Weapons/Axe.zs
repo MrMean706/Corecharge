@@ -22,7 +22,7 @@ Class Axe : TangoFist
 		AXEP A -1;
 		Stop;
 	Select:
-        TNT1 A 0 A_PlaySound("fist/select", CHAN_WEAPON);
+        TNT1 A 0 A_StartSound("fist/select", CHAN_WEAPON);
 		AXEG H 0 A_Raise();
 		Loop;
 	Deselect:
@@ -33,7 +33,7 @@ Class Axe : TangoFist
 		Loop;
 	Fire:
         AXEG G 2;
-        AXEG HI 1 A_PlaySound("weapons/axeswing", CHAN_WEAPON);
+        AXEG HI 1 A_StartSound("weapons/axeswing", CHAN_WEAPON);
 		AXEG J 2 
         {
             FTranslatedLineTarget t;

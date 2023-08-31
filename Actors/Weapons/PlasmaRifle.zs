@@ -34,7 +34,7 @@ Class TangoPlasmaRifle : Weapon
 		TPRP A -1;
 		Stop;
 	Select:
-		TNT1 A 0 A_PlaySound("plasmarifle/select", CHAN_WEAPON);
+		TNT1 A 0 A_StartSound("plasmarifle/select", CHAN_WEAPON);
 		PKPL A 0 A_Raise;
 		Loop;
 	Deselect:
@@ -44,7 +44,7 @@ Class TangoPlasmaRifle : Weapon
 		PKPL A 1 A_WeaponReady(WRF_ALLOWRELOAD);
 		Loop;
 	NoAmmo:
-		PKPL A 2 A_PlaySound("weapons/empty");
+		PKPL A 2 A_StartSound("weapons/empty");
 		Goto Ready;
 	Fire:
 		PLSF A 1 Bright
@@ -57,14 +57,14 @@ Class TangoPlasmaRifle : Weapon
 		// be grating if it happens on every single shot
             if (TangoPlayer(self).shouldScreenShake() && (Random(1,256) >= 96)) Radius_Quake(2, 2, 0, 1, 0);
             A_Light1();
-            A_PlaySound("weapons/plasmafire", CHAN_WEAPON);
+            A_StartSound("weapons/plasmafire", CHAN_WEAPON);
             return ResolveState(null);
         }
 		PLSF B 1 Bright A_Light0;
 		PLSF A 1 Bright;
 		PLSF B 1 Bright A_Refire;
 		PKPL BCDE 1;
-		PKPL F 6 A_PlaySound("BEPBEP");
+		PKPL F 6 A_StartSound("BEPBEP");
 		PKPL EDCB 1;
 		TNT1 A 0 A_JumpIfNoAmmo("CheckAutoReload");
 		Goto Ready;
@@ -80,7 +80,7 @@ Class TangoPlasmaRifle : Weapon
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo", 0,"Ready");
 		PLZR B 1; // A_FireCustomMissile("PlasmaCellCasing")
 		PLZR CD 2;
-		PLZR E 4 A_PlaySound("PLREB", CHAN_AUTO);
+		PLZR E 4 A_StartSound("PLREB", CHAN_AUTO);
 		PLZR FGH 1;
 		PLZR I 1 ;
 	ReloadRepeat:

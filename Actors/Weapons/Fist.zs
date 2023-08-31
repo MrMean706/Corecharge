@@ -15,7 +15,7 @@ Class TangoFist : Fist
 	States
 	{
 	Select:
-		TNT1 A 0 A_PlaySound("fist/select", CHAN_WEAPON);
+		TNT1 A 0 A_StartSound("fist/select", CHAN_WEAPON);
 		PUNG A 0 A_Raise();
 		Loop;
 	Deselect:

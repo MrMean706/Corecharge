@@ -46,7 +46,7 @@ Class TangoShotgun : Weapon
         if (CountInv("ShotgunAmmo") == 0)
             return ResolveState("CheckAutoReload");
         A_AlertMonsters();
-        A_PlaySound("weapons/shotgunfire", CHAN_WEAPON);
+        A_StartSound("weapons/shotgunfire", CHAN_WEAPON);
         A_FireBullets(3.6, 1.5, 10, 9, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192);
         if (TangoPlayer(self).shouldScreenShake()) Radius_Quake(5, 3, 0, 1, 0);
         A_GunFlash();
@@ -66,7 +66,7 @@ Class TangoShotgun : Weapon
         }
 		SHTF DEF 1;
 		SHTG BCDEFG 1;
-		SHTG G 1 A_PlaySound("weapons/shotguncock");
+		SHTG G 1 A_StartSound("weapons/shotguncock");
 		SHTG H 2;
 		SHTG I 1;
 		TNT1 A 0 A_SpawnItemEx("ShotgunCasing",random(-7,-9),cos(pitch)*-25,sin(-pitch)*25+random(26,28), random(3,5),0,random(4,6), random(-80,-90));
@@ -85,7 +85,7 @@ Class TangoShotgun : Weapon
 		SHTG A 1 A_WeaponReady(WRF_NOFIRE);
 		Goto Reload;
 	NoAmmo:
-		SHTG A 2 A_PlaySound("weapons/empty");
+		SHTG A 2 A_StartSound("weapons/empty");
 		Goto Ready;
 	Reload:
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("tango_cvar_shotgun_skin") == 1, "ReloadGothic");
@@ -108,7 +108,7 @@ Class TangoShotgun : Weapon
 		SHTR BC 1;
 		TNT1 A 0 A_GiveInventory("ShotgunAmmo", 1);
 		TNT1 A 0 A_TakeInventory("TangoShell", 1);
-		SHTR D 1 A_PlaySound("weapons/shellin", CHAN_AUTO);
+		SHTR D 1 A_StartSound("weapons/shellin", CHAN_AUTO);
 		SHTR E 1;
 		SHTR FHI 1 A_WeaponReady(WRF_NOBOB);
 		Goto ReloadRepeat;
@@ -117,7 +117,7 @@ Class TangoShotgun : Weapon
 		TNT1 A 0 A_TakeInventory("Reloading", 1);
 		Goto Ready;
 	Select:
-		TNT1 A 0 A_PlaySound("weapons/shotguncock", CHAN_WEAPON);
+		TNT1 A 0 A_StartSound("weapons/shotguncock", CHAN_WEAPON);
 		SHTG A 0 A_Raise;
 		Loop;
 	Deselect:

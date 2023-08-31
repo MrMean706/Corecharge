@@ -60,7 +60,7 @@ Class TangoAssaultRifle : Weapon
             if (CountInv("AssaultRifleAmmo") == 0)
                 return ResolveState("CheckAutoReload");
             A_AlertMonsters();
-            A_PlaySound("weapons/arfire", CHAN_WEAPON);
+            A_StartSound("weapons/arfire", CHAN_WEAPON);
             A_GunFlash();
             A_Light1();
             double spread_horz = invoker.GetSpreadHorz();
@@ -98,7 +98,7 @@ Class TangoAssaultRifle : Weapon
 		TARG A 1 A_WeaponReady(WRF_NOFIRE);
 		Goto Reload;
 	NoAmmo:
-		TARG A 2 A_PlaySound("weapons/empty");
+		TARG A 2 A_StartSound("weapons/empty");
 		Goto Ready;
 	Reload:
 		TNT1 A 0 A_JumpIfInventory("TangoBulletClip", 1, 1);
@@ -108,13 +108,13 @@ Class TangoAssaultRifle : Weapon
 		
 		TARR ABCC 1;
 		TARR DF 1;
-		TNT1 A 0 A_PlaySound("weapons/arright", CHAN_AUTO);
+		TNT1 A 0 A_StartSound("weapons/arright", CHAN_AUTO);
 		TARR GIJ 1;
 		TARR KLMPON 1;
 		TRR1 ABCDE 1;
 		TRR1 F 3;
 		TRR1 GH 1;
-		TNT1 A 0 A_PlaySound("weapons/aropen", CHAN_AUTO);
+		TNT1 A 0 A_StartSound("weapons/aropen", CHAN_AUTO);
 		TRR1 IJ 1;
 		TNT1 A 0 A_SpawnItemEx("ClipCasing", 22, 0, 38, frandom(0, 1.0), frandom(-6.5, -8.0), frandom(1.0, 3.5)) ;
 		TRR1 KLM 1;
@@ -129,20 +129,20 @@ Class TangoAssaultRifle : Weapon
 	ReloadFinish:
 		TRR2 AB 2;
 		TRR2 C 1;
-		TNT1 A 0 A_PlaySound("weapons/arin", CHAN_AUTO);
+		TNT1 A 0 A_StartSound("weapons/arin", CHAN_AUTO);
 		TRR2 DE 1;
 		TRR2 F 3;
 		TRR2 G 5;
 		TRR2 HIJ 1;
 		TARR NK 1;
-		TNT1 A 0 A_PlaySound("weapons/arleft", CHAN_AUTO);
+		TNT1 A 0 A_StartSound("weapons/arleft", CHAN_AUTO);
 		TARR HFDCBA 1;
 		Goto Ready;
 	Flash:
 		TNT1 A 0;
 		Goto LightDone;
 	Select:
-		TNT1 A 0 A_PlaySound("items/assaultrifle", CHAN_WEAPON);
+		TNT1 A 0 A_StartSound("items/assaultrifle", CHAN_WEAPON);
 		TARG A 0 A_Raise;
 		Loop;
 	Deselect:
