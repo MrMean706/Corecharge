@@ -6,10 +6,10 @@ Class AssaultRifleAmmo : Ammo
 {
     Default
     {
-        Inventory.Amount 20;
-        Inventory.MaxAmount 20;
+        Inventory.Amount 32;
+        Inventory.MaxAmount 32;
         Ammo.BackpackAmount 0;
-        Ammo.BackpackMaxAmount 20;
+        Ammo.BackpackMaxAmount 32;
         +Inventory.IGNORESKILL
     }
 	
@@ -42,7 +42,7 @@ Class TangoAssaultRifle : Weapon
         Obituary "%o was gunned down by %k's Assault Rifle";
         Inventory.PickupMessage "$TANGO_ASSAULT_RIFLE";
         Weapon.Kickback 50;
-        Weapon.AmmoGive2 20;
+        Weapon.AmmoGive2 32;
     }
 	
 	States

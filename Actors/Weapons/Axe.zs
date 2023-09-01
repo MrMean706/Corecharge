@@ -1,17 +1,9 @@
 Class Axe : TangoFist
 {   
-    override void AttachToOwner(Actor other)
-    {
-        other.TakeInventory("TangoFist", 1);
-        if (other.health < 100) other.health = 100;
-        super.AttachToOwner(other);
-    }
-
      Default
     {
         Weapon.SlotNumber 1;
         Inventory.Icon "AXEPA0";
-        Inventory.PickupMessage "You claimed yourself a powerful axe!";
         Tag "Axe";
         Obituary "%k butchered %o with his axe!";
         Inventory.PickupMessage "$TANGO_BERSERK";
@@ -20,6 +12,7 @@ Class Axe : TangoFist
 	States
 	{
 	Spawn:
+        AXEP AAAA 0 A_SpawnItemEx("Medikit", 0, 0, 0, frandom(-1, 1), frandom(-1, 1));
 		AXEP A -1;
 		Stop;
 	Select:
