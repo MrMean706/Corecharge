@@ -113,7 +113,7 @@ Class WeaponPlasmaBall : PlasmaBall
 {
     Default
     {
-        DamageFunction 30;
+        DamageFunction 23;
         Height 6;
         Speed 54;
         Radius 3;

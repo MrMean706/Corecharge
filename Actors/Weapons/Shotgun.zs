@@ -2,10 +2,10 @@ Class ShotgunAmmo : Ammo
 {
 	Default
     {
-        Inventory.Amount 4;
-        Inventory.MaxAmount 4;
+        Inventory.Amount 6;
+        Inventory.MaxAmount 6;
         Ammo.BackpackAmount 0;
-        Ammo.BackpackMaxAmount 4;
+        Ammo.BackpackMaxAmount 6;
         +Inventory.IGNORESKILL
     }
 }
@@ -47,7 +47,7 @@ Class TangoShotgun : Weapon
             return ResolveState("CheckAutoReload");
         A_AlertMonsters();
         A_StartSound("weapons/shotgunfire", CHAN_WEAPON);
-        A_FireBullets(3.6, 1.5, 10, 9, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192);
+        A_FireBullets(3.6, 1.5, 7, 10, "ShotgunPuff", FBF_USEAMMO|FBF_NORANDOM, 8192);
         if (TangoPlayer(self).shouldScreenShake()) Radius_Quake(5, 3, 0, 1, 0);
         A_GunFlash();
         A_Light1();
