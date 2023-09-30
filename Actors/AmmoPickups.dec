@@ -12,10 +12,10 @@ Actor TangoBulletClip : Ammo
 {
 	//$Title "TangoBulletClip"
 	Tag "Bullet Clip"
-	Inventory.Amount 10
-	Inventory.MaxAmount 200
-	Ammo.BackpackAmount 10
-	Ammo.BackpackMaxAmount 400
+	Inventory.Amount 5
+	Inventory.MaxAmount 100
+	Ammo.BackpackAmount 5
+	Ammo.BackpackMaxAmount 200
 	Inventory.PickupMessage "$TANGO_BULLET_CLIP"
 	Inventory.PickupSound "weapons/getclip"
 	Inventory.Icon "TCLPA0"
@@ -27,28 +27,11 @@ Actor TangoBulletClip : Ammo
 	}
 }
 
-Actor TangoBulletClipHalf : TangoBulletClip
-{
-	//$Title "TangoBulletClipHalf"
-	Tag "Bullet Half Clip"
-	Inventory.PickupMessage "$TANGO_BULLET_CLIP_HALF"
-	Inventory.PickupSound "weapons/getclip"
-	Ammo.BackpackAmount 0
-	Inventory.Amount 5
-	Inventory.Icon "TCLPA0"
-	States
-	{
-	Spawn:
-		TCLH A -1
-		Stop
-	}
-}
-
 Actor TangoBulletBox : TangoBulletClip
 {
 	//$Title "TangoBulletBox"
 	Tag "Bullet Box"
-	Inventory.Amount 50
+	Inventory.Amount 25
 	Inventory.PickupMessage "$TANGO_BULLET_BOX"
 	Inventory.PickupSound "weapons/getclipbox"
 	States

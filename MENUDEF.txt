@@ -2,7 +2,7 @@
 // AddOptionMenu "OptionsMenu"
 // {
 // 	StaticText " "
-// 	Submenu "Supercharge Options", "SuperchargeOptions"
+// 	Submenu "Corecharge Options", "CorechargeOptions"
 // }
 
 // Zandronum doesn't support AddOptionMenu as of this writing, so we have to
@@ -22,7 +22,7 @@ ListMenu "MainMenu"
 
 	TextItem "New Game", "n", "PlayerclassMenu"
 	TextItem "Options","o", "OptionsMenu"
-	TextItem "SC Options", "c", "SuperchargeOptions"
+	TextItem "CC Options", "c", "CorechargeOptions"
 	TextItem "Load Game", "l", "LoadGameMenu"
 	TextItem "Save Game", "s", "SaveGameMenu"
 	ifOption(ReadThis)
@@ -32,10 +32,10 @@ ListMenu "MainMenu"
 	TextItem "Quit", "q", "QuitMenu"
 }
 
-OptionMenu "SuperchargeOptions"
+OptionMenu "CorechargeOptions"
 {
 	Position -15
-	Title		"Supercharge Options"
+	Title		"Corecharge Options"
 	
 	StaticText "HUD Options", 1
 	Option		"Large HUD section order**", "cl_tango_fullscreen_hud_style", "HudOrderOptions"

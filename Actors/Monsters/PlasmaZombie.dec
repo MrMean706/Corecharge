@@ -2,7 +2,7 @@ Actor TangoZombieMan: ZombieMan
 {
 	//$Category Monsters
 	//$Color 12
-	//$Title "TangoPlasmaZombie (Drops Half Clip)"
+	//$Title "TangoPlasmaZombie"
 
 	Tag "Plasma Zombie"
 	Health 40
@@ -21,7 +21,7 @@ Actor TangoZombieMan: ZombieMan
 	deathsound "grunt/death"
 	activesound "grunt/active"
 	obituary "%o was cauterised by a zombie's plasma."
-    DropItem "TangoBulletClipHalf"
+    DropItem "TangoBulletClip"
 	  
 	States
 	{

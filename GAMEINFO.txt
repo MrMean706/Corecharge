@@ -1,2 +1,2 @@
-STARTUPTITLE = "Supercharge"
+STARTUPTITLE = "Corecharge"
 STARTUPCOLORS = "FFFFFF", "257E23"
